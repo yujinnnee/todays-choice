@@ -38,7 +38,7 @@
         <a class="nav-link is-active" href="#home" aria-current="page">홈</a>
         <a class="nav-link" href="#new-tests">오늘의 테스트</a>
         <a class="nav-link" href="#popular">전체 테스트</a>
-        <a class="nav-link" href="#about">Instagram</a>
+        <a class="nav-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">Instagram</a>
       </nav>
       <button class="icon-button search-toggle" type="button" aria-label="테스트 검색" aria-haspopup="dialog"><svg class="icon"><use href="#icon-search"/></svg></button>
     </div>
@@ -600,7 +600,7 @@ const testData = {
         <a class="nav-link" href="index.html#home">홈</a>
         <a class="nav-link" href="index.html#new-tests">오늘의 테스트</a>
         <a class="nav-link" href="index.html#popular">전체 테스트</a>
-        <a class="nav-link" href="index.html#about">Instagram</a>
+        <a class="nav-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">Instagram</a>
       </nav>
       <button class="icon-button search-toggle" type="button" aria-label="테스트 검색" aria-haspopup="dialog"><svg class="icon"><use href="#icon-search"/></svg></button>
     </div>
@@ -783,7 +783,7 @@ const testData = {
         <a class="nav-link" href="index.html#home">홈</a>
         <a class="nav-link" href="index.html#new-tests">오늘의 테스트</a>
         <a class="nav-link" href="index.html#popular">전체 테스트</a>
-        <a class="nav-link" href="index.html#about">Instagram</a>
+        <a class="nav-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">Instagram</a>
       </nav>
       <button class="icon-button search-toggle" type="button" aria-label="테스트 검색" aria-haspopup="dialog"><svg class="icon"><use href="#icon-search"/></svg></button>
     </div>
@@ -956,7 +956,7 @@ const testData = {
         <a class="nav-link" href="index.html#home">홈</a>
         <a class="nav-link" href="index.html#new-tests">오늘의 테스트</a>
         <a class="nav-link" href="index.html#popular">전체 테스트</a>
-        <a class="nav-link" href="index.html#about">Instagram</a>
+        <a class="nav-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">Instagram</a>
       </nav>
       <button class="icon-button search-toggle" type="button" aria-label="테스트 검색" aria-haspopup="dialog"><svg class="icon"><use href="index.html#icon-search"/></svg></button>
     </div>
@@ -1128,7 +1128,7 @@ const testData = {
         <a class="nav-link" href="index.html#home">홈</a>
         <a class="nav-link" href="index.html#new-tests">오늘의 테스트</a>
         <a class="nav-link" href="index.html#popular">전체 테스트</a>
-        <a class="nav-link" href="index.html#about">Instagram</a>
+        <a class="nav-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">Instagram</a>
       </nav>
       <button class="icon-button search-toggle" type="button" aria-label="테스트 검색" aria-haspopup="dialog"><svg class="icon"><use href="#icon-search"/></svg></button>
     </div>
@@ -1300,7 +1300,7 @@ const testData = {
         <a class="nav-link" href="index.html#home">홈</a>
         <a class="nav-link" href="index.html#new-tests">오늘의 테스트</a>
         <a class="nav-link" href="index.html#popular">전체 테스트</a>
-        <a class="nav-link" href="index.html#about">Instagram</a>
+        <a class="nav-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">Instagram</a>
       </nav>
       <button class="icon-button search-toggle" type="button" aria-label="테스트 검색" aria-haspopup="dialog"><svg class="icon"><use href="#icon-search"/></svg></button>
     </div>
@@ -1472,7 +1472,7 @@ const testData = {
         <a class="nav-link" href="index.html#home">홈</a>
         <a class="nav-link" href="index.html#new-tests">오늘의 테스트</a>
         <a class="nav-link" href="index.html#popular">전체 테스트</a>
-        <a class="nav-link" href="index.html#about">Instagram</a>
+        <a class="nav-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">Instagram</a>
       </nav>
       <button class="icon-button search-toggle" type="button" aria-label="테스트 검색" aria-haspopup="dialog"><svg class="icon"><use href="#icon-search"/></svg></button>
     </div>
@@ -1644,7 +1644,7 @@ const testData = {
         <a class="nav-link" href="index.html#home">홈</a>
         <a class="nav-link" href="index.html#new-tests">오늘의 테스트</a>
         <a class="nav-link" href="index.html#popular">전체 테스트</a>
-        <a class="nav-link" href="index.html#about">Instagram</a>
+        <a class="nav-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">Instagram</a>
       </nav>
       <button class="icon-button search-toggle" type="button" aria-label="테스트 검색" aria-haspopup="dialog"><svg class="icon"><use href="#icon-search"/></svg></button>
     </div>
@@ -1816,7 +1816,7 @@ const testData = {
         <a class="nav-link" href="index.html#home">홈</a>
         <a class="nav-link" href="index.html#new-tests">오늘의 테스트</a>
         <a class="nav-link" href="index.html#popular">전체 테스트</a>
-        <a class="nav-link" href="index.html#about">Instagram</a>
+        <a class="nav-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">Instagram</a>
       </nav>
       <button class="icon-button search-toggle" type="button" aria-label="테스트 검색" aria-haspopup="dialog"><svg class="icon"><use href="#icon-search"/></svg></button>
     </div>
@@ -1988,7 +1988,7 @@ const testData = {
         <a class="nav-link" href="index.html#home">홈</a>
         <a class="nav-link" href="index.html#new-tests">오늘의 테스트</a>
         <a class="nav-link" href="index.html#popular">전체 테스트</a>
-        <a class="nav-link" href="index.html#about">Instagram</a>
+        <a class="nav-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">Instagram</a>
       </nav>
       <button class="icon-button search-toggle" type="button" aria-label="테스트 검색" aria-haspopup="dialog"><svg class="icon"><use href="#icon-search"/></svg></button>
     </div>
@@ -2160,7 +2160,7 @@ const testData = {
         <a class="nav-link" href="index.html#home">홈</a>
         <a class="nav-link" href="index.html#new-tests">오늘의 테스트</a>
         <a class="nav-link" href="index.html#popular">전체 테스트</a>
-        <a class="nav-link" href="index.html#about">Instagram</a>
+        <a class="nav-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">Instagram</a>
       </nav>
       <button class="icon-button search-toggle" type="button" aria-label="테스트 검색" aria-haspopup="dialog"><svg class="icon"><use href="#icon-search"/></svg></button>
     </div>
@@ -2332,7 +2332,7 @@ const testData = {
         <a class="nav-link" href="index.html#home">홈</a>
         <a class="nav-link" href="index.html#new-tests">오늘의 테스트</a>
         <a class="nav-link" href="index.html#popular">전체 테스트</a>
-        <a class="nav-link" href="index.html#about">Instagram</a>
+        <a class="nav-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">Instagram</a>
       </nav>
       <button class="icon-button search-toggle" type="button" aria-label="테스트 검색" aria-haspopup="dialog"><svg class="icon"><use href="#icon-search"/></svg></button>
     </div>
