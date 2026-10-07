@@ -177,16 +177,17 @@ const categoryCards = Array.from(document.querySelectorAll("#category-grid .test
 const categoryGrid = document.querySelector("#category-grid");
 const categoryEmpty = document.querySelector("#category-empty");
 const testPagination = document.querySelector("#test-pagination");
-const TESTS_PER_PAGE = 9;
+const mobileTestLayout = window.matchMedia("(max-width: 640px)");
 let selectedCategory = "all";
 let currentTestPage = 1;
 
 function renderCategoryTests() {
+  const testsPerPage = mobileTestLayout.matches ? 5 : 9;
   const filteredCards = categoryCards.filter((card) => selectedCategory === "all" || card.dataset.category === selectedCategory);
-  const pageCount = Math.ceil(filteredCards.length / TESTS_PER_PAGE);
+  const pageCount = Math.ceil(filteredCards.length / testsPerPage);
   currentTestPage = Math.max(1, Math.min(currentTestPage, pageCount || 1));
-  const offset = (currentTestPage - 1) * TESTS_PER_PAGE;
-  const pageCards = new Set(filteredCards.slice(offset, offset + TESTS_PER_PAGE));
+  const offset = (currentTestPage - 1) * testsPerPage;
+  const pageCards = new Set(filteredCards.slice(offset, offset + testsPerPage));
   categoryCards.forEach((card) => { card.hidden = !pageCards.has(card); });
   categoryEmpty.hidden = filteredCards.length > 0;
   const categoryLabel = categoryButtons.find((button) => button.dataset.filter === selectedCategory).textContent;
@@ -233,6 +234,12 @@ categoryButtons.forEach((button) => {
   });
 });
 if (categoryGrid) renderCategoryTests();
+mobileTestLayout.addEventListener("change", () => {
+  if (!categoryGrid) return;
+  currentTestPage = 1;
+  categoryGrid.style.minHeight = "";
+  renderCategoryTests();
+});
 
 document.querySelectorAll(".view-all").forEach((link) => {
   link.addEventListener("click", () => {
