@@ -323,6 +323,7 @@ button:disabled{cursor:default}
 .page-button{min-width:40px;min-height:40px;padding:8px 12px;border:1px solid var(--border);border-radius:12px;background:#fff;font-size:14px}
 .page-button:hover:not(:disabled),.page-button[aria-current="page"]{border-color:var(--pink);background:var(--pink-light);color:var(--pink)}
 .page-button:disabled{color:#aaa}
+@media(max-width:640px){.test-pagination{gap:3px;flex-wrap:nowrap}.page-button{min-width:28px;min-height:36px;padding:6px 5px;font-size:13px}}
 .category-button{display:inline-flex;align-items:center;justify-content:center;text-align:center;padding:10px 20px;border:1px solid var(--border);border-radius:999px;background:#fff;color:var(--muted);font-size:15px;font-weight:500;line-height:1.4;white-space:nowrap;transition:background .18s,border-color .18s,color .18s}
 .category-button:hover{border-color:#ddd;background:#fafafa}
 .category-count{position:relative;top:-1px;font-size:.9em;font-weight:650;font-variant-numeric:tabular-nums}
@@ -1278,12 +1279,16 @@ function renderCategoryTests() {
   testPagination.replaceChildren();
   testPagination.hidden = pageCount <= 1;
   if (pageCount <= 1) return;
-  function addPageButton(label, page, disabled = false, active = false) {
+  function addPageButton(label, page, disabled = false, active = false, symbol = "") {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "page-button";
-    button.textContent = label;
+    button.textContent = symbol || label;
     button.disabled = disabled;
+    if (symbol) {
+      button.setAttribute("aria-label", label);
+      button.title = label;
+    }
     button.setAttribute("aria-controls", "category-grid");
     if (active) button.setAttribute("aria-current", "page");
     button.addEventListener("click", () => {
@@ -1294,11 +1299,16 @@ function renderCategoryTests() {
     });
     testPagination.append(button);
   }
-  addPageButton("이전", currentTestPage - 1, currentTestPage === 1);
-  for (let page = 1; page <= pageCount; page += 1) {
+  const visiblePageCount = Math.min(5, pageCount);
+  const firstPage = Math.max(1, Math.min(currentTestPage - Math.floor(visiblePageCount / 2), pageCount - visiblePageCount + 1));
+  const lastPage = firstPage + visiblePageCount - 1;
+  addPageButton("처음", 1, currentTestPage === 1, false, "<<");
+  addPageButton("이전", currentTestPage - 1, currentTestPage === 1, false, "<");
+  for (let page = firstPage; page <= lastPage; page += 1) {
     addPageButton(String(page), page, false, page === currentTestPage);
   }
-  addPageButton("다음", currentTestPage + 1, currentTestPage === pageCount);
+  addPageButton("다음", currentTestPage + 1, currentTestPage === pageCount, false, ">");
+  addPageButton("맨끝", pageCount, currentTestPage === pageCount, false, ">>");
 }
 
 categoryButtons.forEach((button) => {

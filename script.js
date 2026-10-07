@@ -251,12 +251,16 @@ function renderCategoryTests() {
   testPagination.replaceChildren();
   testPagination.hidden = pageCount <= 1;
   if (pageCount <= 1) return;
-  function addPageButton(label, page, disabled = false, active = false) {
+  function addPageButton(label, page, disabled = false, active = false, symbol = "") {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "page-button";
-    button.textContent = label;
+    button.textContent = symbol || label;
     button.disabled = disabled;
+    if (symbol) {
+      button.setAttribute("aria-label", label);
+      button.title = label;
+    }
     button.setAttribute("aria-controls", "category-grid");
     if (active) button.setAttribute("aria-current", "page");
     button.addEventListener("click", () => {
@@ -267,11 +271,16 @@ function renderCategoryTests() {
     });
     testPagination.append(button);
   }
-  addPageButton("이전", currentTestPage - 1, currentTestPage === 1);
-  for (let page = 1; page <= pageCount; page += 1) {
+  const visiblePageCount = Math.min(5, pageCount);
+  const firstPage = Math.max(1, Math.min(currentTestPage - Math.floor(visiblePageCount / 2), pageCount - visiblePageCount + 1));
+  const lastPage = firstPage + visiblePageCount - 1;
+  addPageButton("처음", 1, currentTestPage === 1, false, "<<");
+  addPageButton("이전", currentTestPage - 1, currentTestPage === 1, false, "<");
+  for (let page = firstPage; page <= lastPage; page += 1) {
     addPageButton(String(page), page, false, page === currentTestPage);
   }
-  addPageButton("다음", currentTestPage + 1, currentTestPage === pageCount);
+  addPageButton("다음", currentTestPage + 1, currentTestPage === pageCount, false, ">");
+  addPageButton("맨끝", pageCount, currentTestPage === pageCount, false, ">>");
 }
 
 categoryButtons.forEach((button) => {
