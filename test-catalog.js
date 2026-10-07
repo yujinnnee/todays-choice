@@ -3,6 +3,96 @@
 // Add metadata here and a matching <slug>-data.js module to register a test.
 const TEST_CATALOG = [
   {
+    "id": 50,
+    "slug": "romance-priorities",
+    "title": "내가 연애에서 절대 포기 못 하는 건?",
+    "description": "좋아하는 마음만으로는 부족한, 내 연애의 가장 중요한 기준은 무엇일까?",
+    "category": "연애·결혼",
+    "url": "test.html?id=romance-priorities",
+    "icon": "heart"
+  },
+  {
+    "id": 49,
+    "slug": "overseas-move",
+    "title": "갑자기 해외 이민 기회가 생기면 나는?",
+    "description": "익숙한 삶을 떠나 완전히 새로운 나라에서 살 기회가 생긴다면 나는 어떤 선택을 할까?",
+    "category": "재미",
+    "url": "test.html?id=overseas-move",
+    "icon": "flame"
+  },
+  {
+    "id": 48,
+    "slug": "friend-romance-distance",
+    "title": "친구가 연애 때문에 잠수 타면 나는?",
+    "description": "친구가 연애를 시작한 뒤 연락이 뜸해지면 나는 어떻게 반응할까?",
+    "category": "친구·인간관계·사회생활",
+    "url": "test.html?id=friend-romance-distance",
+    "icon": "people"
+  },
+  {
+    "id": 47,
+    "slug": "long-term-love",
+    "title": "나는 장기연애 체질일까?",
+    "description": "설렘이 익숙함으로 바뀐 뒤에도 나는 관계를 오래 이어갈 수 있을까?",
+    "category": "연애·결혼",
+    "url": "test.html?id=long-term-love",
+    "icon": "heart"
+  },
+  {
+    "id": 46,
+    "slug": "mood-swings",
+    "title": "나는 감정 기복이 큰 사람일까?",
+    "description": "내 기분은 얼마나 자주, 얼마나 크게 흔들리는 편일까?",
+    "category": "성격",
+    "url": "test.html?id=mood-swings",
+    "icon": "leaf"
+  },
+  {
+    "id": 45,
+    "slug": "sociability",
+    "title": "내 사회성은 사실 어느 정도일까?",
+    "description": "낯선 사람, 모임, 대화 속에서 드러나는 내 진짜 사회성은 몇 %일까?",
+    "category": "친구·인간관계·사회생활",
+    "url": "test.html?id=sociability",
+    "icon": "people"
+  },
+  {
+    "id": 44,
+    "slug": "year-off",
+    "title": "갑자기 1년 휴가가 생기면 나는?",
+    "description": "아무 의무 없이 1년이 주어진다면 나는 어떻게 살아갈까?",
+    "category": "재미",
+    "url": "test.html?id=year-off",
+    "icon": "flame"
+  },
+  {
+    "id": 43,
+    "slug": "romance-behavior",
+    "title": "내가 연애하면 가장 많이 하는 행동은?",
+    "description": "좋아하는 사람이 생기면 나는 어떤 행동을 가장 자주 하게 될까?",
+    "category": "연애·결혼",
+    "url": "test.html?id=romance-behavior",
+    "icon": "heart"
+  },
+  {
+    "id": 42,
+    "slug": "mental-recovery",
+    "title": "내 멘탈 회복 속도는 얼마나 빠를까?",
+    "description": "힘든 일이 생긴 뒤 나는 얼마나 빨리 다시 원래의 나로 돌아올까?",
+    "category": "성격",
+    "url": "test.html?id=mental-recovery",
+    "icon": "leaf"
+  },
+  {
+    "id": 41,
+    "slug": "variety-character",
+    "title": "내 인생이 예능이라면 나는 어떤 캐릭터일까?",
+    "description": "사람들 사이에서 나는 어떤 역할로 기억되는 사람일까?",
+    "category": "재미",
+    "url": "test.html?id=variety-character",
+    "icon": "flame"
+  },
+  {
     "id": 40,
     "slug": "stress-change",
     "title": "내가 스트레스 받으면 가장 먼저 변하는 것은?",
