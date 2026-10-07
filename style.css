@@ -27,7 +27,7 @@ button:disabled{cursor:default}
 .icon-button:hover{background:#f7f7f7}
 .header-inner>.search-toggle{color:var(--text)}
 .header-inner>.search-toggle .icon{stroke-width:2}
-.hero{background:#fcfcfd}
+.hero{background:#f4f4f6}
 .hero-inner{display:flex;align-items:center;min-height:500px;padding:64px clamp(24px,4vw,64px)}
 .hero-copy{width:100%;max-width:100%}
 .hero-copy h1{margin:0 0 24px;font-size:clamp(42px,4.5vw,64px);line-height:1.24;letter-spacing:-3.5px;font-weight:800}
