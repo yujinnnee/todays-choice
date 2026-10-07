@@ -33,6 +33,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2401413706072374"
+       crossorigin="anonymous"></script>
 </head>
 <body>
   <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -645,6 +647,8 @@ const testData = {
   <script src="affection-data.js" defer></script>
   <script src="script.js" defer></script>
   <script src="test-runner.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2401413706072374"
+       crossorigin="anonymous"></script>
 </head>
 <body class="test-page">
   <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -834,6 +838,8 @@ const testData = {
   <script src="cutoff-data.js" defer></script>
   <script src="script.js" defer></script>
   <script src="test-runner.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2401413706072374"
+       crossorigin="anonymous"></script>
 </head>
 <body class="test-page">
   <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -1023,6 +1029,8 @@ const testData = {
   <script src="difficult-people-data.js" defer></script>
   <script src="script.js" defer></script>
   <script src="test-runner.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2401413706072374"
+       crossorigin="anonymous"></script>
 </head>
 <body class="test-page">
   <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -1212,6 +1220,8 @@ const testData = {
   <script src="friend-boundaries-data.js" defer></script>
   <script src="script.js" defer></script>
   <script src="test-runner.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2401413706072374"
+       crossorigin="anonymous"></script>
 </head>
 <body class="test-page">
   <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -1401,6 +1411,8 @@ const testData = {
   <script src="friend-dependence-data.js" defer></script>
   <script src="script.js" defer></script>
   <script src="test-runner.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2401413706072374"
+       crossorigin="anonymous"></script>
 </head>
 <body class="test-page">
   <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -1601,6 +1613,8 @@ const testData = {
   <script src="game-character-data.js" defer></script>
   <script src="script.js" defer></script>
   <script src="test-runner.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2401413706072374"
+       crossorigin="anonymous"></script>
 </head>
 <body class="test-page">
   <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -1791,6 +1805,8 @@ const testData = {
   <script src="jealousy-data.js" defer></script>
   <script src="script.js" defer></script>
   <script src="test-runner.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2401413706072374"
+       crossorigin="anonymous"></script>
 </head>
 <body class="test-page">
   <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -1980,6 +1996,8 @@ const testData = {
   <script src="lying-data.js" defer></script>
   <script src="script.js" defer></script>
   <script src="test-runner.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2401413706072374"
+       crossorigin="anonymous"></script>
 </head>
 <body class="test-page">
   <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -2169,6 +2187,8 @@ const testData = {
   <script src="marriage-values-data.js" defer></script>
   <script src="script.js" defer></script>
   <script src="test-runner.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2401413706072374"
+       crossorigin="anonymous"></script>
 </head>
 <body class="test-page">
   <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -2358,6 +2378,8 @@ const testData = {
   <script src="mental-strength-data.js" defer></script>
   <script src="script.js" defer></script>
   <script src="test-runner.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2401413706072374"
+       crossorigin="anonymous"></script>
 </head>
 <body class="test-page">
   <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -2548,6 +2570,8 @@ const testData = {
   <script src="million-followers-data.js" defer></script>
   <script src="script.js" defer></script>
   <script src="test-runner.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2401413706072374"
+       crossorigin="anonymous"></script>
 </head>
 <body class="test-page">
   <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -2738,6 +2762,8 @@ const testData = {
   <script src="relationship-control-data.js" defer></script>
   <script src="script.js" defer></script>
   <script src="test-runner.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2401413706072374"
+       crossorigin="anonymous"></script>
 </head>
 <body class="test-page">
   <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -2927,6 +2953,8 @@ const testData = {
   <script src="relationship-energy-data.js" defer></script>
   <script src="script.js" defer></script>
   <script src="test-runner.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2401413706072374"
+       crossorigin="anonymous"></script>
 </head>
 <body class="test-page">
   <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -3116,6 +3144,8 @@ const testData = {
   <script src="secret-data.js" defer></script>
   <script src="script.js" defer></script>
   <script src="test-runner.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2401413706072374"
+       crossorigin="anonymous"></script>
 </head>
 <body class="test-page">
   <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -3305,6 +3335,8 @@ const testData = {
   <script src="social-adaptation-data.js" defer></script>
   <script src="script.js" defer></script>
   <script src="test-runner.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2401413706072374"
+       crossorigin="anonymous"></script>
 </head>
 <body class="test-page">
   <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -3494,6 +3526,8 @@ const testData = {
   <script src="social-awareness-data.js" defer></script>
   <script src="script.js" defer></script>
   <script src="test-runner.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2401413706072374"
+       crossorigin="anonymous"></script>
 </head>
 <body class="test-page">
   <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -3683,6 +3717,8 @@ const testData = {
   <script src="social-mask-data.js" defer></script>
   <script src="script.js" defer></script>
   <script src="test-runner.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2401413706072374"
+       crossorigin="anonymous"></script>
 </head>
 <body class="test-page">
   <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
