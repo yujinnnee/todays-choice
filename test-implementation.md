@@ -70,6 +70,8 @@
       </div>
       <p id="filter-status" class="visually-hidden" role="status">전체 테스트를 표시하고 있어요.</p>
       <div class="card-grid" id="category-grid">
+        <a class="test-card" href="social-adaptation-test.html" data-test="30" data-category="relationship"><span class="icon-tile"><svg class="icon"><use href="#icon-people"/></svg></span><h3>나는 사회생활에서 얼마나 적응이 빠른 편일까?</h3><p>새로운 사람, 새로운 환경에 나는 얼마나 빨리 녹아드는 타입일까?</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
+        <a class="test-card" href="difficult-people-test.html" data-test="29" data-category="relationship"><span class="icon-tile"><svg class="icon"><use href="#icon-chat"/></svg></span><h3>나는 싫은 사람과도 잘 지낼 수 있을까?</h3><p>감정은 감정이고 사회생활은 사회생활일까?</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
         <a class="test-card" href="million-followers-test.html" data-test="28" data-category="fun"><span class="icon-tile"><svg class="icon"><use href="#icon-people"/></svg></span><h3>나는 하루아침에 100만 팔로워가 생기면 어떻게 변할까?</h3><p>갑자기 모두가 나를 보기 시작한다면, 나는 어떤 사람이 될까?</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
         <a class="test-card" href="affection-test.html" data-test="27" data-category="relationship"><span class="icon-tile"><svg class="icon"><use href="#icon-heart"/></svg></span><h3>나는 인간관계에서 정이 많은 편일까?</h3><p>한번 내 사람이 되면 얼마나 오래 챙기는 타입일까?</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
         <a class="test-card" href="friend-dependence-test.html" data-test="26" data-category="relationship"><span class="icon-tile"><svg class="icon"><use href="#icon-chat"/></svg></span><h3>나는 친구에게 얼마나 의존하는 편일까?</h3><p>힘들 때도, 심심할 때도 나는 친구를 얼마나 찾는 편일까?</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
@@ -844,6 +846,178 @@ const testData = {
     </div>
   </footer>
   <dialog id="search-dialog" class="modal" aria-labelledby="search-title"><div class="modal-heading"><h2 id="search-title">어떤 테스트를 찾으세요?</h2><button class="icon-button" type="button" data-close aria-label="검색 닫기"><svg class="icon"><use href="#icon-close"/></svg></button></div><label class="search-field"><svg class="icon"><use href="#icon-search"/></svg><input id="search-input" type="search" placeholder="친구, 인간관계, 손절…" aria-label="테스트 검색어" autocomplete="off"></label><p id="search-count" class="search-count" aria-live="polite"></p><div id="search-results" class="search-results"></div></dialog>
+</body>
+</html>
+```
+
+## difficult-people-data.js
+
+```javascript
+"use strict";
+
+const testData = {
+  id: 29,
+  url: "difficult-people-test.html",
+  title: "나는 싫은 사람과도 잘 지낼 수 있을까?",
+  description: "감정은 감정이고 사회생활은 사회생활일까?",
+  category: "친구·인간관계·사회생활",
+  shareDescription: "내 싫은 사람 대처 테스트 결과를 확인해보세요.",
+  questions: [
+    {
+      question: "별로 안 좋아하는 사람과 같은 팀이 됐다면?",
+      answers: ["필요한 일은 편하게 같이 한다", "조금 불편하지만 티 안 낸다", "필요한 말만 한다", "최대한 엮이지 않으려고 한다"],
+    },
+    {
+      question: "싫은 사람이 먼저 친근하게 말을 걸면?",
+      answers: ["자연스럽게 받아준다", "예의상 맞춰준다", "짧게 대답한다", "대화를 빨리 끝내고 싶다"],
+    },
+    {
+      question: "회식이나 모임에서 그 사람 옆자리에 앉게 된다면?",
+      answers: ["그냥 앉는다", "조금 불편하지만 괜찮다", "가능하면 자리를 바꾼다", "어떻게든 피한다"],
+    },
+    {
+      question: "싫은 사람에게 부탁을 받아야 한다면?",
+      answers: ["필요한 일이면 한다", "업무라면 한다", "최소한만 돕는다", "웬만하면 거절하고 싶다"],
+    },
+    {
+      question: "그 사람이 좋은 성과를 냈다면?",
+      answers: ["잘한 건 인정한다", "축하 정도는 해준다", "별로 관심 없다", "솔직히 축하하기 싫다"],
+    },
+    {
+      question: "싫은 사람이 나에게 실수를 사과한다면?",
+      answers: ["사과는 사과대로 받아준다", "상황을 보고 받아준다", "쉽게 마음이 풀리진 않는다", "싫은 감정이 더 커서 받아들이기 어렵다"],
+    },
+    {
+      question: "다른 사람들이 그 사람을 좋아한다면?",
+      answers: ["사람마다 보는 게 다르다고 생각한다", "조금 신기하지만 신경 안 쓴다", "왜 좋아하는지 이해가 안 된다", "괜히 더 불편해진다"],
+    },
+    {
+      question: "싫은 사람과 장기간 같이 일해야 한다면?",
+      answers: ["일만 잘 맞으면 괜찮다", "적응하려고 노력한다", "스트레스를 꽤 받을 것 같다", "계속 같이 있어야 하면 너무 힘들다"],
+    },
+    {
+      question: "그 사람이 나한테 잘해주기 시작하면?",
+      answers: ["다시 생각해볼 수 있다", "조금 지켜본다", "그래도 거리 두는 편이다", "싫어진 사람은 잘 안 바뀐다"],
+    },
+    {
+      question: "사회생활에서 싫은 사람을 대하는 나는?",
+      answers: ["감정과 일을 분리하는 편이다", "웬만하면 티 안 낸다", "표정이나 말투에 조금 드러난다", "싫으면 숨기기 어렵다"],
+    },
+  ].map(({ question, answers }) => ({
+    question,
+    answers: answers.map((text, index) => ({ text, score: index + 1 })),
+  })),
+  results: [
+    {
+      min: 10, max: 16,
+      title: "프로 사회생활형",
+      description: "싫은 감정이 있어도 필요한 관계는 무난하게 유지하는 편이야. 감정과 상황을 비교적 잘 분리하고, 상대를 좋아하지 않아도 예의는 지키는 타입.",
+    },
+    {
+      min: 17, max: 24,
+      title: "티는 안 내는 편",
+      description: "불편한 사람과도 웬만하면 문제없이 지내는 편. 다만 속으로는 어느 정도 거리 두기를 하면서 관계를 관리하는 타입이야.",
+    },
+    {
+      min: 25, max: 32,
+      title: "불편함이 꽤 드러나는 편",
+      description: "싫은 사람과 계속 맞춰 지내는 걸 꽤 힘들어하는 편이야. 필요한 상황에서는 참지만 오래 함께하면 스트레스가 쌓일 가능성이 큼.",
+    },
+    {
+      min: 33, max: 40,
+      title: "싫으면 거리 두는 타입",
+      description: "한번 불편하다고 느끼면 굳이 관계를 유지하려 하지 않는 편. 감정을 숨기기보다 가능한 한 접점을 줄이는 쪽을 선택하는 타입이야.",
+    },
+  ],
+};
+```
+
+## difficult-people-test.html
+
+```html
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="감정은 감정이고 사회생활은 사회생활일까?">
+  <title>나는 싫은 사람과도 잘 지낼 수 있을까? | Today's Choice</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="test.css">
+  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.8.2/kakao.min.js" integrity="sha384-zt/G7/KfaRQ9dT/QIkS0ujMtzouJqzuSJcXVQu50x0rl/+mD1dc70AeOejVbMD9E" crossorigin="anonymous" defer></script>
+  <script src="difficult-people-data.js" defer></script>
+  <script src="script.js" defer></script>
+  <script src="test-runner.js" defer></script>
+</head>
+<body class="test-page">
+  <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="7.3"/><path d="m16 16 5 5"/></symbol>
+    <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M20.8 4.7a5.5 5.5 0 0 0-7.8 0L12 5.8l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.5a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+    <symbol id="icon-chat" viewBox="0 0 24 24"><path d="M21 11.5a9 9 0 0 1-9 8.5 10 10 0 0 1-4-.8L3 21l1.7-4.7A8 8 0 0 1 3 11.5a9 9 0 0 1 18 0Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></symbol>
+    <symbol id="icon-ring" viewBox="0 0 24 24"><circle cx="12" cy="14" r="7.5"/><path d="m9 3 3 3 3-3-1-2h-4l-1 2Z"/></symbol>
+    <symbol id="icon-people" viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 4a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v3"/></symbol>
+    <symbol id="icon-flame" viewBox="0 0 24 24"><path d="M12 3c0 4-5 6-5 11a5 5 0 0 0 10 0c0-3-2-5-3-7 0 3-1 4-2 5 0-4 2-6 0-9Z"/></symbol>
+    <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M21 14A9.5 9.5 0 0 1 10 3a9.5 9.5 0 1 0 11 11Z"/></symbol>
+    <symbol id="icon-leaf" viewBox="0 0 24 24"><path d="M12 22V11M12 15C5 16 2 11 3 7c6-1 9 3 9 8Zm0-5c0-6 4-9 9-8 1 6-3 10-9 8Z"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+  </svg>
+  <a class="skip-link" href="#main">본문 바로가기</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html#home" aria-label="오늘의 초이스 홈">Today's choice</a>
+      <nav class="main-nav" aria-label="주 메뉴">
+        <a class="nav-link" href="index.html#home">홈</a>
+        <a class="nav-link" href="index.html#new-tests">오늘의 테스트</a>
+        <a class="nav-link" href="index.html#popular">전체 테스트</a>
+        <a class="nav-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </nav>
+      <button class="icon-button search-toggle" type="button" aria-label="테스트 검색" aria-haspopup="dialog"><svg class="icon"><use href="#icon-search"/></svg></button>
+    </div>
+  </header>
+  <main id="main" data-test-runner>
+    <section class="test-panel" data-screen="start" aria-labelledby="test-title">
+      <p class="test-category" data-role="category"></p>
+      <h1 id="test-title" data-role="title" data-focus tabindex="-1"></h1>
+      <p class="test-description" data-role="description"></p>
+      <p class="test-count" data-role="count"></p>
+      <button class="primary-button" type="button" data-role="start">테스트 시작하기</button>
+    </section>
+    <section class="test-panel" data-screen="question" aria-labelledby="question-title" hidden>
+      <div class="question-top">
+        <button class="test-back" type="button" data-role="back">← 뒤로가기</button>
+        <span class="test-position" data-role="position"></span>
+      </div>
+      <progress class="test-progress" data-role="progress" value="0" max="10" aria-label="테스트 진행률"></progress>
+      <h2 class="question-title" id="question-title" data-role="question" data-focus tabindex="-1"></h2>
+      <div class="answer-list" data-role="answers" role="group" aria-labelledby="question-title"></div>
+    </section>
+    <section class="test-panel test-result" data-screen="result" aria-labelledby="result-title" hidden>
+      <p class="result-label">당신의 불편한 관계 대처 지수는</p>
+      <p class="result-score"><span data-role="score"></span><small> / <span data-role="max-score"></span>점</small></p>
+      <h2 class="result-title" id="result-title" data-role="result-title" data-focus tabindex="-1"></h2>
+      <p class="result-description" data-role="result-description"></p>
+      <div class="result-actions">
+        <button class="secondary-button" type="button" data-role="restart">다시하기</button>
+        <a class="secondary-button" href="index.html#category-tests">다른 테스트 보기</a>
+      </div>
+      <button class="primary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
+      <p class="kakao-share-status" id="kakao-share-status" role="status" hidden></p>
+      <p class="test-disclaimer">본 테스트는 재미를 위한 콘텐츠이며 전문적인 심리 진단이 아닙니다.</p>
+    </section>
+    <noscript><p>테스트를 진행하려면 브라우저에서 JavaScript를 활성화해 주세요.</p></noscript>
+  </main>
+  <footer class="site-footer" id="about">
+    <div class="container footer-inner">
+      <a class="instagram-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        <span>@choice_zip_</span>
+      </a>
+    </div>
+  </footer>
+  <dialog id="search-dialog" class="modal" aria-labelledby="search-title"><div class="modal-heading"><h2 id="search-title">어떤 테스트를 찾으세요?</h2><button class="icon-button" type="button" data-close aria-label="검색 닫기"><svg class="icon"><use href="#icon-close"/></svg></button></div><label class="search-field"><svg class="icon"><use href="#icon-search"/></svg><input id="search-input" type="search" placeholder="사회생활, 관계, 적응…" aria-label="테스트 검색어" autocomplete="off"></label><p id="search-count" class="search-count" aria-live="polite"></p><div id="search-results" class="search-results"></div></dialog>
 </body>
 </html>
 ```
@@ -2750,6 +2924,178 @@ const testData = {
     </div>
   </footer>
   <dialog id="search-dialog" class="modal" aria-labelledby="search-title"><div class="modal-heading"><h2 id="search-title">어떤 테스트를 찾으세요?</h2><button class="icon-button" type="button" data-close aria-label="검색 닫기"><svg class="icon"><use href="#icon-close"/></svg></button></div><label class="search-field"><svg class="icon"><use href="#icon-search"/></svg><input id="search-input" type="search" placeholder="비밀, 친구, 재미…" aria-label="테스트 검색어" autocomplete="off"></label><p id="search-count" class="search-count" aria-live="polite"></p><div id="search-results" class="search-results"></div></dialog>
+</body>
+</html>
+```
+
+## social-adaptation-data.js
+
+```javascript
+"use strict";
+
+const testData = {
+  id: 30,
+  url: "social-adaptation-test.html",
+  title: "나는 사회생활에서 얼마나 적응이 빠른 편일까?",
+  description: "새로운 사람, 새로운 환경에 나는 얼마나 빨리 녹아드는 타입일까?",
+  category: "친구·인간관계·사회생활",
+  shareDescription: "내 사회생활 적응 테스트 결과를 확인해보세요.",
+  questions: [
+    {
+      question: "새로운 회사나 학교에 처음 가면?",
+      answers: ["먼저 주변을 파악하고 금방 적응한다", "조금 긴장하지만 빠르게 익숙해진다", "며칠은 어색하다", "한동안 적응하기 힘들다"],
+    },
+    {
+      question: "처음 보는 사람들과 함께 점심을 먹게 된다면?",
+      answers: ["자연스럽게 대화한다", "분위기를 보며 대화에 참여한다", "먼저 말을 걸어주면 편하다", "많이 어색하고 부담스럽다"],
+    },
+    {
+      question: "새로운 업무를 맡았을 때 나는?",
+      answers: ["일단 해보면서 익힌다", "설명을 듣고 금방 따라간다", "익숙해질 때까지 시간이 필요하다", "변화 자체가 스트레스다"],
+    },
+    {
+      question: "내가 모르는 규칙이나 분위기가 있는 곳에 가면?",
+      answers: ["빠르게 눈치채고 맞춘다", "주변을 보면서 조금씩 맞춘다", "누가 알려줘야 편하다", "그런 상황 자체가 부담스럽다"],
+    },
+    {
+      question: "새로운 팀에 들어갔을 때?",
+      answers: ["먼저 말을 걸어보는 편이다", "자연스럽게 친해질 기회를 기다린다", "친한 사람이 생길 때까지 조용한 편이다", "한동안 혼자 있는 게 편하다"],
+    },
+    {
+      question: "갑자기 일정이나 방식이 바뀐다면?",
+      answers: ["바로 새로운 방식에 맞춘다", "잠깐 당황하지만 금방 적응한다", "꽤 신경 쓰인다", "원래 방식이 바뀌는 게 매우 싫다"],
+    },
+    {
+      question: "낯선 자리에서 질문을 받아야 한다면?",
+      answers: ["자연스럽게 대답한다", "조금 긴장하지만 괜찮다", "머릿속이 잠깐 하얘진다", "가능한 한 피하고 싶다"],
+    },
+    {
+      question: "새로운 사람들과 단체 채팅방에 들어가면?",
+      answers: ["먼저 인사하고 대화에도 참여한다", "인사하고 분위기를 본다", "주로 읽기만 한다", "필요할 때만 말한다"],
+    },
+    {
+      question: "새로운 환경에서 실수를 했다면?",
+      answers: ["금방 고치고 넘어간다", "조금 민망하지만 금방 회복한다", "계속 신경 쓰인다", "이후 행동까지 위축되는 편이다"],
+    },
+    {
+      question: "환경이 완전히 바뀌었을 때 나는?",
+      answers: ["오히려 새로운 게 재밌다", "시간이 조금 지나면 괜찮아진다", "익숙해지는 데 꽤 오래 걸린다", "익숙한 환경을 떠나는 게 매우 힘들다"],
+    },
+  ].map(({ question, answers }) => ({
+    question,
+    answers: answers.map((text, index) => ({ text, score: 4 - index })),
+  })),
+  results: [
+    {
+      min: 34, max: 40,
+      title: "어디서든 금방 녹아드는 적응형",
+      description: "새로운 사람이나 환경에 대한 부담이 적고, 상황을 빠르게 파악해서 자연스럽게 맞춰가는 편이야. 변화가 생겨도 비교적 금방 자기 페이스를 찾는 타입.",
+    },
+    {
+      min: 26, max: 33,
+      title: "조금만 지나면 금방 적응하는 편",
+      description: "처음에는 약간 어색하거나 긴장해도 시간이 지나면 자연스럽게 적응하는 편이야. 완전히 낯선 상황에서도 큰 스트레스 없이 익숙해질 수 있는 타입.",
+    },
+    {
+      min: 18, max: 25,
+      title: "적응에 시간이 필요한 편",
+      description: "새로운 사람이나 환경에 익숙해지기까지 시간이 조금 필요한 타입. 처음에는 조용하지만 익숙해지고 나면 편하게 지내는 경우가 많아.",
+    },
+    {
+      min: 10, max: 17,
+      title: "익숙한 환경이 편한 타입",
+      description: "낯선 사람이나 갑작스러운 변화에서 스트레스를 크게 느끼는 편이야. 빠르게 적응하기보다는 충분히 관찰하고 익숙해진 뒤 편해지는 타입.",
+    },
+  ],
+};
+```
+
+## social-adaptation-test.html
+
+```html
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="새로운 사람, 새로운 환경에 나는 얼마나 빨리 녹아드는 타입일까?">
+  <title>나는 사회생활에서 얼마나 적응이 빠른 편일까? | Today's Choice</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="test.css">
+  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.8.2/kakao.min.js" integrity="sha384-zt/G7/KfaRQ9dT/QIkS0ujMtzouJqzuSJcXVQu50x0rl/+mD1dc70AeOejVbMD9E" crossorigin="anonymous" defer></script>
+  <script src="social-adaptation-data.js" defer></script>
+  <script src="script.js" defer></script>
+  <script src="test-runner.js" defer></script>
+</head>
+<body class="test-page">
+  <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="7.3"/><path d="m16 16 5 5"/></symbol>
+    <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M20.8 4.7a5.5 5.5 0 0 0-7.8 0L12 5.8l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.5a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+    <symbol id="icon-chat" viewBox="0 0 24 24"><path d="M21 11.5a9 9 0 0 1-9 8.5 10 10 0 0 1-4-.8L3 21l1.7-4.7A8 8 0 0 1 3 11.5a9 9 0 0 1 18 0Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></symbol>
+    <symbol id="icon-ring" viewBox="0 0 24 24"><circle cx="12" cy="14" r="7.5"/><path d="m9 3 3 3 3-3-1-2h-4l-1 2Z"/></symbol>
+    <symbol id="icon-people" viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 4a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v3"/></symbol>
+    <symbol id="icon-flame" viewBox="0 0 24 24"><path d="M12 3c0 4-5 6-5 11a5 5 0 0 0 10 0c0-3-2-5-3-7 0 3-1 4-2 5 0-4 2-6 0-9Z"/></symbol>
+    <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M21 14A9.5 9.5 0 0 1 10 3a9.5 9.5 0 1 0 11 11Z"/></symbol>
+    <symbol id="icon-leaf" viewBox="0 0 24 24"><path d="M12 22V11M12 15C5 16 2 11 3 7c6-1 9 3 9 8Zm0-5c0-6 4-9 9-8 1 6-3 10-9 8Z"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+  </svg>
+  <a class="skip-link" href="#main">본문 바로가기</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html#home" aria-label="오늘의 초이스 홈">Today's choice</a>
+      <nav class="main-nav" aria-label="주 메뉴">
+        <a class="nav-link" href="index.html#home">홈</a>
+        <a class="nav-link" href="index.html#new-tests">오늘의 테스트</a>
+        <a class="nav-link" href="index.html#popular">전체 테스트</a>
+        <a class="nav-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </nav>
+      <button class="icon-button search-toggle" type="button" aria-label="테스트 검색" aria-haspopup="dialog"><svg class="icon"><use href="#icon-search"/></svg></button>
+    </div>
+  </header>
+  <main id="main" data-test-runner>
+    <section class="test-panel" data-screen="start" aria-labelledby="test-title">
+      <p class="test-category" data-role="category"></p>
+      <h1 id="test-title" data-role="title" data-focus tabindex="-1"></h1>
+      <p class="test-description" data-role="description"></p>
+      <p class="test-count" data-role="count"></p>
+      <button class="primary-button" type="button" data-role="start">테스트 시작하기</button>
+    </section>
+    <section class="test-panel" data-screen="question" aria-labelledby="question-title" hidden>
+      <div class="question-top">
+        <button class="test-back" type="button" data-role="back">← 뒤로가기</button>
+        <span class="test-position" data-role="position"></span>
+      </div>
+      <progress class="test-progress" data-role="progress" value="0" max="10" aria-label="테스트 진행률"></progress>
+      <h2 class="question-title" id="question-title" data-role="question" data-focus tabindex="-1"></h2>
+      <div class="answer-list" data-role="answers" role="group" aria-labelledby="question-title"></div>
+    </section>
+    <section class="test-panel test-result" data-screen="result" aria-labelledby="result-title" hidden>
+      <p class="result-label">당신의 사회생활 적응 지수는</p>
+      <p class="result-score"><span data-role="score"></span><small> / <span data-role="max-score"></span>점</small></p>
+      <h2 class="result-title" id="result-title" data-role="result-title" data-focus tabindex="-1"></h2>
+      <p class="result-description" data-role="result-description"></p>
+      <div class="result-actions">
+        <button class="secondary-button" type="button" data-role="restart">다시하기</button>
+        <a class="secondary-button" href="index.html#category-tests">다른 테스트 보기</a>
+      </div>
+      <button class="primary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
+      <p class="kakao-share-status" id="kakao-share-status" role="status" hidden></p>
+      <p class="test-disclaimer">본 테스트는 재미를 위한 콘텐츠이며 전문적인 심리 진단이 아닙니다.</p>
+    </section>
+    <noscript><p>테스트를 진행하려면 브라우저에서 JavaScript를 활성화해 주세요.</p></noscript>
+  </main>
+  <footer class="site-footer" id="about">
+    <div class="container footer-inner">
+      <a class="instagram-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        <span>@choice_zip_</span>
+      </a>
+    </div>
+  </footer>
+  <dialog id="search-dialog" class="modal" aria-labelledby="search-title"><div class="modal-heading"><h2 id="search-title">어떤 테스트를 찾으세요?</h2><button class="icon-button" type="button" data-close aria-label="검색 닫기"><svg class="icon"><use href="#icon-close"/></svg></button></div><label class="search-field"><svg class="icon"><use href="#icon-search"/></svg><input id="search-input" type="search" placeholder="사회생활, 관계, 적응…" aria-label="테스트 검색어" autocomplete="off"></label><p id="search-count" class="search-count" aria-live="polite"></p><div id="search-results" class="search-results"></div></dialog>
 </body>
 </html>
 ```
