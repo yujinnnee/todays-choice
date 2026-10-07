@@ -5,7 +5,7 @@ const testData = {
   url: "social-awareness-test.html",
   title: "나는 인간관계에서 눈치를 얼마나 보는 편일까?",
   description: "다른 사람의 말투, 표정, 분위기를 얼마나 신경 쓰는지 알아보세요.",
-  category: "친구·인간관계",
+  category: "친구·인간관계·사회생활",
   shareDescription: "내 인간관계 눈치 성향 결과를 확인해보세요.",
   questions: [
     {

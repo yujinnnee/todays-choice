@@ -5,7 +5,7 @@ const testData = {
   url: "friend-boundaries-test.html",
   title: "나는 친한 친구에게도 선을 두는 편일까?",
   description: "아무리 친해도 지켜야 할 선이 있다고 생각하는 편일까?",
-  category: "친구·인간관계",
+  category: "친구·인간관계·사회생활",
   shareDescription: "내 친구 사이 경계 테스트 결과를 확인해보세요.",
   questions: [
     {

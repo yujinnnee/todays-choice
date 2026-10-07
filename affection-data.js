@@ -5,7 +5,7 @@ const testData = {
   url: "affection-test.html",
   title: "나는 인간관계에서 정이 많은 편일까?",
   description: "한번 내 사람이 되면 얼마나 오래 챙기는 타입일까?",
-  category: "친구·인간관계",
+  category: "친구·인간관계·사회생활",
   shareDescription: "내 인간관계 정 테스트 결과를 확인해보세요.",
   questions: [
     {

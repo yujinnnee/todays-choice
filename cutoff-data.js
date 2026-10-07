@@ -5,7 +5,7 @@ const testData = {
   url: "cutoff-test.html",
   title: "나는 사람을 얼마나 빨리 손절하는 편일까?",
   description: "인간관계에서 나는 참는 편일까, 빠르게 정리하는 편일까?",
-  category: "친구·인간관계",
+  category: "친구·인간관계·사회생활",
   shareDescription: "내 인간관계 손절 성향 결과를 확인해보세요.",
   questions: [
     {

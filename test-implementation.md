@@ -64,7 +64,7 @@
       <div class="category-filters" role="group" aria-label="테스트 카테고리">
         <button class="category-button" type="button" data-filter="all" aria-pressed="true" aria-controls="category-grid">전체</button>
         <button class="category-button" type="button" data-filter="love" aria-pressed="false" aria-controls="category-grid">연애·결혼</button>
-        <button class="category-button" type="button" data-filter="relationship" aria-pressed="false" aria-controls="category-grid">친구·인간관계</button>
+        <button class="category-button" type="button" data-filter="relationship" aria-pressed="false" aria-controls="category-grid">친구·인간관계·사회생활</button>
         <button class="category-button" type="button" data-filter="personality" aria-pressed="false" aria-controls="category-grid">성격</button>
         <button class="category-button" type="button" data-filter="fun" aria-pressed="false" aria-controls="category-grid">재미</button>
       </div>
@@ -491,7 +491,7 @@ const testData = {
   url: "affection-test.html",
   title: "나는 인간관계에서 정이 많은 편일까?",
   description: "한번 내 사람이 되면 얼마나 오래 챙기는 타입일까?",
-  category: "친구·인간관계",
+  category: "친구·인간관계·사회생활",
   shareDescription: "내 인간관계 정 테스트 결과를 확인해보세요.",
   questions: [
     {
@@ -663,7 +663,7 @@ const testData = {
   url: "cutoff-test.html",
   title: "나는 사람을 얼마나 빨리 손절하는 편일까?",
   description: "인간관계에서 나는 참는 편일까, 빠르게 정리하는 편일까?",
-  category: "친구·인간관계",
+  category: "친구·인간관계·사회생활",
   shareDescription: "내 인간관계 손절 성향 결과를 확인해보세요.",
   questions: [
     {
@@ -835,7 +835,7 @@ const testData = {
   url: "friend-boundaries-test.html",
   title: "나는 친한 친구에게도 선을 두는 편일까?",
   description: "아무리 친해도 지켜야 할 선이 있다고 생각하는 편일까?",
-  category: "친구·인간관계",
+  category: "친구·인간관계·사회생활",
   shareDescription: "내 친구 사이 경계 테스트 결과를 확인해보세요.",
   questions: [
     {
@@ -1007,7 +1007,7 @@ const testData = {
   url: "friend-dependence-test.html",
   title: "나는 친구에게 얼마나 의존하는 편일까?",
   description: "힘들 때도, 심심할 때도 나는 친구를 얼마나 찾는 편일까?",
-  category: "친구·인간관계",
+  category: "친구·인간관계·사회생활",
   shareDescription: "내 친구 의존도 테스트 결과를 확인해보세요.",
   questions: [
     {
@@ -2567,7 +2567,7 @@ const testData = {
   url: "social-awareness-test.html",
   title: "나는 인간관계에서 눈치를 얼마나 보는 편일까?",
   description: "다른 사람의 말투, 표정, 분위기를 얼마나 신경 쓰는지 알아보세요.",
-  category: "친구·인간관계",
+  category: "친구·인간관계·사회생활",
   shareDescription: "내 인간관계 눈치 성향 결과를 확인해보세요.",
   questions: [
     {

@@ -5,7 +5,7 @@ const testData = {
   url: "friend-dependence-test.html",
   title: "나는 친구에게 얼마나 의존하는 편일까?",
   description: "힘들 때도, 심심할 때도 나는 친구를 얼마나 찾는 편일까?",
-  category: "친구·인간관계",
+  category: "친구·인간관계·사회생활",
   shareDescription: "내 친구 의존도 테스트 결과를 확인해보세요.",
   questions: [
     {
