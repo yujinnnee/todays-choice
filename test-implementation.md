@@ -654,10 +654,10 @@ const testData = {
       <h2 class="result-title" id="result-title" data-role="result-title" data-focus tabindex="-1"></h2>
       <p class="result-description" data-role="result-description"></p>
       <div class="result-actions">
-        <button class="primary-button" type="button" data-role="restart">다시하기</button>
+        <button class="secondary-button" type="button" data-role="restart">다시하기</button>
         <a class="secondary-button" href="index.html#category-tests">다른 테스트 보기</a>
       </div>
-      <button class="secondary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
+      <button class="primary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
       <p class="kakao-share-status" id="kakao-share-status" role="status" hidden></p>
       <p class="test-disclaimer">본 테스트는 재미를 위한 콘텐츠이며 전문적인 심리 진단이 아닙니다.</p>
     </section>
@@ -826,10 +826,10 @@ const testData = {
       <h2 class="result-title" id="result-title" data-role="result-title" data-focus tabindex="-1"></h2>
       <p class="result-description" data-role="result-description"></p>
       <div class="result-actions">
-        <button class="primary-button" type="button" data-role="restart">다시하기</button>
+        <button class="secondary-button" type="button" data-role="restart">다시하기</button>
         <a class="secondary-button" href="index.html#category-tests">다른 테스트 보기</a>
       </div>
-      <button class="secondary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
+      <button class="primary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
       <p class="kakao-share-status" id="kakao-share-status" role="status" hidden></p>
       <p class="test-disclaimer">본 테스트는 재미를 위한 콘텐츠이며 전문적인 심리 진단이 아닙니다.</p>
     </section>
@@ -998,10 +998,10 @@ const testData = {
       <h2 class="result-title" id="result-title" data-role="result-title" data-focus tabindex="-1"></h2>
       <p class="result-description" data-role="result-description"></p>
       <div class="result-actions">
-        <button class="primary-button" type="button" data-role="restart">다시하기</button>
+        <button class="secondary-button" type="button" data-role="restart">다시하기</button>
         <a class="secondary-button" href="index.html#category-tests">다른 테스트 보기</a>
       </div>
-      <button class="secondary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
+      <button class="primary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
       <p class="kakao-share-status" id="kakao-share-status" role="status" hidden></p>
       <p class="test-disclaimer">본 테스트는 재미를 위한 콘텐츠이며 전문적인 심리 진단이 아닙니다.</p>
     </section>
@@ -1170,10 +1170,10 @@ const testData = {
       <h2 class="result-title" id="result-title" data-role="result-title" data-focus tabindex="-1"></h2>
       <p class="result-description" data-role="result-description"></p>
       <div class="result-actions">
-        <button class="primary-button" type="button" data-role="restart">다시하기</button>
+        <button class="secondary-button" type="button" data-role="restart">다시하기</button>
         <a class="secondary-button" href="index.html#category-tests">다른 테스트 보기</a>
       </div>
-      <button class="secondary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
+      <button class="primary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
       <p class="kakao-share-status" id="kakao-share-status" role="status" hidden></p>
       <p class="test-disclaimer">본 테스트는 재미를 위한 콘텐츠이며 전문적인 심리 진단이 아닙니다.</p>
     </section>
@@ -1354,10 +1354,10 @@ const testData = {
       <p class="result-description" data-role="result-description"></p>
       <p class="test-disclaimer">동점일 경우, 가장 높은 스탯 중 가장 최근에 선택한 스탯으로 결과를 정해요.</p>
       <div class="result-actions">
-        <button class="primary-button" type="button" data-role="restart">다시하기</button>
+        <button class="secondary-button" type="button" data-role="restart">다시하기</button>
         <a class="secondary-button" href="index.html#category-tests">다른 테스트 보기</a>
       </div>
-      <button class="secondary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
+      <button class="primary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
       <p class="kakao-share-status" id="kakao-share-status" role="status" hidden></p>
       <p class="test-disclaimer">본 테스트는 재미를 위한 콘텐츠이며 전문적인 심리 진단이 아닙니다.</p>
     </section>
@@ -1526,10 +1526,10 @@ const testData = {
       <h2 class="result-title" id="result-title" data-role="result-title" data-focus tabindex="-1"></h2>
       <p class="result-description" data-role="result-description"></p>
       <div class="result-actions">
-        <button class="primary-button" type="button" data-role="restart">다시하기</button>
+        <button class="secondary-button" type="button" data-role="restart">다시하기</button>
         <a class="secondary-button" href="index.html#category-tests">다른 테스트 보기</a>
       </div>
-      <button class="secondary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
+      <button class="primary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
       <p class="kakao-share-status" id="kakao-share-status" role="status" hidden></p>
       <p class="test-disclaimer">본 테스트는 재미를 위한 콘텐츠이며 전문적인 심리 진단이 아닙니다.</p>
     </section>
@@ -1698,10 +1698,10 @@ const testData = {
       <h2 class="result-title" id="result-title" data-role="result-title" data-focus tabindex="-1"></h2>
       <p class="result-description" data-role="result-description"></p>
       <div class="result-actions">
-        <button class="primary-button" type="button" data-role="restart">다시하기</button>
+        <button class="secondary-button" type="button" data-role="restart">다시하기</button>
         <a class="secondary-button" href="index.html#category-tests">다른 테스트 보기</a>
       </div>
-      <button class="secondary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
+      <button class="primary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
       <p class="kakao-share-status" id="kakao-share-status" role="status" hidden></p>
       <p class="test-disclaimer">본 테스트는 재미를 위한 콘텐츠이며 전문적인 심리 진단이 아닙니다.</p>
     </section>
@@ -1870,10 +1870,10 @@ const testData = {
       <h2 class="result-title" id="result-title" data-role="result-title" data-focus tabindex="-1"></h2>
       <p class="result-description" data-role="result-description"></p>
       <div class="result-actions">
-        <button class="primary-button" type="button" data-role="restart">다시하기</button>
+        <button class="secondary-button" type="button" data-role="restart">다시하기</button>
         <a class="secondary-button" href="index.html#category-tests">다른 테스트 보기</a>
       </div>
-      <button class="secondary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
+      <button class="primary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
       <p class="kakao-share-status" id="kakao-share-status" role="status" hidden></p>
       <p class="test-disclaimer">본 테스트는 재미를 위한 콘텐츠이며 전문적인 심리 진단이 아닙니다.</p>
     </section>
@@ -2042,10 +2042,10 @@ const testData = {
       <h2 class="result-title" id="result-title" data-role="result-title" data-focus tabindex="-1"></h2>
       <p class="result-description" data-role="result-description"></p>
       <div class="result-actions">
-        <button class="primary-button" type="button" data-role="restart">다시하기</button>
+        <button class="secondary-button" type="button" data-role="restart">다시하기</button>
         <a class="secondary-button" href="index.html#category-tests">다른 테스트 보기</a>
       </div>
-      <button class="secondary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
+      <button class="primary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
       <p class="kakao-share-status" id="kakao-share-status" role="status" hidden></p>
       <p class="test-disclaimer">본 테스트는 재미를 위한 콘텐츠이며 전문적인 심리 진단이 아닙니다.</p>
     </section>
@@ -2216,10 +2216,10 @@ const testData = {
       <h2 class="result-title" id="result-title" data-role="result-title" data-focus tabindex="-1"></h2>
       <p class="result-description" data-role="result-description"></p>
       <div class="result-actions">
-        <button class="primary-button" type="button" data-role="restart">다시하기</button>
+        <button class="secondary-button" type="button" data-role="restart">다시하기</button>
         <a class="secondary-button" href="index.html#category-tests">다른 테스트 보기</a>
       </div>
-      <button class="secondary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
+      <button class="primary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
       <p class="kakao-share-status" id="kakao-share-status" role="status" hidden></p>
       <p class="test-disclaimer">본 테스트는 재미를 위한 콘텐츠이며 전문적인 심리 진단이 아닙니다.</p>
     </section>
@@ -2388,10 +2388,10 @@ const testData = {
       <h2 class="result-title" id="result-title" data-role="result-title" data-focus tabindex="-1"></h2>
       <p class="result-description" data-role="result-description"></p>
       <div class="result-actions">
-        <button class="primary-button" type="button" data-role="restart">다시하기</button>
+        <button class="secondary-button" type="button" data-role="restart">다시하기</button>
         <a class="secondary-button" href="index.html#category-tests">다른 테스트 보기</a>
       </div>
-      <button class="secondary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
+      <button class="primary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
       <p class="kakao-share-status" id="kakao-share-status" role="status" hidden></p>
       <p class="test-disclaimer">본 테스트는 재미를 위한 콘텐츠이며 전문적인 심리 진단이 아닙니다.</p>
     </section>
@@ -2560,10 +2560,10 @@ const testData = {
       <h2 class="result-title" id="result-title" data-role="result-title" data-focus tabindex="-1"></h2>
       <p class="result-description" data-role="result-description"></p>
       <div class="result-actions">
-        <button class="primary-button" type="button" data-role="restart">다시하기</button>
+        <button class="secondary-button" type="button" data-role="restart">다시하기</button>
         <a class="secondary-button" href="index.html#category-tests">다른 테스트 보기</a>
       </div>
-      <button class="secondary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
+      <button class="primary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
       <p class="kakao-share-status" id="kakao-share-status" role="status" hidden></p>
       <p class="test-disclaimer">본 테스트는 재미를 위한 콘텐츠이며 전문적인 심리 진단이 아닙니다.</p>
     </section>
@@ -2732,10 +2732,10 @@ const testData = {
       <h2 class="result-title" id="result-title" data-role="result-title" data-focus tabindex="-1"></h2>
       <p class="result-description" data-role="result-description"></p>
       <div class="result-actions">
-        <button class="primary-button" type="button" data-role="restart">다시하기</button>
+        <button class="secondary-button" type="button" data-role="restart">다시하기</button>
         <a class="secondary-button" href="index.html#category-tests">다른 테스트 보기</a>
       </div>
-      <button class="secondary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
+      <button class="primary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
       <p class="kakao-share-status" id="kakao-share-status" role="status" hidden></p>
       <p class="test-disclaimer">본 테스트는 재미를 위한 콘텐츠이며 전문적인 심리 진단이 아닙니다.</p>
     </section>
@@ -2904,10 +2904,10 @@ const testData = {
       <h2 class="result-title" id="result-title" data-role="result-title" data-focus tabindex="-1"></h2>
       <p class="result-description" data-role="result-description"></p>
       <div class="result-actions">
-        <button class="primary-button" type="button" data-role="restart">다시하기</button>
+        <button class="secondary-button" type="button" data-role="restart">다시하기</button>
         <a class="secondary-button" href="index.html#category-tests">다른 테스트 보기</a>
       </div>
-      <button class="secondary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
+      <button class="primary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
       <p class="kakao-share-status" id="kakao-share-status" role="status" hidden></p>
       <p class="test-disclaimer">본 테스트는 재미를 위한 콘텐츠이며 전문적인 심리 진단이 아닙니다.</p>
     </section>
@@ -3076,10 +3076,10 @@ const testData = {
       <h2 class="result-title" id="result-title" data-role="result-title" data-focus tabindex="-1"></h2>
       <p class="result-description" data-role="result-description"></p>
       <div class="result-actions">
-        <button class="primary-button" type="button" data-role="restart">다시하기</button>
+        <button class="secondary-button" type="button" data-role="restart">다시하기</button>
         <a class="secondary-button" href="index.html#category-tests">다른 테스트 보기</a>
       </div>
-      <button class="secondary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
+      <button class="primary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
       <p class="kakao-share-status" id="kakao-share-status" role="status" hidden></p>
       <p class="test-disclaimer">본 테스트는 재미를 위한 콘텐츠이며 전문적인 심리 진단이 아닙니다.</p>
     </section>
