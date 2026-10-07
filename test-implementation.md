@@ -60,7 +60,7 @@
     </section>
     <section class="container test-section category-section" id="popular" aria-labelledby="category-title">
       <span id="category-tests" aria-hidden="true"></span>
-      <div class="section-heading"><h2 id="category-title">카테고리별 테스트</h2></div>
+      <div class="section-heading"><h2 id="category-title">전체 테스트</h2></div>
       <div class="category-filters" role="group" aria-label="테스트 카테고리">
         <button class="category-button" type="button" data-filter="all" aria-pressed="true" aria-controls="category-grid">전체</button>
         <button class="category-button" type="button" data-filter="love" aria-pressed="false" aria-controls="category-grid">연애·결혼</button>
