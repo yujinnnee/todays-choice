@@ -71,7 +71,7 @@ if (kakaoShareButton) {
 // The complete category list supplies search, random launch and today's picks.
 const catalogGrid = document.querySelector("#category-grid");
 if (catalogGrid && typeof TEST_CATALOG !== "undefined") {
-  const categories = { "연애/결혼": "love", "재미": "fun", "성격": "personality" };
+  const categories = { "연애/결혼": "love", "연애·결혼": "love", "재미": "fun", "성격": "personality" };
   const makeIcon = (name, filled = false) => {
     const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     svg.setAttribute("class", `icon${filled ? " filled-heart" : ""}`);
@@ -218,6 +218,15 @@ document.querySelectorAll("dialog").forEach((dialog) => {
 
 const categoryButtons = Array.from(document.querySelectorAll(".category-button"));
 const categoryCards = Array.from(document.querySelectorAll("#category-grid .test-card"));
+categoryButtons.forEach((button) => {
+  button.dataset.label = button.textContent.trim();
+  const count = categoryCards.filter(card => button.dataset.filter === "all" || card.dataset.category === button.dataset.filter).length;
+  const countLabel = document.createElement("span");
+  countLabel.className = "category-count";
+  countLabel.textContent = `(${count})`;
+  button.append(countLabel);
+  button.setAttribute("aria-label", `${button.dataset.label} 테스트 ${count}개`);
+});
 const categoryGrid = document.querySelector("#category-grid");
 const categoryEmpty = document.querySelector("#category-empty");
 const testPagination = document.querySelector("#test-pagination");
@@ -234,7 +243,7 @@ function renderCategoryTests() {
   const pageCards = new Set(filteredCards.slice(offset, offset + testsPerPage));
   categoryCards.forEach((card) => { card.hidden = !pageCards.has(card); });
   categoryEmpty.hidden = filteredCards.length > 0;
-  const categoryLabel = categoryButtons.find((button) => button.dataset.filter === selectedCategory).textContent;
+  const categoryLabel = categoryButtons.find((button) => button.dataset.filter === selectedCategory).dataset.label;
   document.querySelector("#filter-status").textContent = filteredCards.length
     ? `${categoryLabel} 테스트 ${filteredCards.length}개 중 ${offset + 1}~${offset + pageCards.size}개를 표시하고 있어요. ${currentTestPage}페이지.`
     : `${categoryLabel} 카테고리에 등록된 테스트가 없어요.`;
