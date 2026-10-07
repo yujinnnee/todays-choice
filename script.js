@@ -1,6 +1,8 @@
 "use strict";
 
 const KAKAO_JAVASCRIPT_KEY = '7a0729ebdecc02b3f4ce5e892c53248a';
+const SHARE_SITE_URL = "https://todayschoice.kr/";
+const SHARE_IMAGE_URL = new URL("assets/share-cover.png", SHARE_SITE_URL).href;
 
 function initializeKakao() {
   if (!window.Kakao) return false;
@@ -37,16 +39,19 @@ if (kakaoShareButton) {
         showShareError("카카오 공유 기능을 불러오지 못했어요. 인터넷 연결을 확인한 뒤 새로고침해 주세요.");
         return;
       }
-      // Preserve the current directory for both root and subdirectory hosting.
-      const testUrl = new URL(location.pathname, location.origin).href;
+      const testUrl = new URL(testData.url, SHARE_SITE_URL).href;
+      const testLink = { mobileWebUrl: testUrl, webUrl: testUrl };
       const request = Kakao.Share.sendDefault({
-        objectType: "text",
-        text: `${testData.title}\n${testData.shareDescription || testData.description}`,
-        link: {
-          mobileWebUrl: testUrl,
-          webUrl: testUrl,
+        objectType: "feed",
+        content: {
+          title: testData.title,
+          description: testData.shareDescription || testData.description,
+          imageUrl: SHARE_IMAGE_URL,
+          imageWidth: 1200,
+          imageHeight: 630,
+          link: testLink,
         },
-        buttonTitle: "나도 테스트 해보기",
+        buttons: [{ title: "나도 테스트 해보기", link: testLink }],
       });
       // SDK errors can occur immediately or through a rejected promise.
       Promise.resolve(request).catch((error) => {
