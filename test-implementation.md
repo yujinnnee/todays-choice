@@ -1,6 +1,6 @@
 # Today's Choice 전체 코드
 
-현재 테스트와 카카오톡 공유 기능을 포함한 전체 코드입니다. 공유 이미지는 assets/share-cover-v3.png입니다.
+현재 테스트와 GA4, 카카오톡 공유 기능을 포함한 전체 코드입니다. 공유 이미지는 assets/share-cover-v3.png입니다.
 
 ## index.html
 
@@ -9,6 +9,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <script src="analytics.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -248,6 +249,41 @@ body:has(dialog[open]){overflow:hidden}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
 ```
 
+## analytics.js
+
+```javascript
+"use strict";
+
+// Replace this value with the measurement ID of your GA4 web data stream.
+const GA4_MEASUREMENT_ID = "G-JGQJWYPHNL";
+
+window.dataLayer = window.dataLayer || [];
+window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+window.gtag("js", new Date());
+
+// Keep the placeholder inactive until a real measurement ID is supplied.
+if (GA4_MEASUREMENT_ID !== "G-XXXXXXXXXX" && /^G-[A-Z0-9]+$/.test(GA4_MEASUREMENT_ID)) {
+  const googleTag = document.createElement("script");
+  googleTag.async = true;
+  googleTag.src = `https://www.googletagmanager.com/gtag/js?id=${GA4_MEASUREMENT_ID}`;
+  document.head.append(googleTag);
+  window.gtag("config", GA4_MEASUREMENT_ID);
+}
+
+function trackTestEvent(eventName, data, extra = {}) {
+  try {
+    window.gtag("event", eventName, {
+      test_id: String(data.id),
+      test_title: data.title,
+      test_category: data.category,
+      ...extra,
+    });
+  } catch (error) {
+    // Analytics must never interrupt the test or sharing controls.
+  }
+}
+```
+
 ## script.js
 
 ```javascript
@@ -281,6 +317,9 @@ if (kakaoShareButton) {
   };
 
   kakaoShareButton.addEventListener("click", () => {
+    if (typeof trackTestEvent === "function") {
+      trackTestEvent("test_share", testData, { method: "kakao" });
+    }
     shareStatus.hidden = true;
     shareStatus.textContent = "";
     try {
@@ -619,6 +658,7 @@ const testData = {
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <script src="analytics.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -810,6 +850,7 @@ const testData = {
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <script src="analytics.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -1001,6 +1042,7 @@ const testData = {
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <script src="analytics.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -1192,6 +1234,7 @@ const testData = {
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <script src="analytics.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -1383,6 +1426,7 @@ const testData = {
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <script src="analytics.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -1585,6 +1629,7 @@ const testData = {
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <script src="analytics.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -1777,6 +1822,7 @@ const testData = {
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <script src="analytics.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -1968,6 +2014,7 @@ const testData = {
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <script src="analytics.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -2159,6 +2206,7 @@ const testData = {
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <script src="analytics.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -2350,6 +2398,7 @@ const testData = {
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <script src="analytics.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -2542,6 +2591,7 @@ const testData = {
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <script src="analytics.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -2734,6 +2784,7 @@ const testData = {
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <script src="analytics.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -2925,6 +2976,7 @@ const testData = {
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <script src="analytics.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -3116,6 +3168,7 @@ const testData = {
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <script src="analytics.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -3307,6 +3360,7 @@ const testData = {
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <script src="analytics.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -3498,6 +3552,7 @@ const testData = {
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <script src="analytics.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -3689,6 +3744,7 @@ const testData = {
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <script src="analytics.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -3803,6 +3859,11 @@ function createTestRunner(root, data) {
   let questionIndex = 0;
   let answers = Array(data.questions.length).fill(null);
   let screen = "start";
+  let started = false;
+  let completed = false;
+  const track = (eventName, extra) => {
+    if (typeof trackTestEvent === "function") trackTestEvent(eventName, data, extra);
+  };
   const maxScore = data.questions.reduce((sum, question) =>
     sum + Math.max(...question.answers.map((answer) => answer.score)), 0);
 
@@ -3854,6 +3915,7 @@ function createTestRunner(root, data) {
   function showResult() {
     if (answers.some((answer) => answer === null)) return;
     let result;
+    let resultDetails;
     if (data.stats) {
       const counts = Object.fromEntries(data.stats.map((stat) => [stat.id, 0]));
       const selectedStats = answers.map((answer, index) => data.questions[index].answers[answer].stat);
@@ -3862,6 +3924,7 @@ function createTestRunner(root, data) {
       // Resolve ties using the most recent answer among the highest stats.
       const winner = [...selectedStats].reverse().find((stat) => counts[stat] === highest);
       result = data.results.find((item) => item.stat === winner);
+      resultDetails = { result_stat: winner, result_score: highest, max_score: data.questions.length };
       find("stats").replaceChildren();
       data.stats.forEach((stat) => {
         const row = document.createElement("div");
@@ -3876,6 +3939,7 @@ function createTestRunner(root, data) {
     } else {
       const total = answers.reduce((sum, answer, index) => sum + data.questions[index].answers[answer].score, 0);
       result = data.results.find((item) => total >= item.min && total <= item.max);
+      resultDetails = { result_score: total, max_score: maxScore };
       find("score").textContent = total;
       if (data.resultMetric) {
         find("result-metric").textContent = `${data.resultMetric.label} ${Math.round(total / maxScore * 100)}%`;
@@ -3884,9 +3948,19 @@ function createTestRunner(root, data) {
     find("result-title").textContent = result.title;
     find("result-description").textContent = result.description;
     showScreen("result");
+    if (!completed) {
+      completed = true;
+      track("test_complete", { result_title: result.title, question_count: data.questions.length, ...resultDetails });
+    }
   }
 
-  find("start").addEventListener("click", showQuestion);
+  find("start").addEventListener("click", () => {
+    if (!started) {
+      started = true;
+      track("test_start", { question_count: data.questions.length });
+    }
+    showQuestion();
+  });
   find("back").addEventListener("click", () => {
     if (questionIndex === 0) showScreen("start");
     else {
@@ -3897,6 +3971,8 @@ function createTestRunner(root, data) {
   find("restart").addEventListener("click", () => {
     questionIndex = 0;
     answers = Array(data.questions.length).fill(null);
+    started = false;
+    completed = false;
     if (!data.stats) find("score").textContent = "";
     find("result-title").textContent = "";
     find("result-description").textContent = "";
@@ -3905,6 +3981,7 @@ function createTestRunner(root, data) {
     showScreen("start");
   });
   showScreen("start", false);
+  track("test_view");
 }
 
 createTestRunner(document.querySelector("[data-test-runner]"), testData);

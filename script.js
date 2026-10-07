@@ -28,6 +28,9 @@ if (kakaoShareButton) {
   };
 
   kakaoShareButton.addEventListener("click", () => {
+    if (typeof trackTestEvent === "function") {
+      trackTestEvent("test_share", testData, { method: "kakao" });
+    }
     shareStatus.hidden = true;
     shareStatus.textContent = "";
     try {

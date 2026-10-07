@@ -7,6 +7,11 @@ function createTestRunner(root, data) {
   let questionIndex = 0;
   let answers = Array(data.questions.length).fill(null);
   let screen = "start";
+  let started = false;
+  let completed = false;
+  const track = (eventName, extra) => {
+    if (typeof trackTestEvent === "function") trackTestEvent(eventName, data, extra);
+  };
   const maxScore = data.questions.reduce((sum, question) =>
     sum + Math.max(...question.answers.map((answer) => answer.score)), 0);
 
@@ -58,6 +63,7 @@ function createTestRunner(root, data) {
   function showResult() {
     if (answers.some((answer) => answer === null)) return;
     let result;
+    let resultDetails;
     if (data.stats) {
       const counts = Object.fromEntries(data.stats.map((stat) => [stat.id, 0]));
       const selectedStats = answers.map((answer, index) => data.questions[index].answers[answer].stat);
@@ -66,6 +72,7 @@ function createTestRunner(root, data) {
       // Resolve ties using the most recent answer among the highest stats.
       const winner = [...selectedStats].reverse().find((stat) => counts[stat] === highest);
       result = data.results.find((item) => item.stat === winner);
+      resultDetails = { result_stat: winner, result_score: highest, max_score: data.questions.length };
       find("stats").replaceChildren();
       data.stats.forEach((stat) => {
         const row = document.createElement("div");
@@ -80,6 +87,7 @@ function createTestRunner(root, data) {
     } else {
       const total = answers.reduce((sum, answer, index) => sum + data.questions[index].answers[answer].score, 0);
       result = data.results.find((item) => total >= item.min && total <= item.max);
+      resultDetails = { result_score: total, max_score: maxScore };
       find("score").textContent = total;
       if (data.resultMetric) {
         find("result-metric").textContent = `${data.resultMetric.label} ${Math.round(total / maxScore * 100)}%`;
@@ -88,9 +96,19 @@ function createTestRunner(root, data) {
     find("result-title").textContent = result.title;
     find("result-description").textContent = result.description;
     showScreen("result");
+    if (!completed) {
+      completed = true;
+      track("test_complete", { result_title: result.title, question_count: data.questions.length, ...resultDetails });
+    }
   }
 
-  find("start").addEventListener("click", showQuestion);
+  find("start").addEventListener("click", () => {
+    if (!started) {
+      started = true;
+      track("test_start", { question_count: data.questions.length });
+    }
+    showQuestion();
+  });
   find("back").addEventListener("click", () => {
     if (questionIndex === 0) showScreen("start");
     else {
@@ -101,6 +119,8 @@ function createTestRunner(root, data) {
   find("restart").addEventListener("click", () => {
     questionIndex = 0;
     answers = Array(data.questions.length).fill(null);
+    started = false;
+    completed = false;
     if (!data.stats) find("score").textContent = "";
     find("result-title").textContent = "";
     find("result-description").textContent = "";
@@ -109,6 +129,7 @@ function createTestRunner(root, data) {
     showScreen("start");
   });
   showScreen("start", false);
+  track("test_view");
 }
 
 createTestRunner(document.querySelector("[data-test-runner]"), testData);
