@@ -70,6 +70,7 @@
       </div>
       <p id="filter-status" class="visually-hidden" role="status">전체 테스트를 표시하고 있어요.</p>
       <div class="card-grid" id="category-grid">
+        <a class="test-card" href="million-followers-test.html" data-test="28" data-category="fun"><span class="icon-tile"><svg class="icon"><use href="#icon-people"/></svg></span><h3>나는 하루아침에 100만 팔로워가 생기면 어떻게 변할까?</h3><p>갑자기 모두가 나를 보기 시작한다면, 나는 어떤 사람이 될까?</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
         <a class="test-card" href="affection-test.html" data-test="27" data-category="relationship"><span class="icon-tile"><svg class="icon"><use href="#icon-heart"/></svg></span><h3>나는 인간관계에서 정이 많은 편일까?</h3><p>한번 내 사람이 되면 얼마나 오래 챙기는 타입일까?</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
         <a class="test-card" href="friend-dependence-test.html" data-test="26" data-category="relationship"><span class="icon-tile"><svg class="icon"><use href="#icon-chat"/></svg></span><h3>나는 친구에게 얼마나 의존하는 편일까?</h3><p>힘들 때도, 심심할 때도 나는 친구를 얼마나 찾는 편일까?</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
         <a class="test-card" href="friend-boundaries-test.html" data-test="25" data-category="relationship"><span class="icon-tile"><svg class="icon"><use href="#icon-people"/></svg></span><h3>나는 친한 친구에게도 선을 두는 편일까?</h3><p>아무리 친해도 지켜야 할 선이 있다고 생각하는 편일까?</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
@@ -2063,6 +2064,180 @@ const testData = {
 </html>
 ```
 
+## million-followers-data.js
+
+```javascript
+"use strict";
+
+const testData = {
+  id: 28,
+  url: "million-followers-test.html",
+  title: "나는 하루아침에 100만 팔로워가 생기면 어떻게 변할까?",
+  description: "갑자기 모두가 나를 보기 시작한다면, 나는 어떤 사람이 될까?",
+  category: "재미",
+  shareDescription: "내 100만 팔로워 테스트 결과를 확인해보세요.",
+  resultMetric: { label: "유명인 적응도" },
+  questions: [
+    {
+      question: "자고 일어났더니 팔로워가 100만 명이 됐다면 가장 먼저?",
+      answers: ["무슨 일인지 확인한다", "친구들에게 바로 자랑한다", "어떤 콘텐츠를 올릴지 고민한다", "광고 단가부터 찾아본다"],
+    },
+    {
+      question: "올린 게시물마다 댓글이 수천 개씩 달린다면?",
+      answers: ["필요한 댓글만 본다", "거의 다 읽어본다", "반응 좋은 댓글에 열심히 답한다", "댓글 반응에 따라 다음 콘텐츠를 바꾼다"],
+    },
+    {
+      question: "브랜드에서 처음으로 광고 제안이 들어오면?",
+      answers: ["내 취향 아니면 거절한다", "괜찮은 브랜드인지 먼저 본다", "조건 좋으면 한번 해본다", "일단 광고비부터 물어본다"],
+    },
+    {
+      question: "길거리에서 사람들이 알아보기 시작한다면?",
+      answers: ["조금 부담스럽다", "신기하고 재밌다", "사진 요청에도 적극적으로 응한다", "은근히 알아봐 주길 기대하게 된다"],
+    },
+    {
+      question: "내 게시물이 예전보다 반응이 안 좋다면?",
+      answers: ["그럴 수도 있다고 생각한다", "이유 정도는 확인한다", "반응이 신경 쓰여 계속 확인한다", "조회수가 안 나오면 하루 종일 기분이 안 좋다"],
+    },
+    {
+      question: "친구가 “너 유명해지고 좀 변한 것 같아”라고 한다면?",
+      answers: ["어떤 부분인지 진지하게 물어본다", "조금 신경 쓰인다", "유명해졌으니 어느 정도 변하는 건 당연하다고 생각한다", "솔직히 질투하는 건가 싶다"],
+    },
+    {
+      question: "유명 크리에이터들과 어울릴 기회가 생기면?",
+      answers: ["굳이 무리해서 친해지지는 않는다", "자연스럽게 친해져 본다", "인맥을 넓히려고 적극적으로 움직인다", "어떻게든 친해져서 같이 콘텐츠를 만들고 싶다"],
+    },
+    {
+      question: "사람들이 내 외모나 성격을 평가하기 시작하면?",
+      answers: ["모르는 사람 평가라 크게 신경 안 쓴다", "기분 나쁜 건 조금 신경 쓰인다", "좋은 반응과 나쁜 반응 모두 자주 확인한다", "사람들에게 어떻게 보이는지가 매우 중요해진다"],
+    },
+    {
+      question: "한 달에 큰돈을 벌기 시작한다면?",
+      answers: ["지금 생활을 크게 바꾸지 않는다", "갖고 싶었던 것 몇 개 정도 산다", "여행이나 소비가 확 늘어난다", "제대로 셀럽처럼 살아보고 싶다"],
+    },
+    {
+      question: "100만 팔로워를 유지하려면 매일 콘텐츠를 만들어야 한다면?",
+      answers: ["힘들면 쉬어도 된다고 생각한다", "적당히 꾸준히 한다", "성장을 위해 꽤 열심히 한다", "절대 놓치기 싫어서 생활 대부분을 콘텐츠에 맞춘다"],
+    },
+  ].map(({ question, answers }) => ({
+    question,
+    answers: answers.map((text, index) => ({ text, score: index + 1 })),
+  })),
+  results: [
+    {
+      min: 10, max: 16,
+      title: "유명해져도 그대로인 마이웨이형",
+      description: "100만 명이 나를 보고 있어도 내 생활과 기준을 크게 바꾸지 않는 타입. 관심은 반갑지만 유명세 때문에 내가 달라지는 건 별로 원하지 않는 편이야.",
+    },
+    {
+      min: 17, max: 24,
+      title: "적당히 즐기는 인기 적응형",
+      description: "유명해진 상황을 즐기면서도 어느 정도 선을 지킬 줄 아는 편. 좋은 기회는 활용하지만 SNS 숫자가 내 생활의 전부가 되지는 않는 타입이야.",
+    },
+    {
+      min: 25, max: 32,
+      title: "셀럽 본능이 깨어나는 성장형",
+      description: "사람들의 관심이 커질수록 더 잘하고 싶어지는 타입. 반응, 조회수, 콘텐츠 성과에도 꽤 민감하고 유명세를 새로운 기회로 적극 활용하는 편이야.",
+    },
+    {
+      min: 33, max: 40,
+      title: "100만 팔로워 풀장착 셀럽형",
+      description: "100만 팔로워가 생기는 순간 생활 자체가 확 달라질 가능성이 큰 타입. 콘텐츠, 인맥, 광고, 이미지 관리까지 적극적으로 챙기면서 유명세를 제대로 즐길 것 같아. 다만 숫자와 반응에 너무 끌려다닐 가능성도 있음.",
+    },
+  ],
+};
+```
+
+## million-followers-test.html
+
+```html
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="갑자기 모두가 나를 보기 시작한다면, 나는 어떤 사람이 될까?">
+  <title>나는 하루아침에 100만 팔로워가 생기면 어떻게 변할까? | Today's Choice</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="test.css">
+  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.8.2/kakao.min.js" integrity="sha384-zt/G7/KfaRQ9dT/QIkS0ujMtzouJqzuSJcXVQu50x0rl/+mD1dc70AeOejVbMD9E" crossorigin="anonymous" defer></script>
+  <script src="million-followers-data.js" defer></script>
+  <script src="script.js" defer></script>
+  <script src="test-runner.js" defer></script>
+</head>
+<body class="test-page">
+  <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="7.3"/><path d="m16 16 5 5"/></symbol>
+    <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M20.8 4.7a5.5 5.5 0 0 0-7.8 0L12 5.8l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.5a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+    <symbol id="icon-chat" viewBox="0 0 24 24"><path d="M21 11.5a9 9 0 0 1-9 8.5 10 10 0 0 1-4-.8L3 21l1.7-4.7A8 8 0 0 1 3 11.5a9 9 0 0 1 18 0Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></symbol>
+    <symbol id="icon-ring" viewBox="0 0 24 24"><circle cx="12" cy="14" r="7.5"/><path d="m9 3 3 3 3-3-1-2h-4l-1 2Z"/></symbol>
+    <symbol id="icon-people" viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 4a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v3"/></symbol>
+    <symbol id="icon-flame" viewBox="0 0 24 24"><path d="M12 3c0 4-5 6-5 11a5 5 0 0 0 10 0c0-3-2-5-3-7 0 3-1 4-2 5 0-4 2-6 0-9Z"/></symbol>
+    <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M21 14A9.5 9.5 0 0 1 10 3a9.5 9.5 0 1 0 11 11Z"/></symbol>
+    <symbol id="icon-leaf" viewBox="0 0 24 24"><path d="M12 22V11M12 15C5 16 2 11 3 7c6-1 9 3 9 8Zm0-5c0-6 4-9 9-8 1 6-3 10-9 8Z"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+  </svg>
+  <a class="skip-link" href="#main">본문 바로가기</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html#home" aria-label="오늘의 초이스 홈">Today's choice</a>
+      <nav class="main-nav" aria-label="주 메뉴">
+        <a class="nav-link" href="index.html#home">홈</a>
+        <a class="nav-link" href="index.html#new-tests">오늘의 테스트</a>
+        <a class="nav-link" href="index.html#popular">전체 테스트</a>
+        <a class="nav-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </nav>
+      <button class="icon-button search-toggle" type="button" aria-label="테스트 검색" aria-haspopup="dialog"><svg class="icon"><use href="#icon-search"/></svg></button>
+    </div>
+  </header>
+  <main id="main" data-test-runner>
+    <section class="test-panel" data-screen="start" aria-labelledby="test-title">
+      <p class="test-category" data-role="category"></p>
+      <h1 id="test-title" data-role="title" data-focus tabindex="-1"></h1>
+      <p class="test-description" data-role="description"></p>
+      <p class="test-count" data-role="count"></p>
+      <button class="primary-button" type="button" data-role="start">테스트 시작하기</button>
+    </section>
+    <section class="test-panel" data-screen="question" aria-labelledby="question-title" hidden>
+      <div class="question-top">
+        <button class="test-back" type="button" data-role="back">← 뒤로가기</button>
+        <span class="test-position" data-role="position"></span>
+      </div>
+      <progress class="test-progress" data-role="progress" value="0" max="10" aria-label="테스트 진행률"></progress>
+      <h2 class="question-title" id="question-title" data-role="question" data-focus tabindex="-1"></h2>
+      <div class="answer-list" data-role="answers" role="group" aria-labelledby="question-title"></div>
+    </section>
+    <section class="test-panel test-result" data-screen="result" aria-labelledby="result-title" hidden>
+      <p class="result-label">당신의 유명인 변화 지수는</p>
+      <p class="result-score"><span data-role="score"></span><small> / <span data-role="max-score"></span>점</small></p>
+      <p class="result-metric" data-role="result-metric"></p>
+      <h2 class="result-title" id="result-title" data-role="result-title" data-focus tabindex="-1"></h2>
+      <p class="result-description" data-role="result-description"></p>
+      <div class="result-actions">
+        <button class="primary-button" type="button" data-role="restart">다시하기</button>
+        <a class="secondary-button" href="index.html#category-tests">다른 테스트 보기</a>
+      </div>
+      <button class="secondary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
+      <p class="kakao-share-status" id="kakao-share-status" role="status" hidden></p>
+      <p class="test-disclaimer">본 테스트는 재미를 위한 콘텐츠이며 전문적인 심리 진단이 아닙니다.</p>
+    </section>
+    <noscript><p>테스트를 진행하려면 브라우저에서 JavaScript를 활성화해 주세요.</p></noscript>
+  </main>
+  <footer class="site-footer" id="about">
+    <div class="container footer-inner">
+      <a class="instagram-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        <span>@choice_zip_</span>
+      </a>
+    </div>
+  </footer>
+  <dialog id="search-dialog" class="modal" aria-labelledby="search-title"><div class="modal-heading"><h2 id="search-title">어떤 테스트를 찾으세요?</h2><button class="icon-button" type="button" data-close aria-label="검색 닫기"><svg class="icon"><use href="#icon-close"/></svg></button></div><label class="search-field"><svg class="icon"><use href="#icon-search"/></svg><input id="search-input" type="search" placeholder="팔로워, 셀럽, 재미…" aria-label="테스트 검색어" autocomplete="off"></label><p id="search-count" class="search-count" aria-live="polite"></p><div id="search-results" class="search-results"></div></dialog>
+</body>
+</html>
+```
+
 ## relationship-control-data.js
 
 ```javascript
@@ -2935,6 +3110,8 @@ function createTestRunner(root, data) {
   let questionIndex = 0;
   let answers = Array(data.questions.length).fill(null);
   let screen = "start";
+  const maxScore = data.questions.reduce((sum, question) =>
+    sum + Math.max(...question.answers.map((answer) => answer.score)), 0);
 
   find("category").textContent = data.category;
   find("title").textContent = data.title;
@@ -2942,8 +3119,7 @@ function createTestRunner(root, data) {
   find("count").textContent = `총 ${data.questions.length}문항${data.answerGuide ? ` (${data.answerGuide})` : ""}`;
   find("progress").max = data.questions.length;
   if (!data.stats) {
-    find("max-score").textContent = data.questions.reduce((sum, question) =>
-      sum + Math.max(...question.answers.map((answer) => answer.score)), 0);
+    find("max-score").textContent = maxScore;
   }
 
   function showScreen(name, focus = true) {
@@ -3008,6 +3184,9 @@ function createTestRunner(root, data) {
       const total = answers.reduce((sum, answer, index) => sum + data.questions[index].answers[answer].score, 0);
       result = data.results.find((item) => total >= item.min && total <= item.max);
       find("score").textContent = total;
+      if (data.resultMetric) {
+        find("result-metric").textContent = `${data.resultMetric.label} ${Math.round(total / maxScore * 100)}%`;
+      }
     }
     find("result-title").textContent = result.title;
     find("result-description").textContent = result.description;
@@ -3029,6 +3208,7 @@ function createTestRunner(root, data) {
     find("result-title").textContent = "";
     find("result-description").textContent = "";
     if (data.stats) find("stats").replaceChildren();
+    if (data.resultMetric) find("result-metric").textContent = "";
     showScreen("start");
   });
   showScreen("start", false);
@@ -3065,6 +3245,7 @@ createTestRunner(document.querySelector("[data-test-runner]"), testData);
 .answer-button:hover,.answer-button[aria-pressed="true"]{border-color:var(--pink);background:var(--pink-light)}
 .test-result{text-align:center}
 .result-label{margin:0;color:var(--muted);font-size:17px}
+.result-metric{display:inline-block;margin:0 0 24px;padding:12px 18px;border:1px solid #ffdce4;border-radius:16px;background:var(--pink-light);color:var(--pink);font-size:18px;font-weight:650;line-height:1.5}
 .result-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:24px 0 28px;text-align:left}
 .stat-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;padding:16px;border:1px solid var(--border);border-radius:16px;font-size:15px}
 .stat-row dt{font-weight:600}

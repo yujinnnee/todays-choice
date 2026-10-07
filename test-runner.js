@@ -7,6 +7,8 @@ function createTestRunner(root, data) {
   let questionIndex = 0;
   let answers = Array(data.questions.length).fill(null);
   let screen = "start";
+  const maxScore = data.questions.reduce((sum, question) =>
+    sum + Math.max(...question.answers.map((answer) => answer.score)), 0);
 
   find("category").textContent = data.category;
   find("title").textContent = data.title;
@@ -14,8 +16,7 @@ function createTestRunner(root, data) {
   find("count").textContent = `총 ${data.questions.length}문항${data.answerGuide ? ` (${data.answerGuide})` : ""}`;
   find("progress").max = data.questions.length;
   if (!data.stats) {
-    find("max-score").textContent = data.questions.reduce((sum, question) =>
-      sum + Math.max(...question.answers.map((answer) => answer.score)), 0);
+    find("max-score").textContent = maxScore;
   }
 
   function showScreen(name, focus = true) {
@@ -80,6 +81,9 @@ function createTestRunner(root, data) {
       const total = answers.reduce((sum, answer, index) => sum + data.questions[index].answers[answer].score, 0);
       result = data.results.find((item) => total >= item.min && total <= item.max);
       find("score").textContent = total;
+      if (data.resultMetric) {
+        find("result-metric").textContent = `${data.resultMetric.label} ${Math.round(total / maxScore * 100)}%`;
+      }
     }
     find("result-title").textContent = result.title;
     find("result-description").textContent = result.description;
@@ -101,6 +105,7 @@ function createTestRunner(root, data) {
     find("result-title").textContent = "";
     find("result-description").textContent = "";
     if (data.stats) find("stats").replaceChildren();
+    if (data.resultMetric) find("result-metric").textContent = "";
     showScreen("start");
   });
   showScreen("start", false);
