@@ -14,15 +14,23 @@ function createTestRunner(root, data) {
   };
   const maxScore = data.questions.reduce((sum, question) =>
     sum + Math.max(...question.answers.map((answer) => answer.score)), 0);
+  const minScore = data.questions.reduce((sum, question) =>
+    sum + Math.min(...question.answers.map((answer) => answer.score)), 0);
 
   find("category").textContent = data.category;
   find("title").textContent = data.title;
   find("description").textContent = data.description;
-  find("count").textContent = `총 ${data.questions.length}문항${data.answerGuide ? ` (${data.answerGuide})` : ""}`;
+  find("count").textContent = `총 ${data.questions.length}문항`;
   find("progress").max = data.questions.length;
-  if (!data.stats) {
-    find("max-score").textContent = maxScore;
-  }
+  const configure = (name, callback) => {
+    const element = find(name);
+    if (element) callback(element);
+  };
+  const resultScreen = root.querySelector('[data-screen="result"]');
+  if (resultScreen) resultScreen.dataset.card = "true";
+  configure("result-card", (element) => { element.dataset.styled = "true"; });
+  configure("result-type", (element) => { element.hidden = !data.showResultType; });
+  configure("result-metric", (element) => { element.hidden = !data.resultMetric; });
 
   function showScreen(name, focus = true) {
     screen = name;
@@ -72,29 +80,33 @@ function createTestRunner(root, data) {
       // Resolve ties using the most recent answer among the highest stats.
       const winner = [...selectedStats].reverse().find((stat) => counts[stat] === highest);
       result = data.results.find((item) => item.stat === winner);
+      const resultType = find("result-type");
+      if (resultType) resultType.textContent = data.stats.find((stat) => stat.id === winner).title;
       resultDetails = { result_stat: winner, result_score: highest, max_score: data.questions.length };
-      find("stats").replaceChildren();
-      data.stats.forEach((stat) => {
-        const row = document.createElement("div");
-        row.className = "stat-row";
-        const label = document.createElement("dt");
-        label.textContent = stat.title;
-        const value = document.createElement("dd");
-        value.textContent = `${counts[stat.id]} / ${data.questions.length}`;
-        row.append(label, value);
-        find("stats").append(row);
-      });
     } else {
       const total = answers.reduce((sum, answer, index) => sum + data.questions[index].answers[answer].score, 0);
-      result = data.results.find((item) => total >= item.min && total <= item.max);
+      const percentage = data.resultMetric?.normalize
+        ? Math.round((total - minScore) / (maxScore - minScore) * 100)
+        : Math.round(total / maxScore * 100);
+      const resultValue = data.resultMetric?.useForResult ? percentage : total;
+      result = data.results.find((item) => resultValue >= item.min && resultValue <= item.max);
       resultDetails = { result_score: total, max_score: maxScore };
-      find("score").textContent = total;
       if (data.resultMetric) {
-        find("result-metric").textContent = `${data.resultMetric.label} ${Math.round(total / maxScore * 100)}%`;
+        find("result-metric").textContent = `${data.resultMetric.label} ${percentage}%`;
+        resultDetails.result_percentage = percentage;
       }
     }
     find("result-title").textContent = result.title;
-    find("result-description").textContent = result.description;
+    const description = find("result-description");
+    description.replaceChildren();
+    const paragraphs = /\n\s*\n/.test(result.description)
+      ? result.description.split(/\n\s*\n/)
+      : result.description.split(/(?<=[.!?])\s+/);
+    paragraphs.forEach((text) => {
+      const paragraph = document.createElement("p");
+      paragraph.textContent = text.trim().replace(/\.\s*/g, ".\n").trimEnd();
+      description.append(paragraph);
+    });
     showScreen("result");
     if (!completed) {
       completed = true;
@@ -121,15 +133,11 @@ function createTestRunner(root, data) {
     answers = Array(data.questions.length).fill(null);
     started = false;
     completed = false;
-    if (!data.stats) find("score").textContent = "";
     find("result-title").textContent = "";
     find("result-description").textContent = "";
-    if (data.stats) find("stats").replaceChildren();
     if (data.resultMetric) find("result-metric").textContent = "";
     showScreen("start");
   });
   showScreen("start", false);
   track("test_view");
 }
-
-createTestRunner(document.querySelector("[data-test-runner]"), testData);

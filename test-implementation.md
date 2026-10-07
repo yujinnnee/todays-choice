@@ -1,6 +1,6 @@
 # Today's Choice 전체 코드
 
-현재 테스트와 GA4, 카카오톡 공유 기능을 포함한 전체 코드입니다. 공유 이미지는 assets/share-cover-v3.png입니다.
+공통 test.html과 테스트 데이터, GA4, 카카오톡 공유 기능을 포함한 전체 코드입니다. 공유 이미지는 assets/share-cover-v3.png입니다. 구조 안내는 test-structure.md를 참고하세요.
 
 ## index.html
 
@@ -9,6 +9,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <script src="test-catalog.js"></script>
   <script src="analytics.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff">
@@ -89,26 +90,8 @@
         <button class="category-button" type="button" data-filter="fun" aria-pressed="false" aria-controls="category-grid">재미</button>
       </div>
       <p id="filter-status" class="visually-hidden" role="status">전체 테스트를 표시하고 있어요.</p>
-      <div class="card-grid" id="category-grid">
-        <a class="test-card" href="social-adaptation-test.html" data-test="30" data-category="relationship"><span class="icon-tile"><svg class="icon"><use href="#icon-people"/></svg></span><h3>나는 사회생활에서 얼마나 적응이 빠른 편일까?</h3><p>새로운 사람, 새로운 환경에 나는 얼마나 빨리 녹아드는 타입일까?</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
-        <a class="test-card" href="difficult-people-test.html" data-test="29" data-category="relationship"><span class="icon-tile"><svg class="icon"><use href="#icon-chat"/></svg></span><h3>나는 싫은 사람과도 잘 지낼 수 있을까?</h3><p>감정은 감정이고 사회생활은 사회생활일까?</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
-        <a class="test-card" href="million-followers-test.html" data-test="28" data-category="fun"><span class="icon-tile"><svg class="icon"><use href="#icon-people"/></svg></span><h3>나는 하루아침에 100만 팔로워가 생기면 어떻게 변할까?</h3><p>갑자기 모두가 나를 보기 시작한다면, 나는 어떤 사람이 될까?</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
-        <a class="test-card" href="affection-test.html" data-test="27" data-category="relationship"><span class="icon-tile"><svg class="icon"><use href="#icon-heart"/></svg></span><h3>나는 인간관계에서 정이 많은 편일까?</h3><p>한번 내 사람이 되면 얼마나 오래 챙기는 타입일까?</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
-        <a class="test-card" href="friend-dependence-test.html" data-test="26" data-category="relationship"><span class="icon-tile"><svg class="icon"><use href="#icon-chat"/></svg></span><h3>나는 친구에게 얼마나 의존하는 편일까?</h3><p>힘들 때도, 심심할 때도 나는 친구를 얼마나 찾는 편일까?</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
-        <a class="test-card" href="friend-boundaries-test.html" data-test="25" data-category="relationship"><span class="icon-tile"><svg class="icon"><use href="#icon-people"/></svg></span><h3>나는 친한 친구에게도 선을 두는 편일까?</h3><p>아무리 친해도 지켜야 할 선이 있다고 생각하는 편일까?</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
-        <a class="test-card" href="relationship-control-test.html" data-test="24" data-category="love"><span class="icon-tile"><svg class="icon"><use href="#icon-chat"/></svg></span><h3>나는 연애할 때 상대를 얼마나 통제하려는 편일까?</h3><p>걱정과 관심일까, 아니면 상대를 내 기준에 맞추려는 걸까?</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
-        <a class="test-card" href="relationship-energy-test.html" data-test="23" data-category="love"><span class="icon-tile"><svg class="icon"><use href="#icon-heart"/></svg></span><h3>나는 연애할 때 감정소모가 큰 편일까?</h3><p>연애 하나로 하루 기분이 얼마나 흔들리는지 알아보세요.</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
-        <a class="test-card" href="marriage-values-test.html" data-test="22" data-category="love"><span class="icon-tile"><svg class="icon"><use href="#icon-ring"/></svg></span><h3>나는 사랑만으로 결혼할 수 있을까?</h3><p>결혼에서 사랑과 현실, 나는 어디에 더 가까울까?</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
-        <a class="test-card" href="lying-test.html" data-test="21" data-category="fun"><span class="icon-tile"><svg class="icon"><use href="#icon-people"/></svg></span><h3>나는 거짓말을 얼마나 잘하는 편일까?</h3><p>거짓말을 하면 바로 티 나는 타입일까, 끝까지 자연스럽게 숨기는 타입일까?</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
-        <a class="test-card" href="secret-test.html" data-test="20" data-category="fun"><span class="icon-tile"><svg class="icon"><use href="#icon-chat"/></svg></span><h3>나는 비밀을 들으면 얼마나 오래 참을 수 있을까?</h3><p>입이 무거운 편일까, 말하고 싶어서 근질근질한 편일까?</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
-        <a class="test-card" href="game-character-test.html" data-test="19" data-category="fun"><span class="icon-tile"><svg class="icon"><use href="#icon-flame"/></svg></span><h3>내가 게임 속 캐릭터라면 능력치는 어디에 몰려 있을까?</h3><p>게임 캐릭터가 된다면 나는 어떤 스탯에 몰빵된 타입일까?</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
-        <a class="test-card" href="mental-strength-test.html" data-test="18" data-category="personality"><span class="icon-tile"><svg class="icon"><use href="#icon-leaf"/></svg></span><h3>내 멘탈은 얼마나 단단한 편일까?</h3><p>스트레스나 실패 앞에서 나는 얼마나 쉽게 흔들리는 사람일까?</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
-        <a class="test-card" href="social-mask-test.html" data-test="17" data-category="personality"><span class="icon-tile"><svg class="icon"><use href="#icon-moon"/></svg></span><h3>내 사회생활 가면은 얼마나 두꺼울까?</h3><p>밖에서의 나와 혼자 있을 때의 나는 얼마나 다를까?</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
-        <a class="test-card" href="social-awareness-test.html" data-test="16" data-category="relationship"><span class="icon-tile"><svg class="icon"><use href="#icon-chat"/></svg></span><h3>나는 인간관계에서 눈치를 얼마나 보는 편일까?</h3><p>다른 사람의 말투, 표정, 분위기를 얼마나 신경 쓰는지 알아보세요.</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
-        <a class="test-card" href="cutoff-test.html" data-test="15" data-category="relationship"><span class="icon-tile"><svg class="icon"><use href="#icon-people"/></svg></span><h3>나는 사람을 얼마나 빨리 손절하는 편일까?</h3><p>인간관계에서 나는 참는 편일까, 빠르게 정리하는 편일까?</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
-        <p class="category-empty" id="category-empty" hidden>아직 이 카테고리에 등록된 테스트가 없어요.</p>
-        <a class="test-card" href="jealousy-test.html" data-test="8" data-category="love"><span class="icon-tile"><svg class="icon filled-heart"><use href="#icon-heart"/></svg></span><h3>내 질투심은 정상 범위일까?</h3><p>연애할 때 나는 얼마나 질투하는 편인지 알아보세요.</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
-      </div>
+      <div class="card-grid" id="category-grid"></div>
+      <p class="category-empty" id="category-empty" hidden>아직 이 카테고리에 등록된 테스트가 없어요.</p>
       <nav class="test-pagination" id="test-pagination" aria-label="테스트 목록 페이지" hidden></nav>
     </section>
   </main>
@@ -121,6 +104,152 @@
     </div>
   </footer>
   <dialog id="search-dialog" class="modal" aria-labelledby="search-title"><div class="modal-heading"><h2 id="search-title">어떤 테스트를 찾으세요?</h2><button class="icon-button" type="button" data-close aria-label="검색 닫기"><svg class="icon"><use href="#icon-close"/></svg></button></div><label class="search-field"><svg class="icon"><use href="#icon-search"/></svg><input id="search-input" type="search" placeholder="연애, 인간관계, 사회생활…" aria-label="테스트 검색어" autocomplete="off"></label><p id="search-count" class="search-count" aria-live="polite"></p><div id="search-results" class="search-results"></div></dialog>
+</body>
+</html>
+```
+
+## test.html
+
+```html
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <script src="test-catalog.js"></script>
+  <script src="analytics.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:site_name" content="Today's Choice">
+  <meta property="og:title" content="Today's choice | 심리테스트">
+  <meta property="og:description" content="오늘의 초이스에서 재미있는 심리테스트를 만나보세요.">
+  <meta property="og:url" content="https://todayschoice.kr/test.html">
+  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
+  <meta property="og:image:width" content="1731">
+  <meta property="og:image:height" content="909">
+  <meta property="og:image:alt" content="Today's choice">
+  <meta property="og:image:type" content="image/png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Today's choice | 심리테스트">
+  <meta name="twitter:description" content="오늘의 초이스에서 재미있는 심리테스트를 만나보세요.">
+  <meta name="twitter:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
+  <meta name="twitter:image:alt" content="Today's choice">
+  <meta name="description" content="오늘의 초이스에서 재미있는 심리테스트를 만나보세요.">
+  <title>Today's choice | 심리테스트</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="test.css">
+  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.8.2/kakao.min.js" integrity="sha384-zt/G7/KfaRQ9dT/QIkS0ujMtzouJqzuSJcXVQu50x0rl/+mD1dc70AeOejVbMD9E" crossorigin="anonymous" defer></script>
+  <script src="script.js" defer></script>
+  <script src="test-runner.js" defer></script>
+  <script type="module" src="test-loader.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2401413706072374"
+       crossorigin="anonymous"></script>
+</head>
+<body class="test-page">
+  <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="7.3"/><path d="m16 16 5 5"/></symbol>
+    <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M20.8 4.7a5.5 5.5 0 0 0-7.8 0L12 5.8l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.5a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+    <symbol id="icon-chat" viewBox="0 0 24 24"><path d="M21 11.5a9 9 0 0 1-9 8.5 10 10 0 0 1-4-.8L3 21l1.7-4.7A8 8 0 0 1 3 11.5a9 9 0 0 1 18 0Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></symbol>
+    <symbol id="icon-ring" viewBox="0 0 24 24"><circle cx="12" cy="14" r="7.5"/><path d="m9 3 3 3 3-3-1-2h-4l-1 2Z"/></symbol>
+    <symbol id="icon-people" viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 4a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v3"/></symbol>
+    <symbol id="icon-flame" viewBox="0 0 24 24"><path d="M12 3c0 4-5 6-5 11a5 5 0 0 0 10 0c0-3-2-5-3-7 0 3-1 4-2 5 0-4 2-6 0-9Z"/></symbol>
+    <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M21 14A9.5 9.5 0 0 1 10 3a9.5 9.5 0 1 0 11 11Z"/></symbol>
+    <symbol id="icon-leaf" viewBox="0 0 24 24"><path d="M12 22V11M12 15C5 16 2 11 3 7c6-1 9 3 9 8Zm0-5c0-6 4-9 9-8 1 6-3 10-9 8Z"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+  </svg>
+  <a class="skip-link" href="#main">본문 바로가기</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html#home" aria-label="오늘의 초이스 홈">Today's choice</a>
+      <nav class="main-nav" aria-label="주 메뉴">
+        <a class="nav-link" href="index.html#home">홈</a>
+        <a class="nav-link" href="index.html#new-tests">오늘의 테스트</a>
+        <a class="nav-link" href="index.html#popular">전체 테스트</a>
+        <a class="nav-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </nav>
+      <button class="icon-button search-toggle" type="button" aria-label="테스트 검색" aria-haspopup="dialog"><svg class="icon"><use href="index.html#icon-search"/></svg></button>
+    </div>
+  </header>
+  <main id="main" data-test-runner>
+    <section class="test-panel" data-role="loading" role="status"><p>테스트를 불러오는 중이에요.</p></section>
+    <section class="test-panel" data-role="load-error" hidden><h1>테스트를 불러올 수 없어요</h1><p data-role="error-message"></p><a class="secondary-button" href="index.html#category-tests">전체 테스트 보기</a></section>
+    <section class="test-panel" data-screen="start" hidden aria-labelledby="test-title">
+      <p class="test-category" data-role="category"></p>
+      <h1 id="test-title" data-role="title" data-focus tabindex="-1"></h1>
+      <p class="test-description" data-role="description"></p>
+      <p class="test-count" data-role="count"></p>
+      <button class="primary-button" type="button" data-role="start">테스트 시작하기</button>
+    </section>
+    <section class="test-panel" data-screen="question" aria-labelledby="question-title" hidden>
+      <div class="question-top">
+        <button class="test-back" type="button" data-role="back">← 뒤로가기</button>
+        <span class="test-position" data-role="position"></span>
+      </div>
+      <progress class="test-progress" data-role="progress" value="0" max="10" aria-label="테스트 진행률"></progress>
+      <h2 class="question-title" id="question-title" data-role="question" data-focus tabindex="-1"></h2>
+      <div class="answer-list" data-role="answers" role="group" aria-labelledby="question-title"></div>
+    </section>
+    <section class="test-panel test-result" data-screen="result" aria-labelledby="result-title" hidden>
+      <div class="result-card" data-role="result-card">
+        <p class="test-category" data-role="result-type" hidden></p>
+        <p class="result-metric" data-role="result-metric" hidden></p>
+        <h2 class="result-title" id="result-title" data-role="result-title" data-focus tabindex="-1"></h2>
+        <div class="result-description" data-role="result-description"></div>
+      </div>
+      <div class="result-actions">
+        <button class="secondary-button" type="button" data-role="restart">다시하기</button>
+        <a class="secondary-button" href="index.html#category-tests">다른 테스트 보기</a>
+      </div>
+      <button class="primary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
+      <p class="kakao-share-status" id="kakao-share-status" role="status" hidden></p>
+      <p class="test-disclaimer">본 테스트는 재미를 위한 콘텐츠이며 전문적인 심리 진단이 아닙니다.</p>
+    </section>
+    <noscript><p>테스트를 진행하려면 브라우저에서 JavaScript를 활성화해 주세요.</p></noscript>
+  </main>
+  <footer class="site-footer" id="about">
+    <div class="container footer-inner">
+      <a class="instagram-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        <span>@choice_zip_</span>
+      </a>
+    </div>
+  </footer>
+  <dialog id="search-dialog" class="modal" aria-labelledby="search-title"><div class="modal-heading"><h2 id="search-title">어떤 테스트를 찾으세요?</h2><button class="icon-button" type="button" data-close aria-label="검색 닫기"><svg class="icon"><use href="#icon-close"/></svg></button></div><label class="search-field"><svg class="icon"><use href="#icon-search"/></svg><input id="search-input" type="search" placeholder="연애, 인간관계, 사회생활…" aria-label="테스트 검색어" autocomplete="off"></label><p id="search-count" class="search-count" aria-live="polite"></p><div id="search-results" class="search-results"></div></dialog>
+</body>
+</html>
+```
+
+## 404.html
+
+```html
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Today's choice</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <meta property="og:title" content="Today's choice">
+  <meta property="og:description" content="오늘의 초이스에서 재미있는 심리테스트를 만나보세요.">
+  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
+  <script src="/test-catalog.js"></script>
+  <script src="/analytics.js"></script>
+  <script src="/legacy-redirect.js" defer></script>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/test.css">
+</head>
+<body class="test-page">
+  <main>
+    <section class="test-panel">
+      <h1>페이지를 찾을 수 없어요</h1>
+      <p>전체 테스트에서 원하는 테스트를 선택해 주세요.</p>
+      <a class="secondary-button" href="/index.html#category-tests">전체 테스트 보기</a>
+    </section>
+  </main>
 </body>
 </html>
 ```
@@ -157,7 +286,7 @@ button:disabled{cursor:default}
 .icon-button:hover{background:#f7f7f7}
 .header-inner>.search-toggle{color:var(--text)}
 .header-inner>.search-toggle .icon{stroke-width:2}
-.hero{background:#f4f4f6}
+.hero{background:#fff8fa;border-bottom:1px solid #ffe7ee}
 .hero-inner{display:flex;align-items:center;min-height:500px;padding:64px clamp(24px,4vw,64px)}
 .hero-copy{width:100%;max-width:100%}
 .hero-copy h1{margin:0 0 24px;font-size:clamp(42px,4.5vw,64px);line-height:1.24;letter-spacing:-3.5px;font-weight:800}
@@ -249,6 +378,65 @@ body:has(dialog[open]){overflow:hidden}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
 ```
 
+## test.css
+
+```css
+.test-page{display:flex;flex-direction:column;min-height:100vh}
+.test-page main{flex:1;width:calc(100% - 40px);max-width:700px;margin:56px auto 0}
+.test-panel{padding:40px;border:1px solid var(--border);border-radius:18px;background:#fff}
+.test-panel[hidden]{display:none}
+.test-panel [data-focus]:focus{outline:none}
+.test-category{display:inline-block;margin:0 0 24px;padding:8px 14px;border:1px solid #ffdce4;border-radius:999px;background:var(--pink-light);color:var(--pink);font-size:14px}
+.test-panel h1{margin:0 0 20px;font-size:clamp(27px,4vw,36px);line-height:1.4;letter-spacing:-1px}
+.test-description,.result-description{margin:0;color:var(--muted);font-size:17px;line-height:1.85}
+.test-count{margin:28px 0;color:var(--muted);font-size:14px}
+.test-panel .primary-button{width:100%;min-height:58px;border-radius:16px;transition:none}
+.test-panel .primary-button:hover{transform:none}
+.question-top{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:18px}
+.test-back{padding:8px 0;border:0;background:none;color:var(--muted);font-size:14px}
+.test-back:hover{color:var(--pink)}
+.test-position{font-size:14px;font-weight:600;font-variant-numeric:tabular-nums}
+.test-progress{display:block;width:100%;height:6px;margin:0 0 36px;border:0;border-radius:999px;overflow:hidden;background:#f3f3f3;appearance:none}
+.test-progress::-webkit-progress-bar{background:#f3f3f3;border-radius:999px}
+.test-progress::-webkit-progress-value{background:var(--pink);border-radius:999px}
+.test-progress::-moz-progress-bar{background:var(--pink);border-radius:999px}
+.question-title{margin:0 0 28px;font-size:25px;line-height:1.55;letter-spacing:-.7px}
+.answer-list{display:grid;gap:12px}
+.answer-button{width:100%;min-height:64px;padding:18px 20px;border:1px solid var(--border);border-radius:16px;background:#fff;text-align:left;font-size:16px;line-height:1.65}
+.answer-button:hover,.answer-button[aria-pressed="true"]{border-color:var(--pink);background:var(--pink-light)}
+.test-result{text-align:center}
+.result-metric{display:inline-block;margin:0 0 24px;padding:12px 18px;border:1px solid #ffdce4;border-radius:16px;background:var(--pink-light);color:var(--pink);font-size:18px;font-weight:650;line-height:1.5}
+.result-score{margin:14px 0 28px;color:var(--pink);font-size:72px;line-height:1.15;font-weight:800;letter-spacing:-2px}
+.result-score small{margin-left:6px;font-size:20px;font-weight:500;letter-spacing:0}
+.result-title{margin:0 0 20px;font-size:28px;line-height:1.4;letter-spacing:-.8px}
+.result-actions{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:32px}
+.secondary-button{display:flex;align-items:center;justify-content:center;min-height:58px;padding:16px;border:1px solid var(--border);border-radius:16px;background:#fff;font-size:16px;font-weight:600}
+.secondary-button:hover{border-color:var(--pink);background:var(--pink-light)}
+.test-disclaimer{margin:28px 0 0;color:var(--muted);font-size:12px;line-height:1.7}
+.kakao-share-button{width:100%;margin-top:12px}
+.kakao-share-status{margin:12px 0 0;color:var(--muted);font-size:14px;line-height:1.7}
+@media(max-width:640px){.test-page main{margin-top:32px}.test-panel{padding:28px 22px}.test-category{margin-bottom:20px}.test-description,.result-description{font-size:16px}.question-title{font-size:22px}.test-progress{margin-bottom:28px}.answer-button{padding:16px;min-height:62px}.result-title{font-size:24px}.result-score{font-size:64px}.result-actions{grid-template-columns:1fr}}
+
+.result-description{white-space:pre-line}
+.result-metric[hidden],.test-category[hidden]{display:none}
+.test-result[data-card="true"]{padding:40px;background:#fff;border-color:#e8e8ec}
+.result-card[data-styled="true"]{padding:0;border:0;background:#fff;text-align:center}
+.result-card[data-styled="true"]::before{content:"";display:block;width:32px;height:4px;margin:0 auto 28px;border-radius:999px;background:var(--pink)}
+.result-card[data-styled="true"] .test-category{margin:0 0 18px;padding:7px 13px;background:var(--pink-light);border:0;font-size:13px;font-weight:600}
+.result-card[data-styled="true"] .result-score{margin:0 0 20px;color:var(--text);font-size:56px;letter-spacing:-2px}
+.result-card[data-styled="true"] .result-score small{color:var(--muted);font-size:17px}
+.result-card[data-styled="true"] .result-metric{margin:0 0 20px;padding:8px 14px;border:0;font-size:15px}
+.result-card[data-styled="true"] .result-title{max-width:520px;margin:0 auto 28px;font-size:30px;line-height:1.5;font-weight:750;word-break:keep-all;overflow-wrap:anywhere;text-wrap:balance;text-align:center}
+.result-card[data-styled="true"] .result-description{padding:26px 28px;border:1px solid #f0f0f2;border-radius:16px;background:#fafafa;color:#59606b;text-align:left;white-space:normal;word-break:keep-all;overflow-wrap:anywhere;font-size:16px;line-height:1.9}
+.result-card[data-styled="true"] .result-description p{margin:0 0 18px}
+.result-card[data-styled="true"] .result-description p{white-space:pre-line}
+.result-card[data-styled="true"] .result-description p:last-child{margin-bottom:0}
+.test-result[data-card="true"] .result-actions{margin-top:24px}
+.test-result[data-card="true"] .secondary-button,.test-result[data-card="true"] .kakao-share-button{min-height:54px;border-radius:14px}
+.test-result[data-card="true"]>.test-disclaimer{margin-top:22px;color:#858992}
+@media(max-width:640px){.test-result[data-card="true"]{padding:28px 20px}.result-card[data-styled="true"]::before{margin-bottom:22px}.result-card[data-styled="true"] .result-title{font-size:25px;margin-bottom:24px}.result-card[data-styled="true"] .result-score{font-size:48px}.result-card[data-styled="true"] .result-description{padding:20px 18px;font-size:15px;line-height:1.9}.test-result[data-card="true"] .result-actions{grid-template-columns:1fr 1fr;gap:10px}.test-result[data-card="true"] .secondary-button{padding:12px 8px;font-size:14px}}
+```
+
 ## analytics.js
 
 ```javascript
@@ -267,7 +455,13 @@ if (GA4_MEASUREMENT_ID !== "G-XXXXXXXXXX" && /^G-[A-Z0-9]+$/.test(GA4_MEASUREMEN
   googleTag.async = true;
   googleTag.src = `https://www.googletagmanager.com/gtag/js?id=${GA4_MEASUREMENT_ID}`;
   document.head.append(googleTag);
-  window.gtag("config", GA4_MEASUREMENT_ID);
+  const selectedId = new URLSearchParams(location.search).get("id");
+  const currentTest = typeof TEST_CATALOG !== "undefined" && /\/test\.html$/.test(location.pathname)
+    ? TEST_CATALOG.find((test) => test.slug === selectedId || String(test.id) === selectedId)
+    : null;
+  window.gtag("config", GA4_MEASUREMENT_ID, currentTest
+    ? { page_title: `${currentTest.title} | Today's Choice` }
+    : {});
 }
 
 function trackTestEvent(eventName, data, extra = {}) {
@@ -281,6 +475,459 @@ function trackTestEvent(eventName, data, extra = {}) {
   } catch (error) {
     // Analytics must never interrupt the test or sharing controls.
   }
+}
+```
+
+## test-catalog.js
+
+```javascript
+"use strict";
+
+// Add metadata here and a matching <slug>-data.js module to register a test.
+const TEST_CATALOG = [
+  {
+    "id": 40,
+    "slug": "stress-change",
+    "title": "내가 스트레스 받으면 가장 먼저 변하는 것은?",
+    "description": "평소와 달라지는 내 모습은 어디에서 가장 먼저 드러날까?",
+    "category": "성격",
+    "url": "test.html?id=stress-change",
+    "icon": "leaf"
+  },
+  {
+    "id": 39,
+    "slug": "hidden-strength",
+    "title": "내 성격에서 의외로 강한 부분은?",
+    "description": "평소에는 잘 드러나지 않지만, 내가 생각보다 잘하는 건 무엇일까?",
+    "category": "성격",
+    "url": "test.html?id=hidden-strength",
+    "icon": "leaf"
+  },
+  {
+    "id": 38,
+    "slug": "workplace-image",
+    "title": "회사에서 나는 어떤 이미지로 보일까?",
+    "description": "내가 생각하는 나와 동료들이 보는 나는 얼마나 다를까?",
+    "category": "친구·인간관계·사회생활",
+    "url": "test.html?id=workplace-image",
+    "icon": "people"
+  },
+  {
+    "id": 37,
+    "slug": "animal-personality",
+    "title": "내 성격을 동물로 표현하면?",
+    "description": "내 성격과 가장 닮은 동물은 무엇일까?",
+    "category": "성격",
+    "url": "test.html?id=animal-personality",
+    "icon": "leaf"
+  },
+  {
+    "id": 36,
+    "slug": "relationship-fatigue",
+    "title": "내 인간관계 피로도는 몇 %일까?",
+    "description": "사람을 만나고 관계를 유지하는 일이 나에게 얼마나 에너지를 쓰게 할까?",
+    "category": "친구·인간관계·사회생활",
+    "url": "test.html?id=relationship-fatigue",
+    "icon": "people"
+  },
+  {
+    "id": 35,
+    "slug": "hidden-romance",
+    "title": "내가 숨기고 있는 연애 성향은?",
+    "description": "평소에는 잘 드러나지 않는 내 연애 본능은 어떤 모습일까?",
+    "category": "연애/결혼",
+    "url": "test.html?id=hidden-romance",
+    "icon": "heart"
+  },
+  {
+    "id": 34,
+    "slug": "married-partner",
+    "title": "나는 결혼하면 어떤 배우자일까?",
+    "description": "결혼생활 속에서 나는 어떤 모습으로 살아가게 될까?",
+    "category": "연애/결혼",
+    "url": "test.html?id=married-partner",
+    "icon": "ring"
+  },
+  {
+    "id": 33,
+    "slug": "compatible-partner",
+    "title": "나랑 잘 맞는 연애 상대는?",
+    "description": "어떤 사람과 만날 때 가장 편하고 오래 잘 맞을까?",
+    "category": "연애/결혼",
+    "url": "test.html?id=compatible-partner",
+    "icon": "heart"
+  },
+  {
+    "id": 32,
+    "slug": "breakup",
+    "title": "나는 이별 후 어떤 타입일까?",
+    "description": "관계가 끝난 뒤 나는 어떻게 마음을 정리하는 사람일까?",
+    "category": "연애/결혼",
+    "url": "test.html?id=breakup",
+    "icon": "heart"
+  },
+  {
+    "id": 31,
+    "slug": "falling-in-love",
+    "title": "내가 사랑에 빠지는 순간은?",
+    "description": "나는 어떤 순간에 상대에게 마음이 움직이는 사람일까?",
+    "category": "연애/결혼",
+    "url": "test.html?id=falling-in-love",
+    "icon": "heart",
+    "filledHeart": true
+  },
+  {
+    "id": 30,
+    "slug": "social-adaptation",
+    "title": "나는 사회생활에서 얼마나 적응이 빠른 편일까?",
+    "description": "새로운 사람, 새로운 환경에 나는 얼마나 빨리 녹아드는 타입일까?",
+    "category": "친구·인간관계·사회생활",
+    "url": "test.html?id=social-adaptation",
+    "icon": "people"
+  },
+  {
+    "id": 29,
+    "slug": "difficult-people",
+    "title": "나는 싫은 사람과도 잘 지낼 수 있을까?",
+    "description": "감정은 감정이고 사회생활은 사회생활일까?",
+    "category": "친구·인간관계·사회생활",
+    "url": "test.html?id=difficult-people",
+    "icon": "chat"
+  },
+  {
+    "id": 28,
+    "slug": "million-followers",
+    "title": "나는 하루아침에 100만 팔로워가 생기면 어떻게 변할까?",
+    "description": "갑자기 모두가 나를 보기 시작한다면, 나는 어떤 사람이 될까?",
+    "category": "재미",
+    "url": "test.html?id=million-followers",
+    "icon": "people"
+  },
+  {
+    "id": 27,
+    "slug": "affection",
+    "title": "나는 인간관계에서 정이 많은 편일까?",
+    "description": "한번 내 사람이 되면 얼마나 오래 챙기는 타입일까?",
+    "category": "친구·인간관계·사회생활",
+    "url": "test.html?id=affection",
+    "icon": "heart"
+  },
+  {
+    "id": 26,
+    "slug": "friend-dependence",
+    "title": "나는 친구에게 얼마나 의존하는 편일까?",
+    "description": "힘들 때도, 심심할 때도 나는 친구를 얼마나 찾는 편일까?",
+    "category": "친구·인간관계·사회생활",
+    "url": "test.html?id=friend-dependence",
+    "icon": "chat"
+  },
+  {
+    "id": 25,
+    "slug": "friend-boundaries",
+    "title": "나는 친한 친구에게도 선을 두는 편일까?",
+    "description": "아무리 친해도 지켜야 할 선이 있다고 생각하는 편일까?",
+    "category": "친구·인간관계·사회생활",
+    "url": "test.html?id=friend-boundaries",
+    "icon": "people"
+  },
+  {
+    "id": 24,
+    "slug": "relationship-control",
+    "title": "나는 연애할 때 상대를 얼마나 통제하려는 편일까?",
+    "description": "걱정과 관심일까, 아니면 상대를 내 기준에 맞추려는 걸까?",
+    "category": "연애/결혼",
+    "url": "test.html?id=relationship-control",
+    "icon": "chat"
+  },
+  {
+    "id": 23,
+    "slug": "relationship-energy",
+    "title": "나는 연애할 때 감정소모가 큰 편일까?",
+    "description": "연애 하나로 하루 기분이 얼마나 흔들리는지 알아보세요.",
+    "category": "연애/결혼",
+    "url": "test.html?id=relationship-energy",
+    "icon": "heart"
+  },
+  {
+    "id": 22,
+    "slug": "marriage-values",
+    "title": "나는 사랑만으로 결혼할 수 있을까?",
+    "description": "결혼에서 사랑과 현실, 나는 어디에 더 가까울까?",
+    "category": "연애/결혼",
+    "url": "test.html?id=marriage-values",
+    "icon": "ring"
+  },
+  {
+    "id": 21,
+    "slug": "lying",
+    "title": "나는 거짓말을 얼마나 잘하는 편일까?",
+    "description": "거짓말을 하면 바로 티 나는 타입일까, 끝까지 자연스럽게 숨기는 타입일까?",
+    "category": "성격",
+    "url": "test.html?id=lying",
+    "icon": "people"
+  },
+  {
+    "id": 20,
+    "slug": "secret",
+    "title": "나는 비밀을 들으면 얼마나 오래 참을 수 있을까?",
+    "description": "입이 무거운 편일까, 말하고 싶어서 근질근질한 편일까?",
+    "category": "성격",
+    "url": "test.html?id=secret",
+    "icon": "chat"
+  },
+  {
+    "id": 19,
+    "slug": "game-character",
+    "title": "내가 게임 속 캐릭터라면 능력치는 어디에 몰려 있을까?",
+    "description": "게임 캐릭터가 된다면 나는 어떤 스탯에 몰빵된 타입일까?",
+    "category": "재미",
+    "url": "test.html?id=game-character",
+    "icon": "flame"
+  },
+  {
+    "id": 18,
+    "slug": "mental-strength",
+    "title": "내 멘탈은 얼마나 단단한 편일까?",
+    "description": "스트레스나 실패 앞에서 나는 얼마나 쉽게 흔들리는 사람일까?",
+    "category": "성격",
+    "url": "test.html?id=mental-strength",
+    "icon": "leaf"
+  },
+  {
+    "id": 17,
+    "slug": "social-mask",
+    "title": "내 사회생활 가면은 얼마나 두꺼울까?",
+    "description": "밖에서의 나와 혼자 있을 때의 나는 얼마나 다를까?",
+    "category": "친구·인간관계·사회생활",
+    "url": "test.html?id=social-mask",
+    "icon": "moon"
+  },
+  {
+    "id": 16,
+    "slug": "social-awareness",
+    "title": "나는 인간관계에서 눈치를 얼마나 보는 편일까?",
+    "description": "다른 사람의 말투, 표정, 분위기를 얼마나 신경 쓰는지 알아보세요.",
+    "category": "친구·인간관계·사회생활",
+    "url": "test.html?id=social-awareness",
+    "icon": "chat"
+  },
+  {
+    "id": 15,
+    "slug": "cutoff",
+    "title": "나는 사람을 얼마나 빨리 손절하는 편일까?",
+    "description": "인간관계에서 나는 참는 편일까, 빠르게 정리하는 편일까?",
+    "category": "친구·인간관계·사회생활",
+    "url": "test.html?id=cutoff",
+    "icon": "people"
+  },
+  {
+    "id": 8,
+    "slug": "jealousy",
+    "title": "내 질투심은 정상 범위일까?",
+    "description": "연애할 때 나는 얼마나 질투하는 편인지 알아보세요.",
+    "category": "연애/결혼",
+    "url": "test.html?id=jealousy",
+    "icon": "heart",
+    "filledHeart": true
+  }
+];
+```
+
+## test-loader.js
+
+```javascript
+const root = document.querySelector("[data-test-runner]");
+const selectedId = new URLSearchParams(location.search).get("id");
+const selectedTest = TEST_CATALOG.find((test) => test.slug === selectedId || String(test.id) === selectedId);
+
+async function loadTest() {
+  try {
+    if (!selectedTest) throw new Error("찾는 테스트가 없어요. 전체 테스트에서 다시 선택해 주세요.");
+    // Only import paths from the registered catalog, never a user-supplied path.
+    const { default: data } = await import(`./${selectedTest.slug}-data.js`);
+    if (data.id !== selectedTest.id || !data.questions?.length || !data.results?.length) {
+      throw new Error("테스트 정보를 확인할 수 없어요. 잠시 후 다시 시도해 주세요.");
+    }
+    window.testData = data;
+    document.title = `${data.title} | Today's Choice`;
+    createTestRunner(root, data);
+    root.querySelector('[data-role="loading"]').hidden = true;
+  } catch (error) {
+    console.error("테스트 불러오기 실패", error);
+    root.querySelector('[data-role="loading"]').hidden = true;
+    root.querySelector('[data-role="error-message"]').textContent = selectedTest
+      ? "테스트를 불러오지 못했어요. 인터넷 연결을 확인한 뒤 새로고침해 주세요."
+      : "찾는 테스트가 없어요. 전체 테스트에서 다시 선택해 주세요.";
+    root.querySelector('[data-role="load-error"]').hidden = false;
+  }
+}
+
+loadTest();
+```
+
+## test-runner.js
+
+```javascript
+"use strict";
+
+// A different test can reuse this controller by supplying the same data shape.
+function createTestRunner(root, data) {
+  const screens = Array.from(root.querySelectorAll("[data-screen]"));
+  const find = (name) => root.querySelector(`[data-role="${name}"]`);
+  let questionIndex = 0;
+  let answers = Array(data.questions.length).fill(null);
+  let screen = "start";
+  let started = false;
+  let completed = false;
+  const track = (eventName, extra) => {
+    if (typeof trackTestEvent === "function") trackTestEvent(eventName, data, extra);
+  };
+  const maxScore = data.questions.reduce((sum, question) =>
+    sum + Math.max(...question.answers.map((answer) => answer.score)), 0);
+  const minScore = data.questions.reduce((sum, question) =>
+    sum + Math.min(...question.answers.map((answer) => answer.score)), 0);
+
+  find("category").textContent = data.category;
+  find("title").textContent = data.title;
+  find("description").textContent = data.description;
+  find("count").textContent = `총 ${data.questions.length}문항`;
+  find("progress").max = data.questions.length;
+  const configure = (name, callback) => {
+    const element = find(name);
+    if (element) callback(element);
+  };
+  const resultScreen = root.querySelector('[data-screen="result"]');
+  if (resultScreen) resultScreen.dataset.card = "true";
+  configure("result-card", (element) => { element.dataset.styled = "true"; });
+  configure("result-type", (element) => { element.hidden = !data.showResultType; });
+  configure("result-metric", (element) => { element.hidden = !data.resultMetric; });
+
+  function showScreen(name, focus = true) {
+    screen = name;
+    screens.forEach((section) => { section.hidden = section.dataset.screen !== name; });
+    if (focus) root.querySelector(`[data-screen="${name}"] [data-focus]`).focus({ preventScroll: true });
+  }
+
+  function showQuestion() {
+    const question = data.questions[questionIndex];
+    find("position").textContent = `${questionIndex + 1} / ${data.questions.length}`;
+    find("progress").value = questionIndex + 1;
+    find("progress").setAttribute("aria-valuetext", `${data.questions.length}문항 중 ${questionIndex + 1}번째 질문`);
+    find("question").textContent = question.question;
+    find("answers").replaceChildren();
+    question.answers.forEach((answer, index) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "answer-button";
+      button.textContent = answer.text;
+      button.setAttribute("aria-pressed", String(answers[questionIndex] === index));
+      // Detached buttons cannot advance a newer question on a repeated activation.
+      const renderedIndex = questionIndex;
+      button.addEventListener("click", () => {
+        if (screen !== "question" || questionIndex !== renderedIndex) return;
+        answers[questionIndex] = index;
+        if (questionIndex < data.questions.length - 1) {
+          questionIndex += 1;
+          showQuestion();
+        } else {
+          showResult();
+        }
+      });
+      find("answers").append(button);
+    });
+    showScreen("question");
+  }
+
+  function showResult() {
+    if (answers.some((answer) => answer === null)) return;
+    let result;
+    let resultDetails;
+    if (data.stats) {
+      const counts = Object.fromEntries(data.stats.map((stat) => [stat.id, 0]));
+      const selectedStats = answers.map((answer, index) => data.questions[index].answers[answer].stat);
+      selectedStats.forEach((stat) => { counts[stat] += 1; });
+      const highest = Math.max(...Object.values(counts));
+      // Resolve ties using the most recent answer among the highest stats.
+      const winner = [...selectedStats].reverse().find((stat) => counts[stat] === highest);
+      result = data.results.find((item) => item.stat === winner);
+      const resultType = find("result-type");
+      if (resultType) resultType.textContent = data.stats.find((stat) => stat.id === winner).title;
+      resultDetails = { result_stat: winner, result_score: highest, max_score: data.questions.length };
+    } else {
+      const total = answers.reduce((sum, answer, index) => sum + data.questions[index].answers[answer].score, 0);
+      const percentage = data.resultMetric?.normalize
+        ? Math.round((total - minScore) / (maxScore - minScore) * 100)
+        : Math.round(total / maxScore * 100);
+      const resultValue = data.resultMetric?.useForResult ? percentage : total;
+      result = data.results.find((item) => resultValue >= item.min && resultValue <= item.max);
+      resultDetails = { result_score: total, max_score: maxScore };
+      if (data.resultMetric) {
+        find("result-metric").textContent = `${data.resultMetric.label} ${percentage}%`;
+        resultDetails.result_percentage = percentage;
+      }
+    }
+    find("result-title").textContent = result.title;
+    const description = find("result-description");
+    description.replaceChildren();
+    const paragraphs = /\n\s*\n/.test(result.description)
+      ? result.description.split(/\n\s*\n/)
+      : result.description.split(/(?<=[.!?])\s+/);
+    paragraphs.forEach((text) => {
+      const paragraph = document.createElement("p");
+      paragraph.textContent = text.trim().replace(/\.\s*/g, ".\n").trimEnd();
+      description.append(paragraph);
+    });
+    showScreen("result");
+    if (!completed) {
+      completed = true;
+      track("test_complete", { result_title: result.title, question_count: data.questions.length, ...resultDetails });
+    }
+  }
+
+  find("start").addEventListener("click", () => {
+    if (!started) {
+      started = true;
+      track("test_start", { question_count: data.questions.length });
+    }
+    showQuestion();
+  });
+  find("back").addEventListener("click", () => {
+    if (questionIndex === 0) showScreen("start");
+    else {
+      questionIndex -= 1;
+      showQuestion();
+    }
+  });
+  find("restart").addEventListener("click", () => {
+    questionIndex = 0;
+    answers = Array(data.questions.length).fill(null);
+    started = false;
+    completed = false;
+    find("result-title").textContent = "";
+    find("result-description").textContent = "";
+    if (data.resultMetric) find("result-metric").textContent = "";
+    showScreen("start");
+  });
+  showScreen("start", false);
+  track("test_view");
+}
+```
+
+## legacy-redirect.js
+
+```javascript
+"use strict";
+
+// GitHub Pages serves 404.html for old individual test URLs.
+const legacyMatch = location.pathname.match(/^\/([a-z0-9-]+)-test\.html$/);
+const legacyTest = legacyMatch && TEST_CATALOG.find((test) => test.slug === legacyMatch[1]);
+if (legacyTest) {
+  const next = new URL(legacyTest.url, location.origin);
+  const previousParams = new URLSearchParams(location.search);
+  previousParams.delete("id");
+  previousParams.forEach((value, key) => next.searchParams.append(key, value));
+  next.hash = location.hash;
+  location.replace(next.href);
 }
 ```
 
@@ -358,8 +1005,44 @@ if (kakaoShareButton) {
 }
 
 // The complete category list supplies search, random launch and today's picks.
+const catalogGrid = document.querySelector("#category-grid");
+if (catalogGrid && typeof TEST_CATALOG !== "undefined") {
+  const categories = { "연애/결혼": "love", "재미": "fun", "성격": "personality" };
+  const makeIcon = (name, filled = false) => {
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("class", `icon${filled ? " filled-heart" : ""}`);
+    svg.setAttribute("aria-hidden", "true");
+    const use = document.createElementNS("http://www.w3.org/2000/svg", "use");
+    use.setAttribute("href", `#icon-${name}`);
+    svg.append(use);
+    return svg;
+  };
+  catalogGrid.replaceChildren();
+  TEST_CATALOG.forEach((test) => {
+    const card = document.createElement("a");
+    card.className = "test-card";
+    card.href = test.url;
+    card.dataset.test = test.id;
+    card.dataset.category = categories[test.category] || "relationship";
+    const tile = document.createElement("span");
+    tile.className = "icon-tile";
+    tile.append(makeIcon(test.icon || "heart", test.filledHeart));
+    const title = document.createElement("h3");
+    title.textContent = test.title;
+    const description = document.createElement("p");
+    description.textContent = test.description;
+    const bottom = document.createElement("div");
+    bottom.className = "card-bottom";
+    const arrow = document.createElement("span");
+    arrow.className = "circle-arrow";
+    arrow.append(makeIcon("arrow"));
+    bottom.append(arrow);
+    card.append(tile, title, description, bottom);
+    catalogGrid.append(card);
+  });
+}
 const cards = Array.from(document.querySelectorAll("#category-grid .test-card"));
-const tests = Array.from(new Map(cards.map((card) => [Number(card.dataset.test), {
+const tests = typeof TEST_CATALOG !== "undefined" ? TEST_CATALOG : Array.from(new Map(cards.map((card) => [Number(card.dataset.test), {
   id: Number(card.dataset.test),
   title: card.querySelector("h3").innerHTML.replace(/<br\s*\/?>/gi, " ").replace(/\s+/g, " ").trim(),
   description: card.querySelector("p").textContent,
@@ -576,10 +1259,11 @@ document.querySelectorAll("svg.icon").forEach((icon) => icon.setAttribute("aria-
 
 const testData = {
   id: 27,
-  url: "affection-test.html",
+  url: "test.html?id=affection",
   title: "나는 인간관계에서 정이 많은 편일까?",
   description: "한번 내 사람이 되면 얼마나 오래 챙기는 타입일까?",
   category: "친구·인간관계·사회생활",
+  resultLabel: "당신의 정 지수는",
   shareDescription: "내 인간관계 정 테스트 결과를 확인해보세요.",
   questions: [
     {
@@ -630,135 +1314,407 @@ const testData = {
     {
       min: 10, max: 16,
       title: "관계가 끝나면 깔끔한 편",
-      description: "사람에게 정이 없기보다는 관계의 변화도 자연스럽게 받아들이는 타입. 안 맞거나 멀어진 관계를 억지로 붙잡지는 않는 편이야.",
+      description: "사람에게 정이 없기보다는 관계의 변화도 자연스럽게 받아들이는 타입이에요. 안 맞거나 멀어진 관계를 억지로 붙잡지는 않는 편이에요.\n\n함께한 시간이 소중해도 지금의 관계가 편하지 않다면 변화를 받아들이는 편이에요. 예전의 친밀함만으로 연락을 이어가야 한다는 부담이 크지 않아 내 생활을 지킬 수 있어요.\n\n다만 한 번의 어색함 때문에 서로의 마음을 너무 빨리 정리하지는 않는지 돌아보세요. 여전히 아끼는 사람이라면 가벼운 안부나 짧은 대화로 관계를 다시 확인해봐도 좋아요.",
     },
     {
       min: 17, max: 24,
       title: "적당히 정 많은 편",
-      description: "소중한 사람은 챙기지만 관계 때문에 무조건 참고 희생하지는 않는 타입. 정과 현실 사이에서 비교적 균형을 잘 잡는 편이야.",
+      description: "소중한 사람은 챙기지만 관계 때문에 무조건 참고 희생하지는 않는 타입이에요. 정과 현실 사이에서 비교적 균형을 잘 잡는 편이에요.\n\n오래된 인연을 소중하게 여기면서도 내가 감당할 수 있는 범위를 생각하는 편이에요. 도와주고 싶은 마음과 내 상황을 함께 고려해 관계를 오래 유지하는 데 강점이 있어요.\n\n친구를 챙기는 방식이 꼭 큰 희생일 필요는 없어요. 작은 안부나 솔직한 대화도 충분히 마음을 전할 수 있으니, 무리하지 않는 선에서 꾸준히 표현해보세요.",
     },
     {
       min: 25, max: 32,
       title: "정이 꽤 많은 타입",
-      description: "한번 친해진 사람을 쉽게 놓지 못하는 편. 오래된 인연을 중요하게 생각하고, 친구가 힘들면 내 일처럼 신경 쓰는 경우가 많아.",
+      description: "한번 친해진 사람을 쉽게 놓지 못하는 편이에요. 오래된 인연을 중요하게 생각하고, 친구가 힘들면 내 일처럼 신경 쓰는 경우가 많아요.\n\n예전에 함께한 기억이 지금의 관계에도 큰 의미를 주는 편이에요. 연락이 뜸해져도 상대가 필요로 하면 다시 손을 내밀고, 작은 변화에도 마음을 쓰기 쉬워요.\n\n챙기고 싶은 마음이 큰 만큼 내가 서운한 부분도 함께 살펴주세요. 오래된 관계라도 늘 나만 애써야 하는 것은 아니니, 원하는 배려를 솔직하게 말해봐도 괜찮아요.",
     },
     {
       min: 33, max: 40,
       title: "한번 내 사람은 끝까지 챙기는 타입",
-      description: "사람에게 정을 많이 주고 한번 맺은 관계를 오래 가져가는 편이야. 서운하거나 실망해도 그동안 쌓인 정 때문에 쉽게 돌아서지 못하는 타입. 그만큼 따뜻하지만 관계에서 내가 너무 많이 참고 있지는 않은지도 볼 필요가 있어.",
+      description: "사람에게 정을 많이 주고 한번 맺은 관계를 오래 가져가는 편이에요. 서운하거나 실망해도 그동안 쌓인 정 때문에 쉽게 돌아서지 못하는 타입이에요. 그만큼 따뜻하지만 관계에서 내가 너무 많이 참고 있지는 않은지도 볼 필요가 있어요.\n\n친구가 어려운 일을 겪으면 어떻게 도울 수 있을지 오래 생각하는 편이에요. 관계가 예전 같지 않아도 마음속에는 그 사람의 자리가 남아 쉽게 무심해지지 않을 수 있어요.\n\n따뜻함을 오래 유지하려면 내 에너지도 보호해야 해요. 도움을 줄 수 있는 범위를 정하고 반복해서 상처받는 상황에는 거리를 두세요. 정이 많아도 내 마음을 먼저 챙길 수 있어요.",
     },
   ],
 };
+
+export default testData;
 ```
 
-## affection-test.html
+## animal-personality-data.js
 
-```html
-<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <script src="analytics.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="ko_KR">
-  <meta property="og:site_name" content="Today's Choice">
-  <meta property="og:title" content="나는 인간관계에서 정이 많은 편일까? | Today's Choice">
-  <meta property="og:description" content="한번 내 사람이 되면 얼마나 오래 챙기는 타입일까?">
-  <meta property="og:url" content="https://todayschoice.kr/affection-test.html">
-  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
-  <meta property="og:image:width" content="1731">
-  <meta property="og:image:height" content="909">
-  <meta property="og:image:alt" content="Today's choice">
-  <meta property="og:image:type" content="image/png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="나는 인간관계에서 정이 많은 편일까? | Today's Choice">
-  <meta name="twitter:description" content="한번 내 사람이 되면 얼마나 오래 챙기는 타입일까?">
-  <meta name="twitter:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
-  <meta name="twitter:image:alt" content="Today's choice">
-  <meta name="description" content="한번 내 사람이 되면 얼마나 오래 챙기는 타입일까?">
-  <title>나는 인간관계에서 정이 많은 편일까? | Today's Choice</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="test.css">
-  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.8.2/kakao.min.js" integrity="sha384-zt/G7/KfaRQ9dT/QIkS0ujMtzouJqzuSJcXVQu50x0rl/+mD1dc70AeOejVbMD9E" crossorigin="anonymous" defer></script>
-  <script src="affection-data.js" defer></script>
-  <script src="script.js" defer></script>
-  <script src="test-runner.js" defer></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2401413706072374"
-       crossorigin="anonymous"></script>
-</head>
-<body class="test-page">
-  <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
-    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="7.3"/><path d="m16 16 5 5"/></symbol>
-    <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M20.8 4.7a5.5 5.5 0 0 0-7.8 0L12 5.8l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.5a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
-    <symbol id="icon-chat" viewBox="0 0 24 24"><path d="M21 11.5a9 9 0 0 1-9 8.5 10 10 0 0 1-4-.8L3 21l1.7-4.7A8 8 0 0 1 3 11.5a9 9 0 0 1 18 0Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></symbol>
-    <symbol id="icon-ring" viewBox="0 0 24 24"><circle cx="12" cy="14" r="7.5"/><path d="m9 3 3 3 3-3-1-2h-4l-1 2Z"/></symbol>
-    <symbol id="icon-people" viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 4a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v3"/></symbol>
-    <symbol id="icon-flame" viewBox="0 0 24 24"><path d="M12 3c0 4-5 6-5 11a5 5 0 0 0 10 0c0-3-2-5-3-7 0 3-1 4-2 5 0-4 2-6 0-9Z"/></symbol>
-    <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M21 14A9.5 9.5 0 0 1 10 3a9.5 9.5 0 1 0 11 11Z"/></symbol>
-    <symbol id="icon-leaf" viewBox="0 0 24 24"><path d="M12 22V11M12 15C5 16 2 11 3 7c6-1 9 3 9 8Zm0-5c0-6 4-9 9-8 1 6-3 10-9 8Z"/></symbol>
-    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
-  </svg>
-  <a class="skip-link" href="#main">본문 바로가기</a>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="index.html#home" aria-label="오늘의 초이스 홈">Today's choice</a>
-      <nav class="main-nav" aria-label="주 메뉴">
-        <a class="nav-link" href="index.html#home">홈</a>
-        <a class="nav-link" href="index.html#new-tests">오늘의 테스트</a>
-        <a class="nav-link" href="index.html#popular">전체 테스트</a>
-        <a class="nav-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">Instagram</a>
-      </nav>
-      <button class="icon-button search-toggle" type="button" aria-label="테스트 검색" aria-haspopup="dialog"><svg class="icon"><use href="#icon-search"/></svg></button>
-    </div>
-  </header>
-  <main id="main" data-test-runner>
-    <section class="test-panel" data-screen="start" aria-labelledby="test-title">
-      <p class="test-category" data-role="category"></p>
-      <h1 id="test-title" data-role="title" data-focus tabindex="-1"></h1>
-      <p class="test-description" data-role="description"></p>
-      <p class="test-count" data-role="count"></p>
-      <button class="primary-button" type="button" data-role="start">테스트 시작하기</button>
-    </section>
-    <section class="test-panel" data-screen="question" aria-labelledby="question-title" hidden>
-      <div class="question-top">
-        <button class="test-back" type="button" data-role="back">← 뒤로가기</button>
-        <span class="test-position" data-role="position"></span>
-      </div>
-      <progress class="test-progress" data-role="progress" value="0" max="10" aria-label="테스트 진행률"></progress>
-      <h2 class="question-title" id="question-title" data-role="question" data-focus tabindex="-1"></h2>
-      <div class="answer-list" data-role="answers" role="group" aria-labelledby="question-title"></div>
-    </section>
-    <section class="test-panel test-result" data-screen="result" aria-labelledby="result-title" hidden>
-      <p class="result-label">당신의 정 지수는</p>
-      <p class="result-score"><span data-role="score"></span><small> / <span data-role="max-score"></span>점</small></p>
-      <h2 class="result-title" id="result-title" data-role="result-title" data-focus tabindex="-1"></h2>
-      <p class="result-description" data-role="result-description"></p>
-      <div class="result-actions">
-        <button class="secondary-button" type="button" data-role="restart">다시하기</button>
-        <a class="secondary-button" href="index.html#category-tests">다른 테스트 보기</a>
-      </div>
-      <button class="primary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
-      <p class="kakao-share-status" id="kakao-share-status" role="status" hidden></p>
-      <p class="test-disclaimer">본 테스트는 재미를 위한 콘텐츠이며 전문적인 심리 진단이 아닙니다.</p>
-    </section>
-    <noscript><p>테스트를 진행하려면 브라우저에서 JavaScript를 활성화해 주세요.</p></noscript>
-  </main>
-  <footer class="site-footer" id="about">
-    <div class="container footer-inner">
-      <a class="instagram-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        <span>@choice_zip_</span>
-      </a>
-    </div>
-  </footer>
-  <dialog id="search-dialog" class="modal" aria-labelledby="search-title"><div class="modal-heading"><h2 id="search-title">어떤 테스트를 찾으세요?</h2><button class="icon-button" type="button" data-close aria-label="검색 닫기"><svg class="icon"><use href="#icon-close"/></svg></button></div><label class="search-field"><svg class="icon"><use href="#icon-search"/></svg><input id="search-input" type="search" placeholder="친구, 인간관계, 정…" aria-label="테스트 검색어" autocomplete="off"></label><p id="search-count" class="search-count" aria-live="polite"></p><div id="search-results" class="search-results"></div></dialog>
-</body>
-</html>
+```javascript
+"use strict";
+
+const testData = {
+  id: 37,
+  url: "test.html?id=animal-personality",
+  title: "내 성격을 동물로 표현하면?",
+  description: "내 성격과 가장 닮은 동물은 무엇일까?",
+  category: "성격",
+  showResultType: true,
+  stats: [
+    { id: "cat", title: "고양이" },
+    { id: "dog", title: "강아지" },
+    { id: "fox", title: "여우" },
+    { id: "wolf", title: "늑대" },
+    { id: "otter", title: "수달" },
+  ],
+  questions: [
+    {
+      question: "새로운 사람들 사이에 들어가면 나는?",
+      answers: ["먼저 분위기를 파악하는 편이다", "금방 말을 걸고 친해지는 편이다", "조용히 있다가 필요한 순간에만 나선다", "내가 편한 사람 한두 명과 깊게 지내는 편이다", "분위기를 띄우거나 웃음을 만드는 편이다"],
+    },
+    {
+      question: "갑자기 문제가 생기면?",
+      answers: ["일단 차분하게 상황부터 본다", "주변 사람들과 같이 해결하려 한다", "가장 효율적인 방법부터 찾는다", "혼자서라도 끝까지 버텨보는 편이다", "너무 심각하게 생각하기보다 분위기를 바꿔본다"],
+    },
+    {
+      question: "친구들이 나를 찾는 이유는?",
+      answers: ["말하지 않아도 편하게 같이 있을 수 있어서", "이야기를 잘 들어주고 반응을 잘해줘서", "현실적인 조언을 잘해줘서", "중요한 순간에 믿고 의지할 수 있어서", "같이 있으면 재미있어서"],
+    },
+    {
+      question: "혼자 보내는 시간이 생기면?",
+      answers: ["오히려 편하고 좋다", "조금 지나면 누군가와 이야기하고 싶다", "하고 싶었던 일을 정리해서 한다", "혼자만의 시간을 꽤 잘 보내는 편이다", "혼자 있어도 이것저것 재미있는 걸 찾아 한다"],
+    },
+    {
+      question: "누군가 나에게 무례하게 행동했다면?",
+      answers: ["티는 안 내도 속으로 선을 긋는다", "왜 그러는지 먼저 이야기해본다", "상황을 보고 가장 손해 없는 방식으로 대응한다", "한번 선을 넘었다고 느끼면 오래 기억한다", "웬만하면 웃어넘기고 분위기를 바꾼다"],
+    },
+    {
+      question: "중요한 결정을 할 때 나는?",
+      answers: ["내 마음이 편한 쪽을 고른다", "주변 사람들의 의견도 많이 듣는다", "장단점을 따져보고 결정한다", "내가 세운 기준대로 밀고 가는 편이다", "너무 오래 고민하기보다 일단 선택해본다"],
+    },
+    {
+      question: "모임에서 내 모습과 가장 가까운 건?",
+      answers: ["조용히 있다가 친한 사람과만 많이 말한다", "여기저기 대화하며 사람들과 잘 섞인다", "전체 분위기를 보면서 적당히 맞춘다", "많은 사람보다 몇 명과 진하게 이야기한다", "장난이나 이야기로 분위기를 띄운다"],
+    },
+    {
+      question: "힘든 일이 생겼을 때 나는?",
+      answers: ["혼자 조용히 정리할 시간이 필요하다", "가까운 사람에게 바로 털어놓는다", "감정보다 해결 방법을 먼저 생각한다", "웬만하면 혼자 버티다가 정말 힘들 때 말한다", "다른 일을 하면서 기분을 전환하려 한다"],
+    },
+    {
+      question: "누군가 나를 칭찬하면?",
+      answers: ["쑥스럽지만 속으로는 꽤 좋아한다", "바로 기분 좋아지고 표현도 잘한다", "어떤 부분을 좋게 봤는지 궁금하다", "크게 티 내지는 않지만 오래 기억한다", "장난스럽게 받아치면서 즐긴다"],
+    },
+    {
+      question: "계획이 갑자기 바뀌면?",
+      answers: ["내 페이스가 깨져 조금 불편하다", "같이 있는 사람들이 괜찮으면 상관없다", "새 상황에 맞게 바로 계획을 수정한다", "이유가 납득되면 받아들이는 편이다", "오히려 즉흥적인 상황이 재미있다"],
+    },
+    {
+      question: "인간관계에서 가장 중요한 것은?",
+      answers: ["서로의 영역을 존중하는 것", "자주 표현하고 정을 나누는 것", "서로에게 도움이 되고 잘 통하는 것", "믿음과 의리를 지키는 것", "같이 있을 때 즐거운 것"],
+    },
+    {
+      question: "경쟁 상황이 생기면 나는?",
+      answers: ["굳이 경쟁에 휘말리고 싶지 않다", "같이 잘되는 게 더 좋다", "이길 방법을 분석해본다", "시작했다면 쉽게 지고 싶지 않다", "승패보다 과정이 재미있으면 된다"],
+    },
+    {
+      question: "처음 보는 사람이 나를 오해한다면?",
+      answers: ["굳이 모든 오해를 풀 필요는 없다고 생각한다", "나를 제대로 알게 해주고 싶다", "필요하다면 설명하고 아니면 넘긴다", "가까운 사람만 나를 제대로 알면 된다고 생각한다", "시간이 지나면 알아서 알게 될 거라 생각한다"],
+    },
+    {
+      question: "내 성격에서 가장 강한 부분은?",
+      answers: ["독립심", "친화력", "눈치와 판단력", "책임감과 의리", "긍정적인 에너지"],
+    },
+    {
+      question: "사람들이 나에게 자주 하는 말과 가장 가까운 건?",
+      answers: ['"생각보다 자기 주관이 확실해."', '"사람들이랑 진짜 잘 지낸다."', '"은근히 사람이나 상황을 잘 본다."', '"한번 믿으면 진짜 오래 간다."', '"너랑 있으면 안 심심해."'],
+    },
+  ].map(({ question, answers }) => ({
+    question,
+    answers: answers.map((text, index) => ({
+      text,
+      stat: ["cat", "dog", "fox", "wolf", "otter"][index],
+      score: 1,
+    })),
+  })),
+  results: [
+    {
+      stat: "cat",
+      title: "혼자서도 잘 지내는 고양이형",
+      description: "당신은 사람을 싫어하기보다 나만의 시간과 공간을 중요하게 생각하는 편이에요. 누구에게나 쉽게 마음을 열기보다는 편하다고 느껴지는 사람에게 천천히 가까워지는 타입이에요.\n\n겉으로는 무심하거나 차분해 보여도 좋아하는 사람에게는 은근히 정이 많고 애정도 깊은 편이에요. 다만 지나친 간섭이나 내 영역을 침범하는 관계에서는 금방 피로를 느낄 수 있어요.\n\n내 감정과 취향이 비교적 분명해서 다른 사람에게 휩쓸리지 않는 것이 큰 장점이에요. 혼자 있는 편안함과 좋은 사람들과 함께하는 즐거움을 적당히 나눌 때 가장 나다운 모습을 유지할 수 있어요.",
+    },
+    {
+      stat: "dog",
+      title: "사람과 함께할수록 행복한 강아지형",
+      description: "당신은 사람들과 감정을 나누고 가까워지는 데 비교적 거리낌이 없는 편이에요. 좋아하는 사람에게 관심을 표현하고, 상대의 반응에서도 큰 즐거움을 느끼는 타입이에요.\n\n친구나 연인에게 먼저 다가가는 것도 잘하고 주변 분위기를 따뜻하게 만드는 힘이 있어요. 그래서 함께 있을 때 편하고 친근한 사람이라는 인상을 주기 쉬운 편이에요.\n\n다만 가까운 사람의 반응이 평소와 다르면 생각보다 쉽게 서운함을 느낄 수도 있어요. 다른 사람에게 주는 관심만큼 내 감정과 컨디션도 함께 챙기면 더 편안하게 관계를 이어갈 수 있어요.",
+    },
+    {
+      stat: "fox",
+      title: "상황을 빠르게 읽는 여우형",
+      description: "당신은 감정만 앞세우기보다 주변 상황과 사람의 반응을 빠르게 파악하는 편이에요. 어떤 상황에서 어떻게 행동해야 할지 자연스럽게 판단하고 적응하는 능력이 좋은 타입이에요.\n\n사람들과 잘 지내면서도 무조건 상대에게 맞추지는 않고 내게 필요한 거리도 적당히 유지해요. 문제가 생겼을 때도 감정적으로 반응하기보다 가장 현실적인 방법을 찾으려는 편이에요.\n\n겉으로는 여유로워 보여도 머릿속에서는 여러 상황을 동시에 생각하고 있을 수 있어요. 모든 일을 계산하려 하기보다 가끔은 내 감정이 원하는 방향을 따라가보는 것도 좋아요.",
+    },
+    {
+      stat: "wolf",
+      title: "쉽게 마음 주지 않지만 깊게 가는 늑대형",
+      description: "당신은 많은 사람과 넓게 어울리기보다 믿을 수 있는 사람과 깊은 관계를 만드는 편이에요. 한번 내 사람이라고 생각하면 쉽게 돌아서지 않고 오래 챙기는 타입이에요.\n\n겉으로는 독립적이고 단단해 보여도 가까운 관계에서는 책임감과 정이 상당히 큰 편이에요. 특히 신뢰와 의리를 중요하게 생각해서 한번 믿음이 깨지면 다시 마음을 열기 어려울 수도 있어요.\n\n사람을 쉽게 믿지 않는 만큼 한번 맺은 관계의 깊이는 큰 편이에요. 혼자 버티는 데 익숙하더라도 힘들 때는 믿는 사람에게 조금 기대도 괜찮아요.",
+    },
+    {
+      stat: "otter",
+      title: "어디서든 재미를 찾는 수달형",
+      description: "당신은 사람들과 함께 있을 때 자연스럽게 분위기를 부드럽게 만드는 편이에요. 장난이나 대화를 좋아하고 예상하지 못한 상황에서도 재미있는 부분을 잘 찾아내는 타입이에요.\n\n새로운 사람이나 환경에도 비교적 빠르게 적응하고 무거운 분위기를 오래 끌고 가지 않는 편이에요. 주변에서는 같이 있으면 편하고 기분이 좋아지는 사람으로 느낄 가능성이 커요.\n\n다만 힘든 상황에서도 웃어넘기다 보면 내 속마음을 제대로 표현하지 못할 때가 있을 수 있어요. 즐거운 모습뿐 아니라 힘들 때의 감정도 편하게 보여줄 수 있는 관계를 만들어두면 좋아요.",
+    },
+  ],
+};
+
+export default testData;
+```
+
+## breakup-data.js
+
+```javascript
+"use strict";
+
+const testData = {
+  id: 32,
+  url: "test.html?id=breakup",
+  title: "나는 이별 후 어떤 타입일까?",
+  description: "관계가 끝난 뒤 나는 어떻게 마음을 정리하는 사람일까?",
+  category: "연애/결혼",
+  showResultType: true,
+  stats: [
+    { id: "closure", title: "정리형" },
+    { id: "attachment", title: "미련형" },
+    { id: "transition", title: "전환형" },
+    { id: "reflection", title: "복기형" },
+  ],
+  questions: [
+    {
+      question: "헤어진 직후 가장 먼저 드는 생각은?",
+      answers: ["일단 혼자 정리할 시간이 필요하다", "다시 연락하고 싶은 마음이 든다", "친구를 만나거나 다른 일로 바쁘게 지내고 싶다", "왜 이렇게 됐는지 계속 생각하게 된다"],
+    },
+    {
+      question: "전 애인의 SNS는?",
+      answers: ["굳이 찾아보지 않는다", "가끔씩 들어가 본다", "아예 차단하거나 안 보이게 한다", "게시물이나 팔로우 변화를 유심히 보게 된다"],
+    },
+    {
+      question: "헤어진 뒤 친구들이 위로해준다면?",
+      answers: ["고맙지만 혼자 있는 시간이 더 필요하다", "전 애인 이야기를 계속 하게 된다", "친구들과 놀면서 기분을 바꾸고 싶다", "내가 뭘 잘못했는지 의견을 묻는다"],
+    },
+    {
+      question: "전 애인에게 연락이 오면?",
+      answers: ["필요한 말만 하고 다시 거리를 둔다", "바로 마음이 흔들릴 것 같다", "이미 끝난 관계라 크게 의미 두지 않는다", "왜 연락했는지 의도를 계속 생각한다"],
+    },
+    {
+      question: "둘이 자주 갔던 장소를 지나가게 된다면?",
+      answers: ["추억은 추억이라고 생각한다", "괜히 마음이 먹먹해진다", "다른 기억으로 덮고 싶어진다", "그때 있었던 일들이 하나씩 떠오른다"],
+    },
+    {
+      question: "헤어진 뒤 가장 힘든 건?",
+      answers: ["혼자 감정을 정리해야 하는 시간", "그 사람을 더 이상 볼 수 없다는 사실", "익숙했던 일상이 사라진 것", "내가 놓친 신호들이 계속 떠오르는 것"],
+    },
+    {
+      question: "주변에서 소개팅을 권한다면?",
+      answers: ["아직 준비가 안 됐으면 안 한다", "전 애인과 비교할 것 같아 망설인다", "새로운 사람을 만나보는 것도 괜찮다고 생각한다", "다음에는 같은 실수를 하지 않을 수 있을지 먼저 생각한다"],
+    },
+    {
+      question: "전 애인이 새 연애를 시작했다는 걸 알게 되면?",
+      answers: ["씁쓸하지만 받아들인다", "생각보다 많이 흔들릴 것 같다", "이제 정말 끝났다고 느끼고 내 생활에 집중한다", "언제부터 마음이 떠났던 건지 자꾸 생각한다"],
+    },
+    {
+      question: "헤어진 뒤 사진이나 선물은?",
+      answers: ["마음이 정리되면 천천히 정리한다", "쉽게 버리지 못하고 계속 가지고 있는다", "바로 치우거나 안 보이는 곳에 넣는다", "하나씩 보면서 그때 상황을 떠올린다"],
+    },
+    {
+      question: "이별의 이유가 명확하지 않다면?",
+      answers: ["더 이상 답을 찾지 않으려고 한다", "다시 연락해서라도 이유를 듣고 싶다", "이유보다 빨리 일상으로 돌아가고 싶다", "납득될 때까지 계속 이유를 생각한다"],
+    },
+    {
+      question: "이별 후 가장 많이 하는 행동은?",
+      answers: ["혼자 생각을 정리하고 쉬는 편이다", "예전 대화나 사진을 다시 보는 편이다", "운동, 취미, 약속 등으로 일정을 채운다", "관계의 시작부터 끝까지 머릿속으로 다시 돌아본다"],
+    },
+    {
+      question: "시간이 꽤 지난 뒤 전 애인이 생각난다면?",
+      answers: ["좋은 추억 정도로 남길 수 있다", "다시 만날 가능성을 한 번쯤 상상한다", "지금 내 생활이 더 중요하다고 느낀다", "그 관계에서 내가 배운 점을 떠올린다"],
+    },
+  ].map(({ question, answers }) => ({
+    question,
+    answers: answers.map((text, index) => ({
+      text,
+      stat: ["closure", "attachment", "transition", "reflection"][index],
+      score: 1,
+    })),
+  })),
+  results: [
+    {
+      stat: "closure",
+      title: "천천히 놓아주는 정리형",
+      description: "이별 직후에는 충분히 힘들어하지만, 감정을 억지로 밀어내기보다 스스로 정리할 시간을 가지는 타입이에요. 끝난 관계에 매달리기보다는 시간이 지나면서 자연스럽게 받아들이는 편이에요.\n\n추억을 전부 지우려고 하기보다 좋았던 기억과 아쉬웠던 부분을 함께 남겨두는 경우가 많아요. 그래서 시간이 흐르면 감정이 비교적 차분하게 정리되는 편이에요.\n\n다만 혼자 해결하려는 성향이 강하면 힘든 감정까지 오래 품고 있을 수 있어요. 힘든 시기에는 가까운 사람에게 마음을 나누는 것도 도움이 될 수 있어요.",
+    },
+    {
+      stat: "attachment",
+      title: "마음이 쉽게 끝나지 않는 미련형",
+      description: "관계가 끝났다는 사실을 머리로는 알아도 마음이 따라가는 데 시간이 필요한 타입이에요. 전 애인의 연락이나 SNS, 함께했던 추억에 비교적 쉽게 마음이 흔들리는 편이에요.\n\n좋았던 순간을 자주 떠올리고, 다시 만날 수 있는 가능성을 한 번쯤 생각하기도 해요. 그만큼 관계에 깊이 마음을 주고 쉽게 사람을 놓지 못하는 편이에요.\n\n하지만 지나간 관계를 계속 붙잡다 보면 지금의 일상까지 멈출 수 있어요. 다시 만날 가능성보다 지금 내가 잘 지내고 있는지를 먼저 챙겨보는 게 좋아요.",
+    },
+    {
+      stat: "transition",
+      title: "새로운 일상으로 빠르게 넘어가는 전환형",
+      description: "이별 후 힘든 감정에 오래 머무르기보다 새로운 일상으로 시선을 돌리는 타입이에요. 운동, 취미, 친구 약속처럼 다른 활동을 하면서 마음을 회복하는 편이에요.\n\n전 애인의 흔적을 빠르게 정리하거나 새로운 사람을 만나는 것에도 비교적 거부감이 적을 수 있어요. 과거보다 지금 해야 할 일과 앞으로의 생활에 집중하는 힘이 있는 편이에요.\n\n다만 너무 빨리 다른 일로 감정을 덮으면 나중에 뒤늦게 마음이 올라올 수도 있어요. 괜찮은 척하기보다 가끔은 속상했던 감정도 충분히 느껴보는 게 좋아요.",
+    },
+    {
+      stat: "reflection",
+      title: "이유를 알아야 마음이 놓이는 복기형",
+      description: "이별 후 감정보다 먼저 관계가 왜 끝났는지를 계속 생각하는 타입이에요. 상대의 말과 행동, 내가 했던 선택들을 하나씩 돌아보며 이유를 찾으려는 편이에요.\n\n덕분에 지난 관계에서 배울 점을 잘 찾아내고 같은 실수를 반복하지 않으려는 성향이 있어요. 다만 명확한 답이 없는 상황에서도 계속 이유를 찾으려 할 수 있어요.\n\n모든 이별에 완벽한 설명이 남는 것은 아니에요. 충분히 돌아봤다면 어느 순간에는 답을 찾는 것보다 관계를 놓아주는 것도 필요해요.",
+    },
+  ],
+};
+
+export default testData;
+```
+
+## compatible-partner-data.js
+
+```javascript
+"use strict";
+
+const testData = {
+  id: 33,
+  url: "test.html?id=compatible-partner",
+  title: "나랑 잘 맞는 연애 상대는?",
+  description: "어떤 사람과 만날 때 가장 편하고 오래 잘 맞을까?",
+  category: "연애/결혼",
+  showResultType: true,
+  stats: [
+    { id: "friend", title: "친구형" },
+    { id: "affectionate", title: "다정형" },
+    { id: "independent", title: "자유형" },
+    { id: "direct", title: "직진형" },
+  ],
+  questions: [
+    {
+      question: "연애할 때 가장 중요하다고 느끼는 건?",
+      answers: [
+        ["서로 편하게 대화할 수 있는 것", "friend"],
+        ["나를 세심하게 챙겨주는 것", "affectionate"],
+        ["각자의 생활을 존중해주는 것", "independent"],
+        ["확실하게 표현하고 이끌어주는 것", "direct"],
+      ],
+    },
+    {
+      question: "연락 스타일은 어떤 상대가 가장 편해?",
+      answers: [
+        ["하루 종일 자주 연락하는 사람", "affectionate"],
+        ["필요할 때 자연스럽게 연락하는 사람", "independent"],
+        ["장난도 많이 치고 대화가 재밌는 사람", "friend"],
+        ["먼저 연락하고 표현을 잘하는 사람", "direct"],
+      ],
+    },
+    {
+      question: "데이트할 때 가장 끌리는 모습은?",
+      answers: [
+        ["계획을 잘 세우고 적극적으로 이끄는 모습", "direct"],
+        ["별거 안 해도 같이 있으면 편한 모습", "friend"],
+        ["내가 불편한 걸 먼저 알아채는 모습", "affectionate"],
+        ["서로 하고 싶은 걸 각자 존중해주는 모습", "independent"],
+      ],
+    },
+    {
+      question: "내가 힘든 일이 있을 때 바라는 반응은?",
+      answers: [
+        ["옆에서 따뜻하게 위로해주는 것", "affectionate"],
+        ["해결할 방법을 같이 찾아주는 것", "direct"],
+        ["평소처럼 편하게 있어주는 것", "friend"],
+        ["내가 먼저 말할 때까지 기다려주는 것", "independent"],
+      ],
+    },
+    {
+      question: "연애 중 혼자만의 시간이 필요할 때 상대가?",
+      answers: [
+        ["자연스럽게 이해해줬으면 좋겠다", "independent"],
+        ["그래도 자주 연락하며 챙겨줬으면 좋겠다", "affectionate"],
+        ["같이 있어도 각자 할 일을 할 수 있으면 좋겠다", "friend"],
+        ["내가 거리 두는 걸 바로 알아채고 다가와줬으면 좋겠다", "direct"],
+      ],
+    },
+    {
+      question: "다툼이 생겼을 때 가장 잘 맞을 것 같은 상대는?",
+      answers: [
+        ["바로 대화해서 끝내려는 사람", "direct"],
+        ["감정이 가라앉을 때까지 기다려주는 사람", "independent"],
+        ["분위기를 풀면서 자연스럽게 화해하는 사람", "friend"],
+        ["내 기분을 먼저 살피고 달래주는 사람", "affectionate"],
+      ],
+    },
+    {
+      question: "연애가 오래됐을 때 가장 원하는 관계는?",
+      answers: [
+        ["친구처럼 장난치고 편한 관계", "friend"],
+        ["서로 꾸준히 표현하고 챙겨주는 관계", "affectionate"],
+        ["각자 자기 삶도 잘 유지하는 관계", "independent"],
+        ["익숙해져도 설렘과 표현이 계속 있는 관계", "direct"],
+      ],
+    },
+    {
+      question: "상대의 어떤 말에 가장 마음이 놓일까?",
+      answers: [
+        ['"너 하고 싶은 대로 해. 난 믿어."', "independent"],
+        ['"힘들면 나한테 기대도 돼."', "affectionate"],
+        ['"우리 그냥 편하게 얘기하자."', "friend"],
+        ['"나는 너 좋아하는 거 확실해."', "direct"],
+      ],
+    },
+    {
+      question: "상대가 친구들과 자주 약속을 잡는다면?",
+      answers: [
+        ["서로 각자 생활이 있으니 괜찮다", "independent"],
+        ["나와 보내는 시간도 충분하면 괜찮다", "friend"],
+        ["약속이 있어도 연락은 잘해줬으면 한다", "affectionate"],
+        ["나와의 약속을 우선해주는 사람이 좋다", "direct"],
+      ],
+    },
+    {
+      question: "썸을 탈 때 가장 끌리는 상대는?",
+      answers: [
+        ["나한테 호감을 확실하게 표현하는 사람", "direct"],
+        ["천천히 가까워져도 편안한 사람", "friend"],
+        ["사소한 부분까지 기억해주는 사람", "affectionate"],
+        ["부담 주지 않고 자연스럽게 다가오는 사람", "independent"],
+      ],
+    },
+    {
+      question: "연인이 새로운 취미를 시작한다고 하면?",
+      answers: [
+        ["서로 각자 취미를 즐길 수 있어서 좋다", "independent"],
+        ["같이 해보자고 먼저 제안하는 사람이 좋다", "friend"],
+        ["잘하고 있는지 관심 가져주는 사람이 좋다", "affectionate"],
+        ["적극적으로 응원하고 밀어주는 사람이 좋다", "direct"],
+      ],
+    },
+    {
+      question: "내가 사랑받고 있다고 가장 크게 느끼는 순간은?",
+      answers: [
+        ["상대가 내 선택과 생활을 존중해줄 때", "independent"],
+        ["말하지 않아도 내 상태를 알아봐줄 때", "affectionate"],
+        ["같이 웃고 떠드는 시간이 많을 때", "friend"],
+        ["좋아한다는 표현을 아끼지 않을 때", "direct"],
+      ],
+    },
+  ].map(({ question, answers }) => ({
+    question,
+    answers: answers.map(([text, stat]) => ({ text, stat, score: 1 })),
+  })),
+  results: [
+    {
+      stat: "friend",
+      title: "친구처럼 편한 사람이 잘 맞는 편",
+      description: "당신은 연애에서도 편안한 대화와 자연스러운 분위기를 중요하게 느끼는 편이에요. 같이 장난치고 웃을 수 있고, 특별한 일이 없어도 함께 있는 시간이 즐거운 사람과 잘 맞아요.\n\n서로 너무 긴장하거나 눈치를 보는 관계보다 친구처럼 솔직하고 편한 관계에서 마음이 오래가는 편이에요. 연애를 하더라도 억지로 분위기를 만들기보다 일상 자체를 함께 즐길 수 있는 사람이 잘 맞을 가능성이 커요.\n\n다만 너무 편해지면 연애적인 표현이 부족해질 수 있어요. 편안함 속에서도 좋아하는 마음을 종종 표현해주는 상대라면 더 잘 맞을 수 있어요.",
+    },
+    {
+      stat: "affectionate",
+      title: "세심하게 챙겨주는 사람이 잘 맞는 편",
+      description: "당신은 상대의 작은 관심과 배려에서 사랑을 크게 느끼는 편이에요. 내가 했던 말을 기억해주거나 힘들어 보일 때 먼저 챙겨주는 사람에게 마음이 편해질 가능성이 커요.\n\n화려한 표현보다 꾸준히 관심을 보여주고 내 감정을 세심하게 살펴주는 상대와 잘 맞는 편이에요. 연애 중에도 서로의 하루를 자연스럽게 공유하고 마음을 표현하는 관계를 선호할 수 있어요.\n\n다만 상대의 표현이 적으면 사랑이 부족하다고 느낄 수도 있어요. 말과 행동으로 애정을 꾸준히 보여주는 사람이라면 안정적인 관계를 만들기 좋아요.",
+    },
+    {
+      stat: "independent",
+      title: "서로의 생활을 존중해주는 사람이 잘 맞는 편",
+      description: "당신은 연애를 해도 각자의 시간과 생활을 유지할 수 있는 관계에서 편안함을 느끼는 편이에요. 연락이나 만남을 지나치게 요구하기보다 서로 믿고 각자의 일을 할 수 있는 사람이 잘 맞아요.\n\n상대가 내 선택을 존중해주고 혼자 있는 시간도 자연스럽게 이해해줄 때 관계에 대한 만족도가 높아질 수 있어요. 서로 의존하기보다 각자의 삶을 잘 살아가면서 함께할 때 더 좋은 관계가 된다고 느끼는 편이에요.\n\n다만 표현이 너무 적으면 서로 마음을 오해할 수 있어요. 자유를 존중하면서도 필요한 순간에는 확실하게 마음을 표현하는 사람이 특히 잘 맞아요.",
+    },
+    {
+      stat: "direct",
+      title: "표현이 확실한 사람이 잘 맞는 편",
+      description: "당신은 애매한 태도보다 좋아하는 마음을 분명하게 표현하는 사람에게 편안함을 느끼는 편이에요. 먼저 연락하고 만나자고 제안하거나, 마음을 솔직하게 말해주는 상대와 잘 맞을 가능성이 커요.\n\n관계가 애매하게 이어지는 것보다 서로의 마음과 방향이 확실한 연애를 선호하는 편이에요. 갈등이 생겨도 피하기보다 바로 대화하고 해결하려는 상대에게 신뢰를 느낄 수 있어요.\n\n다만 상대의 적극성이 지나치면 간섭처럼 느껴질 수도 있어요. 표현은 확실하지만 내 의견과 선택도 존중해주는 사람이라면 가장 잘 맞을 수 있어요.",
+    },
+  ],
+};
+
+export default testData;
 ```
 
 ## cutoff-data.js
@@ -768,10 +1724,11 @@ const testData = {
 
 const testData = {
   id: 15,
-  url: "cutoff-test.html",
+  url: "test.html?id=cutoff",
   title: "나는 사람을 얼마나 빨리 손절하는 편일까?",
   description: "인간관계에서 나는 참는 편일까, 빠르게 정리하는 편일까?",
   category: "친구·인간관계·사회생활",
+  resultLabel: "당신의 손절 지수는",
   shareDescription: "내 인간관계 손절 성향 결과를 확인해보세요.",
   questions: [
     {
@@ -822,135 +1779,27 @@ const testData = {
     {
       min: 10, max: 16,
       title: "웬만하면 관계를 지키는 편",
-      description: "사람에게 쉽게 정을 끊지 않는 타입. 상대의 상황을 이해하려 하고 웬만한 갈등은 넘기는 편이야. 다만 계속 참기만 하면 혼자 상처가 쌓일 수 있음.",
+      description: "사람에게 쉽게 정을 끊지 않는 타입이에요. 상대의 상황을 이해하려 하고 웬만한 갈등은 넘기는 편이에요. 다만 계속 참기만 하면 혼자 상처가 쌓일 수 있어요.\n\n상대의 실수 뒤에도 사정이 있었을 거라고 생각하며 대화할 여지를 남기는 편이에요. 한 번의 갈등보다 함께 쌓아온 시간을 중요하게 보기에 관계를 회복할 기회가 많은 타입이에요.\n\n이해하는 마음이 나의 불편함을 계속 덮는 방향으로만 가지 않도록 해주세요. 같은 일이 반복된다면 무엇이 힘든지 구체적으로 말하고, 내가 받아들일 수 있는 선도 정해보세요.",
     },
     {
       min: 17, max: 24,
       title: "충분히 고민하고 정리하는 편",
-      description: "한 번의 실수로 바로 관계를 끊지는 않지만 반복되는 문제는 그냥 넘기지 않는 편. 상대에게 기회를 주면서도 내 기준은 지키는 타입.",
+      description: "한 번의 실수로 바로 관계를 끊지는 않지만 반복되는 문제는 그냥 넘기지 않는 편이에요. 상대에게 기회를 주면서도 내 기준은 지키는 타입이에요.\n\n상대가 사과했는지뿐 아니라 이후에 행동이 달라지는지도 살피는 편이에요. 바로 끊거나 무조건 참는 대신 상황을 확인하고 관계의 거리를 조절하려는 점이 장점이에요.\n\n결정을 오래 미루느라 나만 지치고 있다면 기준을 조금 더 분명히 해보세요. 어떤 변화가 필요하고 어디까지 기다릴 수 있는지 정하면 관계를 지킬 때도 정리할 때도 덜 흔들릴 수 있어요.",
     },
     {
       min: 25, max: 32,
       title: "마음이 멀어지는 속도가 빠른 편",
-      description: "한번 신뢰가 깨지거나 실망하면 이전처럼 지내기 어려운 편. 겉으로는 괜찮아 보여도 속으로 이미 거리를 두고 있을 가능성이 큼.",
+      description: "한번 신뢰가 깨지거나 실망하면 이전처럼 지내기 어려운 편이에요. 겉으로는 괜찮아 보여도 속으로 이미 거리를 두고 있을 가능성이 커요.\n\n겉으로는 평소처럼 지내더라도 속마음에서는 연락이나 기대를 먼저 줄일 수 있어요. 다시 친해지려면 말뿐 아니라 믿음을 회복할 행동이 필요하다고 느끼는 편이에요.\n\n상대가 내가 멀어진 이유를 모를 수도 있어요. 아직 관계를 이어가고 싶은 마음이 있다면 불편했던 일을 한 번 설명해보세요. 오해인지 반복되는 문제인지 확인하는 데 도움이 돼요.",
     },
     {
       min: 33, max: 40,
       title: "손절 결정이 빠른 편",
-      description: "관계에서 선을 넘었다고 느끼면 미련 없이 정리하는 타입. 인간관계에 쓸 에너지를 아끼는 장점도 있지만, 순간적인 감정으로 좋은 관계까지 놓치지 않는지는 한 번 생각해볼 필요가 있음.",
+      description: "관계에서 선을 넘었다고 느끼면 미련 없이 정리하는 타입이에요. 인간관계에 쓸 에너지를 아끼는 장점도 있지만, 순간적인 감정으로 좋은 관계까지 놓치지 않는지는 한 번 생각해볼 필요가 있어요.\n\n관계에서 중요한 기준이 분명해 선을 넘었다고 느끼면 빠르게 거리를 두는 편이에요. 억지로 친밀함을 이어가며 에너지를 쓰지 않는다는 점에서는 스스로를 보호하는 힘이 있어요.\n\n다만 감정이 크게 올라온 순간에는 사실과 해석을 잠깐 나눠보세요. 필요한 거리를 먼저 확보한 뒤 판단해도 늦지 않아요. 대화의 여지가 있는 관계와 반복되는 상처를 구분해보면 좋아요.",
     },
   ],
 };
-```
 
-## cutoff-test.html
-
-```html
-<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <script src="analytics.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="ko_KR">
-  <meta property="og:site_name" content="Today's Choice">
-  <meta property="og:title" content="나는 사람을 얼마나 빨리 손절하는 편일까? | Today's Choice">
-  <meta property="og:description" content="인간관계에서 나는 참는 편일까, 빠르게 정리하는 편일까?">
-  <meta property="og:url" content="https://todayschoice.kr/cutoff-test.html">
-  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
-  <meta property="og:image:width" content="1731">
-  <meta property="og:image:height" content="909">
-  <meta property="og:image:alt" content="Today's choice">
-  <meta property="og:image:type" content="image/png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="나는 사람을 얼마나 빨리 손절하는 편일까? | Today's Choice">
-  <meta name="twitter:description" content="인간관계에서 나는 참는 편일까, 빠르게 정리하는 편일까?">
-  <meta name="twitter:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
-  <meta name="twitter:image:alt" content="Today's choice">
-  <meta name="description" content="인간관계에서 나는 참는 편일까, 빠르게 정리하는 편일까?">
-  <title>나는 사람을 얼마나 빨리 손절하는 편일까? | Today's Choice</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="test.css">
-  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.8.2/kakao.min.js" integrity="sha384-zt/G7/KfaRQ9dT/QIkS0ujMtzouJqzuSJcXVQu50x0rl/+mD1dc70AeOejVbMD9E" crossorigin="anonymous" defer></script>
-  <script src="cutoff-data.js" defer></script>
-  <script src="script.js" defer></script>
-  <script src="test-runner.js" defer></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2401413706072374"
-       crossorigin="anonymous"></script>
-</head>
-<body class="test-page">
-  <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
-    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="7.3"/><path d="m16 16 5 5"/></symbol>
-    <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M20.8 4.7a5.5 5.5 0 0 0-7.8 0L12 5.8l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.5a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
-    <symbol id="icon-chat" viewBox="0 0 24 24"><path d="M21 11.5a9 9 0 0 1-9 8.5 10 10 0 0 1-4-.8L3 21l1.7-4.7A8 8 0 0 1 3 11.5a9 9 0 0 1 18 0Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></symbol>
-    <symbol id="icon-ring" viewBox="0 0 24 24"><circle cx="12" cy="14" r="7.5"/><path d="m9 3 3 3 3-3-1-2h-4l-1 2Z"/></symbol>
-    <symbol id="icon-people" viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 4a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v3"/></symbol>
-    <symbol id="icon-flame" viewBox="0 0 24 24"><path d="M12 3c0 4-5 6-5 11a5 5 0 0 0 10 0c0-3-2-5-3-7 0 3-1 4-2 5 0-4 2-6 0-9Z"/></symbol>
-    <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M21 14A9.5 9.5 0 0 1 10 3a9.5 9.5 0 1 0 11 11Z"/></symbol>
-    <symbol id="icon-leaf" viewBox="0 0 24 24"><path d="M12 22V11M12 15C5 16 2 11 3 7c6-1 9 3 9 8Zm0-5c0-6 4-9 9-8 1 6-3 10-9 8Z"/></symbol>
-    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
-  </svg>
-  <a class="skip-link" href="#main">본문 바로가기</a>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="index.html#home" aria-label="오늘의 초이스 홈">Today's choice</a>
-      <nav class="main-nav" aria-label="주 메뉴">
-        <a class="nav-link" href="index.html#home">홈</a>
-        <a class="nav-link" href="index.html#new-tests">오늘의 테스트</a>
-        <a class="nav-link" href="index.html#popular">전체 테스트</a>
-        <a class="nav-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">Instagram</a>
-      </nav>
-      <button class="icon-button search-toggle" type="button" aria-label="테스트 검색" aria-haspopup="dialog"><svg class="icon"><use href="#icon-search"/></svg></button>
-    </div>
-  </header>
-  <main id="main" data-test-runner>
-    <section class="test-panel" data-screen="start" aria-labelledby="test-title">
-      <p class="test-category" data-role="category"></p>
-      <h1 id="test-title" data-role="title" data-focus tabindex="-1"></h1>
-      <p class="test-description" data-role="description"></p>
-      <p class="test-count" data-role="count"></p>
-      <button class="primary-button" type="button" data-role="start">테스트 시작하기</button>
-    </section>
-    <section class="test-panel" data-screen="question" aria-labelledby="question-title" hidden>
-      <div class="question-top">
-        <button class="test-back" type="button" data-role="back">← 뒤로가기</button>
-        <span class="test-position" data-role="position"></span>
-      </div>
-      <progress class="test-progress" data-role="progress" value="0" max="10" aria-label="테스트 진행률"></progress>
-      <h2 class="question-title" id="question-title" data-role="question" data-focus tabindex="-1"></h2>
-      <div class="answer-list" data-role="answers" role="group" aria-labelledby="question-title"></div>
-    </section>
-    <section class="test-panel test-result" data-screen="result" aria-labelledby="result-title" hidden>
-      <p class="result-label">당신의 손절 지수는</p>
-      <p class="result-score"><span data-role="score"></span><small> / <span data-role="max-score"></span>점</small></p>
-      <h2 class="result-title" id="result-title" data-role="result-title" data-focus tabindex="-1"></h2>
-      <p class="result-description" data-role="result-description"></p>
-      <div class="result-actions">
-        <button class="secondary-button" type="button" data-role="restart">다시하기</button>
-        <a class="secondary-button" href="index.html#category-tests">다른 테스트 보기</a>
-      </div>
-      <button class="primary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
-      <p class="kakao-share-status" id="kakao-share-status" role="status" hidden></p>
-      <p class="test-disclaimer">본 테스트는 재미를 위한 콘텐츠이며 전문적인 심리 진단이 아닙니다.</p>
-    </section>
-    <noscript><p>테스트를 진행하려면 브라우저에서 JavaScript를 활성화해 주세요.</p></noscript>
-  </main>
-  <footer class="site-footer" id="about">
-    <div class="container footer-inner">
-      <a class="instagram-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        <span>@choice_zip_</span>
-      </a>
-    </div>
-  </footer>
-  <dialog id="search-dialog" class="modal" aria-labelledby="search-title"><div class="modal-heading"><h2 id="search-title">어떤 테스트를 찾으세요?</h2><button class="icon-button" type="button" data-close aria-label="검색 닫기"><svg class="icon"><use href="#icon-close"/></svg></button></div><label class="search-field"><svg class="icon"><use href="#icon-search"/></svg><input id="search-input" type="search" placeholder="친구, 인간관계, 손절…" aria-label="테스트 검색어" autocomplete="off"></label><p id="search-count" class="search-count" aria-live="polite"></p><div id="search-results" class="search-results"></div></dialog>
-</body>
-</html>
+export default testData;
 ```
 
 ## difficult-people-data.js
@@ -960,10 +1809,11 @@ const testData = {
 
 const testData = {
   id: 29,
-  url: "difficult-people-test.html",
+  url: "test.html?id=difficult-people",
   title: "나는 싫은 사람과도 잘 지낼 수 있을까?",
   description: "감정은 감정이고 사회생활은 사회생활일까?",
   category: "친구·인간관계·사회생활",
+  resultLabel: "당신의 불편한 관계 대처 지수는",
   shareDescription: "내 싫은 사람 대처 테스트 결과를 확인해보세요.",
   questions: [
     {
@@ -1014,135 +1864,133 @@ const testData = {
     {
       min: 10, max: 16,
       title: "프로 사회생활형",
-      description: "싫은 감정이 있어도 필요한 관계는 무난하게 유지하는 편이야. 감정과 상황을 비교적 잘 분리하고, 상대를 좋아하지 않아도 예의는 지키는 타입.",
+      description: "싫은 감정이 있어도 필요한 관계는 무난하게 유지하는 편이에요. 감정과 상황을 비교적 잘 분리하고, 상대를 좋아하지 않아도 예의는 지키는 타입이에요.\n\n개인적인 호감과 필요한 협력을 구분해서 상대의 장점이나 성과를 인정할 수 있어요. 불편한 사람이 있어도 자리에 필요한 태도를 유지해 팀의 흐름을 크게 흔들지 않는 편이에요.\n\n그렇다고 모든 불편함을 참아야 하는 것은 아니에요. 무례한 행동이나 반복되는 문제가 있다면 업무 기준과 내 경계를 분명히 말해보세요. 예의를 지키면서도 나를 보호할 수 있어요.",
     },
     {
       min: 17, max: 24,
       title: "티는 안 내는 편",
-      description: "불편한 사람과도 웬만하면 문제없이 지내는 편. 다만 속으로는 어느 정도 거리 두기를 하면서 관계를 관리하는 타입이야.",
+      description: "불편한 사람과도 웬만하면 문제없이 지내는 편이에요. 다만 속으로는 어느 정도 거리 두기를 하면서 관계를 관리하는 타입이에요.\n\n좋아하지 않는 사람에게도 기본적인 인사와 협조는 할 수 있지만 마음까지 열지는 않는 편이에요. 필요한 만큼만 가까워지는 방식으로 불필요한 갈등을 줄이는 타입이에요.\n\n계속 웃으며 넘기다 보면 속으로 피로가 쌓일 수 있어요. 불편함이 커질 때는 대화의 범위나 함께하는 시간을 조절하고, 꼭 필요한 문제는 차분하게 표현해보세요.",
     },
     {
       min: 25, max: 32,
       title: "불편함이 꽤 드러나는 편",
-      description: "싫은 사람과 계속 맞춰 지내는 걸 꽤 힘들어하는 편이야. 필요한 상황에서는 참지만 오래 함께하면 스트레스가 쌓일 가능성이 큼.",
+      description: "싫은 사람과 계속 맞춰 지내는 걸 꽤 힘들어하는 편이에요. 필요한 상황에서는 참지만 오래 함께하면 스트레스가 쌓일 가능성이 커요.\n\n좋아하지 않는 사람과 오래 함께하면 반응이 짧아지거나 표정에 피로가 나타날 수 있어요. 감정을 숨기는 데 에너지가 많이 들어 필요한 일 외에는 접점을 줄이고 싶어질 수 있어요.\n\n상대와 친해지려 애쓰기보다 필요한 협력의 범위를 정해보세요. 요청과 답변을 구체적으로 나누면 감정적인 부담을 줄일 수 있어요. 자리를 벗어난 뒤에는 긴장을 풀 시간도 챙겨주세요.",
     },
     {
       min: 33, max: 40,
       title: "싫으면 거리 두는 타입",
-      description: "한번 불편하다고 느끼면 굳이 관계를 유지하려 하지 않는 편. 감정을 숨기기보다 가능한 한 접점을 줄이는 쪽을 선택하는 타입이야.",
+      description: "한번 불편하다고 느끼면 굳이 관계를 유지하려 하지 않는 편이에요. 감정을 숨기기보다 가능한 한 접점을 줄이는 쪽을 선택하는 타입이에요.\n\n한번 불편해진 사람과 억지로 친밀한 모습을 유지하기보다 접점을 줄이는 편이에요. 내 감정을 분명히 아는 장점이 있지만 함께해야 하는 상황에서는 피로가 더 크게 느껴질 수 있어요.\n\n관계를 좋게 만드는 것과 필요한 일을 함께하는 것은 다른 목표예요. 꼭 해야 하는 대화는 짧고 구체적으로 하고, 반복되는 문제는 기록하거나 적절한 도움을 요청해보세요.",
     },
   ],
 };
+
+export default testData;
 ```
 
-## difficult-people-test.html
+## falling-in-love-data.js
 
-```html
-<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <script src="analytics.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="ko_KR">
-  <meta property="og:site_name" content="Today's Choice">
-  <meta property="og:title" content="나는 싫은 사람과도 잘 지낼 수 있을까? | Today's Choice">
-  <meta property="og:description" content="감정은 감정이고 사회생활은 사회생활일까?">
-  <meta property="og:url" content="https://todayschoice.kr/difficult-people-test.html">
-  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
-  <meta property="og:image:width" content="1731">
-  <meta property="og:image:height" content="909">
-  <meta property="og:image:alt" content="Today's choice">
-  <meta property="og:image:type" content="image/png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="나는 싫은 사람과도 잘 지낼 수 있을까? | Today's Choice">
-  <meta name="twitter:description" content="감정은 감정이고 사회생활은 사회생활일까?">
-  <meta name="twitter:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
-  <meta name="twitter:image:alt" content="Today's choice">
-  <meta name="description" content="감정은 감정이고 사회생활은 사회생활일까?">
-  <title>나는 싫은 사람과도 잘 지낼 수 있을까? | Today's Choice</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="test.css">
-  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.8.2/kakao.min.js" integrity="sha384-zt/G7/KfaRQ9dT/QIkS0ujMtzouJqzuSJcXVQu50x0rl/+mD1dc70AeOejVbMD9E" crossorigin="anonymous" defer></script>
-  <script src="difficult-people-data.js" defer></script>
-  <script src="script.js" defer></script>
-  <script src="test-runner.js" defer></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2401413706072374"
-       crossorigin="anonymous"></script>
-</head>
-<body class="test-page">
-  <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
-    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="7.3"/><path d="m16 16 5 5"/></symbol>
-    <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M20.8 4.7a5.5 5.5 0 0 0-7.8 0L12 5.8l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.5a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
-    <symbol id="icon-chat" viewBox="0 0 24 24"><path d="M21 11.5a9 9 0 0 1-9 8.5 10 10 0 0 1-4-.8L3 21l1.7-4.7A8 8 0 0 1 3 11.5a9 9 0 0 1 18 0Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></symbol>
-    <symbol id="icon-ring" viewBox="0 0 24 24"><circle cx="12" cy="14" r="7.5"/><path d="m9 3 3 3 3-3-1-2h-4l-1 2Z"/></symbol>
-    <symbol id="icon-people" viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 4a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v3"/></symbol>
-    <symbol id="icon-flame" viewBox="0 0 24 24"><path d="M12 3c0 4-5 6-5 11a5 5 0 0 0 10 0c0-3-2-5-3-7 0 3-1 4-2 5 0-4 2-6 0-9Z"/></symbol>
-    <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M21 14A9.5 9.5 0 0 1 10 3a9.5 9.5 0 1 0 11 11Z"/></symbol>
-    <symbol id="icon-leaf" viewBox="0 0 24 24"><path d="M12 22V11M12 15C5 16 2 11 3 7c6-1 9 3 9 8Zm0-5c0-6 4-9 9-8 1 6-3 10-9 8Z"/></symbol>
-    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
-  </svg>
-  <a class="skip-link" href="#main">본문 바로가기</a>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="index.html#home" aria-label="오늘의 초이스 홈">Today's choice</a>
-      <nav class="main-nav" aria-label="주 메뉴">
-        <a class="nav-link" href="index.html#home">홈</a>
-        <a class="nav-link" href="index.html#new-tests">오늘의 테스트</a>
-        <a class="nav-link" href="index.html#popular">전체 테스트</a>
-        <a class="nav-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">Instagram</a>
-      </nav>
-      <button class="icon-button search-toggle" type="button" aria-label="테스트 검색" aria-haspopup="dialog"><svg class="icon"><use href="#icon-search"/></svg></button>
-    </div>
-  </header>
-  <main id="main" data-test-runner>
-    <section class="test-panel" data-screen="start" aria-labelledby="test-title">
-      <p class="test-category" data-role="category"></p>
-      <h1 id="test-title" data-role="title" data-focus tabindex="-1"></h1>
-      <p class="test-description" data-role="description"></p>
-      <p class="test-count" data-role="count"></p>
-      <button class="primary-button" type="button" data-role="start">테스트 시작하기</button>
-    </section>
-    <section class="test-panel" data-screen="question" aria-labelledby="question-title" hidden>
-      <div class="question-top">
-        <button class="test-back" type="button" data-role="back">← 뒤로가기</button>
-        <span class="test-position" data-role="position"></span>
-      </div>
-      <progress class="test-progress" data-role="progress" value="0" max="10" aria-label="테스트 진행률"></progress>
-      <h2 class="question-title" id="question-title" data-role="question" data-focus tabindex="-1"></h2>
-      <div class="answer-list" data-role="answers" role="group" aria-labelledby="question-title"></div>
-    </section>
-    <section class="test-panel test-result" data-screen="result" aria-labelledby="result-title" hidden>
-      <p class="result-label">당신의 불편한 관계 대처 지수는</p>
-      <p class="result-score"><span data-role="score"></span><small> / <span data-role="max-score"></span>점</small></p>
-      <h2 class="result-title" id="result-title" data-role="result-title" data-focus tabindex="-1"></h2>
-      <p class="result-description" data-role="result-description"></p>
-      <div class="result-actions">
-        <button class="secondary-button" type="button" data-role="restart">다시하기</button>
-        <a class="secondary-button" href="index.html#category-tests">다른 테스트 보기</a>
-      </div>
-      <button class="primary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
-      <p class="kakao-share-status" id="kakao-share-status" role="status" hidden></p>
-      <p class="test-disclaimer">본 테스트는 재미를 위한 콘텐츠이며 전문적인 심리 진단이 아닙니다.</p>
-    </section>
-    <noscript><p>테스트를 진행하려면 브라우저에서 JavaScript를 활성화해 주세요.</p></noscript>
-  </main>
-  <footer class="site-footer" id="about">
-    <div class="container footer-inner">
-      <a class="instagram-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        <span>@choice_zip_</span>
-      </a>
-    </div>
-  </footer>
-  <dialog id="search-dialog" class="modal" aria-labelledby="search-title"><div class="modal-heading"><h2 id="search-title">어떤 테스트를 찾으세요?</h2><button class="icon-button" type="button" data-close aria-label="검색 닫기"><svg class="icon"><use href="#icon-close"/></svg></button></div><label class="search-field"><svg class="icon"><use href="#icon-search"/></svg><input id="search-input" type="search" placeholder="사회생활, 관계, 적응…" aria-label="테스트 검색어" autocomplete="off"></label><p id="search-count" class="search-count" aria-live="polite"></p><div id="search-results" class="search-results"></div></dialog>
-</body>
-</html>
+```javascript
+"use strict";
+
+const testData = {
+  id: 31,
+  url: "test.html?id=falling-in-love",
+  title: "내가 사랑에 빠지는 순간은?",
+  description: "나는 어떤 순간에 상대에게 마음이 움직이는 사람일까?",
+  category: "연애/결혼",
+  resultLabel: "당신이 사랑에 빠지는 순간은",
+  showResultType: true,
+  showStats: false,
+  resultCard: true,
+  answerGuide: "각 답변은 해당 성향에 1점씩 더해져요",
+  stats: [
+    { id: "excitement", title: "설렘형" },
+    { id: "stability", title: "안정형" },
+    { id: "care", title: "배려형" },
+    { id: "attraction", title: "끌림형" },
+  ],
+  questions: [
+    {
+      question: "처음 만난 사람에게 가장 먼저 마음이 가는 순간은?",
+      answers: ["대화가 예상보다 너무 잘 통할 때", "같이 있어도 전혀 어색하지 않을 때", "작은 걸 자연스럽게 챙겨줄 때", "외모나 분위기가 딱 내 취향일 때"],
+    },
+    {
+      question: "연락하다가 가장 호감이 커지는 순간은?",
+      answers: ["티키타카가 잘 맞아서 계속 웃게 될 때", "연락 텀이 달라도 편안하게 이어질 때", "내가 전에 한 말을 기억하고 물어봐줄 때", "평범한 말도 이상하게 설레게 느껴질 때"],
+    },
+    {
+      question: "데이트 중 가장 마음이 움직이는 순간은?",
+      answers: ["예상 못 한 행동으로 두근거리게 할 때", "오래 같이 있어도 편하고 자연스러울 때", "내가 불편한 걸 먼저 알아차려줄 때", "걷다가 문득 옆모습이 너무 좋아 보일 때"],
+    },
+    {
+      question: "상대가 어떤 모습을 보일 때 더 끌릴까?",
+      answers: ["장난스럽고 예상 못 한 매력이 있을 때", "감정 기복 없이 차분하고 믿음직할 때", "다른 사람에게도 기본적으로 친절할 때", "자기만의 스타일과 분위기가 있을 때"],
+    },
+    {
+      question: "상대가 나를 좋아하는 것 같다고 느껴지는 순간 중 가장 좋은 건?",
+      answers: ["나한테만 유독 장난치고 반응이 다를 때", "꾸준히 연락하고 약속을 지킬 때", "내가 힘들어 보이면 먼저 챙겨줄 때", "나를 보는 눈빛이나 분위기가 달라질 때"],
+    },
+    {
+      question: "친구였던 사람에게 갑자기 마음이 생긴다면 가장 가능성 높은 계기는?",
+      answers: ["어느 날 갑자기 이성적으로 느껴지는 순간", "힘든 일을 같이 겪으면서 더 가까워졌을 때", "내가 힘들 때 진심으로 옆에 있어줬을 때", "평소와 다른 모습이 갑자기 매력적으로 보였을 때"],
+    },
+    {
+      question: "상대와 대화할 때 가장 호감이 커지는 포인트는?",
+      answers: ["웃음 코드와 말센스가 잘 맞을 때", "내 말을 편하게 받아주고 대화가 안정적일 때", "내 말에 집중하고 공감해줄 때", "말투나 목소리 자체가 매력적으로 느껴질 때"],
+    },
+    {
+      question: "상대에게 확 마음이 기울 수 있는 행동은?",
+      answers: ["갑자기 보고 싶다고 솔직하게 표현할 때", "항상 한결같은 태도를 보여줄 때", "사소한 걸 기억해서 챙겨줄 때", "예상 못 한 순간 멋있거나 예뻐 보일 때"],
+    },
+    {
+      question: "누군가에게 끌리고 있을 때 나는 무엇을 가장 많이 생각할까?",
+      answers: ["다음엔 어떤 일이 생길지 기대된다", "이 사람과 오래 만나도 편할 것 같다", "이 사람은 나를 소중하게 대해줄 것 같다", "그냥 자꾸 보고 싶고 눈이 간다"],
+    },
+    {
+      question: "상대의 단점을 발견했을 때도 마음이 계속 커질 수 있는 경우는?",
+      answers: ["단점보다 같이 있을 때의 재미가 더 클 때", "단점이 있어도 믿을 수 있는 사람일 때", "기본적으로 따뜻하고 좋은 사람일 때", "단점까지 이상하게 매력적으로 느껴질 때"],
+    },
+    {
+      question: "누군가와 썸을 탈 때 가장 중요한 감정은?",
+      answers: ["두근거림", "편안함", "따뜻함", "강한 끌림"],
+    },
+    {
+      question: "결국 내가 사랑에 빠졌다고 느끼게 되는 순간은?",
+      answers: ["그 사람 때문에 평범한 하루가 특별해질 때", "그 사람과 함께 있는 미래가 자연스럽게 그려질 때", "나도 그 사람을 챙겨주고 싶다는 마음이 커질 때", "이유 없이 계속 생각나고 보고 싶을 때"],
+    },
+  ].map(({ question, answers }) => ({
+    question,
+    answers: answers.map((text, index) => ({
+      text,
+      stat: ["excitement", "stability", "care", "attraction"][index],
+      score: 1,
+    })),
+  })),
+  results: [
+    {
+      stat: "excitement",
+      title: "두근거리는 순간에 마음이 움직이는 타입",
+      description: "당신은 사랑이 시작될 때 ‘설렘’을 중요하게 느끼는 편이에요. 예상하지 못한 말이나 행동, 티키타카가 잘 맞는 순간처럼 평범한 일상에 특별한 감정이 생길 때 상대에게 빠르게 끌리는 타입이에요.\n\n누군가와 함께 있을 때 자꾸 웃게 되고, 다음 만남이 기다려지기 시작한다면 이미 마음이 움직이고 있을 가능성이 커요.\n\n반대로 너무 안정적이고 변화가 없는 관계에서는 조금 심심함을 느낄 수도 있어요.",
+    },
+    {
+      stat: "stability",
+      title: "편안함이 사랑으로 바뀌는 타입",
+      description: "당신은 강렬한 첫인상보다 함께 있을 때 느껴지는 편안함과 신뢰를 중요하게 보는 편이에요.\n\n연락이 조금 늦어도 불안하지 않고, 오래 같이 있어도 어색하지 않으며, 이 사람과 함께라면 편하게 나답게 있을 수 있다고 느껴질 때 마음이 천천히 깊어지는 타입이에요.\n\n처음에는 큰 감정이 없던 사람에게도 시간이 지나면서 사랑이 생길 가능성이 높은 편이에요.",
+    },
+    {
+      stat: "care",
+      title: "나를 소중하게 대해주는 순간에 빠지는 타입",
+      description: "당신은 상대의 작은 행동에서 마음을 많이 느끼는 편이에요.\n\n전에 했던 말을 기억해주거나, 내가 힘들어 보일 때 먼저 알아차려주거나, 별것 아닌 일도 자연스럽게 챙겨주는 모습을 보면 호감이 빠르게 커질 가능성이 높아요.\n\n겉으로 화려한 매력보다 ‘이 사람은 나를 진짜 신경 써주는구나’라는 감정이 사랑으로 이어지는 타입이에요.",
+    },
+    {
+      stat: "attraction",
+      title: "이유 없이 눈이 가는 순간에 빠지는 타입",
+      description: "당신은 사랑이 시작될 때 논리보다 본능적인 끌림의 영향을 많이 받는 편이에요.\n\n외모, 분위기, 목소리, 눈빛처럼 설명하기 어려운 매력 하나가 강하게 느껴지면 상대를 계속 의식하게 되는 타입이에요.\n\n특별한 계기가 없어도 문득 그 사람이 멋있거나 예뻐 보이는 순간 갑자기 마음이 확 움직일 수도 있어요.\n\n‘왜 좋은지 모르겠는데 그냥 좋다’는 감정이 든다면 이미 꽤 많이 빠져 있을 가능성이 높아요.",
+    },
+  ],
+};
+
+export default testData;
 ```
 
 ## friend-boundaries-data.js
@@ -1152,10 +2000,11 @@ const testData = {
 
 const testData = {
   id: 25,
-  url: "friend-boundaries-test.html",
+  url: "test.html?id=friend-boundaries",
   title: "나는 친한 친구에게도 선을 두는 편일까?",
   description: "아무리 친해도 지켜야 할 선이 있다고 생각하는 편일까?",
   category: "친구·인간관계·사회생활",
+  resultLabel: "당신의 친구 사이 경계 지수는",
   shareDescription: "내 친구 사이 경계 테스트 결과를 확인해보세요.",
   questions: [
     {
@@ -1206,135 +2055,27 @@ const testData = {
     {
       min: 10, max: 16,
       title: "거의 모든 걸 공유하는 밀착형",
-      description: "친해지면 상대와의 경계가 많이 낮아지는 편이야. 개인적인 이야기나 물건, 시간까지 자연스럽게 공유하는 타입. 친구를 가족처럼 느끼는 경우도 많아.",
+      description: "친해지면 상대와의 경계가 많이 낮아지는 편이에요. 개인적인 이야기나 물건, 시간까지 자연스럽게 공유하는 타입이에요. 친구를 가족처럼 느끼는 경우도 많아요.\n\n가까운 친구와 함께하는 시간이나 개인적인 이야기를 나누는 것이 자연스럽고 편한 편이에요. 서로 많이 알수록 친밀해진다고 느껴 친구에게 마음을 열기 쉬운 타입이에요.\n\n다만 내게 편한 방식이 상대에게도 똑같이 편한 것은 아닐 수 있어요. 물건을 쓰거나 개인적인 이야기를 전할 때는 먼저 물어보고, 상대가 혼자 있고 싶은 시간도 존중해보세요.",
     },
     {
       min: 17, max: 24,
       title: "편하지만 크게 벽은 없는 편",
-      description: "친한 사람에게는 상당히 편하게 대하지만 어느 정도 기본적인 선은 있는 편이야. 대부분은 공유하면서도 꼭 필요한 부분에서는 내 영역을 지키는 타입.",
+      description: "친한 사람에게는 상당히 편하게 대하지만 어느 정도 기본적인 선은 있는 편이에요. 대부분은 공유하면서도 꼭 필요한 부분에서는 내 영역을 지키는 타입이에요.\n\n친구에게 마음을 열면서도 꼭 지키고 싶은 부분은 따로 남겨두는 편이에요. 평소에는 편하게 어울리다가도 중요한 상황에서는 내 기준을 말할 수 있다는 점이 강점이에요.\n\n친한 사이일수록 서로의 선을 알아서 알 거라고 생각하기 쉬워요. 불편한 일이 생기기 전에 돈, 방문, 개인적인 이야기처럼 민감한 부분을 가볍게 이야기해두면 좋아요.",
     },
     {
       min: 25, max: 32,
       title: "친해도 적당한 거리가 필요한 편",
-      description: "아무리 친해도 개인적인 영역은 존중해야 한다고 생각하는 편이야. 가까운 관계를 좋아하지만 사생활이나 인간관계까지 완전히 공유할 필요는 없다고 보는 타입.",
+      description: "아무리 친해도 개인적인 영역은 존중해야 한다고 생각하는 편이에요. 가까운 관계를 좋아하지만 사생활이나 인간관계까지 완전히 공유할 필요는 없다고 보는 타입이에요.\n\n친밀함을 모든 것을 공유하는 상태로 보지는 않는 편이에요. 친구를 좋아해도 혼자 쉬는 시간이나 말하고 싶지 않은 이야기가 남아 있어야 관계가 더 편하게 느껴질 수 있어요.\n\n상대가 거리를 서운함으로 받아들일 때는 이유를 짧게 설명해보세요. 혼자 쉬고 싶다는 마음과 친구를 아끼는 마음은 함께 있을 수 있어요. 가능한 시간에 먼저 연락하는 것도 도움이 돼요.",
     },
     {
       min: 33, max: 40,
       title: "경계가 확실한 타입",
-      description: "친한 친구라도 넘지 않았으면 하는 선이 분명한 편이야. 내 시간, 사생활, 물건, 인간관계를 독립적으로 유지하고 싶어 하는 타입. 친하지 않아서가 아니라 편한 관계일수록 서로의 영역을 존중해야 한다고 보는 편이야.",
+      description: "친한 친구라도 넘지 않았으면 하는 선이 분명한 편이에요. 내 시간, 사생활, 물건, 인간관계를 독립적으로 유지하고 싶어 하는 타입이에요. 친하지 않아서가 아니라 편한 관계일수록 서로의 영역을 존중해야 한다고 보는 편이에요.\n\n친구라도 내 선택이나 시간을 당연하게 여기면 불편함을 느끼기 쉬워요. 서로의 생활을 존중해야 오래 편하게 지낼 수 있다고 생각해 사생활과 결정권을 중요하게 지키는 편이에요.\n\n선을 지킬 때는 상대를 밀어내는 말보다 원하는 방식을 구체적으로 전해보세요. 미리 연락해주면 좋겠다는 식의 표현은 내 영역을 보호하면서도 관계의 온도를 유지하는 데 도움이 돼요.",
     },
   ],
 };
-```
 
-## friend-boundaries-test.html
-
-```html
-<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <script src="analytics.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="ko_KR">
-  <meta property="og:site_name" content="Today's Choice">
-  <meta property="og:title" content="나는 친한 친구에게도 선을 두는 편일까? | Today's Choice">
-  <meta property="og:description" content="아무리 친해도 지켜야 할 선이 있다고 생각하는 편일까?">
-  <meta property="og:url" content="https://todayschoice.kr/friend-boundaries-test.html">
-  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
-  <meta property="og:image:width" content="1731">
-  <meta property="og:image:height" content="909">
-  <meta property="og:image:alt" content="Today's choice">
-  <meta property="og:image:type" content="image/png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="나는 친한 친구에게도 선을 두는 편일까? | Today's Choice">
-  <meta name="twitter:description" content="아무리 친해도 지켜야 할 선이 있다고 생각하는 편일까?">
-  <meta name="twitter:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
-  <meta name="twitter:image:alt" content="Today's choice">
-  <meta name="description" content="아무리 친해도 지켜야 할 선이 있다고 생각하는 편일까?">
-  <title>나는 친한 친구에게도 선을 두는 편일까? | Today's Choice</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="test.css">
-  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.8.2/kakao.min.js" integrity="sha384-zt/G7/KfaRQ9dT/QIkS0ujMtzouJqzuSJcXVQu50x0rl/+mD1dc70AeOejVbMD9E" crossorigin="anonymous" defer></script>
-  <script src="friend-boundaries-data.js" defer></script>
-  <script src="script.js" defer></script>
-  <script src="test-runner.js" defer></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2401413706072374"
-       crossorigin="anonymous"></script>
-</head>
-<body class="test-page">
-  <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
-    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="7.3"/><path d="m16 16 5 5"/></symbol>
-    <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M20.8 4.7a5.5 5.5 0 0 0-7.8 0L12 5.8l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.5a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
-    <symbol id="icon-chat" viewBox="0 0 24 24"><path d="M21 11.5a9 9 0 0 1-9 8.5 10 10 0 0 1-4-.8L3 21l1.7-4.7A8 8 0 0 1 3 11.5a9 9 0 0 1 18 0Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></symbol>
-    <symbol id="icon-ring" viewBox="0 0 24 24"><circle cx="12" cy="14" r="7.5"/><path d="m9 3 3 3 3-3-1-2h-4l-1 2Z"/></symbol>
-    <symbol id="icon-people" viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 4a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v3"/></symbol>
-    <symbol id="icon-flame" viewBox="0 0 24 24"><path d="M12 3c0 4-5 6-5 11a5 5 0 0 0 10 0c0-3-2-5-3-7 0 3-1 4-2 5 0-4 2-6 0-9Z"/></symbol>
-    <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M21 14A9.5 9.5 0 0 1 10 3a9.5 9.5 0 1 0 11 11Z"/></symbol>
-    <symbol id="icon-leaf" viewBox="0 0 24 24"><path d="M12 22V11M12 15C5 16 2 11 3 7c6-1 9 3 9 8Zm0-5c0-6 4-9 9-8 1 6-3 10-9 8Z"/></symbol>
-    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
-  </svg>
-  <a class="skip-link" href="#main">본문 바로가기</a>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="index.html#home" aria-label="오늘의 초이스 홈">Today's choice</a>
-      <nav class="main-nav" aria-label="주 메뉴">
-        <a class="nav-link" href="index.html#home">홈</a>
-        <a class="nav-link" href="index.html#new-tests">오늘의 테스트</a>
-        <a class="nav-link" href="index.html#popular">전체 테스트</a>
-        <a class="nav-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">Instagram</a>
-      </nav>
-      <button class="icon-button search-toggle" type="button" aria-label="테스트 검색" aria-haspopup="dialog"><svg class="icon"><use href="#icon-search"/></svg></button>
-    </div>
-  </header>
-  <main id="main" data-test-runner>
-    <section class="test-panel" data-screen="start" aria-labelledby="test-title">
-      <p class="test-category" data-role="category"></p>
-      <h1 id="test-title" data-role="title" data-focus tabindex="-1"></h1>
-      <p class="test-description" data-role="description"></p>
-      <p class="test-count" data-role="count"></p>
-      <button class="primary-button" type="button" data-role="start">테스트 시작하기</button>
-    </section>
-    <section class="test-panel" data-screen="question" aria-labelledby="question-title" hidden>
-      <div class="question-top">
-        <button class="test-back" type="button" data-role="back">← 뒤로가기</button>
-        <span class="test-position" data-role="position"></span>
-      </div>
-      <progress class="test-progress" data-role="progress" value="0" max="10" aria-label="테스트 진행률"></progress>
-      <h2 class="question-title" id="question-title" data-role="question" data-focus tabindex="-1"></h2>
-      <div class="answer-list" data-role="answers" role="group" aria-labelledby="question-title"></div>
-    </section>
-    <section class="test-panel test-result" data-screen="result" aria-labelledby="result-title" hidden>
-      <p class="result-label">당신의 친구 사이 경계 지수는</p>
-      <p class="result-score"><span data-role="score"></span><small> / <span data-role="max-score"></span>점</small></p>
-      <h2 class="result-title" id="result-title" data-role="result-title" data-focus tabindex="-1"></h2>
-      <p class="result-description" data-role="result-description"></p>
-      <div class="result-actions">
-        <button class="secondary-button" type="button" data-role="restart">다시하기</button>
-        <a class="secondary-button" href="index.html#category-tests">다른 테스트 보기</a>
-      </div>
-      <button class="primary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
-      <p class="kakao-share-status" id="kakao-share-status" role="status" hidden></p>
-      <p class="test-disclaimer">본 테스트는 재미를 위한 콘텐츠이며 전문적인 심리 진단이 아닙니다.</p>
-    </section>
-    <noscript><p>테스트를 진행하려면 브라우저에서 JavaScript를 활성화해 주세요.</p></noscript>
-  </main>
-  <footer class="site-footer" id="about">
-    <div class="container footer-inner">
-      <a class="instagram-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        <span>@choice_zip_</span>
-      </a>
-    </div>
-  </footer>
-  <dialog id="search-dialog" class="modal" aria-labelledby="search-title"><div class="modal-heading"><h2 id="search-title">어떤 테스트를 찾으세요?</h2><button class="icon-button" type="button" data-close aria-label="검색 닫기"><svg class="icon"><use href="#icon-close"/></svg></button></div><label class="search-field"><svg class="icon"><use href="#icon-search"/></svg><input id="search-input" type="search" placeholder="친구, 인간관계, 정…" aria-label="테스트 검색어" autocomplete="off"></label><p id="search-count" class="search-count" aria-live="polite"></p><div id="search-results" class="search-results"></div></dialog>
-</body>
-</html>
+export default testData;
 ```
 
 ## friend-dependence-data.js
@@ -1344,10 +2085,11 @@ const testData = {
 
 const testData = {
   id: 26,
-  url: "friend-dependence-test.html",
+  url: "test.html?id=friend-dependence",
   title: "나는 친구에게 얼마나 의존하는 편일까?",
   description: "힘들 때도, 심심할 때도 나는 친구를 얼마나 찾는 편일까?",
   category: "친구·인간관계·사회생활",
+  resultLabel: "당신의 친구 의존 지수는",
   shareDescription: "내 친구 의존도 테스트 결과를 확인해보세요.",
   questions: [
     {
@@ -1398,135 +2140,27 @@ const testData = {
     {
       min: 10, max: 16,
       title: "혼자서도 충분한 독립형",
-      description: "친구를 좋아하지만 내 감정이나 일상을 친구에게 크게 의존하지 않는 편이야. 혼자 보내는 시간도 편하고 중요한 선택도 스스로 하는 타입.",
+      description: "친구를 좋아하지만 내 감정이나 일상을 친구에게 크게 의존하지 않는 편이에요. 혼자 보내는 시간도 편하고 중요한 선택도 스스로 하는 타입이에요.\n\n고민을 바로 털어놓기보다 내 생각을 먼저 정리하고 필요한 도움을 고르는 편이에요. 친구의 일정이나 연락 상태에 하루 기분이 크게 좌우되지 않는다는 점이 장점이에요.\n\n혼자 잘 지내는 것과 언제나 혼자 해결해야 하는 것은 달라요. 도움이 필요한 때에는 가까운 사람에게 구체적으로 부탁해보세요. 기대는 경험도 관계를 더 편하게 만들 수 있어요.",
     },
     {
       min: 17, max: 24,
       title: "적당히 기대는 균형형",
-      description: "혼자서도 잘 지내지만 필요할 때는 친구에게 기대는 편. 독립성과 친밀감 사이의 균형을 비교적 잘 유지하는 타입이야.",
+      description: "혼자서도 잘 지내지만 필요할 때는 친구에게 기대는 편이에요. 독립성과 친밀감 사이의 균형을 비교적 잘 유지하는 타입이에요.\n\n내 생활을 유지하면서도 기쁜 일이나 힘든 일을 친구와 나누는 편이에요. 함께 보내는 시간과 혼자 쉬는 시간이 모두 필요하다는 것을 비교적 자연스럽게 받아들이는 타입이에요.\n\n친구에게 기대고 싶은 날에는 원하는 도움을 말로 전해보세요. 해결책이 필요한지 잠깐 들어줬으면 하는지 알려주면, 서로 부담을 줄이면서 필요한 만큼 의지할 수 있어요.",
     },
     {
       min: 25, max: 32,
       title: "친구에게 꽤 많이 기대는 편",
-      description: "힘든 일이나 고민이 생기면 친구와 공유하는 게 중요하고, 함께 시간을 보내는 데서 에너지를 많이 얻는 편이야. 친구의 연락이나 관심이 줄면 서운함을 느낄 수도 있어.",
+      description: "힘든 일이나 고민이 생기면 친구와 공유하는 게 중요하고, 함께 시간을 보내는 데서 에너지를 많이 얻는 편이에요. 친구의 연락이나 관심이 줄면 서운함을 느낄 수도 있어요.\n\n혼자 생각할 때보다 누군가와 이야기할 때 마음과 생각이 더 잘 정리될 수 있어요. 친한 사람과 일상을 나누는 것이 중요한 즐거움이자 안정감의 원천인 편이에요.\n\n친구가 바쁜 날을 관계가 멀어진 신호로만 받아들이지는 말아주세요. 혼자 즐길 수 있는 활동이나 다른 지지 관계도 조금씩 늘리면 한 사람의 반응에 덜 흔들릴 수 있어요.",
     },
     {
       min: 33, max: 40,
       title: "친구 없으면 많이 허전한 밀착형",
-      description: "친구가 일상과 감정에서 상당히 큰 비중을 차지하는 타입. 혼자 해결하기보다 누군가와 함께하는 걸 선호하고, 가까운 친구와의 관계 변화에도 민감하게 반응하는 편이야.",
+      description: "친구가 일상과 감정에서 상당히 큰 비중을 차지하는 타입이에요. 혼자 해결하기보다 누군가와 함께하는 걸 선호하고, 가까운 친구와의 관계 변화에도 민감하게 반응하는 편이에요.\n\n친구와 연결되어 있다는 느낌이 있어야 하루가 더 편안해질 수 있어요. 힘든 일이 생기면 혼자 정리하기보다 누군가와 바로 이야기하며 안심하고 싶은 마음이 큰 편이에요.\n\n가까운 친구도 항상 같은 속도로 연락하거나 시간을 낼 수는 없어요. 혼자 기분을 달랠 작은 방법을 마련하고 부탁할 때는 상대의 여유도 확인해보세요. 가까움 속에서도 각자의 생활은 필요해요.",
     },
   ],
 };
-```
 
-## friend-dependence-test.html
-
-```html
-<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <script src="analytics.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="ko_KR">
-  <meta property="og:site_name" content="Today's Choice">
-  <meta property="og:title" content="나는 친구에게 얼마나 의존하는 편일까? | Today's Choice">
-  <meta property="og:description" content="힘들 때도, 심심할 때도 나는 친구를 얼마나 찾는 편일까?">
-  <meta property="og:url" content="https://todayschoice.kr/friend-dependence-test.html">
-  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
-  <meta property="og:image:width" content="1731">
-  <meta property="og:image:height" content="909">
-  <meta property="og:image:alt" content="Today's choice">
-  <meta property="og:image:type" content="image/png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="나는 친구에게 얼마나 의존하는 편일까? | Today's Choice">
-  <meta name="twitter:description" content="힘들 때도, 심심할 때도 나는 친구를 얼마나 찾는 편일까?">
-  <meta name="twitter:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
-  <meta name="twitter:image:alt" content="Today's choice">
-  <meta name="description" content="힘들 때도, 심심할 때도 나는 친구를 얼마나 찾는 편일까?">
-  <title>나는 친구에게 얼마나 의존하는 편일까? | Today's Choice</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="test.css">
-  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.8.2/kakao.min.js" integrity="sha384-zt/G7/KfaRQ9dT/QIkS0ujMtzouJqzuSJcXVQu50x0rl/+mD1dc70AeOejVbMD9E" crossorigin="anonymous" defer></script>
-  <script src="friend-dependence-data.js" defer></script>
-  <script src="script.js" defer></script>
-  <script src="test-runner.js" defer></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2401413706072374"
-       crossorigin="anonymous"></script>
-</head>
-<body class="test-page">
-  <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
-    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="7.3"/><path d="m16 16 5 5"/></symbol>
-    <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M20.8 4.7a5.5 5.5 0 0 0-7.8 0L12 5.8l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.5a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
-    <symbol id="icon-chat" viewBox="0 0 24 24"><path d="M21 11.5a9 9 0 0 1-9 8.5 10 10 0 0 1-4-.8L3 21l1.7-4.7A8 8 0 0 1 3 11.5a9 9 0 0 1 18 0Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></symbol>
-    <symbol id="icon-ring" viewBox="0 0 24 24"><circle cx="12" cy="14" r="7.5"/><path d="m9 3 3 3 3-3-1-2h-4l-1 2Z"/></symbol>
-    <symbol id="icon-people" viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 4a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v3"/></symbol>
-    <symbol id="icon-flame" viewBox="0 0 24 24"><path d="M12 3c0 4-5 6-5 11a5 5 0 0 0 10 0c0-3-2-5-3-7 0 3-1 4-2 5 0-4 2-6 0-9Z"/></symbol>
-    <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M21 14A9.5 9.5 0 0 1 10 3a9.5 9.5 0 1 0 11 11Z"/></symbol>
-    <symbol id="icon-leaf" viewBox="0 0 24 24"><path d="M12 22V11M12 15C5 16 2 11 3 7c6-1 9 3 9 8Zm0-5c0-6 4-9 9-8 1 6-3 10-9 8Z"/></symbol>
-    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
-  </svg>
-  <a class="skip-link" href="#main">본문 바로가기</a>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="index.html#home" aria-label="오늘의 초이스 홈">Today's choice</a>
-      <nav class="main-nav" aria-label="주 메뉴">
-        <a class="nav-link" href="index.html#home">홈</a>
-        <a class="nav-link" href="index.html#new-tests">오늘의 테스트</a>
-        <a class="nav-link" href="index.html#popular">전체 테스트</a>
-        <a class="nav-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">Instagram</a>
-      </nav>
-      <button class="icon-button search-toggle" type="button" aria-label="테스트 검색" aria-haspopup="dialog"><svg class="icon"><use href="#icon-search"/></svg></button>
-    </div>
-  </header>
-  <main id="main" data-test-runner>
-    <section class="test-panel" data-screen="start" aria-labelledby="test-title">
-      <p class="test-category" data-role="category"></p>
-      <h1 id="test-title" data-role="title" data-focus tabindex="-1"></h1>
-      <p class="test-description" data-role="description"></p>
-      <p class="test-count" data-role="count"></p>
-      <button class="primary-button" type="button" data-role="start">테스트 시작하기</button>
-    </section>
-    <section class="test-panel" data-screen="question" aria-labelledby="question-title" hidden>
-      <div class="question-top">
-        <button class="test-back" type="button" data-role="back">← 뒤로가기</button>
-        <span class="test-position" data-role="position"></span>
-      </div>
-      <progress class="test-progress" data-role="progress" value="0" max="10" aria-label="테스트 진행률"></progress>
-      <h2 class="question-title" id="question-title" data-role="question" data-focus tabindex="-1"></h2>
-      <div class="answer-list" data-role="answers" role="group" aria-labelledby="question-title"></div>
-    </section>
-    <section class="test-panel test-result" data-screen="result" aria-labelledby="result-title" hidden>
-      <p class="result-label">당신의 친구 의존 지수는</p>
-      <p class="result-score"><span data-role="score"></span><small> / <span data-role="max-score"></span>점</small></p>
-      <h2 class="result-title" id="result-title" data-role="result-title" data-focus tabindex="-1"></h2>
-      <p class="result-description" data-role="result-description"></p>
-      <div class="result-actions">
-        <button class="secondary-button" type="button" data-role="restart">다시하기</button>
-        <a class="secondary-button" href="index.html#category-tests">다른 테스트 보기</a>
-      </div>
-      <button class="primary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
-      <p class="kakao-share-status" id="kakao-share-status" role="status" hidden></p>
-      <p class="test-disclaimer">본 테스트는 재미를 위한 콘텐츠이며 전문적인 심리 진단이 아닙니다.</p>
-    </section>
-    <noscript><p>테스트를 진행하려면 브라우저에서 JavaScript를 활성화해 주세요.</p></noscript>
-  </main>
-  <footer class="site-footer" id="about">
-    <div class="container footer-inner">
-      <a class="instagram-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        <span>@choice_zip_</span>
-      </a>
-    </div>
-  </footer>
-  <dialog id="search-dialog" class="modal" aria-labelledby="search-title"><div class="modal-heading"><h2 id="search-title">어떤 테스트를 찾으세요?</h2><button class="icon-button" type="button" data-close aria-label="검색 닫기"><svg class="icon"><use href="#icon-close"/></svg></button></div><label class="search-field"><svg class="icon"><use href="#icon-search"/></svg><input id="search-input" type="search" placeholder="친구, 인간관계, 정…" aria-label="테스트 검색어" autocomplete="off"></label><p id="search-count" class="search-count" aria-live="polite"></p><div id="search-results" class="search-results"></div></dialog>
-</body>
-</html>
+export default testData;
 ```
 
 ## game-character-data.js
@@ -1536,10 +2170,11 @@ const testData = {
 
 const testData = {
   id: 19,
-  url: "game-character-test.html",
+  url: "test.html?id=game-character",
   title: "내가 게임 속 캐릭터라면 능력치는 어디에 몰려 있을까?",
   description: "게임 캐릭터가 된다면 나는 어떤 스탯에 몰빵된 타입일까?",
   category: "재미",
+  resultLabel: "당신의 게임 캐릭터 능력치는",
   answerGuide: "각 답변은 해당 스탯에 1점씩 더해져요",
   shareDescription: "내 게임 캐릭터 능력치 결과를 확인해보세요.",
   stats: [
@@ -1601,136 +2236,245 @@ const testData = {
     {
       stat: "attack",
       title: "공격력 몰빵형",
-      description: "행동력, 추진력, 승부욕이 높은 타입. 생각보다 행동이 빠르고 앞장서는 편. 단점: 너무 빨리 달리다 실수할 수 있음.",
+      description: "행동력, 추진력, 승부욕이 높은 타입이에요. 생각보다 행동이 빠르고 앞장서는 편이에요. 다만 너무 빨리 달리다 실수할 수 있어요.\n\n새로운 퀘스트가 나타나면 완벽한 준비를 기다리기보다 먼저 움직이는 캐릭터에 가까워요. 팀이 망설이고 있을 때 첫걸음을 내딛고 흐름을 바꾸는 역할과 잘 맞아요.\n\n빠르게 행동하는 만큼 중요한 선택 앞에서는 잠깐 멈춰 조건을 확인해보세요. 추진력에 작은 점검 습관을 더하면 힘만 센 캐릭터를 넘어 끝까지 믿고 맡길 수 있는 에이스가 될 수 있어요.",
     },
     {
       stat: "intelligence",
       title: "지능 몰빵형",
-      description: "분석력, 판단력, 계획력이 높은 타입. 감보다 논리를 믿고 상황을 잘 읽는 편. 단점: 생각이 많아 시작이 늦을 수 있음.",
+      description: "분석력, 판단력, 계획력이 높은 타입이에요. 감보다 논리를 믿고 상황을 잘 읽는 편이에요. 다만 생각이 많아 시작이 늦을 수 있어요.\n\n복잡한 상황에서도 정보를 모으고 유리한 방법을 찾는 데 강점이 있어요. 바로 눈앞의 보상보다 다음 단계까지 생각해서 움직이는 전략가 캐릭터에 가까워요.\n\n모든 변수를 계산하려다 출발이 늦어질 때는 작은 시도부터 시작해보세요. 직접 얻은 경험도 중요한 정보이니, 계획과 실행을 번갈아 하면 판단력이 더 빛날 수 있어요.",
     },
     {
       stat: "charm",
       title: "매력 몰빵형",
-      description: "공감력, 친화력, 분위기 메이킹 능력이 높은 타입. 혼자 잘하기보다 사람 사이에서 강한 캐릭터. 단점: 남 눈치를 많이 볼 수 있음.",
+      description: "공감력, 친화력, 분위기 메이킹 능력이 높은 타입이에요. 혼자 잘하기보다 사람 사이에서 강한 캐릭터예요. 다만 남 눈치를 많이 볼 수 있어요.\n\n팀원의 기분을 살피고 서로 어색한 분위기를 풀어주는 역할에 강해요. 혼자 앞서가는 것보다 각자의 장점을 연결해 팀 전체를 움직이게 하는 캐릭터에 가까워요.\n\n모두를 만족시키려다 내 에너지가 먼저 바닥나지 않도록 챙겨주세요. 다른 사람을 돕는 능력만큼 내 의견을 말하고 쉬는 시간을 확보하는 것도 좋은 팀 플레이의 일부예요.",
     },
     {
       stat: "survival",
       title: "생존력 몰빵형",
-      description: "적응력, 버티는 힘, 상황 대처력이 높은 타입. 튀진 않아도 끝까지 살아남는 스타일. 단점: 편한 쪽으로만 가려는 경향이 있을 수 있음.",
+      description: "적응력, 버티는 힘, 상황 대처력이 높은 타입이에요. 튀진 않아도 끝까지 살아남는 스타일이에요. 다만 편한 쪽으로만 가려는 경향이 있을 수 있어요.\n\n상황이 달라져도 무리하게 정면 승부를 하기보다 살아남을 방법을 찾는 편이에요. 자원을 아끼고 기회를 기다리다가 필요한 순간에 움직이는 캐릭터와 잘 맞아요.\n\n안전한 선택은 장점이지만 편한 길만 고르면 새로운 능력을 발견할 기회가 줄어들 수 있어요. 감당할 수 있는 작은 도전을 더하면 버티는 힘에 성장 속도까지 갖출 수 있어요.",
     },
   ],
 };
+
+export default testData;
 ```
 
-## game-character-test.html
+## hidden-romance-data.js
 
-```html
-<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <script src="analytics.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="ko_KR">
-  <meta property="og:site_name" content="Today's Choice">
-  <meta property="og:title" content="내가 게임 속 캐릭터라면 능력치는 어디에 몰려 있을까? | Today's Choice">
-  <meta property="og:description" content="게임 캐릭터가 된다면 나는 어떤 스탯에 몰빵된 타입일까?">
-  <meta property="og:url" content="https://todayschoice.kr/game-character-test.html">
-  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
-  <meta property="og:image:width" content="1731">
-  <meta property="og:image:height" content="909">
-  <meta property="og:image:alt" content="Today's choice">
-  <meta property="og:image:type" content="image/png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="내가 게임 속 캐릭터라면 능력치는 어디에 몰려 있을까? | Today's Choice">
-  <meta name="twitter:description" content="게임 캐릭터가 된다면 나는 어떤 스탯에 몰빵된 타입일까?">
-  <meta name="twitter:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
-  <meta name="twitter:image:alt" content="Today's choice">
-  <meta name="description" content="게임 캐릭터가 된다면 나는 어떤 스탯에 몰빵된 타입일까?">
-  <title>내가 게임 속 캐릭터라면 능력치는 어디에 몰려 있을까? | Today's Choice</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="test.css">
-  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.8.2/kakao.min.js" integrity="sha384-zt/G7/KfaRQ9dT/QIkS0ujMtzouJqzuSJcXVQu50x0rl/+mD1dc70AeOejVbMD9E" crossorigin="anonymous" defer></script>
-  <script src="game-character-data.js" defer></script>
-  <script src="script.js" defer></script>
-  <script src="test-runner.js" defer></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2401413706072374"
-       crossorigin="anonymous"></script>
-</head>
-<body class="test-page">
-  <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
-    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="7.3"/><path d="m16 16 5 5"/></symbol>
-    <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M20.8 4.7a5.5 5.5 0 0 0-7.8 0L12 5.8l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.5a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
-    <symbol id="icon-chat" viewBox="0 0 24 24"><path d="M21 11.5a9 9 0 0 1-9 8.5 10 10 0 0 1-4-.8L3 21l1.7-4.7A8 8 0 0 1 3 11.5a9 9 0 0 1 18 0Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></symbol>
-    <symbol id="icon-ring" viewBox="0 0 24 24"><circle cx="12" cy="14" r="7.5"/><path d="m9 3 3 3 3-3-1-2h-4l-1 2Z"/></symbol>
-    <symbol id="icon-people" viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 4a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v3"/></symbol>
-    <symbol id="icon-flame" viewBox="0 0 24 24"><path d="M12 3c0 4-5 6-5 11a5 5 0 0 0 10 0c0-3-2-5-3-7 0 3-1 4-2 5 0-4 2-6 0-9Z"/></symbol>
-    <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M21 14A9.5 9.5 0 0 1 10 3a9.5 9.5 0 1 0 11 11Z"/></symbol>
-    <symbol id="icon-leaf" viewBox="0 0 24 24"><path d="M12 22V11M12 15C5 16 2 11 3 7c6-1 9 3 9 8Zm0-5c0-6 4-9 9-8 1 6-3 10-9 8Z"/></symbol>
-    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
-  </svg>
-  <a class="skip-link" href="#main">본문 바로가기</a>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="index.html#home" aria-label="오늘의 초이스 홈">Today's choice</a>
-      <nav class="main-nav" aria-label="주 메뉴">
-        <a class="nav-link" href="index.html#home">홈</a>
-        <a class="nav-link" href="index.html#new-tests">오늘의 테스트</a>
-        <a class="nav-link" href="index.html#popular">전체 테스트</a>
-        <a class="nav-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">Instagram</a>
-      </nav>
-      <button class="icon-button search-toggle" type="button" aria-label="테스트 검색" aria-haspopup="dialog"><svg class="icon"><use href="#icon-search"/></svg></button>
-    </div>
-  </header>
-  <main id="main" data-test-runner>
-    <section class="test-panel" data-screen="start" aria-labelledby="test-title">
-      <p class="test-category" data-role="category"></p>
-      <h1 id="test-title" data-role="title" data-focus tabindex="-1"></h1>
-      <p class="test-description" data-role="description"></p>
-      <p class="test-count" data-role="count"></p>
-      <button class="primary-button" type="button" data-role="start">테스트 시작하기</button>
-    </section>
-    <section class="test-panel" data-screen="question" aria-labelledby="question-title" hidden>
-      <div class="question-top">
-        <button class="test-back" type="button" data-role="back">← 뒤로가기</button>
-        <span class="test-position" data-role="position"></span>
-      </div>
-      <progress class="test-progress" data-role="progress" value="0" max="10" aria-label="테스트 진행률"></progress>
-      <h2 class="question-title" id="question-title" data-role="question" data-focus tabindex="-1"></h2>
-      <div class="answer-list" data-role="answers" role="group" aria-labelledby="question-title"></div>
-    </section>
-    <section class="test-panel test-result" data-screen="result" aria-labelledby="result-title" hidden>
-      <p class="result-label">당신의 게임 캐릭터 능력치는</p>
-      <dl class="result-stats" data-role="stats" aria-label="스탯별 점수"></dl>
-      <h2 class="result-title" id="result-title" data-role="result-title" data-focus tabindex="-1"></h2>
-      <p class="result-description" data-role="result-description"></p>
-      <p class="test-disclaimer">동점일 경우, 가장 높은 스탯 중 가장 최근에 선택한 스탯으로 결과를 정해요.</p>
-      <div class="result-actions">
-        <button class="secondary-button" type="button" data-role="restart">다시하기</button>
-        <a class="secondary-button" href="index.html#category-tests">다른 테스트 보기</a>
-      </div>
-      <button class="primary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
-      <p class="kakao-share-status" id="kakao-share-status" role="status" hidden></p>
-      <p class="test-disclaimer">본 테스트는 재미를 위한 콘텐츠이며 전문적인 심리 진단이 아닙니다.</p>
-    </section>
-    <noscript><p>테스트를 진행하려면 브라우저에서 JavaScript를 활성화해 주세요.</p></noscript>
-  </main>
-  <footer class="site-footer" id="about">
-    <div class="container footer-inner">
-      <a class="instagram-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        <span>@choice_zip_</span>
-      </a>
-    </div>
-  </footer>
-  <dialog id="search-dialog" class="modal" aria-labelledby="search-title"><div class="modal-heading"><h2 id="search-title">어떤 테스트를 찾으세요?</h2><button class="icon-button" type="button" data-close aria-label="검색 닫기"><svg class="icon"><use href="#icon-close"/></svg></button></div><label class="search-field"><svg class="icon"><use href="#icon-search"/></svg><input id="search-input" type="search" placeholder="게임, 캐릭터, 능력치…" aria-label="테스트 검색어" autocomplete="off"></label><p id="search-count" class="search-count" aria-live="polite"></p><div id="search-results" class="search-results"></div></dialog>
-</body>
-</html>
+```javascript
+"use strict";
+
+const testData = {
+  id: 35,
+  url: "test.html?id=hidden-romance",
+  title: "내가 숨기고 있는 연애 성향은?",
+  description: "평소에는 잘 드러나지 않는 내 연애 본능은 어떤 모습일까?",
+  category: "연애/결혼",
+  showResultType: true,
+  stats: [
+    { id: "reassurance", title: "확인형" },
+    { id: "direct", title: "직진본능형" },
+    { id: "guarded", title: "방어형" },
+    { id: "possessive", title: "소유형" },
+  ],
+  questions: [
+    {
+      question: "좋아하는 사람이 생겼을 때 겉으로는 아무렇지 않은 척해도 속으로는?",
+      answers: ["상대 반응 하나하나를 꽤 많이 신경 쓴다", "빨리 가까워지고 싶다는 생각이 든다", "괜히 마음 들킬까 봐 더 무심한 척한다", "나도 모르게 상대를 내 사람처럼 생각하게 된다"],
+    },
+    {
+      question: "상대가 평소보다 연락이 뜸한 날에는?",
+      answers: ["바쁜가 보다 하면서도 은근히 이유가 궁금하다", "내가 먼저 연락해서 분위기를 바꾼다", "신경 쓰여도 먼저 연락하지 않고 버틴다", "누구랑 있는지까지 괜히 신경 쓰인다"],
+    },
+    {
+      question: "썸 타는 상대가 다른 이성과 친하게 지내는 걸 보면?",
+      answers: ["나한테도 같은 정도의 관심이 있는지 궁금해진다", "더 적극적으로 내 존재감을 보여주고 싶다", "아무렇지 않은 척하지만 마음은 조금 식는다", "솔직히 질투가 꽤 나는 편이다"],
+    },
+    {
+      question: "좋아하는 사람 앞에서 나는?",
+      answers: ["상대 표정이나 말투를 계속 살피게 된다", "평소보다 표현이 많아지고 적극적으로 변한다", "오히려 평소보다 더 무심하고 차분해진다", "상대가 나에게 얼마나 집중하는지 신경 쓰게 된다"],
+    },
+    {
+      question: "연애를 시작하면 가장 듣고 싶은 말은?",
+      answers: ['"나는 너 진짜 좋아해."', '"우리 자주 보고 더 많이 같이 있자."', '"부담 갖지 말고 편하게 있어."', '"나는 다른 사람보다 네가 제일 중요해."'],
+    },
+    {
+      question: "애인이 나 없이 친구들과 너무 즐겁게 지내는 모습을 보면?",
+      answers: ["나 없이도 잘 지내는 게 조금 서운하다", "다음에는 나도 같이 놀자고 먼저 말한다", "티 내기 싫어서 그냥 내 할 일을 한다", "내가 없는 자리에서 너무 즐거워 보이면 괜히 질투난다"],
+    },
+    {
+      question: "싸운 뒤 상대가 먼저 연락하지 않는다면?",
+      answers: ["나를 얼마나 중요하게 생각하는지 의심이 든다", "답답해서 내가 먼저 연락할 가능성이 높다", "먼저 연락하고 싶어도 끝까지 참는다", "상대가 나보다 더 오래 버티는 게 괘씸하게 느껴진다"],
+    },
+    {
+      question: "애인이 혼자만의 시간이 필요하다고 한다면?",
+      answers: ["나 때문은 아닌지 조금 신경 쓰인다", "시간 갖는 것보다 같이 해결하고 싶다", "오히려 나도 거리 두면서 마음을 정리한다", "왜 굳이 나 없이 혼자 있고 싶은지 궁금하다"],
+    },
+    {
+      question: "연애 중 상대의 마음이 식은 것 같다고 느껴지면?",
+      answers: ["표현이나 행동을 통해 계속 확인하고 싶어진다", "관계를 살리려고 더 적극적으로 행동한다", "상처받기 전에 내가 먼저 마음을 접으려 한다", "상대가 나한테 집중하도록 만들고 싶어진다"],
+    },
+    {
+      question: "연애할 때 내 감정을 들키는 건?",
+      answers: ["상대가 확실히 좋아한다면 괜찮다", "좋아하면 굳이 숨길 필요 없다고 생각한다", "너무 많이 들키면 내가 약해지는 느낌이 든다", "상대보다 내가 더 좋아하는 것처럼 보이는 건 싫다"],
+    },
+    {
+      question: "애인이 중요한 결정을 나와 상의하지 않았다면?",
+      answers: ["나를 믿지 않는 건가 싶어 서운하다", "바로 왜 말 안 했는지 물어본다", "겉으로는 괜찮다고 하지만 마음에 남는다", "연인이라면 중요한 일은 당연히 공유해야 한다고 생각한다"],
+    },
+    {
+      question: "누군가를 정말 많이 좋아하게 되면 나는?",
+      answers: ["사랑받고 있다는 확신을 계속 받고 싶어진다", "평소보다 훨씬 솔직하고 적극적으로 변한다", "좋아할수록 오히려 감정을 숨기려 한다", "상대가 나를 가장 우선해줬으면 하는 마음이 커진다"],
+    },
+    {
+      question: "연애 중 내가 가장 숨기기 쉬운 감정은?",
+      answers: ["불안함", "보고 싶은 마음", "서운함", "질투"],
+    },
+  ].map(({ question, answers }) => ({
+    question,
+    answers: answers.map((text, index) => ({
+      text,
+      stat: ["reassurance", "direct", "guarded", "possessive"][index],
+      score: 1,
+    })),
+  })),
+  results: [
+    {
+      stat: "reassurance",
+      title: "사랑받고 있다는 확신이 필요한 확인형",
+      description: "겉으로는 차분해 보여도 연애를 시작하면 상대의 마음을 꽤 세심하게 확인하는 편이에요. 말투나 연락 빈도, 작은 행동에서도 나를 얼마나 좋아하는지 자연스럽게 살펴보게 돼요.\n\n확실하게 사랑받고 있다고 느껴질 때는 안정적이고 편안하게 관계를 이어가는 타입이에요. 반대로 상대의 표현이 줄거나 애매한 태도가 이어지면 혼자 여러 가지 생각을 할 수 있어요.\n\n이런 성향은 관계를 소중하게 생각하기 때문에 나타나는 모습일 수 있어요. 상대의 행동만 해석하기보다 필요한 표현을 솔직하게 요청하면 훨씬 편안한 연애를 할 수 있어요.",
+    },
+    {
+      stat: "direct",
+      title: "좋아할수록 숨기기 어려운 직진본능형",
+      description: "평소에는 조심스러워 보여도 마음이 확실해지면 생각보다 적극적으로 변하는 편이에요. 먼저 연락하고 만나자고 하거나 좋아하는 마음을 행동으로 보여주는 데 크게 망설이지 않아요.\n\n애매한 관계를 오래 유지하는 것보다 서로의 마음을 확인하고 가까워지는 과정을 더 편하게 느껴요. 좋아하는 사람에게 시간과 에너지를 아낌없이 쓰는 모습도 자주 나타날 수 있어요.\n\n덕분에 상대는 당신의 마음을 알아차리기 쉽고 관계도 빠르게 발전할 수 있어요. 다만 상대의 감정 속도도 나와 같은지는 한 번씩 살펴보면 더 편안한 관계가 될 수 있어요.",
+    },
+    {
+      stat: "guarded",
+      title: "좋아할수록 마음을 숨기는 방어형",
+      description: "마음이 커질수록 오히려 상대에게 감정을 들키지 않으려고 하는 편이에요. 먼저 다가갔다가 상처받거나 내가 더 좋아하는 사람처럼 보이는 상황을 부담스럽게 느낄 수 있어요.\n\n서운하거나 보고 싶은 마음이 생겨도 바로 표현하기보다 혼자 정리하려는 경우가 많아요. 그래서 실제 마음보다 훨씬 무심하고 독립적인 사람처럼 보일 때도 있어요.\n\n스스로를 지키는 데는 익숙하지만 상대는 당신의 진짜 마음을 알아차리기 어려울 수 있어요. 안전하다고 느껴지는 관계에서는 조금씩 솔직한 감정을 보여주는 것도 괜찮아요.",
+    },
+    {
+      stat: "possessive",
+      title: "좋아할수록 내 사람이길 바라는 소유형",
+      description: "평소에는 크게 티 내지 않아도 연애를 하면 상대에게 특별한 존재이고 싶은 마음이 강해지는 편이에요. 상대가 나를 우선해주거나 다른 사람과는 다른 태도를 보여줄 때 사랑받고 있다고 느끼기 쉬워요.\n\n애인의 인간관계나 혼자 보내는 시간이 예상보다 신경 쓰일 때도 있을 수 있어요. 그만큼 상대와 깊게 연결되고 서로에게 중요한 사람이 되는 관계를 원하는 편이에요.\n\n관계에 애정을 많이 쏟는 만큼 질투나 서운함도 크게 느껴질 수 있어요. 상대를 내 사람이라고 느끼는 것과 서로의 생활을 존중하는 것 사이에서 균형을 잡으면 더 편안하게 사랑할 수 있어요.",
+    },
+  ],
+};
+
+export default testData;
+```
+
+## hidden-strength-data.js
+
+```javascript
+"use strict";
+
+const testData = {
+  id: 39,
+  url: "test.html?id=hidden-strength",
+  title: "내 성격에서 의외로 강한 부분은?",
+  description: "평소에는 잘 드러나지 않지만, 내가 생각보다 잘하는 건 무엇일까?",
+  category: "성격",
+  showResultType: true,
+  stats: [
+    { id: "judgment", title: "판단력" },
+    { id: "action", title: "실행력" },
+    { id: "resilience", title: "회복력" },
+    { id: "connection", title: "관계력" },
+    { id: "persistence", title: "끈기" },
+  ],
+  questions: [
+    {
+      question: "갑자기 예상하지 못한 문제가 생기면 나는?",
+      answers: [["주변 상황을 빠르게 파악한다", "judgment"], ["일단 부딪혀보면서 해결한다", "action"], ["감정적으로 흔들리지 않으려고 한다", "resilience"], ["주변 사람들과 역할을 나눈다", "connection"], ["끝까지 포기하지 않고 버틴다", "persistence"]],
+    },
+    {
+      question: "누군가 내 의견을 강하게 반대하면?",
+      answers: [["상대 말도 들어보고 다시 생각해본다", "judgment"], ["필요하면 바로 내 의견을 수정한다", "resilience"], ["내 생각이 맞다면 계속 밀고 간다", "persistence"], ["분위기가 너무 틀어지지 않게 조율한다", "connection"], ["말로만 고민하기보다 직접 결과를 보여주려 한다", "action"]],
+    },
+    {
+      question: "처음 해보는 일을 맡게 되면?",
+      answers: [["일단 시작하면서 익히는 편이다", "action"], ["비슷한 경험이나 정보를 먼저 찾아본다", "judgment"], ["어렵더라도 쉽게 포기하지 않는다", "persistence"], ["모르는 부분은 주변 사람에게 물어본다", "connection"], ["처음 잘 안돼도 금방 다시 시도한다", "resilience"]],
+    },
+    {
+      question: "힘든 일이 오래 이어질 때 나는?",
+      answers: [["하루씩 버티면서 계속 해나간다", "persistence"], ["상황을 바꿀 방법을 찾아본다", "judgment"], ["잠시 쉬고 다시 회복하려 한다", "resilience"], ["주변 사람에게 도움을 요청한다", "connection"], ["계속 움직이면서 해결하려 한다", "action"]],
+    },
+    {
+      question: "여러 사람이 함께 있는 상황에서 문제 생기면?",
+      answers: [["누가 뭘 해야 할지 정리한다", "judgment"], ["일단 내가 먼저 움직인다", "action"], ["사람들 분위기를 살피며 조율한다", "connection"], ["일이 꼬여도 쉽게 멘붕 오지 않는다", "resilience"], ["끝까지 책임지고 마무리하려 한다", "persistence"]],
+    },
+    {
+      question: "실패한 뒤 내 모습과 가장 가까운 건?",
+      answers: [["왜 실패했는지 분석한다", "judgment"], ["바로 다시 해본다", "action"], ["시간이 지나면 금방 털고 일어난다", "resilience"], ["주변 사람들과 이야기하면서 정리한다", "connection"], ["될 때까지 계속 시도한다", "persistence"]],
+    },
+    {
+      question: "주변 사람들이 나에게 자주 맡기는 역할은?",
+      answers: [["결정하거나 정리하는 역할", "judgment"], ["먼저 시작하고 추진하는 역할", "action"], ["분위기를 풀거나 사람 사이를 연결하는 역할", "connection"], ["힘든 상황에서도 중심을 잡는 역할", "resilience"], ["끝까지 책임지고 마무리하는 역할", "persistence"]],
+    },
+    {
+      question: "계획이 틀어졌을 때 나는?",
+      answers: [["새로운 계획을 빠르게 세운다", "judgment"], ["일단 가능한 것부터 한다", "action"], ["잠깐 흔들려도 금방 다시 적응한다", "resilience"], ["같이 있는 사람들과 방향을 맞춘다", "connection"], ["원래 목표는 쉽게 포기하지 않는다", "persistence"]],
+    },
+    {
+      question: "누군가 힘들어하고 있다면?",
+      answers: [["상황을 정리해서 현실적인 조언을 해준다", "judgment"], ["바로 도울 수 있는 행동을 한다", "action"], ["감정적으로 무너지지 않게 옆에서 버텨준다", "resilience"], ["이야기를 들어주고 사람 사이를 연결해준다", "connection"], ["쉽게 포기하지 않도록 끝까지 함께해준다", "persistence"]],
+    },
+    {
+      question: "중요한 일을 앞두고 긴장될 때 나는?",
+      answers: [["해야 할 일을 차분하게 정리한다", "judgment"], ["생각이 많아지기 전에 먼저 시작한다", "action"], ["긴장해도 시간이 지나면 금방 안정된다", "resilience"], ["주변 사람과 이야기하면 마음이 편해진다", "connection"], ["힘들어도 끝까지 버텨서 해낸다", "persistence"]],
+    },
+    {
+      question: "내가 가장 싫어하는 상황은?",
+      answers: [["기준 없이 아무렇게나 결정하는 상황", "judgment"], ["생각만 하고 아무도 움직이지 않는 상황", "action"], ["작은 일 하나로 완전히 무너지는 상황", "resilience"], ["서로 말이 안 통하고 분위기가 틀어진 상황", "connection"], ["조금 힘들다고 금방 포기하는 상황", "persistence"]],
+    },
+    {
+      question: "사람들에게 잘 보이지 않는 내 모습은?",
+      answers: [["머릿속으로 생각보다 많은 걸 계산한다", "judgment"], ["마음먹으면 행동이 생각보다 빠르다", "action"], ["힘든 일을 겪어도 다시 돌아오는 힘이 있다", "resilience"], ["사람들의 기분이나 분위기를 생각보다 잘 읽는다", "connection"], ["겉으로 티 안 내도 오래 버티는 힘이 있다", "persistence"]],
+    },
+    {
+      question: "일이 잘 안 풀릴 때 마지막까지 남는 건?",
+      answers: [["해결책을 찾으려는 생각", "judgment"], ["뭐라도 해보려는 행동", "action"], ["다시 괜찮아질 거라는 마음", "resilience"], ["주변 사람들과 함께하려는 마음", "connection"], ["끝까지 포기하지 않는 마음", "persistence"]],
+    },
+    {
+      question: "내가 생각보다 잘하는 것은?",
+      answers: [["복잡한 상황에서 핵심을 찾는 것", "judgment"], ["말보다 먼저 움직이는 것", "action"], ["힘든 일이 지나간 뒤 다시 일어나는 것", "resilience"], ["사람들과 자연스럽게 맞춰가는 것", "connection"], ["오래 걸려도 끝까지 해내는 것", "persistence"]],
+    },
+  ].map(({ question, answers }) => ({
+    question,
+    answers: answers.map(([text, stat]) => ({ text, stat, score: 1 })),
+  })),
+  results: [
+    {
+      stat: "judgment",
+      title: "복잡할수록 빛나는 판단력",
+      description: "당신은 평소에는 크게 티 나지 않아도 상황을 정리하고 핵심을 찾는 힘이 강한 편이에요. 여러 가지 일이 한꺼번에 생겨도 무엇부터 해야 할지 비교적 빠르게 파악하는 타입이에요.\n\n감정에만 끌려가기보다 상황을 한 번 떨어져서 보는 능력이 있고, 결정이 필요한 순간에 생각보다 침착해질 수 있어요. 그래서 주변 사람들은 중요한 순간에 당신의 의견을 은근히 믿고 따를 가능성이 높아요.\n\n다만 너무 많이 생각하다 보면 결정 전에 에너지를 많이 쓸 수도 있어요. 충분히 판단했다면 내 선택을 믿고 움직여보는 것도 좋아요.",
+    },
+    {
+      stat: "action",
+      title: "생각보다 먼저 움직이는 실행력",
+      description: "당신은 고민만 오래 하기보다 일단 해보면서 답을 찾는 힘이 강한 편이에요. 완벽하게 준비되지 않아도 필요한 순간에는 먼저 움직이고 경험하면서 방향을 잡는 타입이에요.\n\n새로운 일을 시작하거나 문제가 생겼을 때 주변보다 한발 먼저 행동하는 경우가 많아요. 덕분에 기회를 빠르게 잡거나 답답한 상황을 실제 변화로 연결하는 데 강점이 있어요.\n\n다만 행동이 빠른 만큼 가끔은 중요한 부분을 놓칠 수도 있어요. 시작하기 전에 핵심만 한 번 확인하는 습관을 더하면 실행력이 훨씬 강한 무기가 될 수 있어요.",
+    },
+    {
+      stat: "resilience",
+      title: "흔들려도 다시 돌아오는 회복력",
+      description: "당신은 힘든 일이 생겨도 완전히 무너진 채 오래 머무르기보다 다시 일상으로 돌아오는 힘이 강한 편이에요. 당장은 속상하고 흔들려도 시간이 지나면 스스로 감정을 정리하고 다시 움직일 수 있는 타입이에요.\n\n예상하지 못한 변화나 실패에서도 생각보다 빠르게 적응하고 새로운 방법을 찾는 편이에요. 겉으로 보기보다 내면이 단단해서 어려운 상황에서 오히려 강해지는 모습이 나타날 수 있어요.\n\n다만 잘 버틴다는 이유로 힘든 감정을 계속 혼자 넘길 필요는 없어요. 쉴 때는 충분히 쉬고 도움을 받을 줄 알면 회복력도 더 오래 유지할 수 있어요.",
+    },
+    {
+      stat: "connection",
+      title: "사람 사이에서 빛나는 관계력",
+      description: "당신은 생각보다 사람들의 분위기와 감정을 잘 읽고 관계를 부드럽게 이어가는 힘이 강한 편이에요. 누군가 불편해하거나 분위기가 어색해졌을 때 자연스럽게 균형을 맞추는 역할을 할 가능성이 높아요.\n\n사람마다 다른 성향을 파악하고 그에 맞게 소통하는 능력도 좋은 편이에요. 그래서 주변에서는 같이 있으면 편하거나 이야기하기 쉬운 사람으로 느낄 수 있어요.\n\n다만 모두를 편하게 해주려다 보면 내 감정을 뒤로 미룰 수도 있어요. 사람을 챙기는 만큼 내 입장과 필요도 함께 표현하는 것이 좋아요.",
+    },
+    {
+      stat: "persistence",
+      title: "조용히 끝까지 가는 끈기",
+      description: "당신은 시작할 때 가장 눈에 띄는 사람은 아닐 수 있지만 쉽게 포기하지 않는 힘이 강한 편이에요. 시간이 오래 걸리거나 과정이 힘들어도 한번 중요하다고 생각한 일은 끝까지 붙잡는 타입이에요.\n\n겉으로는 힘들어 보여도 속으로는 계속 버티면서 결국 결과를 만들어내는 경우가 많아요. 그래서 시간이 지날수록 주변에서 믿고 맡길 수 있는 사람이라는 평가를 받을 가능성이 높아요.\n\n다만 끝까지 버티는 것과 무조건 참는 것은 조금 달라요. 방향이 맞는지 한 번씩 확인하면서 힘을 쓰면 당신의 끈기가 더 큰 장점이 될 수 있어요.",
+    },
+  ],
+};
+
+export default testData;
 ```
 
 ## jealousy-data.js
@@ -1740,11 +2484,12 @@ const testData = {
 
 const testData = {
   id: 8,
-  url: "jealousy-test.html",
+  url: "test.html?id=jealousy",
   shareDescription: "내 질투 지수 결과를 확인해보세요.",
   title: "내 질투심은 정상 범위일까?",
   description: "연애할 때 나는 얼마나 질투하는 편인지 알아보세요.",
   category: "연애/결혼",
+  resultLabel: "당신의 질투 지수는",
   questions: [
     {
       question: "애인이 이성 친구와 단둘이 밥을 먹는다고 하면?",
@@ -1794,135 +2539,27 @@ const testData = {
     {
       min: 10, max: 16,
       title: "질투와는 거리가 먼 편",
-      description: "상대를 꽤 믿고 각자의 인간관계를 존중하는 타입이에요. 웬만한 일에는 크게 흔들리지 않는 편이지만, 불편한 상황까지 무조건 참을 필요는 없어요. 싫은 건 솔직하게 표현해도 괜찮아요.",
+      description: "상대를 꽤 믿고 각자의 인간관계를 존중하는 타입이에요. 웬만한 일에는 크게 흔들리지 않는 편이지만, 불편한 상황까지 무조건 참을 필요는 없어요. 싫은 건 솔직하게 표현해도 괜찮아요.\n\n연락이 조금 늦거나 상대가 다른 사람들과 시간을 보내도 내 생활을 이어가는 편이에요. 서로의 시간을 인정하기 때문에 상대도 관계 안에서 편안함을 느낄 수 있어요.\n\n다만 신경 쓰이지 않는 것과 불편한 감정을 눌러두는 것은 달라요. 마음에 걸리는 일이 있다면 먼저 내 감정을 살피고, 어떤 점이 불편했는지 차분하게 이야기해보세요.",
     },
     {
       min: 17, max: 24,
       title: "적당히 질투하는 편",
-      description: "신경 쓰이는 건 있지만 대부분 스스로 조절할 수 있는 편이에요. 관계에 관심은 있으면서도 상대를 지나치게 통제하지 않는 비교적 균형 잡힌 타입이에요.",
+      description: "신경 쓰이는 건 있지만 대부분 스스로 조절할 수 있는 편이에요. 관계에 관심은 있으면서도 상대를 지나치게 통제하지 않는 비교적 균형 잡힌 타입이에요.\n\n호감과 관심이 있으니 작은 질투는 느끼지만 바로 의심으로 결론 내리지는 않는 편이에요. 상대의 설명을 듣고 상황을 다시 생각할 여유가 있어 갈등을 조율하기 좋아요.\n\n둘 사이의 기준이 다를 때는 누가 맞는지보다 어디에서 불편함이 생기는지 이야기해보세요. 연락이나 친구 관계에 대한 기대를 미리 나누면 불필요한 오해를 줄일 수 있어요.",
     },
     {
       min: 25, max: 32,
       title: "질투가 꽤 많은 편",
-      description: "애인의 이성 관계나 연락 변화에 민감하게 반응하는 편이에요. 혼자 상상하다가 기분이 상하는 경우도 있을 수 있어요. 상대를 확인하려 하기보다 서로 불편한 기준을 미리 대화해보는 게 좋아요.",
+      description: "애인의 이성 관계나 연락 변화에 민감하게 반응하는 편이에요. 혼자 상상하다가 기분이 상하는 경우도 있을 수 있어요. 상대를 확인하려 하기보다 서로 불편한 기준을 미리 대화해보는 게 좋아요.\n\n평소와 다른 말투나 연락 간격을 알아차리면 이유를 계속 생각할 수 있어요. 상대를 소중하게 여기는 마음이 큰 만큼 확인받고 싶어지는 순간도 잦아질 수 있어요.\n\n걱정이 들 때는 실제로 확인한 사실과 내가 상상한 상황을 나눠보세요. 바로 확인하거나 제한하기보다 불안을 말로 전하고, 서로 지킬 수 있는 기준을 함께 정하는 것이 도움이 돼요.",
     },
     {
       min: 33, max: 40,
       title: "질투 과몰입 주의보",
-      description: "작은 변화도 쉽게 의심으로 이어질 수 있는 편이에요. 상대를 좋아하는 마음이 큰 만큼 불안도 크게 느끼는 타입이에요. 휴대폰 확인이나 인간관계 통제로 이어지면 서로 피곤해질 수 있으니 주의가 필요해요.",
+      description: "작은 변화도 쉽게 의심으로 이어질 수 있는 편이에요. 상대를 좋아하는 마음이 큰 만큼 불안도 크게 느끼는 타입이에요. 휴대폰 확인이나 인간관계 통제로 이어지면 서로 피곤해질 수 있으니 주의가 필요해요.\n\n상대의 반응이 내 예상과 다르면 관계에 대한 확신까지 흔들릴 수 있어요. 불안할수록 연락이나 행동을 더 확인하고 싶지만 그 확인이 잠깐의 안심으로만 끝날 수도 있어요.\n\n불안을 느끼는 마음 자체를 탓할 필요는 없어요. 다만 몰래 휴대폰을 보거나 만남을 제한하는 행동보다 내 감정을 설명하는 방법을 선택해주세요. 내 일상과 관계 밖의 즐거움도 챙겨보세요.",
     },
   ],
 };
-```
 
-## jealousy-test.html
-
-```html
-<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <script src="analytics.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="ko_KR">
-  <meta property="og:site_name" content="Today's Choice">
-  <meta property="og:title" content="내 질투심은 정상 범위일까? | Today's Choice">
-  <meta property="og:description" content="연애할 때 나는 얼마나 질투하는 편인지 알아보세요. 총 10문항으로 알아보는 나의 질투 지수.">
-  <meta property="og:url" content="https://todayschoice.kr/jealousy-test.html">
-  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
-  <meta property="og:image:width" content="1731">
-  <meta property="og:image:height" content="909">
-  <meta property="og:image:alt" content="Today's choice">
-  <meta property="og:image:type" content="image/png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="내 질투심은 정상 범위일까? | Today's Choice">
-  <meta name="twitter:description" content="연애할 때 나는 얼마나 질투하는 편인지 알아보세요. 총 10문항으로 알아보는 나의 질투 지수.">
-  <meta name="twitter:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
-  <meta name="twitter:image:alt" content="Today's choice">
-  <meta name="description" content="연애할 때 나는 얼마나 질투하는 편인지 알아보세요. 총 10문항으로 알아보는 나의 질투 지수.">
-  <title>내 질투심은 정상 범위일까? | Today's Choice</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="test.css">
-  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.8.2/kakao.min.js" integrity="sha384-zt/G7/KfaRQ9dT/QIkS0ujMtzouJqzuSJcXVQu50x0rl/+mD1dc70AeOejVbMD9E" crossorigin="anonymous" defer></script>
-  <script src="jealousy-data.js" defer></script>
-  <script src="script.js" defer></script>
-  <script src="test-runner.js" defer></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2401413706072374"
-       crossorigin="anonymous"></script>
-</head>
-<body class="test-page">
-  <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
-    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="7.3"/><path d="m16 16 5 5"/></symbol>
-    <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M20.8 4.7a5.5 5.5 0 0 0-7.8 0L12 5.8l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.5a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
-    <symbol id="icon-chat" viewBox="0 0 24 24"><path d="M21 11.5a9 9 0 0 1-9 8.5 10 10 0 0 1-4-.8L3 21l1.7-4.7A8 8 0 0 1 3 11.5a9 9 0 0 1 18 0Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></symbol>
-    <symbol id="icon-ring" viewBox="0 0 24 24"><circle cx="12" cy="14" r="7.5"/><path d="m9 3 3 3 3-3-1-2h-4l-1 2Z"/></symbol>
-    <symbol id="icon-people" viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 4a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v3"/></symbol>
-    <symbol id="icon-flame" viewBox="0 0 24 24"><path d="M12 3c0 4-5 6-5 11a5 5 0 0 0 10 0c0-3-2-5-3-7 0 3-1 4-2 5 0-4 2-6 0-9Z"/></symbol>
-    <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M21 14A9.5 9.5 0 0 1 10 3a9.5 9.5 0 1 0 11 11Z"/></symbol>
-    <symbol id="icon-leaf" viewBox="0 0 24 24"><path d="M12 22V11M12 15C5 16 2 11 3 7c6-1 9 3 9 8Zm0-5c0-6 4-9 9-8 1 6-3 10-9 8Z"/></symbol>
-    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
-  </svg>
-  <a class="skip-link" href="#main">본문 바로가기</a>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="index.html#home" aria-label="오늘의 초이스 홈">Today's choice</a>
-      <nav class="main-nav" aria-label="주 메뉴">
-        <a class="nav-link" href="index.html#home">홈</a>
-        <a class="nav-link" href="index.html#new-tests">오늘의 테스트</a>
-        <a class="nav-link" href="index.html#popular">전체 테스트</a>
-        <a class="nav-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">Instagram</a>
-      </nav>
-      <button class="icon-button search-toggle" type="button" aria-label="테스트 검색" aria-haspopup="dialog"><svg class="icon"><use href="index.html#icon-search"/></svg></button>
-    </div>
-  </header>
-  <main id="main" data-test-runner>
-    <section class="test-panel" data-screen="start" aria-labelledby="test-title">
-      <p class="test-category" data-role="category"></p>
-      <h1 id="test-title" data-role="title" data-focus tabindex="-1"></h1>
-      <p class="test-description" data-role="description"></p>
-      <p class="test-count" data-role="count"></p>
-      <button class="primary-button" type="button" data-role="start">테스트 시작하기</button>
-    </section>
-    <section class="test-panel" data-screen="question" aria-labelledby="question-title" hidden>
-      <div class="question-top">
-        <button class="test-back" type="button" data-role="back">← 뒤로가기</button>
-        <span class="test-position" data-role="position"></span>
-      </div>
-      <progress class="test-progress" data-role="progress" value="0" max="10" aria-label="테스트 진행률"></progress>
-      <h2 class="question-title" id="question-title" data-role="question" data-focus tabindex="-1"></h2>
-      <div class="answer-list" data-role="answers" role="group" aria-labelledby="question-title"></div>
-    </section>
-    <section class="test-panel test-result" data-screen="result" aria-labelledby="result-title" hidden>
-      <p class="result-label">당신의 질투 지수는</p>
-      <p class="result-score"><span data-role="score"></span><small> / <span data-role="max-score"></span>점</small></p>
-      <h2 class="result-title" id="result-title" data-role="result-title" data-focus tabindex="-1"></h2>
-      <p class="result-description" data-role="result-description"></p>
-      <div class="result-actions">
-        <button class="secondary-button" type="button" data-role="restart">다시하기</button>
-        <a class="secondary-button" href="index.html#category-tests">다른 테스트 보기</a>
-      </div>
-      <button class="primary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
-      <p class="kakao-share-status" id="kakao-share-status" role="status" hidden></p>
-      <p class="test-disclaimer">본 테스트는 재미를 위한 콘텐츠이며 전문적인 심리 진단이 아닙니다.</p>
-    </section>
-    <noscript><p>테스트를 진행하려면 브라우저에서 JavaScript를 활성화해 주세요.</p></noscript>
-  </main>
-  <footer class="site-footer" id="about">
-    <div class="container footer-inner">
-      <a class="instagram-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        <span>@choice_zip_</span>
-      </a>
-    </div>
-  </footer>
-  <dialog id="search-dialog" class="modal" aria-labelledby="search-title"><div class="modal-heading"><h2 id="search-title">어떤 테스트를 찾으세요?</h2><button class="icon-button" type="button" data-close aria-label="검색 닫기"><svg class="icon"><use href="#icon-close"/></svg></button></div><label class="search-field"><svg class="icon"><use href="#icon-search"/></svg><input id="search-input" type="search" placeholder="연애, 질투…" aria-label="테스트 검색어" autocomplete="off"></label><p id="search-count" class="search-count" aria-live="polite"></p><div id="search-results" class="search-results"></div></dialog>
-</body>
-</html>
+export default testData;
 ```
 
 ## lying-data.js
@@ -1932,10 +2569,11 @@ const testData = {
 
 const testData = {
   id: 21,
-  url: "lying-test.html",
+  url: "test.html?id=lying",
   title: "나는 거짓말을 얼마나 잘하는 편일까?",
   description: "거짓말을 하면 바로 티 나는 타입일까, 끝까지 자연스럽게 숨기는 타입일까?",
-  category: "재미",
+  category: "성격",
+  resultLabel: "당신의 거짓말 지수는",
   shareDescription: "내 거짓말 테스트 결과를 확인해보세요.",
   questions: [
     {
@@ -1986,135 +2624,27 @@ const testData = {
     {
       min: 10, max: 16,
       title: "거짓말 불가형",
-      description: "거짓말을 하면 표정이나 말투에서 티가 나는 편. 숨기려 할수록 오히려 더 어색해질 가능성이 큼.",
+      description: "거짓말을 하면 표정이나 말투에서 티가 나는 편이에요. 숨기려 할수록 오히려 더 어색해질 가능성이 커요.\n\n없는 이야기를 만드는 순간 평소와 다른 긴장감이 표정에 드러날 수 있어요. 말을 맞추려 애쓰기보다 솔직하게 설명하는 쪽이 오히려 편하게 느껴지는 타입이에요.\n\n불편한 질문을 받았다고 꼭 핑계를 만들 필요는 없어요. 말하고 싶지 않은 부분은 지금 이야기하기 어렵다고 표현하면, 거짓말 없이도 내 사생활과 경계를 지킬 수 있어요.",
     },
     {
       min: 17, max: 24,
       title: "어설픈 연기파",
-      description: "간단한 핑계 정도는 가능하지만 질문이 길어지면 흔들리는 타입. 가까운 사람에게는 특히 잘 들키는 편.",
+      description: "간단한 핑계 정도는 가능하지만 질문이 길어지면 흔들리는 타입이에요. 가까운 사람에게는 특히 잘 들키는 편이에요.\n\n준비한 한두 마디는 자연스럽게 할 수 있지만 예상하지 못한 질문에는 말투가 흔들릴 수 있어요. 내 평소 모습을 잘 아는 사람에게는 작은 차이도 눈에 띄기 쉬워요.\n\n곤란한 상황을 넘기려다 설명을 계속 덧붙이면 오히려 더 복잡해질 수 있어요. 무리하게 이야기를 이어가기보다 필요한 사실과 말하기 어려운 부분을 구분해서 전해보세요.",
     },
     {
       min: 25, max: 32,
       title: "자연스러운 포커페이스형",
-      description: "표정과 말투를 꽤 잘 유지하는 편. 갑작스러운 질문에도 어느 정도 자연스럽게 대응할 수 있음.",
+      description: "표정과 말투를 꽤 잘 유지하는 편이에요. 갑작스러운 질문에도 어느 정도 자연스럽게 대응할 수 있어요.\n\n상대의 반응에 바로 당황하지 않고 말의 흐름을 유지하는 데 익숙한 편이에요. 긴장한 상황에서도 표정을 조절하는 능력은 발표나 낯선 자리에서도 도움이 될 수 있어요.\n\n다만 자연스럽게 말할 수 있다는 것과 상대의 신뢰를 지킨다는 것은 별개의 일이에요. 나중에 설명하기 어려운 이야기를 만들기보다 솔직하게 표현할 방법을 먼저 찾아보세요.",
     },
     {
       min: 33, max: 40,
       title: "완벽한 연기파",
-      description: "표정 관리, 이야기 유지, 순간 대처까지 상당히 자연스러운 타입. 다만 잘 숨긴다고 해서 거짓말을 자주 하는 게 좋은 건 아님.",
+      description: "표정 관리, 이야기 유지, 순간 대처까지 상당히 자연스러운 타입이에요. 다만 잘 숨긴다고 해서 거짓말을 자주 하는 게 좋은 건 아니에요.\n\n예상하지 못한 반응에도 침착하게 말을 이어가고, 앞서 한 이야기를 기억하는 편이에요. 상황에 맞춰 표현을 바꾸는 능력이 있어 주변에서는 속마음을 읽기 어렵다고 느낄 수도 있어요.\n\n이 결과는 실제 거짓말 실력을 검증한 평가가 아니에요. 표현을 잘 조절하는 능력을 대화와 발표에 활용하면서, 가까운 관계에서는 사실과 신뢰를 우선하는 태도를 챙겨주세요.",
     },
   ],
 };
-```
 
-## lying-test.html
-
-```html
-<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <script src="analytics.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="ko_KR">
-  <meta property="og:site_name" content="Today's Choice">
-  <meta property="og:title" content="나는 거짓말을 얼마나 잘하는 편일까? | Today's Choice">
-  <meta property="og:description" content="거짓말을 하면 바로 티 나는 타입일까, 끝까지 자연스럽게 숨기는 타입일까?">
-  <meta property="og:url" content="https://todayschoice.kr/lying-test.html">
-  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
-  <meta property="og:image:width" content="1731">
-  <meta property="og:image:height" content="909">
-  <meta property="og:image:alt" content="Today's choice">
-  <meta property="og:image:type" content="image/png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="나는 거짓말을 얼마나 잘하는 편일까? | Today's Choice">
-  <meta name="twitter:description" content="거짓말을 하면 바로 티 나는 타입일까, 끝까지 자연스럽게 숨기는 타입일까?">
-  <meta name="twitter:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
-  <meta name="twitter:image:alt" content="Today's choice">
-  <meta name="description" content="거짓말을 하면 바로 티 나는 타입일까, 끝까지 자연스럽게 숨기는 타입일까?">
-  <title>나는 거짓말을 얼마나 잘하는 편일까? | Today's Choice</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="test.css">
-  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.8.2/kakao.min.js" integrity="sha384-zt/G7/KfaRQ9dT/QIkS0ujMtzouJqzuSJcXVQu50x0rl/+mD1dc70AeOejVbMD9E" crossorigin="anonymous" defer></script>
-  <script src="lying-data.js" defer></script>
-  <script src="script.js" defer></script>
-  <script src="test-runner.js" defer></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2401413706072374"
-       crossorigin="anonymous"></script>
-</head>
-<body class="test-page">
-  <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
-    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="7.3"/><path d="m16 16 5 5"/></symbol>
-    <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M20.8 4.7a5.5 5.5 0 0 0-7.8 0L12 5.8l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.5a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
-    <symbol id="icon-chat" viewBox="0 0 24 24"><path d="M21 11.5a9 9 0 0 1-9 8.5 10 10 0 0 1-4-.8L3 21l1.7-4.7A8 8 0 0 1 3 11.5a9 9 0 0 1 18 0Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></symbol>
-    <symbol id="icon-ring" viewBox="0 0 24 24"><circle cx="12" cy="14" r="7.5"/><path d="m9 3 3 3 3-3-1-2h-4l-1 2Z"/></symbol>
-    <symbol id="icon-people" viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 4a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v3"/></symbol>
-    <symbol id="icon-flame" viewBox="0 0 24 24"><path d="M12 3c0 4-5 6-5 11a5 5 0 0 0 10 0c0-3-2-5-3-7 0 3-1 4-2 5 0-4 2-6 0-9Z"/></symbol>
-    <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M21 14A9.5 9.5 0 0 1 10 3a9.5 9.5 0 1 0 11 11Z"/></symbol>
-    <symbol id="icon-leaf" viewBox="0 0 24 24"><path d="M12 22V11M12 15C5 16 2 11 3 7c6-1 9 3 9 8Zm0-5c0-6 4-9 9-8 1 6-3 10-9 8Z"/></symbol>
-    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
-  </svg>
-  <a class="skip-link" href="#main">본문 바로가기</a>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="index.html#home" aria-label="오늘의 초이스 홈">Today's choice</a>
-      <nav class="main-nav" aria-label="주 메뉴">
-        <a class="nav-link" href="index.html#home">홈</a>
-        <a class="nav-link" href="index.html#new-tests">오늘의 테스트</a>
-        <a class="nav-link" href="index.html#popular">전체 테스트</a>
-        <a class="nav-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">Instagram</a>
-      </nav>
-      <button class="icon-button search-toggle" type="button" aria-label="테스트 검색" aria-haspopup="dialog"><svg class="icon"><use href="#icon-search"/></svg></button>
-    </div>
-  </header>
-  <main id="main" data-test-runner>
-    <section class="test-panel" data-screen="start" aria-labelledby="test-title">
-      <p class="test-category" data-role="category"></p>
-      <h1 id="test-title" data-role="title" data-focus tabindex="-1"></h1>
-      <p class="test-description" data-role="description"></p>
-      <p class="test-count" data-role="count"></p>
-      <button class="primary-button" type="button" data-role="start">테스트 시작하기</button>
-    </section>
-    <section class="test-panel" data-screen="question" aria-labelledby="question-title" hidden>
-      <div class="question-top">
-        <button class="test-back" type="button" data-role="back">← 뒤로가기</button>
-        <span class="test-position" data-role="position"></span>
-      </div>
-      <progress class="test-progress" data-role="progress" value="0" max="10" aria-label="테스트 진행률"></progress>
-      <h2 class="question-title" id="question-title" data-role="question" data-focus tabindex="-1"></h2>
-      <div class="answer-list" data-role="answers" role="group" aria-labelledby="question-title"></div>
-    </section>
-    <section class="test-panel test-result" data-screen="result" aria-labelledby="result-title" hidden>
-      <p class="result-label">당신의 거짓말 지수는</p>
-      <p class="result-score"><span data-role="score"></span><small> / <span data-role="max-score"></span>점</small></p>
-      <h2 class="result-title" id="result-title" data-role="result-title" data-focus tabindex="-1"></h2>
-      <p class="result-description" data-role="result-description"></p>
-      <div class="result-actions">
-        <button class="secondary-button" type="button" data-role="restart">다시하기</button>
-        <a class="secondary-button" href="index.html#category-tests">다른 테스트 보기</a>
-      </div>
-      <button class="primary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
-      <p class="kakao-share-status" id="kakao-share-status" role="status" hidden></p>
-      <p class="test-disclaimer">본 테스트는 재미를 위한 콘텐츠이며 전문적인 심리 진단이 아닙니다.</p>
-    </section>
-    <noscript><p>테스트를 진행하려면 브라우저에서 JavaScript를 활성화해 주세요.</p></noscript>
-  </main>
-  <footer class="site-footer" id="about">
-    <div class="container footer-inner">
-      <a class="instagram-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        <span>@choice_zip_</span>
-      </a>
-    </div>
-  </footer>
-  <dialog id="search-dialog" class="modal" aria-labelledby="search-title"><div class="modal-heading"><h2 id="search-title">어떤 테스트를 찾으세요?</h2><button class="icon-button" type="button" data-close aria-label="검색 닫기"><svg class="icon"><use href="#icon-close"/></svg></button></div><label class="search-field"><svg class="icon"><use href="#icon-search"/></svg><input id="search-input" type="search" placeholder="거짓말, 연기, 재미…" aria-label="테스트 검색어" autocomplete="off"></label><p id="search-count" class="search-count" aria-live="polite"></p><div id="search-results" class="search-results"></div></dialog>
-</body>
-</html>
+export default testData;
 ```
 
 ## marriage-values-data.js
@@ -2124,10 +2654,11 @@ const testData = {
 
 const testData = {
   id: 22,
-  url: "marriage-values-test.html",
+  url: "test.html?id=marriage-values",
   title: "나는 사랑만으로 결혼할 수 있을까?",
   description: "결혼에서 사랑과 현실, 나는 어디에 더 가까울까?",
   category: "연애/결혼",
+  resultLabel: "당신의 결혼 가치관 지수는",
   shareDescription: "내 결혼 가치관 테스트 결과를 확인해보세요.",
   questions: [
     {
@@ -2178,135 +2709,133 @@ const testData = {
     {
       min: 10, max: 16,
       title: "사랑 우선형",
-      description: "사랑하는 마음이 충분하다면 현실적인 어려움도 함께 극복할 수 있다고 믿는 편이야. 결혼에서도 조건보다 사람 자체를 가장 중요하게 보는 타입.",
+      description: "사랑하는 마음이 충분하다면 현실적인 어려움도 함께 극복할 수 있다고 믿는 편이에요. 결혼에서도 조건보다 사람 자체를 가장 중요하게 보는 타입이에요.\n\n함께하는 사람에 대한 마음과 믿음이 결혼을 결정하는 가장 큰 이유가 될 수 있어요. 조건이 완벽하지 않아도 둘이 노력하면 길이 생길 것이라는 기대가 있는 편이에요.\n\n사랑을 지키기 위해서라도 현실 이야기를 피하지 않는 것이 좋아요. 생활비, 일, 집안일처럼 반복될 문제를 구체적으로 나누면 함께 극복하고 싶은 마음을 실제 계획으로 만들 수 있어요.",
     },
     {
       min: 17, max: 24,
       title: "사랑과 현실의 균형형",
-      description: "사랑이 가장 중요하지만 현실도 완전히 무시하지는 않는 편. 서로 노력할 의지가 있다면 부족한 조건은 충분히 맞춰갈 수 있다고 보는 타입이야.",
+      description: "사랑이 가장 중요하지만 현실도 완전히 무시하지는 않는 편이에요. 서로 노력할 의지가 있다면 부족한 조건은 충분히 맞춰갈 수 있다고 보는 타입이에요.\n\n조건이 부족하다는 이유만으로 가능성을 닫지는 않지만 앞으로 함께 살아갈 방식은 확인하고 싶은 편이에요. 상대의 현재 상황뿐 아니라 문제를 해결하려는 태도를 중요하게 보는 타입이에요.\n\n막연히 잘 맞춰갈 수 있다고 생각하기보다 각자의 기대를 미리 이야기해보세요. 돈 관리나 일의 계획을 구체적으로 나누면 사랑과 현실 사이의 균형을 더 분명하게 잡을 수 있어요.",
     },
     {
       min: 25, max: 32,
       title: "현실도 중요한 편",
-      description: "사랑만큼 생활 방식, 경제 상황, 미래 계획도 중요하게 보는 타입. 좋아하는 마음만으로 결혼을 결정하기보다는 실제 함께 살아갈 수 있는지를 꼼꼼하게 생각하는 편이야.",
+      description: "사랑만큼 생활 방식, 경제 상황, 미래 계획도 중요하게 보는 타입이에요. 좋아하는 마음만으로 결혼을 결정하기보다는 실제 함께 살아갈 수 있는지를 꼼꼼하게 생각하는 편이에요.\n\n결혼 이후에도 반복될 생활의 차이를 가볍게 넘기지 않는 편이에요. 소비 습관이나 미래 계획을 확인하면서 서로 편하게 지낼 수 있는 관계인지 생각하는 점이 강점이에요.\n\n현실을 살피는 과정이 상대를 조건으로만 평가하는 시간이 되지 않도록 해주세요. 상황이 달라졌을 때 함께 대화하고 조정할 수 있는지까지 보면 더 넓은 기준으로 판단할 수 있어요.",
     },
     {
       min: 33, max: 40,
       title: "현실 우선형",
-      description: "결혼은 사랑만으로 유지되는 관계가 아니라고 보는 편. 경제력, 가치관, 생활 안정 등 현실적인 조건이 맞지 않으면 아무리 사랑해도 결혼을 선택하기 어려운 타입이야.",
+      description: "결혼은 사랑만으로 유지되는 관계가 아니라고 보는 편이에요. 경제력, 가치관, 생활 안정 등 현실적인 조건이 맞지 않으면 아무리 사랑해도 결혼을 선택하기 어려운 타입이에요.\n\n불확실한 생활을 감수하기보다 준비된 상황에서 결혼하고 싶은 마음이 큰 편이에요. 감정이 좋아도 경제 계획이나 생활 방식이 맞지 않으면 쉽게 결정하지 않는 타입이에요.\n\n안정을 중요하게 여기는 것은 자연스러운 선택이에요. 다만 모든 조건이 완벽해질 때까지 기다리는 기준은 부담이 될 수 있으니, 꼭 필요한 조건과 함께 맞춰갈 부분을 나눠보세요.",
     },
   ],
 };
+
+export default testData;
 ```
 
-## marriage-values-test.html
+## married-partner-data.js
 
-```html
-<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <script src="analytics.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="ko_KR">
-  <meta property="og:site_name" content="Today's Choice">
-  <meta property="og:title" content="나는 사랑만으로 결혼할 수 있을까? | Today's Choice">
-  <meta property="og:description" content="결혼에서 사랑과 현실, 나는 어디에 더 가까울까?">
-  <meta property="og:url" content="https://todayschoice.kr/marriage-values-test.html">
-  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
-  <meta property="og:image:width" content="1731">
-  <meta property="og:image:height" content="909">
-  <meta property="og:image:alt" content="Today's choice">
-  <meta property="og:image:type" content="image/png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="나는 사랑만으로 결혼할 수 있을까? | Today's Choice">
-  <meta name="twitter:description" content="결혼에서 사랑과 현실, 나는 어디에 더 가까울까?">
-  <meta name="twitter:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
-  <meta name="twitter:image:alt" content="Today's choice">
-  <meta name="description" content="결혼에서 사랑과 현실, 나는 어디에 더 가까울까?">
-  <title>나는 사랑만으로 결혼할 수 있을까? | Today's Choice</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="test.css">
-  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.8.2/kakao.min.js" integrity="sha384-zt/G7/KfaRQ9dT/QIkS0ujMtzouJqzuSJcXVQu50x0rl/+mD1dc70AeOejVbMD9E" crossorigin="anonymous" defer></script>
-  <script src="marriage-values-data.js" defer></script>
-  <script src="script.js" defer></script>
-  <script src="test-runner.js" defer></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2401413706072374"
-       crossorigin="anonymous"></script>
-</head>
-<body class="test-page">
-  <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
-    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="7.3"/><path d="m16 16 5 5"/></symbol>
-    <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M20.8 4.7a5.5 5.5 0 0 0-7.8 0L12 5.8l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.5a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
-    <symbol id="icon-chat" viewBox="0 0 24 24"><path d="M21 11.5a9 9 0 0 1-9 8.5 10 10 0 0 1-4-.8L3 21l1.7-4.7A8 8 0 0 1 3 11.5a9 9 0 0 1 18 0Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></symbol>
-    <symbol id="icon-ring" viewBox="0 0 24 24"><circle cx="12" cy="14" r="7.5"/><path d="m9 3 3 3 3-3-1-2h-4l-1 2Z"/></symbol>
-    <symbol id="icon-people" viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 4a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v3"/></symbol>
-    <symbol id="icon-flame" viewBox="0 0 24 24"><path d="M12 3c0 4-5 6-5 11a5 5 0 0 0 10 0c0-3-2-5-3-7 0 3-1 4-2 5 0-4 2-6 0-9Z"/></symbol>
-    <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M21 14A9.5 9.5 0 0 1 10 3a9.5 9.5 0 1 0 11 11Z"/></symbol>
-    <symbol id="icon-leaf" viewBox="0 0 24 24"><path d="M12 22V11M12 15C5 16 2 11 3 7c6-1 9 3 9 8Zm0-5c0-6 4-9 9-8 1 6-3 10-9 8Z"/></symbol>
-    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
-  </svg>
-  <a class="skip-link" href="#main">본문 바로가기</a>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="index.html#home" aria-label="오늘의 초이스 홈">Today's choice</a>
-      <nav class="main-nav" aria-label="주 메뉴">
-        <a class="nav-link" href="index.html#home">홈</a>
-        <a class="nav-link" href="index.html#new-tests">오늘의 테스트</a>
-        <a class="nav-link" href="index.html#popular">전체 테스트</a>
-        <a class="nav-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">Instagram</a>
-      </nav>
-      <button class="icon-button search-toggle" type="button" aria-label="테스트 검색" aria-haspopup="dialog"><svg class="icon"><use href="#icon-search"/></svg></button>
-    </div>
-  </header>
-  <main id="main" data-test-runner>
-    <section class="test-panel" data-screen="start" aria-labelledby="test-title">
-      <p class="test-category" data-role="category"></p>
-      <h1 id="test-title" data-role="title" data-focus tabindex="-1"></h1>
-      <p class="test-description" data-role="description"></p>
-      <p class="test-count" data-role="count"></p>
-      <button class="primary-button" type="button" data-role="start">테스트 시작하기</button>
-    </section>
-    <section class="test-panel" data-screen="question" aria-labelledby="question-title" hidden>
-      <div class="question-top">
-        <button class="test-back" type="button" data-role="back">← 뒤로가기</button>
-        <span class="test-position" data-role="position"></span>
-      </div>
-      <progress class="test-progress" data-role="progress" value="0" max="10" aria-label="테스트 진행률"></progress>
-      <h2 class="question-title" id="question-title" data-role="question" data-focus tabindex="-1"></h2>
-      <div class="answer-list" data-role="answers" role="group" aria-labelledby="question-title"></div>
-    </section>
-    <section class="test-panel test-result" data-screen="result" aria-labelledby="result-title" hidden>
-      <p class="result-label">당신의 결혼 가치관 지수는</p>
-      <p class="result-score"><span data-role="score"></span><small> / <span data-role="max-score"></span>점</small></p>
-      <h2 class="result-title" id="result-title" data-role="result-title" data-focus tabindex="-1"></h2>
-      <p class="result-description" data-role="result-description"></p>
-      <div class="result-actions">
-        <button class="secondary-button" type="button" data-role="restart">다시하기</button>
-        <a class="secondary-button" href="index.html#category-tests">다른 테스트 보기</a>
-      </div>
-      <button class="primary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
-      <p class="kakao-share-status" id="kakao-share-status" role="status" hidden></p>
-      <p class="test-disclaimer">본 테스트는 재미를 위한 콘텐츠이며 전문적인 심리 진단이 아닙니다.</p>
-    </section>
-    <noscript><p>테스트를 진행하려면 브라우저에서 JavaScript를 활성화해 주세요.</p></noscript>
-  </main>
-  <footer class="site-footer" id="about">
-    <div class="container footer-inner">
-      <a class="instagram-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        <span>@choice_zip_</span>
-      </a>
-    </div>
-  </footer>
-  <dialog id="search-dialog" class="modal" aria-labelledby="search-title"><div class="modal-heading"><h2 id="search-title">어떤 테스트를 찾으세요?</h2><button class="icon-button" type="button" data-close aria-label="검색 닫기"><svg class="icon"><use href="#icon-close"/></svg></button></div><label class="search-field"><svg class="icon"><use href="#icon-search"/></svg><input id="search-input" type="search" placeholder="결혼, 사랑, 현실…" aria-label="테스트 검색어" autocomplete="off"></label><p id="search-count" class="search-count" aria-live="polite"></p><div id="search-results" class="search-results"></div></dialog>
-</body>
-</html>
+```javascript
+"use strict";
+
+const testData = {
+  id: 34,
+  url: "test.html?id=married-partner",
+  title: "나는 결혼하면 어떤 배우자일까?",
+  description: "결혼생활 속에서 나는 어떤 모습으로 살아가게 될까?",
+  category: "연애/결혼",
+  showResultType: true,
+  stats: [
+    { id: "practical", title: "현실형" },
+    { id: "caring", title: "다정형" },
+    { id: "independent", title: "독립형" },
+    { id: "energetic", title: "활력형" },
+  ],
+  questions: [
+    {
+      question: "배우자가 힘든 일을 겪고 있다면 나는?",
+      answers: ["먼저 해결 방법부터 같이 찾아본다", "충분히 들어주고 감정을 달래준다", "필요할 때 옆에 있어주되 스스로 정리할 시간도 준다", "분위기를 바꿔주려고 맛있는 걸 먹거나 바람 쐬러 가자고 한다"],
+    },
+    {
+      question: "주말에 둘 다 특별한 일정이 없다면?",
+      answers: ["집안일이나 필요한 일을 먼저 정리하고 싶다", "같이 밥 먹고 소소하게 시간을 보내고 싶다", "각자 하고 싶은 걸 하다가 필요하면 같이 있고 싶다", "어디라도 나가서 재미있는 걸 하고 싶다"],
+    },
+    {
+      question: "생활비를 관리한다면 나는?",
+      answers: ["예산을 정하고 계획적으로 관리하고 싶다", "서로 부담되지 않게 합의해서 쓰고 싶다", "공통 비용만 정하고 개인 돈은 각자 관리하고 싶다", "기본만 맞으면 너무 빡빡하게 관리하고 싶진 않다"],
+    },
+    {
+      question: "배우자가 친구들과 여행을 간다고 한다면?",
+      answers: ["일정이나 비용만 무리 없으면 괜찮다", "잘 다녀오라고 하면서 필요한 걸 챙겨준다", "서로 각자 여행도 다닐 수 있다고 생각한다", "나도 다음엔 같이 놀러 갈 계획부터 세운다"],
+    },
+    {
+      question: "부부싸움을 했다면 나는?",
+      answers: ["원인을 정리하고 해결책을 찾으려 한다", "서로 기분이 풀릴 때까지 대화를 이어간다", "잠깐 각자 시간을 가진 뒤 이야기하고 싶다", "너무 무거워지기 전에 분위기를 풀 방법을 찾는다"],
+    },
+    {
+      question: "배우자가 갑자기 큰돈을 쓰고 싶다고 하면?",
+      answers: ["필요성과 형편부터 따져본다", "왜 사고 싶은지 충분히 듣고 같이 결정한다", "개인 돈 범위라면 본인 선택을 존중한다", "우리 생활에 큰 문제만 없다면 가끔은 써도 된다고 본다"],
+    },
+    {
+      question: "결혼 후 가장 이상적인 일상은?",
+      answers: ["안정적이고 계획이 잘 잡힌 생활", "서로 자주 대화하고 챙겨주는 생활", "함께 살지만 각자의 삶도 잘 유지하는 생활", "평범한 날에도 재미있는 일이 많은 생활"],
+    },
+    {
+      question: "배우자가 집안일을 깜빡했다면?",
+      answers: ["역할을 다시 정하고 다음부터 지키자고 한다", "힘들었나 싶어 내가 먼저 해둘 수도 있다", "매번 그런 게 아니라면 크게 신경 쓰지 않는다", "같이 빨리 끝내고 다른 걸 하자고 한다"],
+    },
+    {
+      question: "배우자가 나와 다른 취미에 푹 빠졌다면?",
+      answers: ["생활에 지장만 없으면 괜찮다고 생각한다", "어떤 취미인지 관심을 가져보려고 한다", "서로 각자 좋아하는 게 있는 게 좋다고 생각한다", "재밌어 보이면 나도 한번 같이 해본다"],
+    },
+    {
+      question: "결혼기념일을 보내는 방식으로 가장 끌리는 건?",
+      answers: ["미리 계획해서 의미 있게 보내는 것", "편지나 선물처럼 마음을 표현하는 것", "꼭 거창하게 챙기지 않아도 둘이 편하면 된다", "평소 안 해본 데이트나 여행을 하는 것"],
+    },
+    {
+      question: "배우자가 이직이나 새로운 도전을 고민한다면?",
+      answers: ["현실적인 조건과 위험을 함께 따져본다", "어떤 선택이든 응원하면서 마음을 들어준다", "본인이 원하는 삶이라면 선택을 존중한다", "새로운 기회라면 한번 해보라고 적극적으로 밀어준다"],
+    },
+    {
+      question: "집에서 함께 보내는 시간이 많아지면?",
+      answers: ["생활 루틴이 잘 맞는지가 중요하다", "자주 대화하고 함께하는 시간이 많아서 좋다", "각자 방이나 혼자 있는 시간이 꼭 필요하다", "같이 요리하거나 놀거리를 만들고 싶다"],
+    },
+    {
+      question: "결혼 후 서로에게 가장 중요하다고 생각하는 것은?",
+      answers: ["책임감과 안정감", "애정 표현과 배려", "신뢰와 존중", "즐거움과 좋은 추억"],
+    },
+  ].map(({ question, answers }) => ({
+    question,
+    answers: answers.map((text, index) => ({
+      text,
+      stat: ["practical", "caring", "independent", "energetic"][index],
+      score: 1,
+    })),
+  })),
+  results: [
+    {
+      stat: "practical",
+      title: "안정적인 생활을 만들어가는 현실형 배우자",
+      description: "당신은 결혼생활에서 책임감과 안정감을 중요하게 생각하는 배우자예요. 문제가 생기면 감정적으로만 반응하기보다 현실적인 해결 방법을 먼저 찾는 편이에요.\n\n생활비, 집안일, 미래 계획처럼 함께 살아가는 데 필요한 부분을 꼼꼼하게 챙길 가능성이 높아요. 배우자 입장에서는 어려운 일이 생겼을 때 믿고 의지할 수 있는 든든한 사람으로 느껴질 수 있어요.\n\n다만 모든 일을 효율이나 해결 중심으로만 바라보면 상대가 감정적인 공감을 아쉬워할 수도 있어요. 가끔은 답을 찾기보다 상대의 마음을 먼저 들어주는 것도 좋은 결혼생활에 도움이 될 수 있어요.",
+    },
+    {
+      stat: "caring",
+      title: "서로를 챙기며 살아가는 다정형 배우자",
+      description: "당신은 결혼 후에도 배우자의 감정과 일상을 세심하게 챙기는 편이에요. 작은 변화도 알아차리고 힘들어 보일 때 먼저 말을 건네는 따뜻한 배우자가 될 가능성이 높아요.\n\n함께 밥을 먹거나 하루 이야기를 나누는 것처럼 평범한 일상 속 교감을 중요하게 생각하는 편이에요. 배우자가 사랑받고 있다는 느낌을 꾸준히 받을 수 있는 관계를 만드는 데 강점이 있어요.\n\n다만 상대를 너무 많이 챙기다 보면 정작 내 감정이나 필요를 뒤로 미룰 수도 있어요. 서로를 배려하는 만큼 나도 충분히 챙김받고 있는지 살펴보는 것이 좋아요.",
+    },
+    {
+      stat: "independent",
+      title: "함께하면서도 각자의 삶을 지키는 독립형 배우자",
+      description: "당신은 결혼했다고 해서 모든 시간과 생활을 반드시 함께해야 한다고 생각하지 않는 편이에요. 서로를 믿고 각자의 취미, 친구, 혼자만의 시간을 존중하는 관계를 편하게 느껴요.\n\n상대를 통제하거나 지나치게 간섭하기보다 한 사람의 독립적인 개인으로 바라보는 편이에요. 덕분에 서로 답답하지 않고 오래 편안하게 지낼 수 있는 관계를 만들 가능성이 높아요.\n\n다만 상대가 애정 표현이나 함께하는 시간을 중요하게 생각한다면 거리감으로 느껴질 수도 있어요. 자유를 존중하면서도 함께하고 싶다는 마음은 충분히 표현해주는 것이 좋아요.",
+    },
+    {
+      stat: "energetic",
+      title: "결혼 후에도 재미를 놓치지 않는 활력형 배우자",
+      description: "당신은 결혼생활이 반복되는 일상으로만 흘러가는 것을 별로 좋아하지 않는 편이에요. 함께 여행을 가거나 새로운 것을 해보면서 둘만의 재미와 추억을 계속 만들고 싶어 하는 타입이에요.\n\n분위기가 무거워질 때도 기분을 풀어주거나 긍정적인 방향으로 바꾸는 역할을 잘할 가능성이 높아요. 배우자에게는 같이 있으면 지루하지 않고 생활에 활력을 주는 사람으로 느껴질 수 있어요.\n\n다만 재미와 즉흥성을 중요하게 여기다 보면 현실적인 준비가 부족해질 때도 있을 수 있어요. 즐거움 속에서도 필요한 계획과 책임을 함께 챙기면 더 균형 잡힌 배우자가 될 수 있어요.",
+    },
+  ],
+};
+
+export default testData;
 ```
 
 ## mental-strength-data.js
@@ -2316,10 +2845,11 @@ const testData = {
 
 const testData = {
   id: 18,
-  url: "mental-strength-test.html",
+  url: "test.html?id=mental-strength",
   title: "내 멘탈은 얼마나 단단한 편일까?",
   description: "스트레스나 실패 앞에서 나는 얼마나 쉽게 흔들리는 사람일까?",
   category: "성격",
+  resultLabel: "당신의 멘탈 단단함 지수는",
   shareDescription: "내 멘탈 단단함 테스트 결과를 확인해보세요.",
   questions: [
     {
@@ -2370,135 +2900,27 @@ const testData = {
     {
       min: 34, max: 40,
       title: "강철멘탈",
-      description: "예상치 못한 문제나 실패가 생겨도 비교적 빠르게 중심을 되찾는 타입. 감정에 휩쓸리기보다 해결할 방법을 찾는 편이고, 한번 힘든 일을 겪어도 회복하는 속도가 빠른 편이야.",
+      description: "예상치 못한 문제나 실패가 생겨도 비교적 빠르게 중심을 되찾는 타입이에요. 감정에 휩쓸리기보다 해결할 방법을 찾는 편이고, 한번 힘든 일을 겪어도 회복하는 속도가 빠른 편이에요.\n\n실패를 내 전체 가치와 연결하기보다 이번에 잘 안 된 부분으로 나누어 보는 편이에요. 예상 밖의 상황에서도 지금 할 수 있는 일을 찾아 일상을 이어가는 힘이 있어요.\n\n잘 버틴다고 해서 피로가 없는 것은 아니에요. 힘든 날에는 해결책을 찾는 일을 잠깐 내려놓고 쉬어도 괜찮아요. 회복을 위한 여유도 오래 단단하게 지내는 데 도움이 돼요.",
     },
     {
       min: 26, max: 33,
       title: "복구형 멘탈",
-      description: "스트레스나 실패에 영향을 받긴 하지만 오래 끌지는 않는 편. 힘들 때는 충분히 힘들어하고, 시간이 지나면 다시 자기 페이스를 찾는 비교적 안정적인 타입이야.",
+      description: "스트레스나 실패에 영향을 받긴 하지만 오래 끌지는 않는 편이에요. 힘들 때는 충분히 힘들어하고, 시간이 지나면 다시 자기 페이스를 찾는 비교적 안정적인 타입이에요.\n\n처음에는 속상하거나 흔들려도 휴식과 주변의 도움을 통해 균형을 되찾는 편이에요. 감정을 무조건 참기보다 충분히 느끼고 다시 움직일 수 있다는 점이 장점이에요.\n\n내가 회복하는 데 도움이 되는 방식을 알아두면 더 편해질 수 있어요. 산책, 수면, 대화처럼 나에게 맞는 방법을 챙기고 힘든 시기에는 평소보다 속도를 낮춰보세요.",
     },
     {
       min: 18, max: 25,
       title: "유리주의보",
-      description: "일이 잘 풀리지 않거나 예상치 못한 문제가 생기면 감정적으로 영향을 많이 받는 편. 특히 실패나 타인의 평가를 오래 생각하는 경우가 있을 수 있어. 다만 멘탈이 약하다기보다 회복하는 데 시간이 필요한 타입에 가까워.",
+      description: "일이 잘 풀리지 않거나 예상치 못한 문제가 생기면 감정적으로 영향을 많이 받는 편이에요. 특히 실패나 타인의 평가를 오래 생각하는 경우가 있을 수 있어요. 다만 멘탈이 약하다기보다 회복하는 데 시간이 필요한 타입에 가까워요.\n\n그날의 실수나 다른 사람의 말이 이후의 기분까지 이어질 수 있어요. 상황을 세심하게 돌아보는 장점이 있지만, 이미 지나간 일을 반복해서 생각하면 에너지가 많이 들 수 있어요.\n\n한 번의 실패가 나를 전부 설명하지는 않아요. 사실과 걱정을 나누어 적거나 당장 할 수 있는 작은 일 하나에 집중해보세요. 충분히 쉬면서 내 속도로 회복해도 괜찮아요.",
     },
     {
       min: 10, max: 17,
       title: "초예민 모드",
-      description: "스트레스나 실패를 마음속에 오래 가지고 가는 편이야. 한번 흔들리면 다른 일에도 영향을 받을 가능성이 크고, 스스로를 몰아붙이는 경향도 있을 수 있어. 혼자 버티기보다 충분히 쉬고 주변 도움을 받는 것도 필요해.",
+      description: "스트레스나 실패를 마음속에 오래 가지고 가는 편이에요. 한번 흔들리면 다른 일에도 영향을 받을 가능성이 크고, 스스로를 몰아붙이는 경향도 있을 수 있어요. 혼자 버티기보다 충분히 쉬고 주변 도움을 받는 것도 필요해요.\n\n예상하지 못한 일이 겹치면 마음에 남는 여운이 커서 평소처럼 지내기 어려울 수 있어요. 작은 신호를 잘 느끼는 만큼 피로와 부담도 더 일찍 알아차리는 편일 수 있어요.\n\n억지로 빨리 괜찮아지려고 스스로를 몰아붙이지 않아도 돼요. 일정을 줄이고 편한 사람에게 상황을 나눠보세요. 일상에 어려움이 오래 이어진다면 도움을 구하는 것도 좋은 선택이에요.",
     },
   ],
 };
-```
 
-## mental-strength-test.html
-
-```html
-<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <script src="analytics.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="ko_KR">
-  <meta property="og:site_name" content="Today's Choice">
-  <meta property="og:title" content="내 멘탈은 얼마나 단단한 편일까? | Today's Choice">
-  <meta property="og:description" content="스트레스나 실패 앞에서 나는 얼마나 쉽게 흔들리는 사람일까?">
-  <meta property="og:url" content="https://todayschoice.kr/mental-strength-test.html">
-  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
-  <meta property="og:image:width" content="1731">
-  <meta property="og:image:height" content="909">
-  <meta property="og:image:alt" content="Today's choice">
-  <meta property="og:image:type" content="image/png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="내 멘탈은 얼마나 단단한 편일까? | Today's Choice">
-  <meta name="twitter:description" content="스트레스나 실패 앞에서 나는 얼마나 쉽게 흔들리는 사람일까?">
-  <meta name="twitter:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
-  <meta name="twitter:image:alt" content="Today's choice">
-  <meta name="description" content="스트레스나 실패 앞에서 나는 얼마나 쉽게 흔들리는 사람일까?">
-  <title>내 멘탈은 얼마나 단단한 편일까? | Today's Choice</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="test.css">
-  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.8.2/kakao.min.js" integrity="sha384-zt/G7/KfaRQ9dT/QIkS0ujMtzouJqzuSJcXVQu50x0rl/+mD1dc70AeOejVbMD9E" crossorigin="anonymous" defer></script>
-  <script src="mental-strength-data.js" defer></script>
-  <script src="script.js" defer></script>
-  <script src="test-runner.js" defer></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2401413706072374"
-       crossorigin="anonymous"></script>
-</head>
-<body class="test-page">
-  <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
-    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="7.3"/><path d="m16 16 5 5"/></symbol>
-    <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M20.8 4.7a5.5 5.5 0 0 0-7.8 0L12 5.8l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.5a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
-    <symbol id="icon-chat" viewBox="0 0 24 24"><path d="M21 11.5a9 9 0 0 1-9 8.5 10 10 0 0 1-4-.8L3 21l1.7-4.7A8 8 0 0 1 3 11.5a9 9 0 0 1 18 0Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></symbol>
-    <symbol id="icon-ring" viewBox="0 0 24 24"><circle cx="12" cy="14" r="7.5"/><path d="m9 3 3 3 3-3-1-2h-4l-1 2Z"/></symbol>
-    <symbol id="icon-people" viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 4a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v3"/></symbol>
-    <symbol id="icon-flame" viewBox="0 0 24 24"><path d="M12 3c0 4-5 6-5 11a5 5 0 0 0 10 0c0-3-2-5-3-7 0 3-1 4-2 5 0-4 2-6 0-9Z"/></symbol>
-    <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M21 14A9.5 9.5 0 0 1 10 3a9.5 9.5 0 1 0 11 11Z"/></symbol>
-    <symbol id="icon-leaf" viewBox="0 0 24 24"><path d="M12 22V11M12 15C5 16 2 11 3 7c6-1 9 3 9 8Zm0-5c0-6 4-9 9-8 1 6-3 10-9 8Z"/></symbol>
-    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
-  </svg>
-  <a class="skip-link" href="#main">본문 바로가기</a>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="index.html#home" aria-label="오늘의 초이스 홈">Today's choice</a>
-      <nav class="main-nav" aria-label="주 메뉴">
-        <a class="nav-link" href="index.html#home">홈</a>
-        <a class="nav-link" href="index.html#new-tests">오늘의 테스트</a>
-        <a class="nav-link" href="index.html#popular">전체 테스트</a>
-        <a class="nav-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">Instagram</a>
-      </nav>
-      <button class="icon-button search-toggle" type="button" aria-label="테스트 검색" aria-haspopup="dialog"><svg class="icon"><use href="#icon-search"/></svg></button>
-    </div>
-  </header>
-  <main id="main" data-test-runner>
-    <section class="test-panel" data-screen="start" aria-labelledby="test-title">
-      <p class="test-category" data-role="category"></p>
-      <h1 id="test-title" data-role="title" data-focus tabindex="-1"></h1>
-      <p class="test-description" data-role="description"></p>
-      <p class="test-count" data-role="count"></p>
-      <button class="primary-button" type="button" data-role="start">테스트 시작하기</button>
-    </section>
-    <section class="test-panel" data-screen="question" aria-labelledby="question-title" hidden>
-      <div class="question-top">
-        <button class="test-back" type="button" data-role="back">← 뒤로가기</button>
-        <span class="test-position" data-role="position"></span>
-      </div>
-      <progress class="test-progress" data-role="progress" value="0" max="10" aria-label="테스트 진행률"></progress>
-      <h2 class="question-title" id="question-title" data-role="question" data-focus tabindex="-1"></h2>
-      <div class="answer-list" data-role="answers" role="group" aria-labelledby="question-title"></div>
-    </section>
-    <section class="test-panel test-result" data-screen="result" aria-labelledby="result-title" hidden>
-      <p class="result-label">당신의 멘탈 단단함 지수는</p>
-      <p class="result-score"><span data-role="score"></span><small> / <span data-role="max-score"></span>점</small></p>
-      <h2 class="result-title" id="result-title" data-role="result-title" data-focus tabindex="-1"></h2>
-      <p class="result-description" data-role="result-description"></p>
-      <div class="result-actions">
-        <button class="secondary-button" type="button" data-role="restart">다시하기</button>
-        <a class="secondary-button" href="index.html#category-tests">다른 테스트 보기</a>
-      </div>
-      <button class="primary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
-      <p class="kakao-share-status" id="kakao-share-status" role="status" hidden></p>
-      <p class="test-disclaimer">본 테스트는 재미를 위한 콘텐츠이며 전문적인 심리 진단이 아닙니다.</p>
-    </section>
-    <noscript><p>테스트를 진행하려면 브라우저에서 JavaScript를 활성화해 주세요.</p></noscript>
-  </main>
-  <footer class="site-footer" id="about">
-    <div class="container footer-inner">
-      <a class="instagram-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        <span>@choice_zip_</span>
-      </a>
-    </div>
-  </footer>
-  <dialog id="search-dialog" class="modal" aria-labelledby="search-title"><div class="modal-heading"><h2 id="search-title">어떤 테스트를 찾으세요?</h2><button class="icon-button" type="button" data-close aria-label="검색 닫기"><svg class="icon"><use href="#icon-close"/></svg></button></div><label class="search-field"><svg class="icon"><use href="#icon-search"/></svg><input id="search-input" type="search" placeholder="성격, 멘탈, 스트레스…" aria-label="테스트 검색어" autocomplete="off"></label><p id="search-count" class="search-count" aria-live="polite"></p><div id="search-results" class="search-results"></div></dialog>
-</body>
-</html>
+export default testData;
 ```
 
 ## million-followers-data.js
@@ -2508,10 +2930,11 @@ const testData = {
 
 const testData = {
   id: 28,
-  url: "million-followers-test.html",
+  url: "test.html?id=million-followers",
   title: "나는 하루아침에 100만 팔로워가 생기면 어떻게 변할까?",
   description: "갑자기 모두가 나를 보기 시작한다면, 나는 어떤 사람이 될까?",
   category: "재미",
+  resultLabel: "당신의 유명인 변화 지수는",
   shareDescription: "내 100만 팔로워 테스트 결과를 확인해보세요.",
   resultMetric: { label: "유명인 적응도" },
   questions: [
@@ -2563,136 +2986,27 @@ const testData = {
     {
       min: 10, max: 16,
       title: "유명해져도 그대로인 마이웨이형",
-      description: "100만 명이 나를 보고 있어도 내 생활과 기준을 크게 바꾸지 않는 타입. 관심은 반갑지만 유명세 때문에 내가 달라지는 건 별로 원하지 않는 편이야.",
+      description: "100만 명이 나를 보고 있어도 내 생활과 기준을 크게 바꾸지 않는 타입이에요. 관심은 반갑지만 유명세 때문에 내가 달라지는 건 별로 원하지 않는 편이에요.\n\n많은 관심이 생겨도 콘텐츠나 생활의 중심을 내 취향에 두려는 편이에요. 다른 사람의 평가 때문에 하루의 계획을 전부 바꾸지 않아 유명세 속에서도 자기 페이스를 지킬 수 있어요.\n\n새로운 기회를 무조건 피할 필요는 없어요. 내 기준에 맞는 협업이나 활동을 골라 경험해보면, 익숙한 생활을 지키면서도 관심이 가져온 좋은 변화를 받아들일 수 있어요.",
     },
     {
       min: 17, max: 24,
       title: "적당히 즐기는 인기 적응형",
-      description: "유명해진 상황을 즐기면서도 어느 정도 선을 지킬 줄 아는 편. 좋은 기회는 활용하지만 SNS 숫자가 내 생활의 전부가 되지는 않는 타입이야.",
+      description: "유명해진 상황을 즐기면서도 어느 정도 선을 지킬 줄 아는 편이에요. 좋은 기회는 활용하지만 SNS 숫자가 내 생활의 전부가 되지는 않는 타입이에요.\n\n사람들이 알아봐 주는 상황은 즐겁지만 쉬는 시간과 사생활도 필요하다고 느끼는 편이에요. 기회를 활용하되 모든 반응에 즉시 맞추지 않는 태도가 오래 활동하는 데 도움이 될 수 있어요.\n\n관심이 커질수록 미리 기준을 정해두면 편해져요. 공개할 사생활의 범위나 광고를 선택하는 조건을 생각해두면, 갑자기 제안이 많아져도 내 속도로 결정할 수 있어요.",
     },
     {
       min: 25, max: 32,
       title: "셀럽 본능이 깨어나는 성장형",
-      description: "사람들의 관심이 커질수록 더 잘하고 싶어지는 타입. 반응, 조회수, 콘텐츠 성과에도 꽤 민감하고 유명세를 새로운 기회로 적극 활용하는 편이야.",
+      description: "사람들의 관심이 커질수록 더 잘하고 싶어지는 타입이에요. 반응, 조회수, 콘텐츠 성과에도 꽤 민감하고 유명세를 새로운 기회로 적극 활용하는 편이에요.\n\n좋은 반응이 오면 다음 콘텐츠를 더 잘 만들고 싶어지는 편이에요. 새로운 사람을 만나고 기회를 넓히는 데 적극적이라 변화한 환경에서 빠르게 성장할 가능성이 있어요.\n\n조회수가 낮은 날을 내 가치가 낮아진 날로 받아들이지는 말아주세요. 성과를 참고하되 내 취향과 휴식도 남겨두면 반응에 휘둘리는 부담을 줄이면서 활동을 이어갈 수 있어요.",
     },
     {
       min: 33, max: 40,
       title: "100만 팔로워 풀장착 셀럽형",
-      description: "100만 팔로워가 생기는 순간 생활 자체가 확 달라질 가능성이 큰 타입. 콘텐츠, 인맥, 광고, 이미지 관리까지 적극적으로 챙기면서 유명세를 제대로 즐길 것 같아. 다만 숫자와 반응에 너무 끌려다닐 가능성도 있음.",
+      description: "100만 팔로워가 생기는 순간 생활 자체가 확 달라질 가능성이 큰 타입이에요. 콘텐츠, 인맥, 광고, 이미지 관리까지 적극적으로 챙기면서 유명세를 제대로 즐길 것 같아요. 다만 숫자와 반응에 너무 끌려다닐 가능성도 있어요.\n\n관심이 커지는 만큼 이미지와 콘텐츠를 관리하는 데 많은 에너지를 쓸 수 있어요. 성장을 놓치고 싶지 않아 쉬는 순간에도 다음 반응과 기회를 생각하게 될 가능성이 있어요.\n\n유명세를 즐기더라도 생활 전체를 숫자에 맡기지는 않는 것이 좋아요. 댓글을 확인하는 시간과 쉬는 시간을 구분하고, 화면 밖에서도 나를 편하게 대해주는 관계를 챙겨보세요.",
     },
   ],
 };
-```
 
-## million-followers-test.html
-
-```html
-<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <script src="analytics.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="ko_KR">
-  <meta property="og:site_name" content="Today's Choice">
-  <meta property="og:title" content="나는 하루아침에 100만 팔로워가 생기면 어떻게 변할까? | Today's Choice">
-  <meta property="og:description" content="갑자기 모두가 나를 보기 시작한다면, 나는 어떤 사람이 될까?">
-  <meta property="og:url" content="https://todayschoice.kr/million-followers-test.html">
-  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
-  <meta property="og:image:width" content="1731">
-  <meta property="og:image:height" content="909">
-  <meta property="og:image:alt" content="Today's choice">
-  <meta property="og:image:type" content="image/png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="나는 하루아침에 100만 팔로워가 생기면 어떻게 변할까? | Today's Choice">
-  <meta name="twitter:description" content="갑자기 모두가 나를 보기 시작한다면, 나는 어떤 사람이 될까?">
-  <meta name="twitter:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
-  <meta name="twitter:image:alt" content="Today's choice">
-  <meta name="description" content="갑자기 모두가 나를 보기 시작한다면, 나는 어떤 사람이 될까?">
-  <title>나는 하루아침에 100만 팔로워가 생기면 어떻게 변할까? | Today's Choice</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="test.css">
-  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.8.2/kakao.min.js" integrity="sha384-zt/G7/KfaRQ9dT/QIkS0ujMtzouJqzuSJcXVQu50x0rl/+mD1dc70AeOejVbMD9E" crossorigin="anonymous" defer></script>
-  <script src="million-followers-data.js" defer></script>
-  <script src="script.js" defer></script>
-  <script src="test-runner.js" defer></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2401413706072374"
-       crossorigin="anonymous"></script>
-</head>
-<body class="test-page">
-  <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
-    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="7.3"/><path d="m16 16 5 5"/></symbol>
-    <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M20.8 4.7a5.5 5.5 0 0 0-7.8 0L12 5.8l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.5a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
-    <symbol id="icon-chat" viewBox="0 0 24 24"><path d="M21 11.5a9 9 0 0 1-9 8.5 10 10 0 0 1-4-.8L3 21l1.7-4.7A8 8 0 0 1 3 11.5a9 9 0 0 1 18 0Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></symbol>
-    <symbol id="icon-ring" viewBox="0 0 24 24"><circle cx="12" cy="14" r="7.5"/><path d="m9 3 3 3 3-3-1-2h-4l-1 2Z"/></symbol>
-    <symbol id="icon-people" viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 4a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v3"/></symbol>
-    <symbol id="icon-flame" viewBox="0 0 24 24"><path d="M12 3c0 4-5 6-5 11a5 5 0 0 0 10 0c0-3-2-5-3-7 0 3-1 4-2 5 0-4 2-6 0-9Z"/></symbol>
-    <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M21 14A9.5 9.5 0 0 1 10 3a9.5 9.5 0 1 0 11 11Z"/></symbol>
-    <symbol id="icon-leaf" viewBox="0 0 24 24"><path d="M12 22V11M12 15C5 16 2 11 3 7c6-1 9 3 9 8Zm0-5c0-6 4-9 9-8 1 6-3 10-9 8Z"/></symbol>
-    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
-  </svg>
-  <a class="skip-link" href="#main">본문 바로가기</a>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="index.html#home" aria-label="오늘의 초이스 홈">Today's choice</a>
-      <nav class="main-nav" aria-label="주 메뉴">
-        <a class="nav-link" href="index.html#home">홈</a>
-        <a class="nav-link" href="index.html#new-tests">오늘의 테스트</a>
-        <a class="nav-link" href="index.html#popular">전체 테스트</a>
-        <a class="nav-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">Instagram</a>
-      </nav>
-      <button class="icon-button search-toggle" type="button" aria-label="테스트 검색" aria-haspopup="dialog"><svg class="icon"><use href="#icon-search"/></svg></button>
-    </div>
-  </header>
-  <main id="main" data-test-runner>
-    <section class="test-panel" data-screen="start" aria-labelledby="test-title">
-      <p class="test-category" data-role="category"></p>
-      <h1 id="test-title" data-role="title" data-focus tabindex="-1"></h1>
-      <p class="test-description" data-role="description"></p>
-      <p class="test-count" data-role="count"></p>
-      <button class="primary-button" type="button" data-role="start">테스트 시작하기</button>
-    </section>
-    <section class="test-panel" data-screen="question" aria-labelledby="question-title" hidden>
-      <div class="question-top">
-        <button class="test-back" type="button" data-role="back">← 뒤로가기</button>
-        <span class="test-position" data-role="position"></span>
-      </div>
-      <progress class="test-progress" data-role="progress" value="0" max="10" aria-label="테스트 진행률"></progress>
-      <h2 class="question-title" id="question-title" data-role="question" data-focus tabindex="-1"></h2>
-      <div class="answer-list" data-role="answers" role="group" aria-labelledby="question-title"></div>
-    </section>
-    <section class="test-panel test-result" data-screen="result" aria-labelledby="result-title" hidden>
-      <p class="result-label">당신의 유명인 변화 지수는</p>
-      <p class="result-score"><span data-role="score"></span><small> / <span data-role="max-score"></span>점</small></p>
-      <p class="result-metric" data-role="result-metric"></p>
-      <h2 class="result-title" id="result-title" data-role="result-title" data-focus tabindex="-1"></h2>
-      <p class="result-description" data-role="result-description"></p>
-      <div class="result-actions">
-        <button class="secondary-button" type="button" data-role="restart">다시하기</button>
-        <a class="secondary-button" href="index.html#category-tests">다른 테스트 보기</a>
-      </div>
-      <button class="primary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
-      <p class="kakao-share-status" id="kakao-share-status" role="status" hidden></p>
-      <p class="test-disclaimer">본 테스트는 재미를 위한 콘텐츠이며 전문적인 심리 진단이 아닙니다.</p>
-    </section>
-    <noscript><p>테스트를 진행하려면 브라우저에서 JavaScript를 활성화해 주세요.</p></noscript>
-  </main>
-  <footer class="site-footer" id="about">
-    <div class="container footer-inner">
-      <a class="instagram-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        <span>@choice_zip_</span>
-      </a>
-    </div>
-  </footer>
-  <dialog id="search-dialog" class="modal" aria-labelledby="search-title"><div class="modal-heading"><h2 id="search-title">어떤 테스트를 찾으세요?</h2><button class="icon-button" type="button" data-close aria-label="검색 닫기"><svg class="icon"><use href="#icon-close"/></svg></button></div><label class="search-field"><svg class="icon"><use href="#icon-search"/></svg><input id="search-input" type="search" placeholder="팔로워, 셀럽, 재미…" aria-label="테스트 검색어" autocomplete="off"></label><p id="search-count" class="search-count" aria-live="polite"></p><div id="search-results" class="search-results"></div></dialog>
-</body>
-</html>
+export default testData;
 ```
 
 ## relationship-control-data.js
@@ -2702,10 +3016,11 @@ const testData = {
 
 const testData = {
   id: 24,
-  url: "relationship-control-test.html",
+  url: "test.html?id=relationship-control",
   title: "나는 연애할 때 상대를 얼마나 통제하려는 편일까?",
   description: "걱정과 관심일까, 아니면 상대를 내 기준에 맞추려는 걸까?",
   category: "연애/결혼",
+  resultLabel: "당신의 연애 통제 성향 지수는",
   shareDescription: "내 연애 통제 성향 테스트 결과를 확인해보세요.",
   questions: [
     {
@@ -2756,135 +3071,27 @@ const testData = {
     {
       min: 10, max: 16,
       title: "자유 존중형",
-      description: "연애를 해도 서로의 생활과 선택을 존중하는 편. 상대를 바꾸려고 하기보다 각자의 영역을 인정하는 타입이야.",
+      description: "연애를 해도 서로의 생활과 선택을 존중하는 편이에요. 상대를 바꾸려고 하기보다 각자의 영역을 인정하는 타입이에요.\n\n상대가 나와 다른 취향이나 인간관계를 갖고 있어도 자연스럽게 받아들이는 편이에요. 연애를 시작했다고 각자의 선택권이 줄어드는 것은 아니라고 생각해 편한 관계를 만들 수 있어요.\n\n자유를 존중하더라도 필요한 배려와 약속은 함께 정할 수 있어요. 내가 원하는 연락이나 함께 보내는 시간을 솔직하게 말하면, 존중과 관심을 동시에 전할 수 있어요.",
     },
     {
       min: 17, max: 24,
       title: "적당한 합의형",
-      description: "상대를 통제하려 하지는 않지만 연인 사이에 어느 정도 기준과 배려는 필요하다고 보는 편. 불편한 부분은 대화로 조율하려는 타입이야.",
+      description: "상대를 통제하려 하지는 않지만 연인 사이에 어느 정도 기준과 배려는 필요하다고 보는 편이에요. 불편한 부분은 대화로 조율하려는 타입이에요.\n\n연애에서 중요한 기준이 생겨도 혼자 정하기보다 서로 이야기하고 맞추려는 편이에요. 내 불편함을 표현하면서도 상대가 다른 생각을 할 여지를 남겨두는 점이 장점이에요.\n\n서로 동의한 약속도 상황이 달라지면 다시 조정할 수 있어요. 한쪽만 계속 양보하고 있지는 않은지 확인하고, 둘 다 감당할 수 있는 기준을 찾아보세요.",
     },
     {
       min: 25, max: 32,
       title: "간섭이 꽤 많은 편",
-      description: "상대의 행동이 관계에 영향을 준다고 생각해서 연락, 인간관계, 생활 방식 등에 관여하는 편이야. 본인은 배려를 원한다고 느껴도 상대에게는 간섭처럼 느껴질 수 있음.",
+      description: "상대의 행동이 관계에 영향을 준다고 생각해서 연락, 인간관계, 생활 방식 등에 관여하는 편이에요. 본인은 배려를 원한다고 느껴도 상대에게는 간섭처럼 느껴질 수 있어요.\n\n걱정되는 상황을 줄이기 위해 상대의 행동에 구체적인 요청을 할 수 있어요. 연락이나 만남의 방식이 달라지면 관계에 대한 배려가 부족하다고 느껴질 가능성도 있어요.\n\n불편함을 말하는 것과 상대의 선택을 대신 정하는 것은 구분해보면 좋아요. 하지 말라는 요구부터 꺼내기보다 어떤 감정이 드는지 설명하고 상대의 입장도 들어보세요.",
     },
     {
       min: 33, max: 40,
       title: "내 기준에 맞추길 원하는 편",
-      description: "연애하면 서로의 행동에 어느 정도 권한이 생긴다고 생각하는 타입. 상대가 내 기준에서 벗어나면 불편함을 크게 느끼는 편이라, 관심과 통제의 경계를 생각해볼 필요가 있어.",
+      description: "연애하면 서로의 행동에 어느 정도 권한이 생긴다고 생각하는 타입이에요. 상대가 내 기준에서 벗어나면 불편함을 크게 느끼는 편이라, 관심과 통제의 경계를 생각해볼 필요가 있어요.\n\n내가 싫어하는 행동을 계속하면 나를 중요하게 생각하지 않는다고 느낄 수 있어요. 그래서 갈등이 생겼을 때 상대의 행동을 바꾸는 일이 먼저 필요하다고 생각하기 쉬운 편이에요.\n\n연인이라도 각자의 시간과 인간관계를 결정할 권리는 남아 있어요. 요청을 거절할 여지도 서로에게 허용하면서, 바꿀 수 없는 차이가 있다면 관계의 기준 자체를 함께 돌아보세요.",
     },
   ],
 };
-```
 
-## relationship-control-test.html
-
-```html
-<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <script src="analytics.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="ko_KR">
-  <meta property="og:site_name" content="Today's Choice">
-  <meta property="og:title" content="나는 연애할 때 상대를 얼마나 통제하려는 편일까? | Today's Choice">
-  <meta property="og:description" content="걱정과 관심일까, 아니면 상대를 내 기준에 맞추려는 걸까?">
-  <meta property="og:url" content="https://todayschoice.kr/relationship-control-test.html">
-  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
-  <meta property="og:image:width" content="1731">
-  <meta property="og:image:height" content="909">
-  <meta property="og:image:alt" content="Today's choice">
-  <meta property="og:image:type" content="image/png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="나는 연애할 때 상대를 얼마나 통제하려는 편일까? | Today's Choice">
-  <meta name="twitter:description" content="걱정과 관심일까, 아니면 상대를 내 기준에 맞추려는 걸까?">
-  <meta name="twitter:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
-  <meta name="twitter:image:alt" content="Today's choice">
-  <meta name="description" content="걱정과 관심일까, 아니면 상대를 내 기준에 맞추려는 걸까?">
-  <title>나는 연애할 때 상대를 얼마나 통제하려는 편일까? | Today's Choice</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="test.css">
-  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.8.2/kakao.min.js" integrity="sha384-zt/G7/KfaRQ9dT/QIkS0ujMtzouJqzuSJcXVQu50x0rl/+mD1dc70AeOejVbMD9E" crossorigin="anonymous" defer></script>
-  <script src="relationship-control-data.js" defer></script>
-  <script src="script.js" defer></script>
-  <script src="test-runner.js" defer></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2401413706072374"
-       crossorigin="anonymous"></script>
-</head>
-<body class="test-page">
-  <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
-    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="7.3"/><path d="m16 16 5 5"/></symbol>
-    <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M20.8 4.7a5.5 5.5 0 0 0-7.8 0L12 5.8l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.5a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
-    <symbol id="icon-chat" viewBox="0 0 24 24"><path d="M21 11.5a9 9 0 0 1-9 8.5 10 10 0 0 1-4-.8L3 21l1.7-4.7A8 8 0 0 1 3 11.5a9 9 0 0 1 18 0Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></symbol>
-    <symbol id="icon-ring" viewBox="0 0 24 24"><circle cx="12" cy="14" r="7.5"/><path d="m9 3 3 3 3-3-1-2h-4l-1 2Z"/></symbol>
-    <symbol id="icon-people" viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 4a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v3"/></symbol>
-    <symbol id="icon-flame" viewBox="0 0 24 24"><path d="M12 3c0 4-5 6-5 11a5 5 0 0 0 10 0c0-3-2-5-3-7 0 3-1 4-2 5 0-4 2-6 0-9Z"/></symbol>
-    <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M21 14A9.5 9.5 0 0 1 10 3a9.5 9.5 0 1 0 11 11Z"/></symbol>
-    <symbol id="icon-leaf" viewBox="0 0 24 24"><path d="M12 22V11M12 15C5 16 2 11 3 7c6-1 9 3 9 8Zm0-5c0-6 4-9 9-8 1 6-3 10-9 8Z"/></symbol>
-    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
-  </svg>
-  <a class="skip-link" href="#main">본문 바로가기</a>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="index.html#home" aria-label="오늘의 초이스 홈">Today's choice</a>
-      <nav class="main-nav" aria-label="주 메뉴">
-        <a class="nav-link" href="index.html#home">홈</a>
-        <a class="nav-link" href="index.html#new-tests">오늘의 테스트</a>
-        <a class="nav-link" href="index.html#popular">전체 테스트</a>
-        <a class="nav-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">Instagram</a>
-      </nav>
-      <button class="icon-button search-toggle" type="button" aria-label="테스트 검색" aria-haspopup="dialog"><svg class="icon"><use href="#icon-search"/></svg></button>
-    </div>
-  </header>
-  <main id="main" data-test-runner>
-    <section class="test-panel" data-screen="start" aria-labelledby="test-title">
-      <p class="test-category" data-role="category"></p>
-      <h1 id="test-title" data-role="title" data-focus tabindex="-1"></h1>
-      <p class="test-description" data-role="description"></p>
-      <p class="test-count" data-role="count"></p>
-      <button class="primary-button" type="button" data-role="start">테스트 시작하기</button>
-    </section>
-    <section class="test-panel" data-screen="question" aria-labelledby="question-title" hidden>
-      <div class="question-top">
-        <button class="test-back" type="button" data-role="back">← 뒤로가기</button>
-        <span class="test-position" data-role="position"></span>
-      </div>
-      <progress class="test-progress" data-role="progress" value="0" max="10" aria-label="테스트 진행률"></progress>
-      <h2 class="question-title" id="question-title" data-role="question" data-focus tabindex="-1"></h2>
-      <div class="answer-list" data-role="answers" role="group" aria-labelledby="question-title"></div>
-    </section>
-    <section class="test-panel test-result" data-screen="result" aria-labelledby="result-title" hidden>
-      <p class="result-label">당신의 연애 통제 성향 지수는</p>
-      <p class="result-score"><span data-role="score"></span><small> / <span data-role="max-score"></span>점</small></p>
-      <h2 class="result-title" id="result-title" data-role="result-title" data-focus tabindex="-1"></h2>
-      <p class="result-description" data-role="result-description"></p>
-      <div class="result-actions">
-        <button class="secondary-button" type="button" data-role="restart">다시하기</button>
-        <a class="secondary-button" href="index.html#category-tests">다른 테스트 보기</a>
-      </div>
-      <button class="primary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
-      <p class="kakao-share-status" id="kakao-share-status" role="status" hidden></p>
-      <p class="test-disclaimer">본 테스트는 재미를 위한 콘텐츠이며 전문적인 심리 진단이 아닙니다.</p>
-    </section>
-    <noscript><p>테스트를 진행하려면 브라우저에서 JavaScript를 활성화해 주세요.</p></noscript>
-  </main>
-  <footer class="site-footer" id="about">
-    <div class="container footer-inner">
-      <a class="instagram-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        <span>@choice_zip_</span>
-      </a>
-    </div>
-  </footer>
-  <dialog id="search-dialog" class="modal" aria-labelledby="search-title"><div class="modal-heading"><h2 id="search-title">어떤 테스트를 찾으세요?</h2><button class="icon-button" type="button" data-close aria-label="검색 닫기"><svg class="icon"><use href="#icon-close"/></svg></button></div><label class="search-field"><svg class="icon"><use href="#icon-search"/></svg><input id="search-input" type="search" placeholder="연애, 통제, 관심…" aria-label="테스트 검색어" autocomplete="off"></label><p id="search-count" class="search-count" aria-live="polite"></p><div id="search-results" class="search-results"></div></dialog>
-</body>
-</html>
+export default testData;
 ```
 
 ## relationship-energy-data.js
@@ -2894,10 +3101,11 @@ const testData = {
 
 const testData = {
   id: 23,
-  url: "relationship-energy-test.html",
+  url: "test.html?id=relationship-energy",
   title: "나는 연애할 때 감정소모가 큰 편일까?",
   description: "연애 하나로 하루 기분이 얼마나 흔들리는지 알아보세요.",
   category: "연애/결혼",
+  resultLabel: "당신의 연애 감정소모 지수는",
   shareDescription: "내 연애 감정소모 테스트 결과를 확인해보세요.",
   questions: [
     {
@@ -2948,135 +3156,135 @@ const testData = {
     {
       min: 10, max: 16,
       title: "감정소모 거의 없는 편",
-      description: "연애를 해도 내 생활과 감정을 비교적 잘 유지하는 타입. 문제가 생겨도 관계 하나 때문에 하루 전체가 크게 흔들리지는 않는 편이야.",
+      description: "연애를 해도 내 생활과 감정을 비교적 잘 유지하는 타입이에요. 문제가 생겨도 관계 하나 때문에 하루 전체가 크게 흔들리지는 않는 편이에요.\n\n애인과의 관계가 중요해도 다른 일정과 내 감정을 함께 챙기는 편이에요. 갈등이 생겨도 모든 일을 멈추기보다 필요한 대화를 하고 일상으로 돌아오는 힘이 있어요.\n\n감정소모가 적다고 관심이 적다는 뜻은 아니에요. 다만 상대가 더 많은 표현을 원할 수 있으니, 내가 관계를 소중하게 생각한다는 마음을 말과 행동으로 전해보세요.",
     },
     {
       min: 17, max: 24,
       title: "적당히 신경 쓰는 편",
-      description: "연애에 영향을 받기는 하지만 금방 균형을 찾는 편. 좋아하는 만큼 신경은 쓰면서도 내 생활까지 잃지는 않는 타입이야.",
+      description: "연애에 영향을 받기는 하지만 금방 균형을 찾는 편이에요. 좋아하는 만큼 신경은 쓰면서도 내 생활까지 잃지는 않는 타입이에요.\n\n답장이 늦거나 작은 다툼이 생기면 신경은 쓰이지만 혼자 결론을 크게 키우지는 않는 편이에요. 관계의 문제를 생각하는 시간과 내 생활을 이어가는 시간이 함께 남아 있어요.\n\n감정이 평소보다 오래 남는 날에는 그냥 넘기기보다 무엇이 불편했는지 정리해보세요. 작은 서운함을 제때 나누고 내 시간도 챙기면 관계의 균형을 유지하기 좋아요.",
     },
     {
       min: 25, max: 32,
       title: "감정소모가 꽤 큰 편",
-      description: "애인의 말투나 행동 변화에 민감하고, 관계가 안 좋으면 다른 일에도 영향을 받는 편이야. 연애에 진심인 만큼 감정 에너지도 많이 쓰는 타입.",
+      description: "애인의 말투나 행동 변화에 민감하고, 관계가 안 좋으면 다른 일에도 영향을 받는 편이에요. 연애에 진심인 만큼 감정 에너지도 많이 쓰는 타입이에요.\n\n애인의 반응에 따라 마음이 자주 움직여 연락을 확인하거나 지난 대화를 다시 떠올릴 수 있어요. 관계에 집중하는 힘이 큰 만큼 다른 일에 쓸 에너지가 줄어드는 날도 있을 거예요.\n\n서운함이 생기면 혼자 해석을 반복하기보다 확인이 필요한 부분을 골라 이야기해보세요. 연락을 잠시 내려놓고 몰입할 활동을 마련하면 내 기분을 돌보는 데 도움이 돼요.",
     },
     {
       min: 33, max: 40,
       title: "연애가 하루를 좌우하는 편",
-      description: "관계의 작은 변화에도 감정이 크게 흔들릴 수 있는 타입. 애인의 기분이나 연락 상태가 내 하루 컨디션까지 좌우할 가능성이 커.",
+      description: "관계의 작은 변화에도 감정이 크게 흔들릴 수 있는 타입이에요. 애인의 기분이나 연락 상태가 내 하루 컨디션까지 좌우할 가능성이 커요.\n\n관계가 편안한 날에는 다른 일도 잘 풀리는 것 같고, 불안한 날에는 평소 일까지 버겁게 느껴질 수 있어요. 확신을 받고 싶은 마음이 커서 상대의 반응을 계속 살피게 될 가능성이 있어요.\n\n좋아하는 마음이 커도 내 하루가 모두 상대의 반응으로 정해질 필요는 없어요. 수면, 식사, 친구와의 시간처럼 내 일상의 기반을 챙기고 불안할 때 필요한 대화를 구체적으로 요청해보세요.",
     },
   ],
 };
+
+export default testData;
 ```
 
-## relationship-energy-test.html
+## relationship-fatigue-data.js
 
-```html
-<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <script src="analytics.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="ko_KR">
-  <meta property="og:site_name" content="Today's Choice">
-  <meta property="og:title" content="나는 연애할 때 감정소모가 큰 편일까? | Today's Choice">
-  <meta property="og:description" content="연애 하나로 하루 기분이 얼마나 흔들리는지 알아보세요.">
-  <meta property="og:url" content="https://todayschoice.kr/relationship-energy-test.html">
-  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
-  <meta property="og:image:width" content="1731">
-  <meta property="og:image:height" content="909">
-  <meta property="og:image:alt" content="Today's choice">
-  <meta property="og:image:type" content="image/png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="나는 연애할 때 감정소모가 큰 편일까? | Today's Choice">
-  <meta name="twitter:description" content="연애 하나로 하루 기분이 얼마나 흔들리는지 알아보세요.">
-  <meta name="twitter:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
-  <meta name="twitter:image:alt" content="Today's choice">
-  <meta name="description" content="연애 하나로 하루 기분이 얼마나 흔들리는지 알아보세요.">
-  <title>나는 연애할 때 감정소모가 큰 편일까? | Today's Choice</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="test.css">
-  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.8.2/kakao.min.js" integrity="sha384-zt/G7/KfaRQ9dT/QIkS0ujMtzouJqzuSJcXVQu50x0rl/+mD1dc70AeOejVbMD9E" crossorigin="anonymous" defer></script>
-  <script src="relationship-energy-data.js" defer></script>
-  <script src="script.js" defer></script>
-  <script src="test-runner.js" defer></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2401413706072374"
-       crossorigin="anonymous"></script>
-</head>
-<body class="test-page">
-  <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
-    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="7.3"/><path d="m16 16 5 5"/></symbol>
-    <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M20.8 4.7a5.5 5.5 0 0 0-7.8 0L12 5.8l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.5a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
-    <symbol id="icon-chat" viewBox="0 0 24 24"><path d="M21 11.5a9 9 0 0 1-9 8.5 10 10 0 0 1-4-.8L3 21l1.7-4.7A8 8 0 0 1 3 11.5a9 9 0 0 1 18 0Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></symbol>
-    <symbol id="icon-ring" viewBox="0 0 24 24"><circle cx="12" cy="14" r="7.5"/><path d="m9 3 3 3 3-3-1-2h-4l-1 2Z"/></symbol>
-    <symbol id="icon-people" viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 4a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v3"/></symbol>
-    <symbol id="icon-flame" viewBox="0 0 24 24"><path d="M12 3c0 4-5 6-5 11a5 5 0 0 0 10 0c0-3-2-5-3-7 0 3-1 4-2 5 0-4 2-6 0-9Z"/></symbol>
-    <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M21 14A9.5 9.5 0 0 1 10 3a9.5 9.5 0 1 0 11 11Z"/></symbol>
-    <symbol id="icon-leaf" viewBox="0 0 24 24"><path d="M12 22V11M12 15C5 16 2 11 3 7c6-1 9 3 9 8Zm0-5c0-6 4-9 9-8 1 6-3 10-9 8Z"/></symbol>
-    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
-  </svg>
-  <a class="skip-link" href="#main">본문 바로가기</a>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="index.html#home" aria-label="오늘의 초이스 홈">Today's choice</a>
-      <nav class="main-nav" aria-label="주 메뉴">
-        <a class="nav-link" href="index.html#home">홈</a>
-        <a class="nav-link" href="index.html#new-tests">오늘의 테스트</a>
-        <a class="nav-link" href="index.html#popular">전체 테스트</a>
-        <a class="nav-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">Instagram</a>
-      </nav>
-      <button class="icon-button search-toggle" type="button" aria-label="테스트 검색" aria-haspopup="dialog"><svg class="icon"><use href="#icon-search"/></svg></button>
-    </div>
-  </header>
-  <main id="main" data-test-runner>
-    <section class="test-panel" data-screen="start" aria-labelledby="test-title">
-      <p class="test-category" data-role="category"></p>
-      <h1 id="test-title" data-role="title" data-focus tabindex="-1"></h1>
-      <p class="test-description" data-role="description"></p>
-      <p class="test-count" data-role="count"></p>
-      <button class="primary-button" type="button" data-role="start">테스트 시작하기</button>
-    </section>
-    <section class="test-panel" data-screen="question" aria-labelledby="question-title" hidden>
-      <div class="question-top">
-        <button class="test-back" type="button" data-role="back">← 뒤로가기</button>
-        <span class="test-position" data-role="position"></span>
-      </div>
-      <progress class="test-progress" data-role="progress" value="0" max="10" aria-label="테스트 진행률"></progress>
-      <h2 class="question-title" id="question-title" data-role="question" data-focus tabindex="-1"></h2>
-      <div class="answer-list" data-role="answers" role="group" aria-labelledby="question-title"></div>
-    </section>
-    <section class="test-panel test-result" data-screen="result" aria-labelledby="result-title" hidden>
-      <p class="result-label">당신의 연애 감정소모 지수는</p>
-      <p class="result-score"><span data-role="score"></span><small> / <span data-role="max-score"></span>점</small></p>
-      <h2 class="result-title" id="result-title" data-role="result-title" data-focus tabindex="-1"></h2>
-      <p class="result-description" data-role="result-description"></p>
-      <div class="result-actions">
-        <button class="secondary-button" type="button" data-role="restart">다시하기</button>
-        <a class="secondary-button" href="index.html#category-tests">다른 테스트 보기</a>
-      </div>
-      <button class="primary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
-      <p class="kakao-share-status" id="kakao-share-status" role="status" hidden></p>
-      <p class="test-disclaimer">본 테스트는 재미를 위한 콘텐츠이며 전문적인 심리 진단이 아닙니다.</p>
-    </section>
-    <noscript><p>테스트를 진행하려면 브라우저에서 JavaScript를 활성화해 주세요.</p></noscript>
-  </main>
-  <footer class="site-footer" id="about">
-    <div class="container footer-inner">
-      <a class="instagram-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        <span>@choice_zip_</span>
-      </a>
-    </div>
-  </footer>
-  <dialog id="search-dialog" class="modal" aria-labelledby="search-title"><div class="modal-heading"><h2 id="search-title">어떤 테스트를 찾으세요?</h2><button class="icon-button" type="button" data-close aria-label="검색 닫기"><svg class="icon"><use href="#icon-close"/></svg></button></div><label class="search-field"><svg class="icon"><use href="#icon-search"/></svg><input id="search-input" type="search" placeholder="연애, 감정소모, 기분…" aria-label="테스트 검색어" autocomplete="off"></label><p id="search-count" class="search-count" aria-live="polite"></p><div id="search-results" class="search-results"></div></dialog>
-</body>
-</html>
+```javascript
+"use strict";
+
+const testData = {
+  id: 36,
+  url: "test.html?id=relationship-fatigue",
+  title: "내 인간관계 피로도는 몇 %일까?",
+  description: "사람을 만나고 관계를 유지하는 일이 나에게 얼마나 에너지를 쓰게 할까?",
+  category: "친구·인간관계·사회생활",
+  resultMetric: { label: "인간관계 피로도", normalize: true, useForResult: true },
+  questions: [
+    {
+      question: "약속이 연달아 잡혀 있는 주를 보내면?",
+      answers: ["오히려 사람 만나는 게 재밌어서 괜찮다", "조금 피곤하지만 충분히 즐길 수 있다", "일정이 많아질수록 혼자 있고 싶어진다", "약속 생각만 해도 벌써 지친다"],
+    },
+    {
+      question: "여러 사람이 있는 모임에 다녀온 뒤 나는?",
+      answers: ["기분이 좋아지고 에너지가 생긴다", "조금 피곤하지만 만족스럽다", "집에 오면 한동안 아무 말도 하기 싫다", "다음날까지도 혼자 있고 싶다"],
+    },
+    {
+      question: "친한 친구가 갑자기 만나자고 하면?",
+      answers: ["웬만하면 바로 나간다", "컨디션 괜찮으면 만난다", "조금 고민한 뒤 결정한다", "약속 없는 날은 그냥 쉬고 싶다"],
+    },
+    {
+      question: "누군가의 고민을 오래 들어준 뒤에는?",
+      answers: ["크게 힘들지 않다", "조금 지치지만 괜찮다", "생각보다 에너지가 많이 빠진다", "내 감정까지 무거워지는 느낌이 든다"],
+    },
+    {
+      question: "단톡방 메시지가 많이 쌓여 있으면?",
+      answers: ["재미있게 읽고 바로 답한다", "시간 날 때 천천히 확인한다", "답해야 한다는 생각에 조금 부담된다", "아예 열어보기 싫을 때가 있다"],
+    },
+    {
+      question: "새로운 사람들과 어울려야 하는 상황에서는?",
+      answers: ["새로운 사람 만나는 게 재밌다", "처음만 조금 어색하다", "익숙해질 때까지 꽤 신경을 쓴다", "계속 긴장해서 많이 피곤하다"],
+    },
+    {
+      question: "친구가 자주 연락하고 자주 만나고 싶어 한다면?",
+      answers: ["나도 좋다", "어느 정도는 괜찮다", "가끔은 연락을 줄이고 싶어진다", "친해도 너무 자주 연락하면 부담스럽다"],
+    },
+    {
+      question: "인간관계에서 가장 피곤한 순간은?",
+      answers: ["딱히 크게 피곤하다고 느끼지 않는다", "상대에게 맞춰줘야 할 때", "분위기나 감정을 계속 신경 써야 할 때", "싫어도 관계를 유지해야 할 때"],
+    },
+    {
+      question: "모임에서 분위기가 어색해지면 나는?",
+      answers: ["별로 신경 쓰지 않는다", "상황을 보면서 자연스럽게 있는다", "괜히 내가 분위기를 풀어야 할 것 같다", "어색한 분위기 자체가 너무 피곤하다"],
+    },
+    {
+      question: "오래 연락하지 않은 사람에게 연락이 오면?",
+      answers: ["반갑고 자연스럽게 대화한다", "반갑지만 조금 어색하다", "무슨 일인지부터 궁금해진다", "괜히 관계를 다시 이어가야 할 것 같아 부담된다"],
+    },
+    {
+      question: "사람들과 하루 종일 함께 있어야 한다면?",
+      answers: ["하루 종일 있어도 괜찮다", "중간중간 혼자 있는 시간이 있으면 좋다", "몇 시간 지나면 혼자 있고 싶어진다", "생각만 해도 꽤 힘들 것 같다"],
+    },
+    {
+      question: "누군가 나에게 서운한 티를 내면?",
+      answers: ["바로 물어보고 해결한다", "조금 신경 쓰이지만 대화해본다", "내가 뭘 잘못했는지 계속 생각한다", "관계가 불편해지는 것 자체가 너무 피곤하다"],
+    },
+    {
+      question: "약속이 취소됐다는 연락을 받으면?",
+      answers: ["아쉽다", "아쉽지만 괜찮다", "솔직히 조금 반갑다", "속으로 엄청 좋아한다"],
+    },
+    {
+      question: "사람을 만날 때의 나는?",
+      answers: ["거의 있는 그대로 행동한다", "상황에 따라 조금 조절한다", "상대에 맞춰 말투나 행동을 꽤 바꾸는 편이다", "사람마다 다른 모습을 보여주는 느낌이 든다"],
+    },
+    {
+      question: "인간관계를 유지하는 데 대해 나는?",
+      answers: ["자연스럽게 하면 되는 일이라고 생각한다", "어느 정도 노력은 필요하다고 본다", "생각보다 많은 에너지가 필요한 일이라고 느낀다", "가끔 모든 관계에서 잠깐 사라지고 싶을 때가 있다"],
+    },
+  ].map(({ question, answers }) => ({
+    question,
+    answers: answers.map((text, index) => ({ text, score: index + 1 })),
+  })),
+  results: [
+    {
+      min: 0,
+      max: 24,
+      title: "사람 만나도 에너지 남는 편",
+      description: "사람을 만나고 관계를 이어가는 데서 큰 피로를 느끼지 않는 편이에요. 대화나 모임 자체를 즐기고, 여러 사람과 함께 있어도 비교적 자연스럽게 행동하는 타입이에요.\n\n상대의 반응이나 분위기를 지나치게 신경 쓰지 않아서 인간관계에 쓰는 에너지가 적은 편이에요. 약속이 많거나 새로운 사람을 만나도 금방 적응하고 일상으로 돌아오는 힘이 있어요.\n\n다만 내가 편하다고 해서 상대도 같은 속도와 거리를 원하는 건 아닐 수 있어요. 가끔은 상대가 어떤 관계 방식을 편하게 느끼는지도 함께 살펴보면 좋아요.",
+    },
+    {
+      min: 25,
+      max: 49,
+      title: "적당히 사람도 만나고 혼자도 쉬는 편",
+      description: "사람들과 어울리는 걸 싫어하지는 않지만, 관계가 많아지면 어느 정도 피로를 느끼는 편이에요. 좋아하는 사람과 보내는 시간은 즐겁지만 혼자 회복하는 시간도 꽤 중요하게 느껴져요.\n\n약속이나 연락이 적당할 때는 편하지만 일정이 몰리면 자연스럽게 혼자 있고 싶어질 수 있어요. 인간관계와 내 시간을 비교적 균형 있게 조절하는 타입에 가까워요.\n\n사람을 피한다기보다 내가 쓸 수 있는 에너지를 잘 알고 있는 편이에요. 피곤하다고 느껴질 때는 억지로 약속을 채우기보다 충분히 쉬어도 괜찮아요.",
+    },
+    {
+      min: 50,
+      max: 74,
+      title: "사람을 만나면 생각보다 많이 지치는 편",
+      description: "관계를 유지하면서 상대의 말과 감정, 분위기를 꽤 많이 신경 쓰는 편이에요. 사람들과 즐겁게 시간을 보내더라도 집에 돌아오면 생각보다 큰 피로가 몰려올 수 있어요.\n\n특히 새로운 사람을 만나거나 불편한 관계를 유지해야 할 때 에너지를 많이 사용하는 타입이에요. 혼자 있는 시간이 부족하면 사람을 만나는 것 자체가 부담스럽게 느껴질 수도 있어요.\n\n그렇다고 인간관계를 싫어하는 것은 아니고, 관계에 쓰는 에너지가 큰 편에 가까워요. 약속 사이에 혼자 회복할 시간을 충분히 만들어두면 훨씬 편하게 관계를 이어갈 수 있어요.",
+    },
+    {
+      min: 75,
+      max: 100,
+      title: "인간관계 배터리가 자주 방전되는 편",
+      description: "사람을 만나고 연락을 이어가는 것만으로도 꽤 많은 에너지를 사용하는 편이에요. 좋아하는 사람과 함께 있어도 시간이 길어지면 혼자 조용히 쉬고 싶은 마음이 커질 수 있어요.\n\n상대의 기분이나 분위기를 많이 살피거나 관계가 불편해질까 신경 쓰면서 더 쉽게 지칠 수도 있어요. 약속이 겹치거나 연락이 몰리면 모든 관계에서 잠깐 벗어나고 싶다고 느끼는 순간도 있을 수 있어요.\n\n혼자 있는 시간이 많은 것이 인간관계를 못한다는 의미는 아니에요. 내가 편하게 감당할 수 있는 관계의 거리와 속도를 알고 조절하는 것이 가장 중요해요.",
+    },
+  ],
+};
+
+export default testData;
 ```
 
 ## secret-data.js
@@ -3086,10 +3294,11 @@ const testData = {
 
 const testData = {
   id: 20,
-  url: "secret-test.html",
+  url: "test.html?id=secret",
   title: "나는 비밀을 들으면 얼마나 오래 참을 수 있을까?",
   description: "입이 무거운 편일까, 말하고 싶어서 근질근질한 편일까?",
-  category: "재미",
+  category: "성격",
+  resultLabel: "당신의 비밀 유지 성향은",
   shareDescription: "내 비밀 유지 테스트 결과를 확인해보세요.",
   questions: [
     {
@@ -3140,135 +3349,27 @@ const testData = {
     {
       min: 10, max: 16,
       title: "철통 보안형",
-      description: "비밀을 맡겨도 되는 타입. 감정이 상하거나 상황이 바뀌어도 남의 이야기를 쉽게 꺼내지 않는 편이야.",
+      description: "비밀을 맡겨도 되는 타입이에요. 감정이 상하거나 상황이 바뀌어도 남의 이야기를 쉽게 꺼내지 않는 편이에요.\n\n재미있는 이야기보다 상대가 믿고 맡겼다는 사실을 더 중요하게 여기는 편이에요. 누가 캐물어도 자세한 내용을 덧붙이지 않아 친구들이 편하게 속마음을 털어놓을 수 있어요.\n\n다만 무거운 이야기를 혼자 책임질 필요까지는 없어요. 듣기 버거운 상황에서는 상대에게 내 한계를 말하고, 어떤 도움을 원하는지 함께 정리해보는 것도 괜찮아요.",
     },
     {
       min: 17, max: 24,
       title: "믿고 맡길 수 있는 편",
-      description: "웬만한 비밀은 잘 지키는 편. 다만 너무 충격적이거나 부담스러운 이야기는 혼자 가지고 있기 힘들 수 있어.",
+      description: "웬만한 비밀은 잘 지키는 편이에요. 다만 너무 충격적이거나 부담스러운 이야기는 혼자 가지고 있기 힘들 수 있어요.\n\n상대의 이야기를 함부로 꺼내지 않으려는 기준이 있고, 평소에는 그 기준을 잘 지키는 편이에요. 갑자기 질문을 받더라도 말을 돌리거나 대화를 정리할 여유가 있어요.\n\n이야기가 너무 부담스럽다면 다른 사람에게 털어놓기 전에 비밀 주인과 먼저 상의해보세요. 어디까지 공유해도 되는지 확인하면 신뢰를 지키면서 내 부담도 줄일 수 있어요.",
     },
     {
       min: 25, max: 32,
       title: "입이 조금 근질근질한 편",
-      description: "비밀을 지키려고는 하지만 누군가에게 말하고 싶은 유혹도 꽤 큰 편. 특히 분위기 타면 힌트를 흘릴 가능성이 있음.",
+      description: "비밀을 지키려고는 하지만 누군가에게 말하고 싶은 유혹도 꽤 큰 편이에요. 특히 분위기에 휩쓸리면 힌트를 흘릴 가능성이 있어요.\n\n놀랍거나 재미있는 이야기를 들으면 누군가와 반응을 나누고 싶은 마음이 커질 수 있어요. 이름을 빼거나 작은 힌트만 주는 정도는 괜찮다고 느끼는 순간도 있을 거예요.\n\n하지만 작은 단서만으로도 당사자를 알아볼 수 있다는 점은 기억해주세요. 말하고 싶어질 때는 한 번 멈추고, 이 이야기를 꺼낼 권한이 나에게 있는지 생각해보면 좋아요.",
     },
     {
       min: 33, max: 40,
       title: "비밀 유지 주의보",
-      description: "비밀을 혼자 들고 있기 힘든 타입. 악의는 없어도 “이 정도는 괜찮겠지” 하다가 퍼뜨릴 수 있으니 조심해야 함.",
+      description: "비밀을 혼자 들고 있기 힘든 타입이에요. 악의는 없어도 “이 정도는 괜찮겠지” 하다가 퍼뜨릴 수 있으니 조심해야 해요.\n\n대화가 무르익거나 감정이 올라오면 비밀보다 지금 하고 싶은 말이 먼저 나올 수 있어요. 특히 친한 사람에게만 말하면 안전할 거라고 생각하기 쉬운 편이에요.\n\n처음부터 지키기 어려운 이야기는 듣지 않겠다고 말해도 괜찮아요. 이미 들었다면 사람 이름이나 상황의 단서까지 조심하고, 공유가 필요할 때는 당사자의 허락을 먼저 구해주세요.",
     },
   ],
 };
-```
 
-## secret-test.html
-
-```html
-<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <script src="analytics.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="ko_KR">
-  <meta property="og:site_name" content="Today's Choice">
-  <meta property="og:title" content="나는 비밀을 들으면 얼마나 오래 참을 수 있을까? | Today's Choice">
-  <meta property="og:description" content="입이 무거운 편일까, 말하고 싶어서 근질근질한 편일까?">
-  <meta property="og:url" content="https://todayschoice.kr/secret-test.html">
-  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
-  <meta property="og:image:width" content="1731">
-  <meta property="og:image:height" content="909">
-  <meta property="og:image:alt" content="Today's choice">
-  <meta property="og:image:type" content="image/png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="나는 비밀을 들으면 얼마나 오래 참을 수 있을까? | Today's Choice">
-  <meta name="twitter:description" content="입이 무거운 편일까, 말하고 싶어서 근질근질한 편일까?">
-  <meta name="twitter:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
-  <meta name="twitter:image:alt" content="Today's choice">
-  <meta name="description" content="입이 무거운 편일까, 말하고 싶어서 근질근질한 편일까?">
-  <title>나는 비밀을 들으면 얼마나 오래 참을 수 있을까? | Today's Choice</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="test.css">
-  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.8.2/kakao.min.js" integrity="sha384-zt/G7/KfaRQ9dT/QIkS0ujMtzouJqzuSJcXVQu50x0rl/+mD1dc70AeOejVbMD9E" crossorigin="anonymous" defer></script>
-  <script src="secret-data.js" defer></script>
-  <script src="script.js" defer></script>
-  <script src="test-runner.js" defer></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2401413706072374"
-       crossorigin="anonymous"></script>
-</head>
-<body class="test-page">
-  <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
-    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="7.3"/><path d="m16 16 5 5"/></symbol>
-    <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M20.8 4.7a5.5 5.5 0 0 0-7.8 0L12 5.8l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.5a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
-    <symbol id="icon-chat" viewBox="0 0 24 24"><path d="M21 11.5a9 9 0 0 1-9 8.5 10 10 0 0 1-4-.8L3 21l1.7-4.7A8 8 0 0 1 3 11.5a9 9 0 0 1 18 0Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></symbol>
-    <symbol id="icon-ring" viewBox="0 0 24 24"><circle cx="12" cy="14" r="7.5"/><path d="m9 3 3 3 3-3-1-2h-4l-1 2Z"/></symbol>
-    <symbol id="icon-people" viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 4a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v3"/></symbol>
-    <symbol id="icon-flame" viewBox="0 0 24 24"><path d="M12 3c0 4-5 6-5 11a5 5 0 0 0 10 0c0-3-2-5-3-7 0 3-1 4-2 5 0-4 2-6 0-9Z"/></symbol>
-    <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M21 14A9.5 9.5 0 0 1 10 3a9.5 9.5 0 1 0 11 11Z"/></symbol>
-    <symbol id="icon-leaf" viewBox="0 0 24 24"><path d="M12 22V11M12 15C5 16 2 11 3 7c6-1 9 3 9 8Zm0-5c0-6 4-9 9-8 1 6-3 10-9 8Z"/></symbol>
-    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
-  </svg>
-  <a class="skip-link" href="#main">본문 바로가기</a>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="index.html#home" aria-label="오늘의 초이스 홈">Today's choice</a>
-      <nav class="main-nav" aria-label="주 메뉴">
-        <a class="nav-link" href="index.html#home">홈</a>
-        <a class="nav-link" href="index.html#new-tests">오늘의 테스트</a>
-        <a class="nav-link" href="index.html#popular">전체 테스트</a>
-        <a class="nav-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">Instagram</a>
-      </nav>
-      <button class="icon-button search-toggle" type="button" aria-label="테스트 검색" aria-haspopup="dialog"><svg class="icon"><use href="#icon-search"/></svg></button>
-    </div>
-  </header>
-  <main id="main" data-test-runner>
-    <section class="test-panel" data-screen="start" aria-labelledby="test-title">
-      <p class="test-category" data-role="category"></p>
-      <h1 id="test-title" data-role="title" data-focus tabindex="-1"></h1>
-      <p class="test-description" data-role="description"></p>
-      <p class="test-count" data-role="count"></p>
-      <button class="primary-button" type="button" data-role="start">테스트 시작하기</button>
-    </section>
-    <section class="test-panel" data-screen="question" aria-labelledby="question-title" hidden>
-      <div class="question-top">
-        <button class="test-back" type="button" data-role="back">← 뒤로가기</button>
-        <span class="test-position" data-role="position"></span>
-      </div>
-      <progress class="test-progress" data-role="progress" value="0" max="10" aria-label="테스트 진행률"></progress>
-      <h2 class="question-title" id="question-title" data-role="question" data-focus tabindex="-1"></h2>
-      <div class="answer-list" data-role="answers" role="group" aria-labelledby="question-title"></div>
-    </section>
-    <section class="test-panel test-result" data-screen="result" aria-labelledby="result-title" hidden>
-      <p class="result-label">당신의 비밀 유지 성향은</p>
-      <p class="result-score"><span data-role="score"></span><small> / <span data-role="max-score"></span>점</small></p>
-      <h2 class="result-title" id="result-title" data-role="result-title" data-focus tabindex="-1"></h2>
-      <p class="result-description" data-role="result-description"></p>
-      <div class="result-actions">
-        <button class="secondary-button" type="button" data-role="restart">다시하기</button>
-        <a class="secondary-button" href="index.html#category-tests">다른 테스트 보기</a>
-      </div>
-      <button class="primary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
-      <p class="kakao-share-status" id="kakao-share-status" role="status" hidden></p>
-      <p class="test-disclaimer">본 테스트는 재미를 위한 콘텐츠이며 전문적인 심리 진단이 아닙니다.</p>
-    </section>
-    <noscript><p>테스트를 진행하려면 브라우저에서 JavaScript를 활성화해 주세요.</p></noscript>
-  </main>
-  <footer class="site-footer" id="about">
-    <div class="container footer-inner">
-      <a class="instagram-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        <span>@choice_zip_</span>
-      </a>
-    </div>
-  </footer>
-  <dialog id="search-dialog" class="modal" aria-labelledby="search-title"><div class="modal-heading"><h2 id="search-title">어떤 테스트를 찾으세요?</h2><button class="icon-button" type="button" data-close aria-label="검색 닫기"><svg class="icon"><use href="#icon-close"/></svg></button></div><label class="search-field"><svg class="icon"><use href="#icon-search"/></svg><input id="search-input" type="search" placeholder="비밀, 친구, 재미…" aria-label="테스트 검색어" autocomplete="off"></label><p id="search-count" class="search-count" aria-live="polite"></p><div id="search-results" class="search-results"></div></dialog>
-</body>
-</html>
+export default testData;
 ```
 
 ## social-adaptation-data.js
@@ -3278,10 +3379,11 @@ const testData = {
 
 const testData = {
   id: 30,
-  url: "social-adaptation-test.html",
+  url: "test.html?id=social-adaptation",
   title: "나는 사회생활에서 얼마나 적응이 빠른 편일까?",
   description: "새로운 사람, 새로운 환경에 나는 얼마나 빨리 녹아드는 타입일까?",
   category: "친구·인간관계·사회생활",
+  resultLabel: "당신의 사회생활 적응 지수는",
   shareDescription: "내 사회생활 적응 테스트 결과를 확인해보세요.",
   questions: [
     {
@@ -3332,135 +3434,27 @@ const testData = {
     {
       min: 34, max: 40,
       title: "어디서든 금방 녹아드는 적응형",
-      description: "새로운 사람이나 환경에 대한 부담이 적고, 상황을 빠르게 파악해서 자연스럽게 맞춰가는 편이야. 변화가 생겨도 비교적 금방 자기 페이스를 찾는 타입.",
+      description: "새로운 사람이나 환경에 대한 부담이 적고, 상황을 빠르게 파악해서 자연스럽게 맞춰가는 편이에요. 변화가 생겨도 비교적 금방 자기 페이스를 찾는 타입이에요.\n\n처음 보는 사람이나 낯선 규칙도 관찰하면서 빠르게 익히는 편이에요. 완벽하게 준비되지 않아도 먼저 시도해보기에 새로운 자리에서 경험을 쌓는 속도가 빠를 수 있어요.\n\n금방 익숙해졌다고 모든 규칙을 이미 안다고 생각할 필요는 없어요. 중요한 부분은 한 번 더 확인하고 주변의 다른 속도도 배려하면, 빠른 적응력이 팀 안에서 더 편하게 발휘될 수 있어요.",
     },
     {
       min: 26, max: 33,
       title: "조금만 지나면 금방 적응하는 편",
-      description: "처음에는 약간 어색하거나 긴장해도 시간이 지나면 자연스럽게 적응하는 편이야. 완전히 낯선 상황에서도 큰 스트레스 없이 익숙해질 수 있는 타입.",
+      description: "처음에는 약간 어색하거나 긴장해도 시간이 지나면 자연스럽게 적응하는 편이에요. 완전히 낯선 상황에서도 큰 스트레스 없이 익숙해질 수 있는 타입이에요.\n\n처음에는 긴장해도 주변을 살피고 작은 대화나 시도를 하면서 편안함을 찾아가는 편이에요. 낯선 상황을 무조건 피하지 않고 익숙해질 시간을 줄 수 있다는 점이 장점이에요.\n\n새 환경에서 나를 편하게 만드는 요소를 알아두면 도움이 돼요. 질문할 사람이나 하루의 기본 루틴을 정해두면 불확실함이 줄고, 새로운 일에 더 여유 있게 집중할 수 있어요.",
     },
     {
       min: 18, max: 25,
       title: "적응에 시간이 필요한 편",
-      description: "새로운 사람이나 환경에 익숙해지기까지 시간이 조금 필요한 타입. 처음에는 조용하지만 익숙해지고 나면 편하게 지내는 경우가 많아.",
+      description: "새로운 사람이나 환경에 익숙해지기까지 시간이 조금 필요한 타입이에요. 처음에는 조용하지만 익숙해지고 나면 편하게 지내는 경우가 많아요.\n\n먼저 충분히 관찰하고 분위기를 이해한 뒤 참여하는 쪽이 편할 수 있어요. 초반에 조용하다고 관심이 없거나 능력이 부족한 것은 아니며 익숙해지면 내 장점이 더 잘 드러나는 편이에요.\n\n처음부터 모두와 가까워지려고 하기보다 작은 목표 하나를 정해보세요. 한 사람에게 인사하거나 모르는 규칙을 질문하는 식으로 시작하면 내 속도를 지키면서 적응할 수 있어요.",
     },
     {
       min: 10, max: 17,
       title: "익숙한 환경이 편한 타입",
-      description: "낯선 사람이나 갑작스러운 변화에서 스트레스를 크게 느끼는 편이야. 빠르게 적응하기보다는 충분히 관찰하고 익숙해진 뒤 편해지는 타입.",
+      description: "낯선 사람이나 갑작스러운 변화에서 스트레스를 크게 느끼는 편이에요. 빠르게 적응하기보다는 충분히 관찰하고 익숙해진 뒤 편해지는 타입이에요.\n\n이미 아는 규칙과 편한 관계가 있을 때 내 능력을 더 안정적으로 발휘하는 편이에요. 갑작스러운 변화가 생기면 새 정보를 받아들이는 것만으로도 에너지가 많이 들 수 있어요.\n\n낯선 환경에 바로 익숙해져야 한다고 재촉하지 않아도 돼요. 미리 일정과 필요한 정보를 확인하고 하루에 하나씩 익혀보세요. 익숙한 휴식 습관을 유지하는 것도 부담을 줄이는 데 도움이 돼요.",
     },
   ],
 };
-```
 
-## social-adaptation-test.html
-
-```html
-<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <script src="analytics.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="ko_KR">
-  <meta property="og:site_name" content="Today's Choice">
-  <meta property="og:title" content="나는 사회생활에서 얼마나 적응이 빠른 편일까? | Today's Choice">
-  <meta property="og:description" content="새로운 사람, 새로운 환경에 나는 얼마나 빨리 녹아드는 타입일까?">
-  <meta property="og:url" content="https://todayschoice.kr/social-adaptation-test.html">
-  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
-  <meta property="og:image:width" content="1731">
-  <meta property="og:image:height" content="909">
-  <meta property="og:image:alt" content="Today's choice">
-  <meta property="og:image:type" content="image/png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="나는 사회생활에서 얼마나 적응이 빠른 편일까? | Today's Choice">
-  <meta name="twitter:description" content="새로운 사람, 새로운 환경에 나는 얼마나 빨리 녹아드는 타입일까?">
-  <meta name="twitter:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
-  <meta name="twitter:image:alt" content="Today's choice">
-  <meta name="description" content="새로운 사람, 새로운 환경에 나는 얼마나 빨리 녹아드는 타입일까?">
-  <title>나는 사회생활에서 얼마나 적응이 빠른 편일까? | Today's Choice</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="test.css">
-  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.8.2/kakao.min.js" integrity="sha384-zt/G7/KfaRQ9dT/QIkS0ujMtzouJqzuSJcXVQu50x0rl/+mD1dc70AeOejVbMD9E" crossorigin="anonymous" defer></script>
-  <script src="social-adaptation-data.js" defer></script>
-  <script src="script.js" defer></script>
-  <script src="test-runner.js" defer></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2401413706072374"
-       crossorigin="anonymous"></script>
-</head>
-<body class="test-page">
-  <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
-    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="7.3"/><path d="m16 16 5 5"/></symbol>
-    <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M20.8 4.7a5.5 5.5 0 0 0-7.8 0L12 5.8l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.5a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
-    <symbol id="icon-chat" viewBox="0 0 24 24"><path d="M21 11.5a9 9 0 0 1-9 8.5 10 10 0 0 1-4-.8L3 21l1.7-4.7A8 8 0 0 1 3 11.5a9 9 0 0 1 18 0Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></symbol>
-    <symbol id="icon-ring" viewBox="0 0 24 24"><circle cx="12" cy="14" r="7.5"/><path d="m9 3 3 3 3-3-1-2h-4l-1 2Z"/></symbol>
-    <symbol id="icon-people" viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 4a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v3"/></symbol>
-    <symbol id="icon-flame" viewBox="0 0 24 24"><path d="M12 3c0 4-5 6-5 11a5 5 0 0 0 10 0c0-3-2-5-3-7 0 3-1 4-2 5 0-4 2-6 0-9Z"/></symbol>
-    <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M21 14A9.5 9.5 0 0 1 10 3a9.5 9.5 0 1 0 11 11Z"/></symbol>
-    <symbol id="icon-leaf" viewBox="0 0 24 24"><path d="M12 22V11M12 15C5 16 2 11 3 7c6-1 9 3 9 8Zm0-5c0-6 4-9 9-8 1 6-3 10-9 8Z"/></symbol>
-    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
-  </svg>
-  <a class="skip-link" href="#main">본문 바로가기</a>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="index.html#home" aria-label="오늘의 초이스 홈">Today's choice</a>
-      <nav class="main-nav" aria-label="주 메뉴">
-        <a class="nav-link" href="index.html#home">홈</a>
-        <a class="nav-link" href="index.html#new-tests">오늘의 테스트</a>
-        <a class="nav-link" href="index.html#popular">전체 테스트</a>
-        <a class="nav-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">Instagram</a>
-      </nav>
-      <button class="icon-button search-toggle" type="button" aria-label="테스트 검색" aria-haspopup="dialog"><svg class="icon"><use href="#icon-search"/></svg></button>
-    </div>
-  </header>
-  <main id="main" data-test-runner>
-    <section class="test-panel" data-screen="start" aria-labelledby="test-title">
-      <p class="test-category" data-role="category"></p>
-      <h1 id="test-title" data-role="title" data-focus tabindex="-1"></h1>
-      <p class="test-description" data-role="description"></p>
-      <p class="test-count" data-role="count"></p>
-      <button class="primary-button" type="button" data-role="start">테스트 시작하기</button>
-    </section>
-    <section class="test-panel" data-screen="question" aria-labelledby="question-title" hidden>
-      <div class="question-top">
-        <button class="test-back" type="button" data-role="back">← 뒤로가기</button>
-        <span class="test-position" data-role="position"></span>
-      </div>
-      <progress class="test-progress" data-role="progress" value="0" max="10" aria-label="테스트 진행률"></progress>
-      <h2 class="question-title" id="question-title" data-role="question" data-focus tabindex="-1"></h2>
-      <div class="answer-list" data-role="answers" role="group" aria-labelledby="question-title"></div>
-    </section>
-    <section class="test-panel test-result" data-screen="result" aria-labelledby="result-title" hidden>
-      <p class="result-label">당신의 사회생활 적응 지수는</p>
-      <p class="result-score"><span data-role="score"></span><small> / <span data-role="max-score"></span>점</small></p>
-      <h2 class="result-title" id="result-title" data-role="result-title" data-focus tabindex="-1"></h2>
-      <p class="result-description" data-role="result-description"></p>
-      <div class="result-actions">
-        <button class="secondary-button" type="button" data-role="restart">다시하기</button>
-        <a class="secondary-button" href="index.html#category-tests">다른 테스트 보기</a>
-      </div>
-      <button class="primary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
-      <p class="kakao-share-status" id="kakao-share-status" role="status" hidden></p>
-      <p class="test-disclaimer">본 테스트는 재미를 위한 콘텐츠이며 전문적인 심리 진단이 아닙니다.</p>
-    </section>
-    <noscript><p>테스트를 진행하려면 브라우저에서 JavaScript를 활성화해 주세요.</p></noscript>
-  </main>
-  <footer class="site-footer" id="about">
-    <div class="container footer-inner">
-      <a class="instagram-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        <span>@choice_zip_</span>
-      </a>
-    </div>
-  </footer>
-  <dialog id="search-dialog" class="modal" aria-labelledby="search-title"><div class="modal-heading"><h2 id="search-title">어떤 테스트를 찾으세요?</h2><button class="icon-button" type="button" data-close aria-label="검색 닫기"><svg class="icon"><use href="#icon-close"/></svg></button></div><label class="search-field"><svg class="icon"><use href="#icon-search"/></svg><input id="search-input" type="search" placeholder="사회생활, 관계, 적응…" aria-label="테스트 검색어" autocomplete="off"></label><p id="search-count" class="search-count" aria-live="polite"></p><div id="search-results" class="search-results"></div></dialog>
-</body>
-</html>
+export default testData;
 ```
 
 ## social-awareness-data.js
@@ -3470,10 +3464,11 @@ const testData = {
 
 const testData = {
   id: 16,
-  url: "social-awareness-test.html",
+  url: "test.html?id=social-awareness",
   title: "나는 인간관계에서 눈치를 얼마나 보는 편일까?",
   description: "다른 사람의 말투, 표정, 분위기를 얼마나 신경 쓰는지 알아보세요.",
   category: "친구·인간관계·사회생활",
+  resultLabel: "당신의 눈치 지수는",
   shareDescription: "내 인간관계 눈치 성향 결과를 확인해보세요.",
   questions: [
     {
@@ -3524,135 +3519,27 @@ const testData = {
     {
       min: 10, max: 16,
       title: "마이웨이형",
-      description: "다른 사람의 반응에 크게 흔들리지 않는 편이야. 필요한 말도 비교적 솔직하게 하고, 상대의 기분까지 전부 내 책임이라고 생각하지 않는 타입.",
+      description: "다른 사람의 반응에 크게 흔들리지 않는 편이에요. 필요한 말도 비교적 솔직하게 하고, 상대의 기분까지 전부 내 책임이라고 생각하지 않는 타입이에요.\n\n모든 표정과 말투에 의미를 붙이기보다 상대에게도 각자의 사정이 있다고 보는 편이에요. 내 의견을 편하게 말할 수 있어 애매한 상황을 오래 끌지 않는 장점이 있어요.\n\n가끔은 내가 편하게 한 말이 상대에게 다르게 들릴 수도 있어요. 중요한 대화에서는 상대의 반응을 한 번 확인하고, 필요한 배려를 더하면 솔직함이 더 편안하게 전달될 수 있어요.",
     },
     {
       min: 17, max: 24,
       title: "적당한 센스형",
-      description: "상대의 감정이나 분위기를 어느 정도 고려하지만 지나치게 끌려다니지는 않는 편. 상황에 맞게 배려하면서도 내 생각을 표현할 줄 아는 타입이야.",
+      description: "상대의 감정이나 분위기를 어느 정도 고려하지만 지나치게 끌려다니지는 않는 편이에요. 상황에 맞게 배려하면서도 내 생각을 표현할 줄 아는 타입이에요.\n\n처음에는 분위기를 살피지만 상대 반응만으로 내 행동을 모두 정하지는 않는 편이에요. 필요할 때는 맞춰주고 의견이 다를 때는 내 생각도 말할 수 있다는 점이 강점이에요.\n\n다만 배려와 양보가 계속 한쪽으로 쏠리는지는 가끔 돌아봐주세요. 관계가 편하려면 상대 기분뿐 아니라 내가 원하는 것도 대화에 함께 올라올 수 있어야 해요.",
     },
     {
       min: 25, max: 32,
       title: "분위기 감지형",
-      description: "상대의 말투나 표정 변화를 빠르게 알아차리고 신경 쓰는 편이야. 배려심이 큰 장점이지만, 상대 반응을 너무 해석하다 보면 내가 지칠 수 있어.",
+      description: "상대의 말투나 표정 변화를 빠르게 알아차리고 신경 쓰는 편이에요. 배려심이 큰 장점이지만, 상대 반응을 너무 해석하다 보면 내가 지칠 수 있어요.\n\n말투가 짧아지거나 표정이 달라지면 금방 알아차려 상황을 돌아보는 편이에요. 덕분에 상대가 말하지 않은 불편함을 챙기거나 갈등을 줄이는 데 도움이 될 수 있어요.\n\n하지만 그 변화가 꼭 나 때문인 것은 아니에요. 혼자 의미를 정하기보다 필요할 때 직접 확인하고, 답을 알 수 없는 반응은 잠시 내려놓는 연습을 해보면 좋아요.",
     },
     {
       min: 33, max: 40,
       title: "인간관계 레이더형",
-      description: "다른 사람의 감정과 반응을 굉장히 세밀하게 살피는 타입. 갈등을 피하려고 내 의견이나 감정을 뒤로 미루는 경우가 많을 수 있어. 모두를 편하게 하려다 내가 불편해지지 않는지가 중요해.",
+      description: "다른 사람의 감정과 반응을 굉장히 세밀하게 살피는 타입이에요. 갈등을 피하려고 내 의견이나 감정을 뒤로 미루는 경우가 많을 수 있어요. 모두를 편하게 하려다 내가 불편해지지 않는지가 중요해요.\n\n자리에 있는 사람들의 기분을 살피느라 내가 하고 싶은 말을 뒤로 미루기 쉬워요. 세심한 배려는 장점이지만 계속 긴장한 채 관계를 유지하면 만남 뒤에 많이 지칠 수 있어요.\n\n모두를 편하게 해줄 책임이 나에게 있는 것은 아니에요. 작은 의견부터 표현하고 부담스러운 부탁에는 생각할 시간을 요청해보세요. 내 감정도 관계 안에서 존중받아야 해요.",
     },
   ],
 };
-```
 
-## social-awareness-test.html
-
-```html
-<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <script src="analytics.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="ko_KR">
-  <meta property="og:site_name" content="Today's Choice">
-  <meta property="og:title" content="나는 인간관계에서 눈치를 얼마나 보는 편일까? | Today's Choice">
-  <meta property="og:description" content="다른 사람의 말투, 표정, 분위기를 얼마나 신경 쓰는지 알아보세요.">
-  <meta property="og:url" content="https://todayschoice.kr/social-awareness-test.html">
-  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
-  <meta property="og:image:width" content="1731">
-  <meta property="og:image:height" content="909">
-  <meta property="og:image:alt" content="Today's choice">
-  <meta property="og:image:type" content="image/png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="나는 인간관계에서 눈치를 얼마나 보는 편일까? | Today's Choice">
-  <meta name="twitter:description" content="다른 사람의 말투, 표정, 분위기를 얼마나 신경 쓰는지 알아보세요.">
-  <meta name="twitter:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
-  <meta name="twitter:image:alt" content="Today's choice">
-  <meta name="description" content="다른 사람의 말투, 표정, 분위기를 얼마나 신경 쓰는지 알아보세요.">
-  <title>나는 인간관계에서 눈치를 얼마나 보는 편일까? | Today's Choice</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="test.css">
-  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.8.2/kakao.min.js" integrity="sha384-zt/G7/KfaRQ9dT/QIkS0ujMtzouJqzuSJcXVQu50x0rl/+mD1dc70AeOejVbMD9E" crossorigin="anonymous" defer></script>
-  <script src="social-awareness-data.js" defer></script>
-  <script src="script.js" defer></script>
-  <script src="test-runner.js" defer></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2401413706072374"
-       crossorigin="anonymous"></script>
-</head>
-<body class="test-page">
-  <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
-    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="7.3"/><path d="m16 16 5 5"/></symbol>
-    <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M20.8 4.7a5.5 5.5 0 0 0-7.8 0L12 5.8l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.5a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
-    <symbol id="icon-chat" viewBox="0 0 24 24"><path d="M21 11.5a9 9 0 0 1-9 8.5 10 10 0 0 1-4-.8L3 21l1.7-4.7A8 8 0 0 1 3 11.5a9 9 0 0 1 18 0Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></symbol>
-    <symbol id="icon-ring" viewBox="0 0 24 24"><circle cx="12" cy="14" r="7.5"/><path d="m9 3 3 3 3-3-1-2h-4l-1 2Z"/></symbol>
-    <symbol id="icon-people" viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 4a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v3"/></symbol>
-    <symbol id="icon-flame" viewBox="0 0 24 24"><path d="M12 3c0 4-5 6-5 11a5 5 0 0 0 10 0c0-3-2-5-3-7 0 3-1 4-2 5 0-4 2-6 0-9Z"/></symbol>
-    <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M21 14A9.5 9.5 0 0 1 10 3a9.5 9.5 0 1 0 11 11Z"/></symbol>
-    <symbol id="icon-leaf" viewBox="0 0 24 24"><path d="M12 22V11M12 15C5 16 2 11 3 7c6-1 9 3 9 8Zm0-5c0-6 4-9 9-8 1 6-3 10-9 8Z"/></symbol>
-    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
-  </svg>
-  <a class="skip-link" href="#main">본문 바로가기</a>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="index.html#home" aria-label="오늘의 초이스 홈">Today's choice</a>
-      <nav class="main-nav" aria-label="주 메뉴">
-        <a class="nav-link" href="index.html#home">홈</a>
-        <a class="nav-link" href="index.html#new-tests">오늘의 테스트</a>
-        <a class="nav-link" href="index.html#popular">전체 테스트</a>
-        <a class="nav-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">Instagram</a>
-      </nav>
-      <button class="icon-button search-toggle" type="button" aria-label="테스트 검색" aria-haspopup="dialog"><svg class="icon"><use href="#icon-search"/></svg></button>
-    </div>
-  </header>
-  <main id="main" data-test-runner>
-    <section class="test-panel" data-screen="start" aria-labelledby="test-title">
-      <p class="test-category" data-role="category"></p>
-      <h1 id="test-title" data-role="title" data-focus tabindex="-1"></h1>
-      <p class="test-description" data-role="description"></p>
-      <p class="test-count" data-role="count"></p>
-      <button class="primary-button" type="button" data-role="start">테스트 시작하기</button>
-    </section>
-    <section class="test-panel" data-screen="question" aria-labelledby="question-title" hidden>
-      <div class="question-top">
-        <button class="test-back" type="button" data-role="back">← 뒤로가기</button>
-        <span class="test-position" data-role="position"></span>
-      </div>
-      <progress class="test-progress" data-role="progress" value="0" max="10" aria-label="테스트 진행률"></progress>
-      <h2 class="question-title" id="question-title" data-role="question" data-focus tabindex="-1"></h2>
-      <div class="answer-list" data-role="answers" role="group" aria-labelledby="question-title"></div>
-    </section>
-    <section class="test-panel test-result" data-screen="result" aria-labelledby="result-title" hidden>
-      <p class="result-label">당신의 눈치 지수는</p>
-      <p class="result-score"><span data-role="score"></span><small> / <span data-role="max-score"></span>점</small></p>
-      <h2 class="result-title" id="result-title" data-role="result-title" data-focus tabindex="-1"></h2>
-      <p class="result-description" data-role="result-description"></p>
-      <div class="result-actions">
-        <button class="secondary-button" type="button" data-role="restart">다시하기</button>
-        <a class="secondary-button" href="index.html#category-tests">다른 테스트 보기</a>
-      </div>
-      <button class="primary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
-      <p class="kakao-share-status" id="kakao-share-status" role="status" hidden></p>
-      <p class="test-disclaimer">본 테스트는 재미를 위한 콘텐츠이며 전문적인 심리 진단이 아닙니다.</p>
-    </section>
-    <noscript><p>테스트를 진행하려면 브라우저에서 JavaScript를 활성화해 주세요.</p></noscript>
-  </main>
-  <footer class="site-footer" id="about">
-    <div class="container footer-inner">
-      <a class="instagram-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        <span>@choice_zip_</span>
-      </a>
-    </div>
-  </footer>
-  <dialog id="search-dialog" class="modal" aria-labelledby="search-title"><div class="modal-heading"><h2 id="search-title">어떤 테스트를 찾으세요?</h2><button class="icon-button" type="button" data-close aria-label="검색 닫기"><svg class="icon"><use href="#icon-close"/></svg></button></div><label class="search-field"><svg class="icon"><use href="#icon-search"/></svg><input id="search-input" type="search" placeholder="친구, 인간관계, 눈치…" aria-label="테스트 검색어" autocomplete="off"></label><p id="search-count" class="search-count" aria-live="polite"></p><div id="search-results" class="search-results"></div></dialog>
-</body>
-</html>
+export default testData;
 ```
 
 ## social-mask-data.js
@@ -3662,10 +3549,11 @@ const testData = {
 
 const testData = {
   id: 17,
-  url: "social-mask-test.html",
+  url: "test.html?id=social-mask",
   title: "내 사회생활 가면은 얼마나 두꺼울까?",
   description: "밖에서의 나와 혼자 있을 때의 나는 얼마나 다를까?",
-  category: "성격",
+  category: "친구·인간관계·사회생활",
+  resultLabel: "당신의 사회생활 가면 지수는",
   shareDescription: "내 사회생활 가면 테스트 결과를 확인해보세요.",
   questions: [
     {
@@ -3716,320 +3604,353 @@ const testData = {
     {
       min: 10, max: 16,
       title: "본캐형",
-      description: "밖에서도 비교적 본래 모습 그대로 지내는 편이야. 싫은 건 싫다고 하고, 기분도 어느 정도 드러내는 타입. 사람 때문에 에너지를 과하게 쓰는 편은 아님.",
+      description: "밖에서도 비교적 본래 모습 그대로 지내는 편이에요. 싫은 건 싫다고 하고, 기분도 어느 정도 드러내는 타입이에요. 사람 때문에 에너지를 과하게 쓰는 편은 아니에요.\n\n상대에 따라 크게 다른 모습을 만들기보다 내 반응을 자연스럽게 보여주는 편이에요. 친해진 뒤에야 본모습을 알게 되는 차이가 작아 주변에서는 솔직한 사람으로 느낄 수 있어요.\n\n편하게 표현하는 것과 모든 감정을 바로 드러내는 것은 조금 달라요. 중요한 자리에서는 전달할 방식과 타이밍을 한 번 생각하면 내 모습을 지키면서도 관계를 편하게 만들 수 있어요.",
     },
     {
       min: 17, max: 24,
       title: "반반형",
-      description: "상황에 맞게 조절은 하지만 본래 모습까지 숨기지는 않는 편. 예의와 솔직함 사이에서 적당히 균형을 맞추는 타입이야.",
+      description: "상황에 맞게 조절은 하지만 본래 모습까지 숨기지는 않는 편이에요. 예의와 솔직함 사이에서 적당히 균형을 맞추는 타입이에요.\n\n낯선 자리에서는 조금 더 예의를 챙기고 편한 사람 앞에서는 긴장을 풀 줄 아는 편이에요. 상황에 맞추는 능력과 나다운 모습이 함께 남아 있어 부담이 크게 쌓이지 않을 수 있어요.\n\n그래도 여러 만남이 겹치면 평소보다 에너지가 더 들 수 있어요. 내가 어디에서 편하고 어디에서 힘을 많이 쓰는지 알아두면 약속과 휴식의 균형을 잡는 데 도움이 돼요.",
     },
     {
       min: 25, max: 32,
       title: "사회생활 모드형",
-      description: "분위기, 상대, 상황에 맞춰 내 모습을 많이 조절하는 편이야. 사회생활은 잘하지만, 집에 오면 유독 지치는 이유가 있을 수 있음.",
+      description: "분위기, 상대, 상황에 맞춰 내 모습을 많이 조절하는 편이에요. 사회생활은 잘하지만, 집에 오면 유독 지치는 이유가 있을 수 있어요.\n\n누구를 만나는지에 따라 말투와 반응을 조절해서 자리의 분위기를 맞추는 편이에요. 주변에는 편한 사람으로 보일 수 있지만 그만큼 내 감정을 계속 관리하는 수고가 있어요.\n\n모든 자리에서 좋은 반응을 보여줄 필요는 없어요. 부담 없는 관계에서는 작은 취향이나 의견부터 솔직하게 말해보세요. 밖에서 쓴 에너지를 회복할 혼자만의 시간도 챙겨주세요.",
     },
     {
       min: 33, max: 40,
       title: "풀가면 장착형",
-      description: "밖에서는 거의 별도의 사회생활용 캐릭터를 쓰는 타입. 싫어도 웃고, 피곤해도 밝게 행동하고, 분위기까지 챙기는 편이야. 사람들에게는 편한 사람이지만 정작 본인은 에너지 소모가 큰 편일 수 있음.",
+      description: "밖에서는 거의 별도의 사회생활용 캐릭터를 쓰는 타입이에요. 싫어도 웃고, 피곤해도 밝게 행동하고, 분위기까지 챙기는 편이에요. 사람들에게는 편한 사람이지만 정작 본인은 에너지 소모가 큰 편일 수 있어요.\n\n내 기분이 좋지 않아도 상대가 불편하지 않게 먼저 웃거나 분위기를 살릴 수 있어요. 이런 능력 덕분에 사회생활은 매끄러워 보여도 집에 돌아오면 긴장이 한꺼번에 풀릴 수 있어요.\n\n언제나 밝고 친절해야 한다는 기준을 조금 낮춰도 괜찮아요. 오늘은 조용히 있고 싶다고 말하거나 무리한 부탁을 거절해보세요. 편한 모습으로 쉬는 시간도 나에게 필요한 시간이에요.",
     },
   ],
 };
+
+export default testData;
 ```
 
-## social-mask-test.html
-
-```html
-<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <script src="analytics.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="ko_KR">
-  <meta property="og:site_name" content="Today's Choice">
-  <meta property="og:title" content="내 사회생활 가면은 얼마나 두꺼울까? | Today's Choice">
-  <meta property="og:description" content="밖에서의 나와 혼자 있을 때의 나는 얼마나 다를까?">
-  <meta property="og:url" content="https://todayschoice.kr/social-mask-test.html">
-  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
-  <meta property="og:image:width" content="1731">
-  <meta property="og:image:height" content="909">
-  <meta property="og:image:alt" content="Today's choice">
-  <meta property="og:image:type" content="image/png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="내 사회생활 가면은 얼마나 두꺼울까? | Today's Choice">
-  <meta name="twitter:description" content="밖에서의 나와 혼자 있을 때의 나는 얼마나 다를까?">
-  <meta name="twitter:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
-  <meta name="twitter:image:alt" content="Today's choice">
-  <meta name="description" content="밖에서의 나와 혼자 있을 때의 나는 얼마나 다를까?">
-  <title>내 사회생활 가면은 얼마나 두꺼울까? | Today's Choice</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="test.css">
-  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.8.2/kakao.min.js" integrity="sha384-zt/G7/KfaRQ9dT/QIkS0ujMtzouJqzuSJcXVQu50x0rl/+mD1dc70AeOejVbMD9E" crossorigin="anonymous" defer></script>
-  <script src="social-mask-data.js" defer></script>
-  <script src="script.js" defer></script>
-  <script src="test-runner.js" defer></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2401413706072374"
-       crossorigin="anonymous"></script>
-</head>
-<body class="test-page">
-  <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
-    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="7.3"/><path d="m16 16 5 5"/></symbol>
-    <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M20.8 4.7a5.5 5.5 0 0 0-7.8 0L12 5.8l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.5a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
-    <symbol id="icon-chat" viewBox="0 0 24 24"><path d="M21 11.5a9 9 0 0 1-9 8.5 10 10 0 0 1-4-.8L3 21l1.7-4.7A8 8 0 0 1 3 11.5a9 9 0 0 1 18 0Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></symbol>
-    <symbol id="icon-ring" viewBox="0 0 24 24"><circle cx="12" cy="14" r="7.5"/><path d="m9 3 3 3 3-3-1-2h-4l-1 2Z"/></symbol>
-    <symbol id="icon-people" viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 4a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v3"/></symbol>
-    <symbol id="icon-flame" viewBox="0 0 24 24"><path d="M12 3c0 4-5 6-5 11a5 5 0 0 0 10 0c0-3-2-5-3-7 0 3-1 4-2 5 0-4 2-6 0-9Z"/></symbol>
-    <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M21 14A9.5 9.5 0 0 1 10 3a9.5 9.5 0 1 0 11 11Z"/></symbol>
-    <symbol id="icon-leaf" viewBox="0 0 24 24"><path d="M12 22V11M12 15C5 16 2 11 3 7c6-1 9 3 9 8Zm0-5c0-6 4-9 9-8 1 6-3 10-9 8Z"/></symbol>
-    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
-  </svg>
-  <a class="skip-link" href="#main">본문 바로가기</a>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="index.html#home" aria-label="오늘의 초이스 홈">Today's choice</a>
-      <nav class="main-nav" aria-label="주 메뉴">
-        <a class="nav-link" href="index.html#home">홈</a>
-        <a class="nav-link" href="index.html#new-tests">오늘의 테스트</a>
-        <a class="nav-link" href="index.html#popular">전체 테스트</a>
-        <a class="nav-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">Instagram</a>
-      </nav>
-      <button class="icon-button search-toggle" type="button" aria-label="테스트 검색" aria-haspopup="dialog"><svg class="icon"><use href="#icon-search"/></svg></button>
-    </div>
-  </header>
-  <main id="main" data-test-runner>
-    <section class="test-panel" data-screen="start" aria-labelledby="test-title">
-      <p class="test-category" data-role="category"></p>
-      <h1 id="test-title" data-role="title" data-focus tabindex="-1"></h1>
-      <p class="test-description" data-role="description"></p>
-      <p class="test-count" data-role="count"></p>
-      <button class="primary-button" type="button" data-role="start">테스트 시작하기</button>
-    </section>
-    <section class="test-panel" data-screen="question" aria-labelledby="question-title" hidden>
-      <div class="question-top">
-        <button class="test-back" type="button" data-role="back">← 뒤로가기</button>
-        <span class="test-position" data-role="position"></span>
-      </div>
-      <progress class="test-progress" data-role="progress" value="0" max="10" aria-label="테스트 진행률"></progress>
-      <h2 class="question-title" id="question-title" data-role="question" data-focus tabindex="-1"></h2>
-      <div class="answer-list" data-role="answers" role="group" aria-labelledby="question-title"></div>
-    </section>
-    <section class="test-panel test-result" data-screen="result" aria-labelledby="result-title" hidden>
-      <p class="result-label">당신의 사회생활 가면 지수는</p>
-      <p class="result-score"><span data-role="score"></span><small> / <span data-role="max-score"></span>점</small></p>
-      <h2 class="result-title" id="result-title" data-role="result-title" data-focus tabindex="-1"></h2>
-      <p class="result-description" data-role="result-description"></p>
-      <div class="result-actions">
-        <button class="secondary-button" type="button" data-role="restart">다시하기</button>
-        <a class="secondary-button" href="index.html#category-tests">다른 테스트 보기</a>
-      </div>
-      <button class="primary-button kakao-share-button" id="kakao-share-button" type="button">카카오톡으로 공유하기</button>
-      <p class="kakao-share-status" id="kakao-share-status" role="status" hidden></p>
-      <p class="test-disclaimer">본 테스트는 재미를 위한 콘텐츠이며 전문적인 심리 진단이 아닙니다.</p>
-    </section>
-    <noscript><p>테스트를 진행하려면 브라우저에서 JavaScript를 활성화해 주세요.</p></noscript>
-  </main>
-  <footer class="site-footer" id="about">
-    <div class="container footer-inner">
-      <a class="instagram-link" href="https://www.instagram.com/choice_zip_/" target="_blank" rel="noopener noreferrer">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        <span>@choice_zip_</span>
-      </a>
-    </div>
-  </footer>
-  <dialog id="search-dialog" class="modal" aria-labelledby="search-title"><div class="modal-heading"><h2 id="search-title">어떤 테스트를 찾으세요?</h2><button class="icon-button" type="button" data-close aria-label="검색 닫기"><svg class="icon"><use href="#icon-close"/></svg></button></div><label class="search-field"><svg class="icon"><use href="#icon-search"/></svg><input id="search-input" type="search" placeholder="성격, 사회생활, 가면…" aria-label="테스트 검색어" autocomplete="off"></label><p id="search-count" class="search-count" aria-live="polite"></p><div id="search-results" class="search-results"></div></dialog>
-</body>
-</html>
-```
-
-## test-runner.js
+## stress-change-data.js
 
 ```javascript
 "use strict";
 
-// A different test can reuse this controller by supplying the same data shape.
-function createTestRunner(root, data) {
-  const screens = Array.from(root.querySelectorAll("[data-screen]"));
-  const find = (name) => root.querySelector(`[data-role="${name}"]`);
-  let questionIndex = 0;
-  let answers = Array(data.questions.length).fill(null);
-  let screen = "start";
-  let started = false;
-  let completed = false;
-  const track = (eventName, extra) => {
-    if (typeof trackTestEvent === "function") trackTestEvent(eventName, data, extra);
-  };
-  const maxScore = data.questions.reduce((sum, question) =>
-    sum + Math.max(...question.answers.map((answer) => answer.score)), 0);
+const testData = {
+  id: 40,
+  url: "test.html?id=stress-change",
+  title: "내가 스트레스 받으면 가장 먼저 변하는 것은?",
+  description: "평소와 달라지는 내 모습은 어디에서 가장 먼저 드러날까?",
+  category: "성격",
+  showResultType: true,
+  stats: [
+    { id: "speech", title: "말투형" },
+    { id: "emotion", title: "감정형" },
+    { id: "action", title: "행동형" },
+    { id: "routine", title: "생활형" },
+    { id: "relationship", title: "관계형" },
+  ],
+  questions: [
+    {
+      question: "일이 한꺼번에 몰리면 가장 먼저 나타나는 변화는?",
+      answers: ["평소보다 말수가 확 줄어든다", "사소한 일에도 예민해진다", "해야 할 일을 자꾸 미룬다", "식사나 수면 패턴이 흐트러진다", "사람 만나는 게 갑자기 귀찮아진다"],
+    },
+    {
+      question: "하루 종일 신경 쓰이는 일이 있을 때 나는?",
+      answers: ["대답이 짧아지고 반응이 줄어든다", "작은 말에도 쉽게 기분이 상한다", "해야 할 일에 집중이 잘 안 된다", "늦게 자거나 평소보다 많이 먹게 된다", "연락을 일부러 늦게 보게 된다"],
+    },
+    {
+      question: "누군가 계속 말을 걸면?",
+      answers: ["대답은 하지만 말이 짧아진다", "괜히 짜증이 올라온다", "다른 일 하면서 대충 반응한다", "피곤해서 그냥 쉬고 싶어진다", "혼자 있고 싶어서 자리를 피하고 싶다"],
+    },
+    {
+      question: "스트레스가 심한 날 퇴근이나 일정이 끝나면?",
+      answers: ["아무 말도 하기 싫어진다", "하루 있었던 일이 계속 생각난다", "해야 할 일을 다 미루고 눕는다", "배달이나 야식부터 찾게 된다", "약속이 있어도 취소하고 싶어진다"],
+    },
+    {
+      question: "내가 힘들다는 걸 주변에서 가장 먼저 알아차릴 만한 부분은?",
+      answers: ["말투나 목소리가 달라진다", "표정과 감정 기복이 커진다", "평소보다 집중력이나 속도가 떨어진다", "잠, 식사, 피로감이 확 달라진다", "사람들과 거리를 두기 시작한다"],
+    },
+    {
+      question: "계획이 계속 꼬이면 나는?",
+      answers: ["말하기 귀찮아져서 조용해진다", "짜증부터 난다", "그냥 손 놓고 싶어진다", "컨디션이 무너지면서 더 지친다", "주변 사람까지 귀찮게 느껴진다"],
+    },
+    {
+      question: "스트레스가 오래 이어질 때 가장 자주 생기는 모습은?",
+      answers: ["대화가 점점 줄어든다", "감정이 널뛰기한다", "미루는 일이 많아진다", "생활 리듬이 완전히 깨진다", "혼자 있는 시간이 급격히 늘어난다"],
+    },
+    {
+      question: "중요한 일을 앞두고 압박감을 느끼면?",
+      answers: ["불필요한 대화를 줄인다", "작은 실수에도 스스로 화가 난다", "해야 할 걸 알면서도 손이 잘 안 간다", "잠을 설칠 가능성이 크다", "연락이나 약속을 최소화하고 싶어진다"],
+    },
+    {
+      question: "스트레스 받을 때 내가 제일 싫어지는 건?",
+      answers: ["누가 계속 말 거는 것", "별것 아닌데도 감정적으로 반응하는 내 모습", "해야 할 걸 못 하고 있는 내 모습", "망가지는 수면과 식사 패턴", "괜히 사람들에게까지 거리 두는 내 모습"],
+    },
+    {
+      question: "힘든 날 누군가 “괜찮아?”라고 물으면?",
+      answers: ["“응” 하고 대화를 빨리 끝낸다", "괜찮다고 해도 표정에 다 드러난다", "대답보다 일단 해야 할 걸 피하고 싶다", "너무 피곤해서 그냥 쉬고 싶다고 한다", "누구와도 대화하기 싫다고 느낀다"],
+    },
+    {
+      question: "스트레스가 쌓일수록 나는?",
+      answers: ["평소보다 무뚝뚝해진다", "참다가 한 번에 터질 가능성이 높아진다", "평소 루틴을 유지하기 어려워진다", "먹는 것과 자는 시간이 들쭉날쭉해진다", "연락할 사람을 점점 줄이게 된다"],
+    },
+    {
+      question: "예상보다 큰 실수를 했을 때 나는?",
+      answers: ["말을 줄이고 혼자 생각한다", "자책이 오래 간다", "다른 일까지 손에 잘 안 잡힌다", "밥맛이 없거나 과하게 먹게 된다", "주변 사람을 피하고 싶어진다"],
+    },
+    {
+      question: "스트레스 받는 시기에 가장 먼저 포기하기 쉬운 건?",
+      answers: ["대화와 연락", "감정 조절", "해야 할 일의 속도와 루틴", "수면과 식사 관리", "약속과 인간관계"],
+    },
+    {
+      question: "주변 사람이 내 스트레스를 눈치챈다면 이유는?",
+      answers: ["평소보다 말이 없어져서", "예민하고 날카로워져서", "평소보다 일을 미루거나 멍해져서", "얼굴이 피곤하고 생활 리듬이 깨져서", "연락이나 만남을 피해서"],
+    },
+    {
+      question: "스트레스가 심할 때 가장 먼저 회복하고 싶은 건?",
+      answers: ["편하게 말할 수 있는 여유", "안정된 기분", "다시 움직일 수 있는 집중력", "정상적인 수면과 식사", "사람들과 편하게 지낼 수 있는 에너지"],
+    },
+  ].map(({ question, answers }) => ({
+    question,
+    answers: answers.map((text, index) => ({
+      text,
+      stat: ["speech", "emotion", "action", "routine", "relationship"][index],
+      score: 1,
+    })),
+  })),
+  results: [
+    {
+      stat: "speech",
+      title: "스트레스가 말투부터 바꾸는 편",
+      description: "당신은 스트레스를 받으면 가장 먼저 말수가 줄거나 반응이 짧아지는 편이에요. 평소에는 자연스럽게 하던 대화도 귀찮게 느껴지고, 괜히 말을 아끼게 될 수 있어요.\n\n기분이 나쁜 게 아니어도 주변에서는 차갑거나 무뚝뚝해졌다고 느낄 가능성이 있어요. 특히 에너지가 부족한 날에는 설명하기보다 조용히 있고 싶은 마음이 더 커질 수 있어요.\n\n억지로 말을 많이 하려고 하기보다 혼자 정리할 시간을 먼저 갖는 게 도움이 될 수 있어요. 조금 회복한 뒤 가까운 사람에게 지금 상태를 짧게라도 알려주면 오해를 줄이기 좋아요.",
+    },
+    {
+      stat: "emotion",
+      title: "스트레스가 감정부터 흔드는 편",
+      description: "당신은 스트레스를 받으면 가장 먼저 감정의 폭이 커지는 편이에요. 평소라면 넘길 수 있는 일도 예민하게 느껴지고, 작은 말에도 마음이 쉽게 흔들릴 수 있어요.\n\n짜증, 서운함, 자책 같은 감정이 평소보다 오래 남으면서 하루 전체 분위기에 영향을 줄 수 있어요. 특히 여러 일이 겹치면 내가 왜 이렇게 예민한지 스스로도 답답하게 느껴질 수 있어요.\n\n감정을 억지로 눌러두기보다 지금 내가 지쳐 있다는 신호로 받아들이는 게 좋아요. 잠깐 쉬거나 감정을 정리할 시간을 가지면 훨씬 빠르게 원래 페이스로 돌아올 수 있어요.",
+    },
+    {
+      stat: "action",
+      title: "스트레스가 행동력부터 떨어뜨리는 편",
+      description: "당신은 스트레스를 받으면 해야 할 일을 알면서도 몸이 잘 따라주지 않는 편이에요. 평소에는 금방 처리하던 일도 미루게 되고, 집중력이 떨어져 시작 자체가 어렵게 느껴질 수 있어요.\n\n할 일이 쌓일수록 더 부담을 느끼고, 그 부담 때문에 다시 미루는 흐름이 생길 가능성도 있어요. 의지가 부족해서라기보다 스트레스로 사용할 수 있는 에너지가 줄어든 상태에 가까워요.\n\n이럴 때는 한꺼번에 해결하려 하기보다 가장 작은 일부터 하나씩 끝내는 게 좋아요. 조금이라도 움직이기 시작하면 생각보다 빠르게 다시 리듬을 찾을 수 있어요.",
+    },
+    {
+      stat: "routine",
+      title: "스트레스가 생활 리듬부터 무너뜨리는 편",
+      description: "당신은 스트레스를 받으면 수면, 식사, 피로감 같은 생활 패턴에서 가장 먼저 변화가 나타나는 편이에요. 잠이 잘 오지 않거나 반대로 너무 오래 자고 싶어질 수 있고, 먹는 습관도 평소와 달라질 수 있어요.\n\n생활 리듬이 깨지면 몸이 더 피곤해지고, 그 피로가 다시 스트레스를 키우는 흐름으로 이어질 수 있어요. 겉으로는 크게 티가 나지 않아도 몸이 먼저 현재 상태를 보여주는 타입에 가까워요.\n\n힘든 시기일수록 완벽한 관리보다 기본적인 수면과 식사 시간을 지키는 게 중요해요. 생활 리듬이 조금씩 돌아오면 감정과 집중력도 함께 안정될 가능성이 높아요.",
+    },
+    {
+      stat: "relationship",
+      title: "스트레스가 인간관계 거리부터 바꾸는 편",
+      description: "당신은 스트레스를 받으면 사람들과의 거리를 먼저 늘리는 편이에요. 평소에는 괜찮던 연락이나 약속도 부담스럽게 느껴지고, 혼자 조용히 있고 싶은 마음이 커질 수 있어요.\n\n누군가가 싫어진다기보다 사람에게 쓸 에너지 자체가 부족해지면서 자연스럽게 관계를 줄이는 타입이에요. 그래서 연락이 늦어지거나 약속을 피하면서 스스로 회복할 시간을 확보하려 할 수 있어요.\n\n혼자 쉬는 시간은 분명 필요하지만 너무 오래 모든 관계를 끊을 필요는 없어요. 편한 사람 한두 명과 최소한의 연결을 유지하면 스트레스를 회복하는 데 오히려 도움이 될 수 있어요.",
+    },
+  ],
+};
 
-  find("category").textContent = data.category;
-  find("title").textContent = data.title;
-  find("description").textContent = data.description;
-  find("count").textContent = `총 ${data.questions.length}문항${data.answerGuide ? ` (${data.answerGuide})` : ""}`;
-  find("progress").max = data.questions.length;
-  if (!data.stats) {
-    find("max-score").textContent = maxScore;
-  }
-
-  function showScreen(name, focus = true) {
-    screen = name;
-    screens.forEach((section) => { section.hidden = section.dataset.screen !== name; });
-    if (focus) root.querySelector(`[data-screen="${name}"] [data-focus]`).focus({ preventScroll: true });
-  }
-
-  function showQuestion() {
-    const question = data.questions[questionIndex];
-    find("position").textContent = `${questionIndex + 1} / ${data.questions.length}`;
-    find("progress").value = questionIndex + 1;
-    find("progress").setAttribute("aria-valuetext", `${data.questions.length}문항 중 ${questionIndex + 1}번째 질문`);
-    find("question").textContent = question.question;
-    find("answers").replaceChildren();
-    question.answers.forEach((answer, index) => {
-      const button = document.createElement("button");
-      button.type = "button";
-      button.className = "answer-button";
-      button.textContent = answer.text;
-      button.setAttribute("aria-pressed", String(answers[questionIndex] === index));
-      // Detached buttons cannot advance a newer question on a repeated activation.
-      const renderedIndex = questionIndex;
-      button.addEventListener("click", () => {
-        if (screen !== "question" || questionIndex !== renderedIndex) return;
-        answers[questionIndex] = index;
-        if (questionIndex < data.questions.length - 1) {
-          questionIndex += 1;
-          showQuestion();
-        } else {
-          showResult();
-        }
-      });
-      find("answers").append(button);
-    });
-    showScreen("question");
-  }
-
-  function showResult() {
-    if (answers.some((answer) => answer === null)) return;
-    let result;
-    let resultDetails;
-    if (data.stats) {
-      const counts = Object.fromEntries(data.stats.map((stat) => [stat.id, 0]));
-      const selectedStats = answers.map((answer, index) => data.questions[index].answers[answer].stat);
-      selectedStats.forEach((stat) => { counts[stat] += 1; });
-      const highest = Math.max(...Object.values(counts));
-      // Resolve ties using the most recent answer among the highest stats.
-      const winner = [...selectedStats].reverse().find((stat) => counts[stat] === highest);
-      result = data.results.find((item) => item.stat === winner);
-      resultDetails = { result_stat: winner, result_score: highest, max_score: data.questions.length };
-      find("stats").replaceChildren();
-      data.stats.forEach((stat) => {
-        const row = document.createElement("div");
-        row.className = "stat-row";
-        const label = document.createElement("dt");
-        label.textContent = stat.title;
-        const value = document.createElement("dd");
-        value.textContent = `${counts[stat.id]} / ${data.questions.length}`;
-        row.append(label, value);
-        find("stats").append(row);
-      });
-    } else {
-      const total = answers.reduce((sum, answer, index) => sum + data.questions[index].answers[answer].score, 0);
-      result = data.results.find((item) => total >= item.min && total <= item.max);
-      resultDetails = { result_score: total, max_score: maxScore };
-      find("score").textContent = total;
-      if (data.resultMetric) {
-        find("result-metric").textContent = `${data.resultMetric.label} ${Math.round(total / maxScore * 100)}%`;
-      }
-    }
-    find("result-title").textContent = result.title;
-    find("result-description").textContent = result.description;
-    showScreen("result");
-    if (!completed) {
-      completed = true;
-      track("test_complete", { result_title: result.title, question_count: data.questions.length, ...resultDetails });
-    }
-  }
-
-  find("start").addEventListener("click", () => {
-    if (!started) {
-      started = true;
-      track("test_start", { question_count: data.questions.length });
-    }
-    showQuestion();
-  });
-  find("back").addEventListener("click", () => {
-    if (questionIndex === 0) showScreen("start");
-    else {
-      questionIndex -= 1;
-      showQuestion();
-    }
-  });
-  find("restart").addEventListener("click", () => {
-    questionIndex = 0;
-    answers = Array(data.questions.length).fill(null);
-    started = false;
-    completed = false;
-    if (!data.stats) find("score").textContent = "";
-    find("result-title").textContent = "";
-    find("result-description").textContent = "";
-    if (data.stats) find("stats").replaceChildren();
-    if (data.resultMetric) find("result-metric").textContent = "";
-    showScreen("start");
-  });
-  showScreen("start", false);
-  track("test_view");
-}
-
-createTestRunner(document.querySelector("[data-test-runner]"), testData);
+export default testData;
 ```
 
-## test.css
+## workplace-image-data.js
 
-```css
-.test-page{display:flex;flex-direction:column;min-height:100vh}
-.test-page main{flex:1;width:calc(100% - 40px);max-width:700px;margin:56px auto 0}
-.test-panel{padding:40px;border:1px solid var(--border);border-radius:18px;background:#fff}
-.test-panel[hidden]{display:none}
-.test-panel [data-focus]:focus{outline:none}
-.test-category{display:inline-block;margin:0 0 24px;padding:8px 14px;border:1px solid #ffdce4;border-radius:999px;background:var(--pink-light);color:var(--pink);font-size:14px}
-.test-panel h1{margin:0 0 20px;font-size:clamp(27px,4vw,36px);line-height:1.4;letter-spacing:-1px}
-.test-description,.result-description{margin:0;color:var(--muted);font-size:17px;line-height:1.85}
-.test-count{margin:28px 0;color:var(--muted);font-size:14px}
-.test-panel .primary-button{width:100%;min-height:58px;border-radius:16px;transition:none}
-.test-panel .primary-button:hover{transform:none}
-.question-top{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:18px}
-.test-back{padding:8px 0;border:0;background:none;color:var(--muted);font-size:14px}
-.test-back:hover{color:var(--pink)}
-.test-position{font-size:14px;font-weight:600;font-variant-numeric:tabular-nums}
-.test-progress{display:block;width:100%;height:6px;margin:0 0 36px;border:0;border-radius:999px;overflow:hidden;background:#f3f3f3;appearance:none}
-.test-progress::-webkit-progress-bar{background:#f3f3f3;border-radius:999px}
-.test-progress::-webkit-progress-value{background:var(--pink);border-radius:999px}
-.test-progress::-moz-progress-bar{background:var(--pink);border-radius:999px}
-.question-title{margin:0 0 28px;font-size:25px;line-height:1.55;letter-spacing:-.7px}
-.answer-list{display:grid;gap:12px}
-.answer-button{width:100%;min-height:64px;padding:18px 20px;border:1px solid var(--border);border-radius:16px;background:#fff;text-align:left;font-size:16px;line-height:1.65}
-.answer-button:hover,.answer-button[aria-pressed="true"]{border-color:var(--pink);background:var(--pink-light)}
-.test-result{text-align:center}
-.result-label{margin:0;color:var(--muted);font-size:17px}
-.result-metric{display:inline-block;margin:0 0 24px;padding:12px 18px;border:1px solid #ffdce4;border-radius:16px;background:var(--pink-light);color:var(--pink);font-size:18px;font-weight:650;line-height:1.5}
-.result-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:24px 0 28px;text-align:left}
-.stat-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;padding:16px;border:1px solid var(--border);border-radius:16px;font-size:15px}
-.stat-row dt{font-weight:600}
-.stat-row dd{margin:0;color:var(--pink);font-weight:700;font-variant-numeric:tabular-nums}
-.result-score{margin:14px 0 28px;color:var(--pink);font-size:72px;line-height:1.15;font-weight:800;letter-spacing:-2px}
-.result-score small{margin-left:6px;font-size:20px;font-weight:500;letter-spacing:0}
-.result-title{margin:0 0 20px;font-size:28px;line-height:1.4;letter-spacing:-.8px}
-.result-actions{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:32px}
-.secondary-button{display:flex;align-items:center;justify-content:center;min-height:58px;padding:16px;border:1px solid var(--border);border-radius:16px;background:#fff;font-size:16px;font-weight:600}
-.secondary-button:hover{border-color:var(--pink);background:var(--pink-light)}
-.test-disclaimer{margin:28px 0 0;color:var(--muted);font-size:12px;line-height:1.7}
-.kakao-share-button{width:100%;margin-top:12px}
-.kakao-share-status{margin:12px 0 0;color:var(--muted);font-size:14px;line-height:1.7}
-@media(max-width:640px){.test-page main{margin-top:32px}.test-panel{padding:28px 22px}.test-category{margin-bottom:20px}.test-description,.result-description{font-size:16px}.question-title{font-size:22px}.test-progress{margin-bottom:28px}.answer-button{padding:16px;min-height:62px}.result-title{font-size:24px}.result-score{font-size:64px}.result-actions{grid-template-columns:1fr}}
+```javascript
+"use strict";
+
+const testData = {
+  id: 38,
+  url: "test.html?id=workplace-image",
+  title: "회사에서 나는 어떤 이미지로 보일까?",
+  description: "내가 생각하는 나와 동료들이 보는 나는 얼마나 다를까?",
+  category: "친구·인간관계·사회생활",
+  showResultType: true,
+  stats: [
+    { id: "reliable", title: "든든형" },
+    { id: "friendly", title: "친화형" },
+    { id: "skilled", title: "실력파형" },
+    { id: "organized", title: "야무진형" },
+    { id: "independent", title: "독립형" },
+  ],
+  questions: [
+    {
+      question: "새로운 업무를 맡았을 때 나는?",
+      answers: [
+        ["일단 필요한 내용을 정리하고 차근차근 시작한다", "organized"],
+        ["잘 모르겠는 부분은 주변에 물어보며 같이 풀어간다", "friendly"],
+        ["말보다 결과로 보여주려고 한다", "skilled"],
+        ["책임진 일은 어떻게든 끝까지 마무리한다", "reliable"],
+        ["내 방식대로 먼저 파악하고 혼자 해보는 편이다", "independent"],
+      ],
+    },
+    {
+      question: "회의 중 내 의견과 다른 이야기가 나오면?",
+      answers: [
+        ["굳이 필요하지 않으면 조용히 듣는 편이다", "independent"],
+        ["분위기를 해치지 않게 내 의견을 말한다", "friendly"],
+        ["근거가 있다면 분명하게 이야기한다", "organized"],
+        ["전체적으로 어떤 선택이 가장 나은지 생각한다", "reliable"],
+        ["내 생각이 맞다고 판단되면 결과로 증명하고 싶다", "skilled"],
+      ],
+    },
+    {
+      question: "동료가 갑자기 업무를 도와달라고 하면?",
+      answers: [
+        ["내가 할 수 있는 부분은 적극적으로 도와준다", "reliable"],
+        ["일단 상황을 듣고 같이 방법을 찾아본다", "friendly"],
+        ["내 업무에 지장이 없다면 도와준다", "independent"],
+        ["가장 빠르게 해결할 수 있는 방법을 알려준다", "skilled"],
+        ["우선순위를 확인하고 가능한 범위를 정한다", "organized"],
+      ],
+    },
+    {
+      question: "점심시간에 나는?",
+      answers: [
+        ["친한 동료들과 이야기하면서 먹는 게 좋다", "friendly"],
+        ["그날 상황에 따라 편하게 움직인다", "organized"],
+        ["가끔은 혼자 먹는 것도 편하다", "independent"],
+        ["사람들과 어울리지만 너무 오래 있지는 않는다", "skilled"],
+        ["주변 사람들을 챙기면서 자연스럽게 같이 움직인다", "reliable"],
+      ],
+    },
+    {
+      question: "업무 실수를 했을 때 나는?",
+      answers: [
+        ["원인을 확인하고 같은 실수를 반복하지 않게 정리한다", "organized"],
+        ["혼자 먼저 해결해본 뒤 필요한 경우에만 공유한다", "independent"],
+        ["빠르게 인정하고 바로 수정한다", "reliable"],
+        ["실수한 부분보다 결과를 어떻게 복구할지 집중한다", "skilled"],
+        ["관련된 사람들에게 먼저 상황을 설명한다", "friendly"],
+      ],
+    },
+    {
+      question: "회사에서 가장 듣고 싶은 말은?",
+      answers: [
+        ['"같이 일하면 편해."', "friendly"],
+        ['"저 사람한테 맡기면 걱정 없어."', "reliable"],
+        ['"일 진짜 잘한다."', "skilled"],
+        ['"자기 할 일은 확실히 한다."', "independent"],
+        ['"일 처리가 진짜 깔끔하다."', "organized"],
+      ],
+    },
+    {
+      question: "갑자기 일이 몰리면 나는?",
+      answers: [
+        ["할 일을 나누고 우선순위부터 정한다", "organized"],
+        ["묵묵히 하나씩 처리하면서 끝까지 버틴다", "reliable"],
+        ["최대한 효율적인 방법을 찾아 빠르게 처리한다", "skilled"],
+        ["필요하면 주변 사람들과 역할을 나눈다", "friendly"],
+        ["내가 맡은 부분부터 집중해서 끝낸다", "independent"],
+      ],
+    },
+    {
+      question: "신입이나 새로운 동료가 들어오면?",
+      answers: [
+        ["먼저 말을 걸고 편하게 적응하도록 도와준다", "friendly"],
+        ["필요한 부분을 정리해서 알려준다", "organized"],
+        ["물어보면 최대한 정확하게 알려준다", "skilled"],
+        ["모르는 게 있으면 언제든 물어보라고 한다", "reliable"],
+        ["굳이 먼저 다가가진 않지만 필요하면 도와준다", "independent"],
+      ],
+    },
+    {
+      question: "회사에서 불편한 사람이 있다면?",
+      answers: [
+        ["업무에 필요한 관계만 유지한다", "independent"],
+        ["최대한 티 내지 않고 무난하게 지낸다", "friendly"],
+        ["감정과 일을 분리하려고 한다", "reliable"],
+        ["일만 잘 맞으면 크게 신경 쓰지 않는다", "skilled"],
+        ["선을 넘는 부분은 분명하게 정리한다", "organized"],
+      ],
+    },
+    {
+      question: "내가 맡은 일에 다른 사람이 계속 의견을 낸다면?",
+      answers: [
+        ["좋은 의견이면 자연스럽게 받아들인다", "reliable"],
+        ["왜 그렇게 생각하는지 충분히 들어본다", "friendly"],
+        ["더 좋은 결과가 나온다면 방식은 상관없다", "skilled"],
+        ["필요한 의견과 아닌 의견을 구분한다", "organized"],
+        ["지나친 간섭처럼 느껴지면 조금 불편하다", "independent"],
+      ],
+    },
+    {
+      question: "상사가 갑자기 새로운 일을 맡긴다면?",
+      answers: [
+        ["요구사항부터 빠르게 파악한다", "skilled"],
+        ["일정과 현재 업무를 먼저 정리한다", "organized"],
+        ["맡은 일이니 최대한 책임지고 해낸다", "reliable"],
+        ["필요한 부분은 주변과 소통하면서 진행한다", "friendly"],
+        ["일단 혼자 파악할 시간을 갖고 싶다", "independent"],
+      ],
+    },
+    {
+      question: "회사 사람들과 친해지는 정도는?",
+      answers: [
+        ["회사에서도 편한 사람들과 친하게 지내는 편이다", "friendly"],
+        ["업무 관계와 개인적인 관계를 어느 정도 나누는 편이다", "independent"],
+        ["친해지더라도 기본적인 선은 지키는 편이다", "organized"],
+        ["같이 일하면서 자연스럽게 신뢰가 쌓이는 게 중요하다", "reliable"],
+        ["사람보다 일로 인정받는 게 더 중요하다", "skilled"],
+      ],
+    },
+    {
+      question: "누군가 내 업무 결과를 칭찬하면?",
+      answers: [
+        ["속으로 뿌듯하지만 크게 티 내지는 않는다", "independent"],
+        ["다음에도 믿고 맡길 수 있게 더 잘하고 싶어진다", "reliable"],
+        ["노력한 만큼 인정받은 것 같아 좋다", "skilled"],
+        ["같이 일한 사람들에게도 공을 돌린다", "friendly"],
+        ["잘된 이유를 기억해두고 다음에도 활용한다", "organized"],
+      ],
+    },
+    {
+      question: "회사에서 예상치 못한 문제가 생기면?",
+      answers: [
+        ["상황을 빠르게 정리하고 해결 순서를 잡는다", "organized"],
+        ["누가 필요한지 파악해서 같이 움직인다", "friendly"],
+        ["내가 할 수 있는 부분은 끝까지 책임진다", "reliable"],
+        ["원인을 빠르게 찾아 해결하는 데 집중한다", "skilled"],
+        ["불필요하게 휘말리지 않고 내 역할에 집중한다", "independent"],
+      ],
+    },
+    {
+      question: "퇴근 직전 급한 일이 생겼다면?",
+      answers: [
+        ["정말 급한 일인지 먼저 판단한다", "organized"],
+        ["내가 해야 할 일이라면 마무리하고 간다", "reliable"],
+        ["빠르게 끝낼 수 있는 방법부터 찾는다", "skilled"],
+        ["같이 해야 한다면 주변 사람들과 맞춰서 처리한다", "friendly"],
+        ["내 업무가 아니라면 굳이 먼저 나서지는 않는다", "independent"],
+      ],
+    },
+  ].map(({ question, answers }) => ({
+    question,
+    answers: answers.map(([text, stat]) => ({ text, stat, score: 1 })),
+  })),
+  results: [
+    {
+      stat: "reliable",
+      title: "믿고 맡길 수 있는 사람으로 보이는 편",
+      description: "회사에서는 책임감 있고 믿을 만한 사람이라는 이미지를 주는 편이에요. 맡은 일이 생기면 쉽게 손을 놓지 않고 끝까지 마무리하려는 모습이 자주 보일 수 있어요.\n\n주변 사람들도 문제가 생겼을 때 당신에게 도움을 요청하거나 의견을 물어볼 가능성이 높아요. 화려하게 앞에 나서기보다 꾸준하게 제 역할을 해내면서 신뢰를 쌓는 타입이에요.\n\n다만 책임감 때문에 다른 사람의 일까지 너무 많이 떠맡게 될 수도 있어요. 도와주는 것과 내가 책임져야 하는 일을 구분하면 훨씬 편하게 회사생활을 할 수 있어요.",
+    },
+    {
+      stat: "friendly",
+      title: "같이 일하면 편한 사람으로 보이는 편",
+      description: "회사에서는 사람들과 자연스럽게 어울리고 분위기를 편하게 만드는 이미지가 강한 편이에요. 먼저 말을 걸거나 상대 이야기를 잘 들어줘서 함께 일하기 편한 사람으로 느껴질 수 있어요.\n\n업무에서도 혼자 해결하기보다 필요한 사람들과 소통하면서 문제를 풀어가는 데 강점이 있어요. 새로운 사람이나 낯선 팀에서도 비교적 빠르게 관계를 만들 수 있는 타입이에요.\n\n다만 주변 분위기를 너무 신경 쓰면 정작 내 의견을 뒤로 미루게 될 수도 있어요. 사람들과 잘 지내는 장점은 유지하면서 필요한 순간에는 내 생각도 분명하게 말해보세요.",
+    },
+    {
+      stat: "skilled",
+      title: "말보다 결과로 보여주는 사람으로 보이는 편",
+      description: "회사에서는 일 잘하고 자기 역할이 확실한 사람이라는 이미지를 주기 쉬운 편이에요. 불필요하게 말이 많기보다 맡은 업무를 빠르고 정확하게 처리하는 모습을 중요하게 생각해요.\n\n문제가 생겨도 감정적으로 반응하기보다 해결 방법이나 결과에 집중하는 편이에요. 그래서 동료들에게는 업무적으로 믿을 수 있고 능력 있는 사람처럼 보일 가능성이 높아요.\n\n다만 일에 집중하다 보면 주변에서는 조금 차갑거나 무심하게 느낄 때도 있을 수 있어요. 작은 대화나 표현을 조금만 더해도 실력과 친근함을 함께 보여줄 수 있어요.",
+    },
+    {
+      stat: "organized",
+      title: "일 처리가 똑 부러지는 사람으로 보이는 편",
+      description: "회사에서는 상황 파악이 빠르고 일을 깔끔하게 정리하는 사람이라는 이미지가 강한 편이에요. 업무를 시작하기 전에 우선순위와 필요한 부분을 정리해서 효율적으로 움직이려는 타입이에요.\n\n해야 할 말과 하지 않아도 될 말을 구분하고, 필요한 순간에는 의견도 분명하게 표현하는 편이에요. 그래서 주변에서는 현실적이고 야무지게 회사생활을 하는 사람으로 볼 가능성이 높아요.\n\n다만 기준이 명확한 만큼 느리거나 답답한 상황에서는 예민해질 수도 있어요. 모든 일이 내 방식대로 흘러가지 않아도 조금 여유를 두면 강점이 더 잘 드러날 수 있어요.",
+    },
+    {
+      stat: "independent",
+      title: "자기 영역이 확실한 사람으로 보이는 편",
+      description: "회사에서는 혼자서도 자기 일을 잘해내고 개인적인 영역이 분명한 사람으로 보이는 편이에요. 필요한 소통은 하지만 굳이 모든 사람과 가까워져야 한다고 생각하지 않는 타입이에요.\n\n업무와 사생활을 비교적 잘 구분하고 혼자 집중할 수 있는 환경에서 능력을 잘 발휘하는 편이에요. 주변 분위기에 쉽게 휘둘리지 않아 자기 페이스를 유지하는 데도 강점이 있어요.\n\n다만 표현이 적으면 다른 사람에게는 조금 어렵거나 거리감 있는 사람으로 보일 수도 있어요. 필요할 때 먼저 한마디 건네는 것만으로도 훨씬 편안한 이미지를 줄 수 있어요.",
+    },
+  ],
+};
+
+export default testData;
 ```
 
 ## assets/favicon.svg

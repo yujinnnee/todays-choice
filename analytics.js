@@ -13,7 +13,13 @@ if (GA4_MEASUREMENT_ID !== "G-XXXXXXXXXX" && /^G-[A-Z0-9]+$/.test(GA4_MEASUREMEN
   googleTag.async = true;
   googleTag.src = `https://www.googletagmanager.com/gtag/js?id=${GA4_MEASUREMENT_ID}`;
   document.head.append(googleTag);
-  window.gtag("config", GA4_MEASUREMENT_ID);
+  const selectedId = new URLSearchParams(location.search).get("id");
+  const currentTest = typeof TEST_CATALOG !== "undefined" && /\/test\.html$/.test(location.pathname)
+    ? TEST_CATALOG.find((test) => test.slug === selectedId || String(test.id) === selectedId)
+    : null;
+  window.gtag("config", GA4_MEASUREMENT_ID, currentTest
+    ? { page_title: `${currentTest.title} | Today's Choice` }
+    : {});
 }
 
 function trackTestEvent(eventName, data, extra = {}) {

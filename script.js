@@ -69,8 +69,44 @@ if (kakaoShareButton) {
 }
 
 // The complete category list supplies search, random launch and today's picks.
+const catalogGrid = document.querySelector("#category-grid");
+if (catalogGrid && typeof TEST_CATALOG !== "undefined") {
+  const categories = { "연애/결혼": "love", "재미": "fun", "성격": "personality" };
+  const makeIcon = (name, filled = false) => {
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("class", `icon${filled ? " filled-heart" : ""}`);
+    svg.setAttribute("aria-hidden", "true");
+    const use = document.createElementNS("http://www.w3.org/2000/svg", "use");
+    use.setAttribute("href", `#icon-${name}`);
+    svg.append(use);
+    return svg;
+  };
+  catalogGrid.replaceChildren();
+  TEST_CATALOG.forEach((test) => {
+    const card = document.createElement("a");
+    card.className = "test-card";
+    card.href = test.url;
+    card.dataset.test = test.id;
+    card.dataset.category = categories[test.category] || "relationship";
+    const tile = document.createElement("span");
+    tile.className = "icon-tile";
+    tile.append(makeIcon(test.icon || "heart", test.filledHeart));
+    const title = document.createElement("h3");
+    title.textContent = test.title;
+    const description = document.createElement("p");
+    description.textContent = test.description;
+    const bottom = document.createElement("div");
+    bottom.className = "card-bottom";
+    const arrow = document.createElement("span");
+    arrow.className = "circle-arrow";
+    arrow.append(makeIcon("arrow"));
+    bottom.append(arrow);
+    card.append(tile, title, description, bottom);
+    catalogGrid.append(card);
+  });
+}
 const cards = Array.from(document.querySelectorAll("#category-grid .test-card"));
-const tests = Array.from(new Map(cards.map((card) => [Number(card.dataset.test), {
+const tests = typeof TEST_CATALOG !== "undefined" ? TEST_CATALOG : Array.from(new Map(cards.map((card) => [Number(card.dataset.test), {
   id: Number(card.dataset.test),
   title: card.querySelector("h3").innerHTML.replace(/<br\s*\/?>/gi, " ").replace(/\s+/g, " ").trim(),
   description: card.querySelector("p").textContent,

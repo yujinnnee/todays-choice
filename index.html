@@ -2,6 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <script src="test-catalog.js"></script>
   <script src="analytics.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff">
@@ -82,26 +83,8 @@
         <button class="category-button" type="button" data-filter="fun" aria-pressed="false" aria-controls="category-grid">재미</button>
       </div>
       <p id="filter-status" class="visually-hidden" role="status">전체 테스트를 표시하고 있어요.</p>
-      <div class="card-grid" id="category-grid">
-        <a class="test-card" href="social-adaptation-test.html" data-test="30" data-category="relationship"><span class="icon-tile"><svg class="icon"><use href="#icon-people"/></svg></span><h3>나는 사회생활에서 얼마나 적응이 빠른 편일까?</h3><p>새로운 사람, 새로운 환경에 나는 얼마나 빨리 녹아드는 타입일까?</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
-        <a class="test-card" href="difficult-people-test.html" data-test="29" data-category="relationship"><span class="icon-tile"><svg class="icon"><use href="#icon-chat"/></svg></span><h3>나는 싫은 사람과도 잘 지낼 수 있을까?</h3><p>감정은 감정이고 사회생활은 사회생활일까?</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
-        <a class="test-card" href="million-followers-test.html" data-test="28" data-category="fun"><span class="icon-tile"><svg class="icon"><use href="#icon-people"/></svg></span><h3>나는 하루아침에 100만 팔로워가 생기면 어떻게 변할까?</h3><p>갑자기 모두가 나를 보기 시작한다면, 나는 어떤 사람이 될까?</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
-        <a class="test-card" href="affection-test.html" data-test="27" data-category="relationship"><span class="icon-tile"><svg class="icon"><use href="#icon-heart"/></svg></span><h3>나는 인간관계에서 정이 많은 편일까?</h3><p>한번 내 사람이 되면 얼마나 오래 챙기는 타입일까?</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
-        <a class="test-card" href="friend-dependence-test.html" data-test="26" data-category="relationship"><span class="icon-tile"><svg class="icon"><use href="#icon-chat"/></svg></span><h3>나는 친구에게 얼마나 의존하는 편일까?</h3><p>힘들 때도, 심심할 때도 나는 친구를 얼마나 찾는 편일까?</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
-        <a class="test-card" href="friend-boundaries-test.html" data-test="25" data-category="relationship"><span class="icon-tile"><svg class="icon"><use href="#icon-people"/></svg></span><h3>나는 친한 친구에게도 선을 두는 편일까?</h3><p>아무리 친해도 지켜야 할 선이 있다고 생각하는 편일까?</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
-        <a class="test-card" href="relationship-control-test.html" data-test="24" data-category="love"><span class="icon-tile"><svg class="icon"><use href="#icon-chat"/></svg></span><h3>나는 연애할 때 상대를 얼마나 통제하려는 편일까?</h3><p>걱정과 관심일까, 아니면 상대를 내 기준에 맞추려는 걸까?</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
-        <a class="test-card" href="relationship-energy-test.html" data-test="23" data-category="love"><span class="icon-tile"><svg class="icon"><use href="#icon-heart"/></svg></span><h3>나는 연애할 때 감정소모가 큰 편일까?</h3><p>연애 하나로 하루 기분이 얼마나 흔들리는지 알아보세요.</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
-        <a class="test-card" href="marriage-values-test.html" data-test="22" data-category="love"><span class="icon-tile"><svg class="icon"><use href="#icon-ring"/></svg></span><h3>나는 사랑만으로 결혼할 수 있을까?</h3><p>결혼에서 사랑과 현실, 나는 어디에 더 가까울까?</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
-        <a class="test-card" href="lying-test.html" data-test="21" data-category="fun"><span class="icon-tile"><svg class="icon"><use href="#icon-people"/></svg></span><h3>나는 거짓말을 얼마나 잘하는 편일까?</h3><p>거짓말을 하면 바로 티 나는 타입일까, 끝까지 자연스럽게 숨기는 타입일까?</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
-        <a class="test-card" href="secret-test.html" data-test="20" data-category="fun"><span class="icon-tile"><svg class="icon"><use href="#icon-chat"/></svg></span><h3>나는 비밀을 들으면 얼마나 오래 참을 수 있을까?</h3><p>입이 무거운 편일까, 말하고 싶어서 근질근질한 편일까?</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
-        <a class="test-card" href="game-character-test.html" data-test="19" data-category="fun"><span class="icon-tile"><svg class="icon"><use href="#icon-flame"/></svg></span><h3>내가 게임 속 캐릭터라면 능력치는 어디에 몰려 있을까?</h3><p>게임 캐릭터가 된다면 나는 어떤 스탯에 몰빵된 타입일까?</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
-        <a class="test-card" href="mental-strength-test.html" data-test="18" data-category="personality"><span class="icon-tile"><svg class="icon"><use href="#icon-leaf"/></svg></span><h3>내 멘탈은 얼마나 단단한 편일까?</h3><p>스트레스나 실패 앞에서 나는 얼마나 쉽게 흔들리는 사람일까?</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
-        <a class="test-card" href="social-mask-test.html" data-test="17" data-category="personality"><span class="icon-tile"><svg class="icon"><use href="#icon-moon"/></svg></span><h3>내 사회생활 가면은 얼마나 두꺼울까?</h3><p>밖에서의 나와 혼자 있을 때의 나는 얼마나 다를까?</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
-        <a class="test-card" href="social-awareness-test.html" data-test="16" data-category="relationship"><span class="icon-tile"><svg class="icon"><use href="#icon-chat"/></svg></span><h3>나는 인간관계에서 눈치를 얼마나 보는 편일까?</h3><p>다른 사람의 말투, 표정, 분위기를 얼마나 신경 쓰는지 알아보세요.</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
-        <a class="test-card" href="cutoff-test.html" data-test="15" data-category="relationship"><span class="icon-tile"><svg class="icon"><use href="#icon-people"/></svg></span><h3>나는 사람을 얼마나 빨리 손절하는 편일까?</h3><p>인간관계에서 나는 참는 편일까, 빠르게 정리하는 편일까?</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
-        <p class="category-empty" id="category-empty" hidden>아직 이 카테고리에 등록된 테스트가 없어요.</p>
-        <a class="test-card" href="jealousy-test.html" data-test="8" data-category="love"><span class="icon-tile"><svg class="icon filled-heart"><use href="#icon-heart"/></svg></span><h3>내 질투심은 정상 범위일까?</h3><p>연애할 때 나는 얼마나 질투하는 편인지 알아보세요.</p><div class="card-bottom"><span class="circle-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span></div></a>
-      </div>
+      <div class="card-grid" id="category-grid"></div>
+      <p class="category-empty" id="category-empty" hidden>아직 이 카테고리에 등록된 테스트가 없어요.</p>
       <nav class="test-pagination" id="test-pagination" aria-label="테스트 목록 페이지" hidden></nav>
     </section>
   </main>

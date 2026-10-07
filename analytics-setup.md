@@ -2,7 +2,7 @@
 
 `analytics.js`의 `GA4_MEASUREMENT_ID`에 실제 측정 ID `G-JGQJWYPHNL`을 적용했습니다. 앞으로 ID를 변경할 때는 이 한 곳을 바꾸면 모든 페이지에 적용됩니다. 값이 `G-XXXXXXXXXX`인 placeholder 상태에서는 Google SDK를 요청하거나 데이터를 전송하지 않습니다.
 
-모든 HTML의 `<head>`가 공통 `analytics.js`를 불러옵니다. 이 파일이 비동기로 gtag SDK를 추가하고 `gtag('config', GA4_MEASUREMENT_ID)`를 한 번 실행합니다. 기본 페이지 조회는 자동 전송하므로 별도의 `page_view` 이벤트를 중복 전송하지 않습니다.
+모든 HTML의 `<head>`가 공통 `analytics.js`를 불러옵니다. 이 파일이 비동기로 gtag SDK를 추가하고 `gtag('config', GA4_MEASUREMENT_ID)`를 한 번 실행합니다. 공통 `test.html?id=...`에서도 카탈로그에서 해당 테스트 제목을 찾아 페이지 제목으로 전송합니다. 기본 페이지 조회는 자동 전송하므로 별도의 `page_view` 이벤트를 중복 전송하지 않습니다.
 
 ## 이벤트
 

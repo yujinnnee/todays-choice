@@ -22,12 +22,7 @@
 .answer-button{width:100%;min-height:64px;padding:18px 20px;border:1px solid var(--border);border-radius:16px;background:#fff;text-align:left;font-size:16px;line-height:1.65}
 .answer-button:hover,.answer-button[aria-pressed="true"]{border-color:var(--pink);background:var(--pink-light)}
 .test-result{text-align:center}
-.result-label{margin:0;color:var(--muted);font-size:17px}
 .result-metric{display:inline-block;margin:0 0 24px;padding:12px 18px;border:1px solid #ffdce4;border-radius:16px;background:var(--pink-light);color:var(--pink);font-size:18px;font-weight:650;line-height:1.5}
-.result-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:24px 0 28px;text-align:left}
-.stat-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;padding:16px;border:1px solid var(--border);border-radius:16px;font-size:15px}
-.stat-row dt{font-weight:600}
-.stat-row dd{margin:0;color:var(--pink);font-weight:700;font-variant-numeric:tabular-nums}
 .result-score{margin:14px 0 28px;color:var(--pink);font-size:72px;line-height:1.15;font-weight:800;letter-spacing:-2px}
 .result-score small{margin-left:6px;font-size:20px;font-weight:500;letter-spacing:0}
 .result-title{margin:0 0 20px;font-size:28px;line-height:1.4;letter-spacing:-.8px}
@@ -38,3 +33,22 @@
 .kakao-share-button{width:100%;margin-top:12px}
 .kakao-share-status{margin:12px 0 0;color:var(--muted);font-size:14px;line-height:1.7}
 @media(max-width:640px){.test-page main{margin-top:32px}.test-panel{padding:28px 22px}.test-category{margin-bottom:20px}.test-description,.result-description{font-size:16px}.question-title{font-size:22px}.test-progress{margin-bottom:28px}.answer-button{padding:16px;min-height:62px}.result-title{font-size:24px}.result-score{font-size:64px}.result-actions{grid-template-columns:1fr}}
+
+.result-description{white-space:pre-line}
+.result-metric[hidden],.test-category[hidden]{display:none}
+.test-result[data-card="true"]{padding:40px;background:#fff;border-color:#e8e8ec}
+.result-card[data-styled="true"]{padding:0;border:0;background:#fff;text-align:center}
+.result-card[data-styled="true"]::before{content:"";display:block;width:32px;height:4px;margin:0 auto 28px;border-radius:999px;background:var(--pink)}
+.result-card[data-styled="true"] .test-category{margin:0 0 18px;padding:7px 13px;background:var(--pink-light);border:0;font-size:13px;font-weight:600}
+.result-card[data-styled="true"] .result-score{margin:0 0 20px;color:var(--text);font-size:56px;letter-spacing:-2px}
+.result-card[data-styled="true"] .result-score small{color:var(--muted);font-size:17px}
+.result-card[data-styled="true"] .result-metric{margin:0 0 20px;padding:8px 14px;border:0;font-size:15px}
+.result-card[data-styled="true"] .result-title{max-width:520px;margin:0 auto 28px;font-size:30px;line-height:1.5;font-weight:750;word-break:keep-all;overflow-wrap:anywhere;text-wrap:balance;text-align:center}
+.result-card[data-styled="true"] .result-description{padding:26px 28px;border:1px solid #f0f0f2;border-radius:16px;background:#fafafa;color:#59606b;text-align:left;white-space:normal;word-break:keep-all;overflow-wrap:anywhere;font-size:16px;line-height:1.9}
+.result-card[data-styled="true"] .result-description p{margin:0 0 18px}
+.result-card[data-styled="true"] .result-description p{white-space:pre-line}
+.result-card[data-styled="true"] .result-description p:last-child{margin-bottom:0}
+.test-result[data-card="true"] .result-actions{margin-top:24px}
+.test-result[data-card="true"] .secondary-button,.test-result[data-card="true"] .kakao-share-button{min-height:54px;border-radius:14px}
+.test-result[data-card="true"]>.test-disclaimer{margin-top:22px;color:#858992}
+@media(max-width:640px){.test-result[data-card="true"]{padding:28px 20px}.result-card[data-styled="true"]::before{margin-bottom:22px}.result-card[data-styled="true"] .result-title{font-size:25px;margin-bottom:24px}.result-card[data-styled="true"] .result-score{font-size:48px}.result-card[data-styled="true"] .result-description{padding:20px 18px;font-size:15px;line-height:1.9}.test-result[data-card="true"] .result-actions{grid-template-columns:1fr 1fr;gap:10px}.test-result[data-card="true"] .secondary-button{padding:12px 8px;font-size:14px}}
