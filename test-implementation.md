@@ -1,6 +1,6 @@
 # Today's Choice 전체 코드
 
-현재 테스트와 카카오톡 공유 기능을 포함한 전체 코드입니다. 공유 이미지는 assets/share-cover.png입니다.
+현재 테스트와 카카오톡 공유 기능을 포함한 전체 코드입니다. 공유 이미지는 assets/share-cover-v3.png입니다.
 
 ## index.html
 
@@ -17,10 +17,10 @@
   <meta property="og:title" content="Today's choice | 오늘 당신의 초이스는?">
   <meta property="og:description" content="연애, 인간관계, 일상 속 고민까지. 오늘의 초이스에서 재미있는 심리테스트를 만나보세요.">
   <meta property="og:url" content="https://todayschoice.kr/">
-  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="오늘 당신의 초이스는? — 재미있는 심리테스트">
+  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
+  <meta property="og:image:width" content="1731">
+  <meta property="og:image:height" content="909">
+  <meta property="og:image:alt" content="Today's choice">
   <meta name="description" content="연애, 인간관계, 일상 속 고민까지. 오늘의 초이스에서 재미있는 심리테스트를 만나보세요.">
   <title>Today's choice | 오늘 당신의 초이스는?</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
@@ -246,7 +246,7 @@ body:has(dialog[open]){overflow:hidden}
 
 const KAKAO_JAVASCRIPT_KEY = '7a0729ebdecc02b3f4ce5e892c53248a';
 const SHARE_SITE_URL = "https://todayschoice.kr/";
-const SHARE_IMAGE_URL = new URL("assets/share-cover.png", SHARE_SITE_URL).href;
+const SHARE_IMAGE_URL = new URL("assets/share-cover-v3.png", SHARE_SITE_URL).href;
 
 function initializeKakao() {
   if (!window.Kakao) return false;
@@ -289,13 +289,13 @@ if (kakaoShareButton) {
         objectType: "feed",
         content: {
           title: testData.title,
-          description: testData.shareDescription || testData.description,
+          description: testData.description,
           imageUrl: SHARE_IMAGE_URL,
-          imageWidth: 1200,
-          imageHeight: 630,
+          imageWidth: 1731,
+          imageHeight: 909,
           link: testLink,
         },
-        buttons: [{ title: "나도 테스트 해보기", link: testLink }],
+        buttons: [{ title: "테스트 하러 가기", link: testLink }],
       });
       // SDK errors can occur immediately or through a rejected promise.
       Promise.resolve(request).catch((error) => {
@@ -618,10 +618,10 @@ const testData = {
   <meta property="og:title" content="나는 인간관계에서 정이 많은 편일까? | Today's Choice">
   <meta property="og:description" content="한번 내 사람이 되면 얼마나 오래 챙기는 타입일까?">
   <meta property="og:url" content="https://todayschoice.kr/affection-test.html">
-  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="오늘 당신의 초이스는? — 재미있는 심리테스트">
+  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
+  <meta property="og:image:width" content="1731">
+  <meta property="og:image:height" content="909">
+  <meta property="og:image:alt" content="Today's choice">
   <meta name="description" content="한번 내 사람이 되면 얼마나 오래 챙기는 타입일까?">
   <title>나는 인간관계에서 정이 많은 편일까? | Today's Choice</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
@@ -800,10 +800,10 @@ const testData = {
   <meta property="og:title" content="나는 사람을 얼마나 빨리 손절하는 편일까? | Today's Choice">
   <meta property="og:description" content="인간관계에서 나는 참는 편일까, 빠르게 정리하는 편일까?">
   <meta property="og:url" content="https://todayschoice.kr/cutoff-test.html">
-  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="오늘 당신의 초이스는? — 재미있는 심리테스트">
+  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
+  <meta property="og:image:width" content="1731">
+  <meta property="og:image:height" content="909">
+  <meta property="og:image:alt" content="Today's choice">
   <meta name="description" content="인간관계에서 나는 참는 편일까, 빠르게 정리하는 편일까?">
   <title>나는 사람을 얼마나 빨리 손절하는 편일까? | Today's Choice</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
@@ -982,10 +982,10 @@ const testData = {
   <meta property="og:title" content="나는 싫은 사람과도 잘 지낼 수 있을까? | Today's Choice">
   <meta property="og:description" content="감정은 감정이고 사회생활은 사회생활일까?">
   <meta property="og:url" content="https://todayschoice.kr/difficult-people-test.html">
-  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="오늘 당신의 초이스는? — 재미있는 심리테스트">
+  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
+  <meta property="og:image:width" content="1731">
+  <meta property="og:image:height" content="909">
+  <meta property="og:image:alt" content="Today's choice">
   <meta name="description" content="감정은 감정이고 사회생활은 사회생활일까?">
   <title>나는 싫은 사람과도 잘 지낼 수 있을까? | Today's Choice</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
@@ -1164,10 +1164,10 @@ const testData = {
   <meta property="og:title" content="나는 친한 친구에게도 선을 두는 편일까? | Today's Choice">
   <meta property="og:description" content="아무리 친해도 지켜야 할 선이 있다고 생각하는 편일까?">
   <meta property="og:url" content="https://todayschoice.kr/friend-boundaries-test.html">
-  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="오늘 당신의 초이스는? — 재미있는 심리테스트">
+  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
+  <meta property="og:image:width" content="1731">
+  <meta property="og:image:height" content="909">
+  <meta property="og:image:alt" content="Today's choice">
   <meta name="description" content="아무리 친해도 지켜야 할 선이 있다고 생각하는 편일까?">
   <title>나는 친한 친구에게도 선을 두는 편일까? | Today's Choice</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
@@ -1346,10 +1346,10 @@ const testData = {
   <meta property="og:title" content="나는 친구에게 얼마나 의존하는 편일까? | Today's Choice">
   <meta property="og:description" content="힘들 때도, 심심할 때도 나는 친구를 얼마나 찾는 편일까?">
   <meta property="og:url" content="https://todayschoice.kr/friend-dependence-test.html">
-  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="오늘 당신의 초이스는? — 재미있는 심리테스트">
+  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
+  <meta property="og:image:width" content="1731">
+  <meta property="og:image:height" content="909">
+  <meta property="og:image:alt" content="Today's choice">
   <meta name="description" content="힘들 때도, 심심할 때도 나는 친구를 얼마나 찾는 편일까?">
   <title>나는 친구에게 얼마나 의존하는 편일까? | Today's Choice</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
@@ -1539,10 +1539,10 @@ const testData = {
   <meta property="og:title" content="내가 게임 속 캐릭터라면 능력치는 어디에 몰려 있을까? | Today's Choice">
   <meta property="og:description" content="게임 캐릭터가 된다면 나는 어떤 스탯에 몰빵된 타입일까?">
   <meta property="og:url" content="https://todayschoice.kr/game-character-test.html">
-  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="오늘 당신의 초이스는? — 재미있는 심리테스트">
+  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
+  <meta property="og:image:width" content="1731">
+  <meta property="og:image:height" content="909">
+  <meta property="og:image:alt" content="Today's choice">
   <meta name="description" content="게임 캐릭터가 된다면 나는 어떤 스탯에 몰빵된 타입일까?">
   <title>내가 게임 속 캐릭터라면 능력치는 어디에 몰려 있을까? | Today's Choice</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
@@ -1722,10 +1722,10 @@ const testData = {
   <meta property="og:title" content="내 질투심은 정상 범위일까? | Today's Choice">
   <meta property="og:description" content="연애할 때 나는 얼마나 질투하는 편인지 알아보세요. 총 10문항으로 알아보는 나의 질투 지수.">
   <meta property="og:url" content="https://todayschoice.kr/jealousy-test.html">
-  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="오늘 당신의 초이스는? — 재미있는 심리테스트">
+  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
+  <meta property="og:image:width" content="1731">
+  <meta property="og:image:height" content="909">
+  <meta property="og:image:alt" content="Today's choice">
   <meta name="description" content="연애할 때 나는 얼마나 질투하는 편인지 알아보세요. 총 10문항으로 알아보는 나의 질투 지수.">
   <title>내 질투심은 정상 범위일까? | Today's Choice</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
@@ -1904,10 +1904,10 @@ const testData = {
   <meta property="og:title" content="나는 거짓말을 얼마나 잘하는 편일까? | Today's Choice">
   <meta property="og:description" content="거짓말을 하면 바로 티 나는 타입일까, 끝까지 자연스럽게 숨기는 타입일까?">
   <meta property="og:url" content="https://todayschoice.kr/lying-test.html">
-  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="오늘 당신의 초이스는? — 재미있는 심리테스트">
+  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
+  <meta property="og:image:width" content="1731">
+  <meta property="og:image:height" content="909">
+  <meta property="og:image:alt" content="Today's choice">
   <meta name="description" content="거짓말을 하면 바로 티 나는 타입일까, 끝까지 자연스럽게 숨기는 타입일까?">
   <title>나는 거짓말을 얼마나 잘하는 편일까? | Today's Choice</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
@@ -2086,10 +2086,10 @@ const testData = {
   <meta property="og:title" content="나는 사랑만으로 결혼할 수 있을까? | Today's Choice">
   <meta property="og:description" content="결혼에서 사랑과 현실, 나는 어디에 더 가까울까?">
   <meta property="og:url" content="https://todayschoice.kr/marriage-values-test.html">
-  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="오늘 당신의 초이스는? — 재미있는 심리테스트">
+  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
+  <meta property="og:image:width" content="1731">
+  <meta property="og:image:height" content="909">
+  <meta property="og:image:alt" content="Today's choice">
   <meta name="description" content="결혼에서 사랑과 현실, 나는 어디에 더 가까울까?">
   <title>나는 사랑만으로 결혼할 수 있을까? | Today's Choice</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
@@ -2268,10 +2268,10 @@ const testData = {
   <meta property="og:title" content="내 멘탈은 얼마나 단단한 편일까? | Today's Choice">
   <meta property="og:description" content="스트레스나 실패 앞에서 나는 얼마나 쉽게 흔들리는 사람일까?">
   <meta property="og:url" content="https://todayschoice.kr/mental-strength-test.html">
-  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="오늘 당신의 초이스는? — 재미있는 심리테스트">
+  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
+  <meta property="og:image:width" content="1731">
+  <meta property="og:image:height" content="909">
+  <meta property="og:image:alt" content="Today's choice">
   <meta name="description" content="스트레스나 실패 앞에서 나는 얼마나 쉽게 흔들리는 사람일까?">
   <title>내 멘탈은 얼마나 단단한 편일까? | Today's Choice</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
@@ -2451,10 +2451,10 @@ const testData = {
   <meta property="og:title" content="나는 하루아침에 100만 팔로워가 생기면 어떻게 변할까? | Today's Choice">
   <meta property="og:description" content="갑자기 모두가 나를 보기 시작한다면, 나는 어떤 사람이 될까?">
   <meta property="og:url" content="https://todayschoice.kr/million-followers-test.html">
-  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="오늘 당신의 초이스는? — 재미있는 심리테스트">
+  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
+  <meta property="og:image:width" content="1731">
+  <meta property="og:image:height" content="909">
+  <meta property="og:image:alt" content="Today's choice">
   <meta name="description" content="갑자기 모두가 나를 보기 시작한다면, 나는 어떤 사람이 될까?">
   <title>나는 하루아침에 100만 팔로워가 생기면 어떻게 변할까? | Today's Choice</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
@@ -2634,10 +2634,10 @@ const testData = {
   <meta property="og:title" content="나는 연애할 때 상대를 얼마나 통제하려는 편일까? | Today's Choice">
   <meta property="og:description" content="걱정과 관심일까, 아니면 상대를 내 기준에 맞추려는 걸까?">
   <meta property="og:url" content="https://todayschoice.kr/relationship-control-test.html">
-  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="오늘 당신의 초이스는? — 재미있는 심리테스트">
+  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
+  <meta property="og:image:width" content="1731">
+  <meta property="og:image:height" content="909">
+  <meta property="og:image:alt" content="Today's choice">
   <meta name="description" content="걱정과 관심일까, 아니면 상대를 내 기준에 맞추려는 걸까?">
   <title>나는 연애할 때 상대를 얼마나 통제하려는 편일까? | Today's Choice</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
@@ -2816,10 +2816,10 @@ const testData = {
   <meta property="og:title" content="나는 연애할 때 감정소모가 큰 편일까? | Today's Choice">
   <meta property="og:description" content="연애 하나로 하루 기분이 얼마나 흔들리는지 알아보세요.">
   <meta property="og:url" content="https://todayschoice.kr/relationship-energy-test.html">
-  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="오늘 당신의 초이스는? — 재미있는 심리테스트">
+  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
+  <meta property="og:image:width" content="1731">
+  <meta property="og:image:height" content="909">
+  <meta property="og:image:alt" content="Today's choice">
   <meta name="description" content="연애 하나로 하루 기분이 얼마나 흔들리는지 알아보세요.">
   <title>나는 연애할 때 감정소모가 큰 편일까? | Today's Choice</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
@@ -2998,10 +2998,10 @@ const testData = {
   <meta property="og:title" content="나는 비밀을 들으면 얼마나 오래 참을 수 있을까? | Today's Choice">
   <meta property="og:description" content="입이 무거운 편일까, 말하고 싶어서 근질근질한 편일까?">
   <meta property="og:url" content="https://todayschoice.kr/secret-test.html">
-  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="오늘 당신의 초이스는? — 재미있는 심리테스트">
+  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
+  <meta property="og:image:width" content="1731">
+  <meta property="og:image:height" content="909">
+  <meta property="og:image:alt" content="Today's choice">
   <meta name="description" content="입이 무거운 편일까, 말하고 싶어서 근질근질한 편일까?">
   <title>나는 비밀을 들으면 얼마나 오래 참을 수 있을까? | Today's Choice</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
@@ -3180,10 +3180,10 @@ const testData = {
   <meta property="og:title" content="나는 사회생활에서 얼마나 적응이 빠른 편일까? | Today's Choice">
   <meta property="og:description" content="새로운 사람, 새로운 환경에 나는 얼마나 빨리 녹아드는 타입일까?">
   <meta property="og:url" content="https://todayschoice.kr/social-adaptation-test.html">
-  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="오늘 당신의 초이스는? — 재미있는 심리테스트">
+  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
+  <meta property="og:image:width" content="1731">
+  <meta property="og:image:height" content="909">
+  <meta property="og:image:alt" content="Today's choice">
   <meta name="description" content="새로운 사람, 새로운 환경에 나는 얼마나 빨리 녹아드는 타입일까?">
   <title>나는 사회생활에서 얼마나 적응이 빠른 편일까? | Today's Choice</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
@@ -3362,10 +3362,10 @@ const testData = {
   <meta property="og:title" content="나는 인간관계에서 눈치를 얼마나 보는 편일까? | Today's Choice">
   <meta property="og:description" content="다른 사람의 말투, 표정, 분위기를 얼마나 신경 쓰는지 알아보세요.">
   <meta property="og:url" content="https://todayschoice.kr/social-awareness-test.html">
-  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="오늘 당신의 초이스는? — 재미있는 심리테스트">
+  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
+  <meta property="og:image:width" content="1731">
+  <meta property="og:image:height" content="909">
+  <meta property="og:image:alt" content="Today's choice">
   <meta name="description" content="다른 사람의 말투, 표정, 분위기를 얼마나 신경 쓰는지 알아보세요.">
   <title>나는 인간관계에서 눈치를 얼마나 보는 편일까? | Today's Choice</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
@@ -3544,10 +3544,10 @@ const testData = {
   <meta property="og:title" content="내 사회생활 가면은 얼마나 두꺼울까? | Today's Choice">
   <meta property="og:description" content="밖에서의 나와 혼자 있을 때의 나는 얼마나 다를까?">
   <meta property="og:url" content="https://todayschoice.kr/social-mask-test.html">
-  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="오늘 당신의 초이스는? — 재미있는 심리테스트">
+  <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
+  <meta property="og:image:width" content="1731">
+  <meta property="og:image:height" content="909">
+  <meta property="og:image:alt" content="Today's choice">
   <meta name="description" content="밖에서의 나와 혼자 있을 때의 나는 얼마나 다를까?">
   <title>내 사회생활 가면은 얼마나 두꺼울까? | Today's Choice</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">

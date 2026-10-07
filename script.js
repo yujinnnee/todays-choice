@@ -2,7 +2,7 @@
 
 const KAKAO_JAVASCRIPT_KEY = '7a0729ebdecc02b3f4ce5e892c53248a';
 const SHARE_SITE_URL = "https://todayschoice.kr/";
-const SHARE_IMAGE_URL = new URL("assets/share-cover.png", SHARE_SITE_URL).href;
+const SHARE_IMAGE_URL = new URL("assets/share-cover-v3.png", SHARE_SITE_URL).href;
 
 function initializeKakao() {
   if (!window.Kakao) return false;
@@ -45,13 +45,13 @@ if (kakaoShareButton) {
         objectType: "feed",
         content: {
           title: testData.title,
-          description: testData.shareDescription || testData.description,
+          description: testData.description,
           imageUrl: SHARE_IMAGE_URL,
-          imageWidth: 1200,
-          imageHeight: 630,
+          imageWidth: 1731,
+          imageHeight: 909,
           link: testLink,
         },
-        buttons: [{ title: "나도 테스트 해보기", link: testLink }],
+        buttons: [{ title: "테스트 하러 가기", link: testLink }],
       });
       // SDK errors can occur immediately or through a rejected promise.
       Promise.resolve(request).catch((error) => {
