@@ -49,6 +49,7 @@
     <symbol id="icon-flame" viewBox="0 0 24 24"><path d="M12 3c0 4-5 6-5 11a5 5 0 0 0 10 0c0-3-2-5-3-7 0 3-1 4-2 5 0-4 2-6 0-9Z"/></symbol>
     <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M21 14A9.5 9.5 0 0 1 10 3a9.5 9.5 0 1 0 11 11Z"/></symbol>
     <symbol id="icon-leaf" viewBox="0 0 24 24"><path d="M12 22V11M12 15C5 16 2 11 3 7c6-1 9 3 9 8Zm0-5c0-6 4-9 9-8 1 6-3 10-9 8Z"/></symbol>
+    <symbol id="icon-star" viewBox="0 0 24 24"><path d="m12 3 2.8 5.7 6.3.9-4.6 4.5 1.1 6.3-5.6-3-5.6 3 1.1-6.3-4.6-4.5 6.3-.9L12 3Z"/></symbol>
     <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
   </svg>
   <a class="skip-link" href="#main">본문 바로가기</a>
@@ -159,6 +160,7 @@
     <symbol id="icon-flame" viewBox="0 0 24 24"><path d="M12 3c0 4-5 6-5 11a5 5 0 0 0 10 0c0-3-2-5-3-7 0 3-1 4-2 5 0-4 2-6 0-9Z"/></symbol>
     <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M21 14A9.5 9.5 0 0 1 10 3a9.5 9.5 0 1 0 11 11Z"/></symbol>
     <symbol id="icon-leaf" viewBox="0 0 24 24"><path d="M12 22V11M12 15C5 16 2 11 3 7c6-1 9 3 9 8Zm0-5c0-6 4-9 9-8 1 6-3 10-9 8Z"/></symbol>
+    <symbol id="icon-star" viewBox="0 0 24 24"><path d="m12 3 2.8 5.7 6.3.9-4.6 4.5 1.1 6.3-5.6-3-5.6 3 1.1-6.3-4.6-4.5 6.3-.9L12 3Z"/></symbol>
     <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
   </svg>
   <a class="skip-link" href="#main">본문 바로가기</a>
@@ -503,7 +505,7 @@ const TEST_CATALOG = [
     "description": "익숙한 삶을 떠나 완전히 새로운 나라에서 살 기회가 생긴다면 나는 어떤 선택을 할까?",
     "category": "재미",
     "url": "test.html?id=overseas-move",
-    "icon": "flame"
+    "icon": "star"
   },
   {
     "id": 48,
@@ -548,7 +550,7 @@ const TEST_CATALOG = [
     "description": "아무 의무 없이 1년이 주어진다면 나는 어떻게 살아갈까?",
     "category": "재미",
     "url": "test.html?id=year-off",
-    "icon": "flame"
+    "icon": "star"
   },
   {
     "id": 43,
@@ -575,7 +577,7 @@ const TEST_CATALOG = [
     "description": "사람들 사이에서 나는 어떤 역할로 기억되는 사람일까?",
     "category": "재미",
     "url": "test.html?id=variety-character",
-    "icon": "flame"
+    "icon": "star"
   },
   {
     "id": 40,
@@ -638,7 +640,7 @@ const TEST_CATALOG = [
     "description": "결혼생활 속에서 나는 어떤 모습으로 살아가게 될까?",
     "category": "연애/결혼",
     "url": "test.html?id=married-partner",
-    "icon": "ring"
+    "icon": "heart"
   },
   {
     "id": 33,
@@ -665,8 +667,7 @@ const TEST_CATALOG = [
     "description": "나는 어떤 순간에 상대에게 마음이 움직이는 사람일까?",
     "category": "연애/결혼",
     "url": "test.html?id=falling-in-love",
-    "icon": "heart",
-    "filledHeart": true
+    "icon": "heart"
   },
   {
     "id": 30,
@@ -684,7 +685,7 @@ const TEST_CATALOG = [
     "description": "감정은 감정이고 사회생활은 사회생활일까?",
     "category": "친구·인간관계·사회생활",
     "url": "test.html?id=difficult-people",
-    "icon": "chat"
+    "icon": "people"
   },
   {
     "id": 28,
@@ -693,7 +694,7 @@ const TEST_CATALOG = [
     "description": "갑자기 모두가 나를 보기 시작한다면, 나는 어떤 사람이 될까?",
     "category": "재미",
     "url": "test.html?id=million-followers",
-    "icon": "people"
+    "icon": "star"
   },
   {
     "id": 27,
@@ -702,7 +703,7 @@ const TEST_CATALOG = [
     "description": "한번 내 사람이 되면 얼마나 오래 챙기는 타입일까?",
     "category": "친구·인간관계·사회생활",
     "url": "test.html?id=affection",
-    "icon": "heart"
+    "icon": "people"
   },
   {
     "id": 26,
@@ -711,7 +712,7 @@ const TEST_CATALOG = [
     "description": "힘들 때도, 심심할 때도 나는 친구를 얼마나 찾는 편일까?",
     "category": "친구·인간관계·사회생활",
     "url": "test.html?id=friend-dependence",
-    "icon": "chat"
+    "icon": "people"
   },
   {
     "id": 25,
@@ -729,7 +730,7 @@ const TEST_CATALOG = [
     "description": "걱정과 관심일까, 아니면 상대를 내 기준에 맞추려는 걸까?",
     "category": "연애/결혼",
     "url": "test.html?id=relationship-control",
-    "icon": "chat"
+    "icon": "heart"
   },
   {
     "id": 23,
@@ -747,7 +748,7 @@ const TEST_CATALOG = [
     "description": "결혼에서 사랑과 현실, 나는 어디에 더 가까울까?",
     "category": "연애/결혼",
     "url": "test.html?id=marriage-values",
-    "icon": "ring"
+    "icon": "heart"
   },
   {
     "id": 21,
@@ -756,7 +757,7 @@ const TEST_CATALOG = [
     "description": "거짓말을 하면 바로 티 나는 타입일까, 끝까지 자연스럽게 숨기는 타입일까?",
     "category": "성격",
     "url": "test.html?id=lying",
-    "icon": "people"
+    "icon": "leaf"
   },
   {
     "id": 20,
@@ -765,7 +766,7 @@ const TEST_CATALOG = [
     "description": "입이 무거운 편일까, 말하고 싶어서 근질근질한 편일까?",
     "category": "성격",
     "url": "test.html?id=secret",
-    "icon": "chat"
+    "icon": "leaf"
   },
   {
     "id": 19,
@@ -774,7 +775,7 @@ const TEST_CATALOG = [
     "description": "게임 캐릭터가 된다면 나는 어떤 스탯에 몰빵된 타입일까?",
     "category": "재미",
     "url": "test.html?id=game-character",
-    "icon": "flame"
+    "icon": "star"
   },
   {
     "id": 18,
@@ -792,7 +793,7 @@ const TEST_CATALOG = [
     "description": "밖에서의 나와 혼자 있을 때의 나는 얼마나 다를까?",
     "category": "친구·인간관계·사회생활",
     "url": "test.html?id=social-mask",
-    "icon": "moon"
+    "icon": "people"
   },
   {
     "id": 16,
@@ -801,7 +802,7 @@ const TEST_CATALOG = [
     "description": "다른 사람의 말투, 표정, 분위기를 얼마나 신경 쓰는지 알아보세요.",
     "category": "친구·인간관계·사회생활",
     "url": "test.html?id=social-awareness",
-    "icon": "chat"
+    "icon": "people"
   },
   {
     "id": 15,
@@ -819,8 +820,7 @@ const TEST_CATALOG = [
     "description": "연애할 때 나는 얼마나 질투하는 편인지 알아보세요.",
     "category": "연애/결혼",
     "url": "test.html?id=jealousy",
-    "icon": "heart",
-    "filledHeart": true
+    "icon": "heart"
   }
 ];
 ```
@@ -1100,9 +1100,10 @@ if (kakaoShareButton) {
 const catalogGrid = document.querySelector("#category-grid");
 if (catalogGrid && typeof TEST_CATALOG !== "undefined") {
   const categories = { "연애/결혼": "love", "연애·결혼": "love", "재미": "fun", "성격": "personality" };
-  const makeIcon = (name, filled = false) => {
+  const categoryIcons = { love: "heart", relationship: "people", personality: "leaf", fun: "star" };
+  const makeIcon = (name) => {
     const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    svg.setAttribute("class", `icon${filled ? " filled-heart" : ""}`);
+    svg.setAttribute("class", "icon");
     svg.setAttribute("aria-hidden", "true");
     const use = document.createElementNS("http://www.w3.org/2000/svg", "use");
     use.setAttribute("href", `#icon-${name}`);
@@ -1118,7 +1119,7 @@ if (catalogGrid && typeof TEST_CATALOG !== "undefined") {
     card.dataset.category = categories[test.category] || "relationship";
     const tile = document.createElement("span");
     tile.className = "icon-tile";
-    tile.append(makeIcon(test.icon || "heart", test.filledHeart));
+    tile.append(makeIcon(categoryIcons[card.dataset.category]));
     const title = document.createElement("h3");
     title.textContent = test.title;
     const description = document.createElement("p");

@@ -18,7 +18,7 @@ const TEST_CATALOG = [
     "description": "익숙한 삶을 떠나 완전히 새로운 나라에서 살 기회가 생긴다면 나는 어떤 선택을 할까?",
     "category": "재미",
     "url": "test.html?id=overseas-move",
-    "icon": "flame"
+    "icon": "star"
   },
   {
     "id": 48,
@@ -63,7 +63,7 @@ const TEST_CATALOG = [
     "description": "아무 의무 없이 1년이 주어진다면 나는 어떻게 살아갈까?",
     "category": "재미",
     "url": "test.html?id=year-off",
-    "icon": "flame"
+    "icon": "star"
   },
   {
     "id": 43,
@@ -90,7 +90,7 @@ const TEST_CATALOG = [
     "description": "사람들 사이에서 나는 어떤 역할로 기억되는 사람일까?",
     "category": "재미",
     "url": "test.html?id=variety-character",
-    "icon": "flame"
+    "icon": "star"
   },
   {
     "id": 40,
@@ -153,7 +153,7 @@ const TEST_CATALOG = [
     "description": "결혼생활 속에서 나는 어떤 모습으로 살아가게 될까?",
     "category": "연애/결혼",
     "url": "test.html?id=married-partner",
-    "icon": "ring"
+    "icon": "heart"
   },
   {
     "id": 33,
@@ -180,8 +180,7 @@ const TEST_CATALOG = [
     "description": "나는 어떤 순간에 상대에게 마음이 움직이는 사람일까?",
     "category": "연애/결혼",
     "url": "test.html?id=falling-in-love",
-    "icon": "heart",
-    "filledHeart": true
+    "icon": "heart"
   },
   {
     "id": 30,
@@ -199,7 +198,7 @@ const TEST_CATALOG = [
     "description": "감정은 감정이고 사회생활은 사회생활일까?",
     "category": "친구·인간관계·사회생활",
     "url": "test.html?id=difficult-people",
-    "icon": "chat"
+    "icon": "people"
   },
   {
     "id": 28,
@@ -208,7 +207,7 @@ const TEST_CATALOG = [
     "description": "갑자기 모두가 나를 보기 시작한다면, 나는 어떤 사람이 될까?",
     "category": "재미",
     "url": "test.html?id=million-followers",
-    "icon": "people"
+    "icon": "star"
   },
   {
     "id": 27,
@@ -217,7 +216,7 @@ const TEST_CATALOG = [
     "description": "한번 내 사람이 되면 얼마나 오래 챙기는 타입일까?",
     "category": "친구·인간관계·사회생활",
     "url": "test.html?id=affection",
-    "icon": "heart"
+    "icon": "people"
   },
   {
     "id": 26,
@@ -226,7 +225,7 @@ const TEST_CATALOG = [
     "description": "힘들 때도, 심심할 때도 나는 친구를 얼마나 찾는 편일까?",
     "category": "친구·인간관계·사회생활",
     "url": "test.html?id=friend-dependence",
-    "icon": "chat"
+    "icon": "people"
   },
   {
     "id": 25,
@@ -244,7 +243,7 @@ const TEST_CATALOG = [
     "description": "걱정과 관심일까, 아니면 상대를 내 기준에 맞추려는 걸까?",
     "category": "연애/결혼",
     "url": "test.html?id=relationship-control",
-    "icon": "chat"
+    "icon": "heart"
   },
   {
     "id": 23,
@@ -262,7 +261,7 @@ const TEST_CATALOG = [
     "description": "결혼에서 사랑과 현실, 나는 어디에 더 가까울까?",
     "category": "연애/결혼",
     "url": "test.html?id=marriage-values",
-    "icon": "ring"
+    "icon": "heart"
   },
   {
     "id": 21,
@@ -271,7 +270,7 @@ const TEST_CATALOG = [
     "description": "거짓말을 하면 바로 티 나는 타입일까, 끝까지 자연스럽게 숨기는 타입일까?",
     "category": "성격",
     "url": "test.html?id=lying",
-    "icon": "people"
+    "icon": "leaf"
   },
   {
     "id": 20,
@@ -280,7 +279,7 @@ const TEST_CATALOG = [
     "description": "입이 무거운 편일까, 말하고 싶어서 근질근질한 편일까?",
     "category": "성격",
     "url": "test.html?id=secret",
-    "icon": "chat"
+    "icon": "leaf"
   },
   {
     "id": 19,
@@ -289,7 +288,7 @@ const TEST_CATALOG = [
     "description": "게임 캐릭터가 된다면 나는 어떤 스탯에 몰빵된 타입일까?",
     "category": "재미",
     "url": "test.html?id=game-character",
-    "icon": "flame"
+    "icon": "star"
   },
   {
     "id": 18,
@@ -307,7 +306,7 @@ const TEST_CATALOG = [
     "description": "밖에서의 나와 혼자 있을 때의 나는 얼마나 다를까?",
     "category": "친구·인간관계·사회생활",
     "url": "test.html?id=social-mask",
-    "icon": "moon"
+    "icon": "people"
   },
   {
     "id": 16,
@@ -316,7 +315,7 @@ const TEST_CATALOG = [
     "description": "다른 사람의 말투, 표정, 분위기를 얼마나 신경 쓰는지 알아보세요.",
     "category": "친구·인간관계·사회생활",
     "url": "test.html?id=social-awareness",
-    "icon": "chat"
+    "icon": "people"
   },
   {
     "id": 15,
@@ -334,7 +333,6 @@ const TEST_CATALOG = [
     "description": "연애할 때 나는 얼마나 질투하는 편인지 알아보세요.",
     "category": "연애/결혼",
     "url": "test.html?id=jealousy",
-    "icon": "heart",
-    "filledHeart": true
+    "icon": "heart"
   }
 ];

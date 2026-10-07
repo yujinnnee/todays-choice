@@ -72,9 +72,10 @@ if (kakaoShareButton) {
 const catalogGrid = document.querySelector("#category-grid");
 if (catalogGrid && typeof TEST_CATALOG !== "undefined") {
   const categories = { "연애/결혼": "love", "연애·결혼": "love", "재미": "fun", "성격": "personality" };
-  const makeIcon = (name, filled = false) => {
+  const categoryIcons = { love: "heart", relationship: "people", personality: "leaf", fun: "star" };
+  const makeIcon = (name) => {
     const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    svg.setAttribute("class", `icon${filled ? " filled-heart" : ""}`);
+    svg.setAttribute("class", "icon");
     svg.setAttribute("aria-hidden", "true");
     const use = document.createElementNS("http://www.w3.org/2000/svg", "use");
     use.setAttribute("href", `#icon-${name}`);
@@ -90,7 +91,7 @@ if (catalogGrid && typeof TEST_CATALOG !== "undefined") {
     card.dataset.category = categories[test.category] || "relationship";
     const tile = document.createElement("span");
     tile.className = "icon-tile";
-    tile.append(makeIcon(test.icon || "heart", test.filledHeart));
+    tile.append(makeIcon(categoryIcons[card.dataset.category]));
     const title = document.createElement("h3");
     title.textContent = test.title;
     const description = document.createElement("p");
