@@ -442,7 +442,8 @@ assert.equal(shares, 1);
 assert.equal(shareEvents[0][0], "test_share");
 assert.equal(shareEvents[0][2].method, "kakao");
 
-const pages = fs.readdirSync(".").filter(file => file.endsWith(".html"));
+// Verification HTML is an unmodified provider token, not an application page.
+const pages = ["index.html", "test.html", "404.html"];
 for (const file of pages) {
   const html = fs.readFileSync(file, "utf8");
   assert.equal((html.match(/src="\/?analytics.js"/g) || []).length, 1);

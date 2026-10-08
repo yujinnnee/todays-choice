@@ -22,8 +22,11 @@ const server = http.createServer((req, res) => {
       const timer = setInterval(() => {
         try {
           if (location.pathname === '/index.html') {
+            if (document.querySelectorAll('h1').length !== 1) throw Error('main headings');
+            if (document.querySelector('link[rel="canonical"]').href !== 'https://todayschoice.kr/') throw Error('main canonical');
+            if (JSON.parse(document.querySelector('script[type="application/ld+json"]').textContent)['@type'] !== 'WebSite') throw Error('site schema');
             const cards = [...document.querySelectorAll('#category-grid .test-card')];
-            if (cards.length !== TEST_CATALOG.length) return;
+            if (cards.length !== TEST_CATALOG.length || !document.querySelector('.category-count')) return;
             const expected = matchMedia('(max-width:640px)').matches ? 5 : 9;
             if (cards.filter(card => !card.hidden).length !== expected) throw Error('pagination');
             if (document.querySelectorAll('#new-tests .test-card').length !== 3) throw Error('today');
@@ -51,6 +54,12 @@ const server = http.createServer((req, res) => {
           } else {
             const start = document.querySelector('[data-role=start]');
             if (!window.testData || start.closest('section').hidden) return;
+            const currentTest = TEST_CATALOG.find(test => test.id === testData.id);
+            const canonical = 'https://todayschoice.kr/' + currentTest.url;
+            if (document.querySelectorAll('link[rel="canonical"]').length !== 1 || document.querySelector('link[rel="canonical"]').href !== canonical) throw Error('test canonical');
+            if (document.querySelector('meta[property="og:title"]').content !== testData.title) throw Error('test OG title');
+            if (!document.querySelector('meta[name="description"]').content.startsWith(testData.title)) throw Error('test description');
+            if (JSON.parse(document.querySelector('#test-webpage-schema').textContent).url !== canonical) throw Error('test schema');
             start.click();
             for (let i = 0; i < testData.questions.length; i++) document.querySelector('[data-role=answers] button').click();
             if (document.querySelector('[data-screen=result]').hidden) throw Error('result hidden');

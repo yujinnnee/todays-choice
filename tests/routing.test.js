@@ -44,7 +44,7 @@ async function checkLoad(id, broken = false) {
     assert.equal(loaded.selected.description, test.description);
     assert.equal(loaded.selected.category, test.category);
     assert.equal(loaded.selected.url, test.url);
-    assert.equal(loaded.context.document.title, `${test.title} | Today's Choice`);
+    assert.equal(loaded.context.document.title, `${test.title} | 오늘의 초이스 심리테스트`);
     assert.equal(loaded.nodes.get('[data-role="loading"]').hidden, true);
     assert.equal((await checkLoad(String(test.id))).selected.id, test.id);
     let redirected;

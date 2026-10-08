@@ -12,7 +12,7 @@
 
 1. 기존 데이터 파일을 복사해 `<slug>-data.js`를 만드세요. 고유한 숫자 `id`와 `url: "test.html?id=<slug>"`를 지정합니다.
 2. `test-catalog.js`에 같은 ID·slug·제목·부제목·카테고리·주소를 추가합니다. `icon`에는 기존 SVG 아이콘 이름을 사용합니다.
-3. HTML을 새로 만들거나 메인 페이지의 카드를 직접 수정할 필요가 없습니다.
+3. `seo-descriptions.js`에 실제 내용에 맞는 검색 설명을 추가하고 `node scripts/build-seo.js`를 실행합니다. 메인 HTML의 카드 링크와 sitemap이 자동 갱신됩니다. 개별 HTML을 새로 만들 필요는 없습니다.
 
 점수형은 선택지에 `score`를 지정하고 결과에 `min`, `max`를 지정합니다. 역점수도 선택지 점수만 다르게 지정합니다.
 
@@ -30,4 +30,6 @@
 
 ES module을 사용하므로 `file://`로 열지 말고 localhost 개발 서버에서 확인하세요. GA4 측정 ID는 `analytics.js` 한 곳에서 관리합니다.
 
-검증: `node tests/analytics.test.js`, `node tests/routing.test.js`.
+`test-seo.js`는 `test.html?id=<slug>`마다 고유 제목·설명·canonical·OG·Twitter·WebPage JSON-LD를 적용합니다. 숫자 ID나 UTM이 붙은 주소도 slug 주소를 canonical로 사용합니다. 원본 공통 HTML의 메타정보는 공통이므로 일반 링크 미리보기는 기존 공통 이미지와 기본 설명을 사용할 수 있습니다. 자세한 수집 확인 방법은 `seo-setup.md`를 참고하세요.
+
+검증: `node tests/analytics.test.js`, `node tests/routing.test.js`, `node tests/seo.test.js`.

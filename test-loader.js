@@ -11,10 +11,11 @@ async function loadTest() {
       throw new Error("테스트 정보를 확인할 수 없어요. 잠시 후 다시 시도해 주세요.");
     }
     window.testData = data;
-    document.title = `${data.title} | Today's Choice`;
+    document.title = `${data.title} | 오늘의 초이스 심리테스트`;
     createTestRunner(root, data);
     root.querySelector('[data-role="loading"]').hidden = true;
   } catch (error) {
+    if (typeof window.markTestSeoError === "function") window.markTestSeoError();
     console.error("테스트 불러오기 실패", error);
     root.querySelector('[data-role="loading"]').hidden = true;
     root.querySelector('[data-role="error-message"]').textContent = selectedTest

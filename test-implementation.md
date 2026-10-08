@@ -1,6 +1,6 @@
 # Today's Choice 전체 코드
 
-공통 test.html과 테스트 데이터, GA4, 카카오톡 공유 기능을 포함한 전체 코드입니다. 공유 이미지는 assets/share-cover-v3.png입니다. 구조 안내는 test-structure.md를 참고하세요.
+공통 test.html과 테스트 데이터, SEO, GA4, 카카오톡 공유 기능을 포함한 전체 코드입니다. 공유 이미지는 assets/share-cover-v3.png입니다. 구조 안내는 test-structure.md, SEO 안내는 seo-setup.md를 참고하세요.
 
 ## index.html
 
@@ -17,9 +17,9 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ko_KR">
-  <meta property="og:site_name" content="Today's Choice">
-  <meta property="og:title" content="Today's choice | 오늘 당신의 초이스는?">
-  <meta property="og:description" content="연애, 인간관계, 일상 속 고민까지. 오늘의 초이스에서 재미있는 심리테스트를 만나보세요.">
+  <meta property="og:site_name" content="오늘의 초이스">
+  <meta property="og:title" content="오늘의 초이스 | 무료 심리테스트">
+  <meta property="og:description" content="연애, 성격, 인간관계 등 다양한 심리테스트를 가볍게 즐겨보세요.">
   <meta property="og:url" content="https://todayschoice.kr/">
   <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
   <meta property="og:image:width" content="1731">
@@ -27,12 +27,25 @@
   <meta property="og:image:alt" content="Today's choice">
   <meta property="og:image:type" content="image/png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Today's choice | 오늘 당신의 초이스는?">
-  <meta name="twitter:description" content="연애, 인간관계, 일상 속 고민까지. 오늘의 초이스에서 재미있는 심리테스트를 만나보세요.">
+  <meta name="twitter:title" content="오늘의 초이스 | 무료 심리테스트">
+  <meta name="twitter:description" content="연애, 성격, 인간관계 등 다양한 심리테스트를 가볍게 즐겨보세요.">
   <meta name="twitter:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
   <meta name="twitter:image:alt" content="Today's choice">
-  <meta name="description" content="연애, 인간관계, 일상 속 고민까지. 오늘의 초이스에서 재미있는 심리테스트를 만나보세요.">
-  <title>Today's choice | 오늘 당신의 초이스는?</title>
+  <meta name="description" content="연애, 성격, 인간관계, 재미 테스트까지 가볍게 즐길 수 있는 무료 심리테스트 사이트 오늘의 초이스입니다.">
+  <meta name="keywords" content="심리테스트, 무료 심리테스트, 연애 심리테스트, 성격 테스트, 인간관계 테스트, 재미있는 테스트, 오늘의 초이스">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://todayschoice.kr/">
+  <title>오늘의 초이스 | 무료 심리테스트, 연애·성격 테스트</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "오늘의 초이스",
+    "alternateName": "Today's Choice",
+    "url": "https://todayschoice.kr/",
+    "description": "연애, 성격, 인간관계 등 다양한 무료 심리테스트를 제공하는 사이트"
+  }
+  </script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
@@ -71,7 +84,7 @@
       <div class="container hero-inner">
         <div class="hero-copy">
           <h1 id="hero-title">오늘 당신의 <span>초이스</span>는?</h1>
-          <p>연애, 인간관계, 일상 속 고민까지 재미있는 심리테스트로 알아보세요.</p>
+          <p>연애에서 느끼는 감정과 인간관계 속 내 모습, 평소 성격을 무료 심리테스트로 알아보세요.</p>
           <button class="primary-button" id="random-test-button" type="button">랜덤 테스트 시작하기 <svg class="icon"><use href="#icon-arrow"/></svg></button>
         </div>
       </div>
@@ -92,7 +105,230 @@
         <button class="category-button" type="button" data-filter="fun" aria-pressed="false" aria-controls="category-grid">재미</button>
       </div>
       <p id="filter-status" class="visually-hidden" role="status">전체 테스트를 표시하고 있어요.</p>
-      <div class="card-grid" id="category-grid"></div>
+      <div class="card-grid" id="category-grid">
+        <a class="test-card" href="test.html?id=romance-priorities" data-test="50" data-category="love">
+          <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg></span>
+          <h3>내가 연애에서 절대 포기 못 하는 건?</h3>
+          <p>좋아하는 마음만으로는 부족한, 내 연애의 가장 중요한 기준은 무엇일까?</p>
+          <div class="card-bottom"><span class="circle-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></span></div>
+        </a>
+        <a class="test-card" href="test.html?id=overseas-move" data-test="49" data-category="fun">
+          <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg></span>
+          <h3>갑자기 해외 이민 기회가 생기면 나는?</h3>
+          <p>익숙한 삶을 떠나 완전히 새로운 나라에서 살 기회가 생긴다면 나는 어떤 선택을 할까?</p>
+          <div class="card-bottom"><span class="circle-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></span></div>
+        </a>
+        <a class="test-card" href="test.html?id=friend-romance-distance" data-test="48" data-category="relationship">
+          <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#icon-people"/></svg></span>
+          <h3>친구가 연애 때문에 잠수 타면 나는?</h3>
+          <p>친구가 연애를 시작한 뒤 연락이 뜸해지면 나는 어떻게 반응할까?</p>
+          <div class="card-bottom"><span class="circle-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></span></div>
+        </a>
+        <a class="test-card" href="test.html?id=long-term-love" data-test="47" data-category="love">
+          <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg></span>
+          <h3>나는 장기연애 체질일까?</h3>
+          <p>설렘이 익숙함으로 바뀐 뒤에도 나는 관계를 오래 이어갈 수 있을까?</p>
+          <div class="card-bottom"><span class="circle-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></span></div>
+        </a>
+        <a class="test-card" href="test.html?id=mood-swings" data-test="46" data-category="personality">
+          <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#icon-leaf"/></svg></span>
+          <h3>나는 감정 기복이 큰 사람일까?</h3>
+          <p>내 기분은 얼마나 자주, 얼마나 크게 흔들리는 편일까?</p>
+          <div class="card-bottom"><span class="circle-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></span></div>
+        </a>
+        <a class="test-card" href="test.html?id=sociability" data-test="45" data-category="relationship">
+          <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#icon-people"/></svg></span>
+          <h3>내 사회성은 사실 어느 정도일까?</h3>
+          <p>낯선 사람, 모임, 대화 속에서 드러나는 내 진짜 사회성은 몇 %일까?</p>
+          <div class="card-bottom"><span class="circle-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></span></div>
+        </a>
+        <a class="test-card" href="test.html?id=year-off" data-test="44" data-category="fun">
+          <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg></span>
+          <h3>갑자기 1년 휴가가 생기면 나는?</h3>
+          <p>아무 의무 없이 1년이 주어진다면 나는 어떻게 살아갈까?</p>
+          <div class="card-bottom"><span class="circle-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></span></div>
+        </a>
+        <a class="test-card" href="test.html?id=romance-behavior" data-test="43" data-category="love">
+          <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg></span>
+          <h3>내가 연애하면 가장 많이 하는 행동은?</h3>
+          <p>좋아하는 사람이 생기면 나는 어떤 행동을 가장 자주 하게 될까?</p>
+          <div class="card-bottom"><span class="circle-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></span></div>
+        </a>
+        <a class="test-card" href="test.html?id=mental-recovery" data-test="42" data-category="personality">
+          <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#icon-leaf"/></svg></span>
+          <h3>내 멘탈 회복 속도는 얼마나 빠를까?</h3>
+          <p>힘든 일이 생긴 뒤 나는 얼마나 빨리 다시 원래의 나로 돌아올까?</p>
+          <div class="card-bottom"><span class="circle-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></span></div>
+        </a>
+        <a class="test-card" href="test.html?id=variety-character" data-test="41" data-category="fun">
+          <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg></span>
+          <h3>내 인생이 예능이라면 나는 어떤 캐릭터일까?</h3>
+          <p>사람들 사이에서 나는 어떤 역할로 기억되는 사람일까?</p>
+          <div class="card-bottom"><span class="circle-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></span></div>
+        </a>
+        <a class="test-card" href="test.html?id=stress-change" data-test="40" data-category="personality">
+          <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#icon-leaf"/></svg></span>
+          <h3>내가 스트레스 받으면 가장 먼저 변하는 것은?</h3>
+          <p>평소와 달라지는 내 모습은 어디에서 가장 먼저 드러날까?</p>
+          <div class="card-bottom"><span class="circle-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></span></div>
+        </a>
+        <a class="test-card" href="test.html?id=hidden-strength" data-test="39" data-category="personality">
+          <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#icon-leaf"/></svg></span>
+          <h3>내 성격에서 의외로 강한 부분은?</h3>
+          <p>평소에는 잘 드러나지 않지만, 내가 생각보다 잘하는 건 무엇일까?</p>
+          <div class="card-bottom"><span class="circle-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></span></div>
+        </a>
+        <a class="test-card" href="test.html?id=workplace-image" data-test="38" data-category="relationship">
+          <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#icon-people"/></svg></span>
+          <h3>회사에서 나는 어떤 이미지로 보일까?</h3>
+          <p>내가 생각하는 나와 동료들이 보는 나는 얼마나 다를까?</p>
+          <div class="card-bottom"><span class="circle-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></span></div>
+        </a>
+        <a class="test-card" href="test.html?id=animal-personality" data-test="37" data-category="personality">
+          <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#icon-leaf"/></svg></span>
+          <h3>내 성격을 동물로 표현하면?</h3>
+          <p>내 성격과 가장 닮은 동물은 무엇일까?</p>
+          <div class="card-bottom"><span class="circle-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></span></div>
+        </a>
+        <a class="test-card" href="test.html?id=relationship-fatigue" data-test="36" data-category="relationship">
+          <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#icon-people"/></svg></span>
+          <h3>내 인간관계 피로도는 몇 %일까?</h3>
+          <p>사람을 만나고 관계를 유지하는 일이 나에게 얼마나 에너지를 쓰게 할까?</p>
+          <div class="card-bottom"><span class="circle-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></span></div>
+        </a>
+        <a class="test-card" href="test.html?id=hidden-romance" data-test="35" data-category="love">
+          <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg></span>
+          <h3>내가 숨기고 있는 연애 성향은?</h3>
+          <p>평소에는 잘 드러나지 않는 내 연애 본능은 어떤 모습일까?</p>
+          <div class="card-bottom"><span class="circle-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></span></div>
+        </a>
+        <a class="test-card" href="test.html?id=married-partner" data-test="34" data-category="love">
+          <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg></span>
+          <h3>나는 결혼하면 어떤 배우자일까?</h3>
+          <p>결혼생활 속에서 나는 어떤 모습으로 살아가게 될까?</p>
+          <div class="card-bottom"><span class="circle-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></span></div>
+        </a>
+        <a class="test-card" href="test.html?id=compatible-partner" data-test="33" data-category="love">
+          <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg></span>
+          <h3>나랑 잘 맞는 연애 상대는?</h3>
+          <p>어떤 사람과 만날 때 가장 편하고 오래 잘 맞을까?</p>
+          <div class="card-bottom"><span class="circle-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></span></div>
+        </a>
+        <a class="test-card" href="test.html?id=breakup" data-test="32" data-category="love">
+          <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg></span>
+          <h3>나는 이별 후 어떤 타입일까?</h3>
+          <p>관계가 끝난 뒤 나는 어떻게 마음을 정리하는 사람일까?</p>
+          <div class="card-bottom"><span class="circle-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></span></div>
+        </a>
+        <a class="test-card" href="test.html?id=falling-in-love" data-test="31" data-category="love">
+          <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg></span>
+          <h3>내가 사랑에 빠지는 순간은?</h3>
+          <p>나는 어떤 순간에 상대에게 마음이 움직이는 사람일까?</p>
+          <div class="card-bottom"><span class="circle-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></span></div>
+        </a>
+        <a class="test-card" href="test.html?id=social-adaptation" data-test="30" data-category="relationship">
+          <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#icon-people"/></svg></span>
+          <h3>나는 사회생활에서 얼마나 적응이 빠른 편일까?</h3>
+          <p>새로운 사람, 새로운 환경에 나는 얼마나 빨리 녹아드는 타입일까?</p>
+          <div class="card-bottom"><span class="circle-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></span></div>
+        </a>
+        <a class="test-card" href="test.html?id=difficult-people" data-test="29" data-category="relationship">
+          <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#icon-people"/></svg></span>
+          <h3>나는 싫은 사람과도 잘 지낼 수 있을까?</h3>
+          <p>감정은 감정이고 사회생활은 사회생활일까?</p>
+          <div class="card-bottom"><span class="circle-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></span></div>
+        </a>
+        <a class="test-card" href="test.html?id=million-followers" data-test="28" data-category="fun">
+          <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg></span>
+          <h3>나는 하루아침에 100만 팔로워가 생기면 어떻게 변할까?</h3>
+          <p>갑자기 모두가 나를 보기 시작한다면, 나는 어떤 사람이 될까?</p>
+          <div class="card-bottom"><span class="circle-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></span></div>
+        </a>
+        <a class="test-card" href="test.html?id=affection" data-test="27" data-category="relationship">
+          <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#icon-people"/></svg></span>
+          <h3>나는 인간관계에서 정이 많은 편일까?</h3>
+          <p>한번 내 사람이 되면 얼마나 오래 챙기는 타입일까?</p>
+          <div class="card-bottom"><span class="circle-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></span></div>
+        </a>
+        <a class="test-card" href="test.html?id=friend-dependence" data-test="26" data-category="relationship">
+          <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#icon-people"/></svg></span>
+          <h3>나는 친구에게 얼마나 의존하는 편일까?</h3>
+          <p>힘들 때도, 심심할 때도 나는 친구를 얼마나 찾는 편일까?</p>
+          <div class="card-bottom"><span class="circle-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></span></div>
+        </a>
+        <a class="test-card" href="test.html?id=friend-boundaries" data-test="25" data-category="relationship">
+          <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#icon-people"/></svg></span>
+          <h3>나는 친한 친구에게도 선을 두는 편일까?</h3>
+          <p>아무리 친해도 지켜야 할 선이 있다고 생각하는 편일까?</p>
+          <div class="card-bottom"><span class="circle-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></span></div>
+        </a>
+        <a class="test-card" href="test.html?id=relationship-control" data-test="24" data-category="love">
+          <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg></span>
+          <h3>나는 연애할 때 상대를 얼마나 통제하려는 편일까?</h3>
+          <p>걱정과 관심일까, 아니면 상대를 내 기준에 맞추려는 걸까?</p>
+          <div class="card-bottom"><span class="circle-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></span></div>
+        </a>
+        <a class="test-card" href="test.html?id=relationship-energy" data-test="23" data-category="love">
+          <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg></span>
+          <h3>나는 연애할 때 감정소모가 큰 편일까?</h3>
+          <p>연애 하나로 하루 기분이 얼마나 흔들리는지 알아보세요.</p>
+          <div class="card-bottom"><span class="circle-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></span></div>
+        </a>
+        <a class="test-card" href="test.html?id=marriage-values" data-test="22" data-category="love">
+          <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg></span>
+          <h3>나는 사랑만으로 결혼할 수 있을까?</h3>
+          <p>결혼에서 사랑과 현실, 나는 어디에 더 가까울까?</p>
+          <div class="card-bottom"><span class="circle-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></span></div>
+        </a>
+        <a class="test-card" href="test.html?id=lying" data-test="21" data-category="personality">
+          <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#icon-leaf"/></svg></span>
+          <h3>나는 거짓말을 얼마나 잘하는 편일까?</h3>
+          <p>거짓말을 하면 바로 티 나는 타입일까, 끝까지 자연스럽게 숨기는 타입일까?</p>
+          <div class="card-bottom"><span class="circle-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></span></div>
+        </a>
+        <a class="test-card" href="test.html?id=secret" data-test="20" data-category="personality">
+          <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#icon-leaf"/></svg></span>
+          <h3>나는 비밀을 들으면 얼마나 오래 참을 수 있을까?</h3>
+          <p>입이 무거운 편일까, 말하고 싶어서 근질근질한 편일까?</p>
+          <div class="card-bottom"><span class="circle-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></span></div>
+        </a>
+        <a class="test-card" href="test.html?id=game-character" data-test="19" data-category="fun">
+          <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg></span>
+          <h3>내가 게임 속 캐릭터라면 능력치는 어디에 몰려 있을까?</h3>
+          <p>게임 캐릭터가 된다면 나는 어떤 스탯에 몰빵된 타입일까?</p>
+          <div class="card-bottom"><span class="circle-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></span></div>
+        </a>
+        <a class="test-card" href="test.html?id=mental-strength" data-test="18" data-category="personality">
+          <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#icon-leaf"/></svg></span>
+          <h3>내 멘탈은 얼마나 단단한 편일까?</h3>
+          <p>스트레스나 실패 앞에서 나는 얼마나 쉽게 흔들리는 사람일까?</p>
+          <div class="card-bottom"><span class="circle-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></span></div>
+        </a>
+        <a class="test-card" href="test.html?id=social-mask" data-test="17" data-category="relationship">
+          <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#icon-people"/></svg></span>
+          <h3>내 사회생활 가면은 얼마나 두꺼울까?</h3>
+          <p>밖에서의 나와 혼자 있을 때의 나는 얼마나 다를까?</p>
+          <div class="card-bottom"><span class="circle-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></span></div>
+        </a>
+        <a class="test-card" href="test.html?id=social-awareness" data-test="16" data-category="relationship">
+          <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#icon-people"/></svg></span>
+          <h3>나는 인간관계에서 눈치를 얼마나 보는 편일까?</h3>
+          <p>다른 사람의 말투, 표정, 분위기를 얼마나 신경 쓰는지 알아보세요.</p>
+          <div class="card-bottom"><span class="circle-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></span></div>
+        </a>
+        <a class="test-card" href="test.html?id=cutoff" data-test="15" data-category="relationship">
+          <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#icon-people"/></svg></span>
+          <h3>나는 사람을 얼마나 빨리 손절하는 편일까?</h3>
+          <p>인간관계에서 나는 참는 편일까, 빠르게 정리하는 편일까?</p>
+          <div class="card-bottom"><span class="circle-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></span></div>
+        </a>
+        <a class="test-card" href="test.html?id=jealousy" data-test="8" data-category="love">
+          <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg></span>
+          <h3>내 질투심은 정상 범위일까?</h3>
+          <p>연애할 때 나는 얼마나 질투하는 편인지 알아보세요.</p>
+          <div class="card-bottom"><span class="circle-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></span></div>
+        </a>
+      </div>
       <p class="category-empty" id="category-empty" hidden>아직 이 카테고리에 등록된 테스트가 없어요.</p>
       <nav class="test-pagination" id="test-pagination" aria-label="테스트 목록 페이지" hidden></nav>
     </section>
@@ -125,8 +361,8 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ko_KR">
-  <meta property="og:site_name" content="Today's Choice">
-  <meta property="og:title" content="Today's choice | 심리테스트">
+  <meta property="og:site_name" content="오늘의 초이스">
+  <meta property="og:title" content="오늘의 초이스 | 심리테스트">
   <meta property="og:description" content="오늘의 초이스에서 재미있는 심리테스트를 만나보세요.">
   <meta property="og:url" content="https://todayschoice.kr/test.html">
   <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
@@ -135,12 +371,15 @@
   <meta property="og:image:alt" content="Today's choice">
   <meta property="og:image:type" content="image/png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Today's choice | 심리테스트">
+  <meta name="twitter:title" content="오늘의 초이스 | 심리테스트">
   <meta name="twitter:description" content="오늘의 초이스에서 재미있는 심리테스트를 만나보세요.">
   <meta name="twitter:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
   <meta name="twitter:image:alt" content="Today's choice">
   <meta name="description" content="오늘의 초이스에서 재미있는 심리테스트를 만나보세요.">
-  <title>Today's choice | 심리테스트</title>
+  <meta name="robots" content="index, follow">
+  <title>오늘의 초이스 | 심리테스트</title>
+  <script src="seo-descriptions.js"></script>
+  <script src="test-seo.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="test.css">
@@ -180,7 +419,7 @@
   </header>
   <main id="main" data-test-runner>
     <section class="test-panel" data-role="loading" role="status"><p>테스트를 불러오는 중이에요.</p></section>
-    <section class="test-panel" data-role="load-error" hidden><h1>테스트를 불러올 수 없어요</h1><p data-role="error-message"></p><a class="secondary-button" href="index.html#category-tests">전체 테스트 보기</a></section>
+    <section class="test-panel" data-role="load-error" hidden><h2>테스트를 불러올 수 없어요</h2><p data-role="error-message"></p><a class="secondary-button" href="index.html#category-tests">전체 테스트 보기</a></section>
     <section class="test-panel" data-screen="start" hidden aria-labelledby="test-title">
       <p class="test-category" data-role="category"></p>
       <h1 id="test-title" data-role="title" data-focus tabindex="-1"></h1>
@@ -236,7 +475,9 @@
   <meta charset="UTF-8">
   <meta name="naver-site-verification" content="443c2f6de5e3ef34f37b5ca0766012b74c51bf0e" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Today's choice</title>
+  <title>페이지를 찾을 수 없어요 | 오늘의 초이스</title>
+  <meta name="description" content="요청한 페이지를 찾을 수 없습니다. 오늘의 초이스에서 원하는 심리테스트를 찾아보세요.">
+  <meta name="robots" content="noindex, follow">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <meta property="og:title" content="Today's choice">
   <meta property="og:description" content="오늘의 초이스에서 재미있는 심리테스트를 만나보세요.">
@@ -829,6 +1070,113 @@ const TEST_CATALOG = [
 ];
 ```
 
+## seo-descriptions.js
+
+```javascript
+"use strict";
+
+// Search descriptions describe the existing tests; they do not change quiz data.
+const TEST_SEO_DESCRIPTIONS = {
+  "romance-priorities": "연애에서 신뢰, 애정 표현, 소통, 자유, 미래 중 내가 가장 중요하게 생각하는 기준을 무료 심리테스트로 알아보세요.",
+  "overseas-move": "해외 이민 기회가 생겼을 때 새로운 경험, 현실 조건, 인간관계와 안정 중 무엇을 우선할지 재미 테스트로 알아보세요.",
+  "friend-romance-distance": "연애를 시작한 친구의 연락이 뜸해질 때 이해하거나 서운해하는 내 반응을 인간관계 테스트로 알아보세요.",
+  "long-term-love": "설렘이 익숙함으로 바뀐 뒤에도 관계를 오래 이어갈 수 있는지 무료 연애 심리테스트로 확인해보세요.",
+  "mood-swings": "내 기분이 얼마나 자주, 얼마나 크게 흔들리는지 일상 속 반응을 돌아보며 감정 기복을 알아보세요.",
+  "sociability": "낯선 사람과의 대화나 모임에서 드러나는 사회성을 무료 인간관계 테스트로 알아보세요.",
+  "year-off": "아무 의무 없이 1년의 휴가가 생긴다면 여행, 성장, 휴식, 관계와 도전 중 무엇을 선택할지 알아보세요.",
+  "romance-behavior": "좋아하는 사람이 생기면 챙김, 연락, 함께하는 시간, 생각과 반응 중 어떤 행동이 늘어나는지 알아보세요.",
+  "mental-recovery": "힘든 일을 겪은 뒤 평소의 나로 돌아오는 속도와 회복하는 방식을 무료 성격 테스트로 알아보세요.",
+  "variety-character": "사람들 사이에서 분위기를 이끌거나 반응하고, 조용한 한마디를 건네는 내 모습을 예능 캐릭터로 알아보세요.",
+  "stress-change": "스트레스를 받았을 때 말투, 감정, 행동, 생활 리듬과 인간관계 중 가장 먼저 달라지는 모습을 알아보세요.",
+  "hidden-strength": "문제를 해결하거나 어려운 상황을 견딜 때 드러나는 판단력, 실행력, 회복력, 관계력과 끈기를 알아보세요.",
+  "workplace-image": "업무 처리와 동료와의 소통 방식으로 회사에서 내가 어떤 이미지로 보일지 사회생활 테스트로 알아보세요.",
+  "animal-personality": "혼자 보내는 시간과 사람을 대하는 방식으로 내 성격과 닮은 고양이, 강아지, 여우, 늑대, 수달 유형을 알아보세요.",
+  "relationship-fatigue": "약속, 연락, 대화와 모임에서 사용하는 에너지를 돌아보며 내 인간관계 피로도를 알아보세요.",
+  "hidden-romance": "좋아할수록 확신을 찾거나 적극적으로 다가가고 마음을 숨기는 등 평소 드러나지 않는 연애 성향을 알아보세요.",
+  "married-partner": "함께하는 일상, 갈등과 생활 계획을 대하는 방식으로 결혼하면 어떤 배우자가 될지 알아보세요.",
+  "compatible-partner": "편안함, 다정함, 자유와 확실한 표현 중 어떤 사람과 연애할 때 가장 잘 맞을지 알아보세요.",
+  "breakup": "관계가 끝난 뒤 마음을 정리하거나 추억을 되짚고 새로운 일상으로 넘어가는 내 이별 성향을 알아보세요.",
+  "falling-in-love": "설렘, 편안함, 배려와 본능적인 끌림 중 어떤 순간에 사랑이 시작되는지 무료 연애 심리테스트로 알아보세요.",
+  "social-adaptation": "새로운 사람과 환경, 낯선 규칙에 얼마나 빨리 익숙해지는지 사회생활 적응 성향을 알아보세요.",
+  "difficult-people": "불편한 사람과 함께 일하거나 대화할 때 감정과 상황을 어떻게 다루는지 인간관계 테스트로 알아보세요.",
+  "million-followers": "하루아침에 100만 팔로워가 생기면 관심, 콘텐츠, 광고와 일상을 어떻게 대할지 재미 테스트로 알아보세요.",
+  "affection": "한번 가까워진 사람을 얼마나 오래 챙기고 관계가 바뀌어도 마음이 남는지 알아보세요.",
+  "friend-dependence": "힘들거나 심심할 때 친구를 얼마나 찾고 중요한 선택에 친구의 의견을 얼마나 참고하는지 알아보세요.",
+  "friend-boundaries": "친한 친구와도 시간, 물건과 사생활에서 지키고 싶은 선이 있는지 인간관계 테스트로 알아보세요.",
+  "relationship-control": "연락, SNS와 인간관계에서 연인의 선택을 존중하거나 관여하는 내 연애 성향을 알아보세요.",
+  "relationship-energy": "연인의 연락과 반응에 따라 하루 기분이 얼마나 달라지는지 연애에서의 감정 소모를 알아보세요.",
+  "marriage-values": "결혼을 생각할 때 사랑과 경제적 안정, 가치관과 미래 계획 중 무엇을 중요하게 보는지 알아보세요.",
+  "lying": "거짓말을 해야 하는 상황에서 표정, 말투와 태도를 어떻게 유지하는지 무료 성격 테스트로 알아보세요.",
+  "secret": "다른 사람의 비밀을 들었을 때 얼마나 오래 간직하고 말하고 싶은 마음을 참는지 알아보세요.",
+  "game-character": "게임 속 캐릭터가 된다면 공격력, 지능, 매력과 생존력 중 어떤 능력에 강점이 있을지 재미 테스트로 알아보세요.",
+  "mental-strength": "스트레스나 실패, 타인의 반응 앞에서 얼마나 흔들리고 버티는지 내 멘탈 성향을 알아보세요.",
+  "social-mask": "사람들과 함께 있을 때와 혼자 있을 때의 모습이 얼마나 다른지 사회생활 속 내 모습을 알아보세요.",
+  "social-awareness": "다른 사람의 말투, 표정과 분위기를 얼마나 신경 쓰는지 무료 인간관계 테스트로 알아보세요.",
+  "cutoff": "서운하거나 맞지 않는 관계에서 더 기다리거나 거리를 두는 내 인간관계 성향을 알아보세요.",
+  "jealousy": "연인의 연락과 인간관계를 대할 때 나타나는 질투 성향을 무료 연애 심리테스트로 알아보세요.",
+};
+```
+
+## test-seo.js
+
+```javascript
+"use strict";
+
+(() => {
+  const selectedId = new URLSearchParams(location.search).get("id");
+  const test = TEST_CATALOG.find(item => item.slug === selectedId || String(item.id) === selectedId);
+  const meta = (attribute, name, value) => {
+    let element = document.querySelector(`meta[${attribute}="${name}"]`);
+    if (!element) {
+      element = document.createElement("meta");
+      element.setAttribute(attribute, name);
+      document.head.append(element);
+    }
+    element.setAttribute("content", value);
+  };
+  window.markTestSeoError = () => {
+    meta("name", "robots", "noindex, follow");
+    document.querySelector('link[rel="canonical"]')?.remove();
+    document.querySelector("#test-webpage-schema")?.remove();
+  };
+  if (!test) {
+    document.title = "테스트를 찾을 수 없어요 | 오늘의 초이스";
+    window.markTestSeoError();
+    return;
+  }
+
+  const url = new URL(test.url, "https://todayschoice.kr/").href;
+  const description = `${test.title} ${TEST_SEO_DESCRIPTIONS[test.slug] || test.description}`;
+  document.title = `${test.title} | 오늘의 초이스 심리테스트`;
+  meta("name", "description", description);
+  meta("name", "robots", "index, follow");
+  meta("property", "og:title", test.title);
+  meta("property", "og:description", description);
+  meta("property", "og:url", url);
+  meta("name", "twitter:title", test.title);
+  meta("name", "twitter:description", description);
+
+  // The shared HTML cannot carry a fixed canonical: each valid ID has its own URL.
+  const canonical = document.querySelector('link[rel="canonical"]') || document.createElement("link");
+  canonical.setAttribute("rel", "canonical");
+  canonical.setAttribute("href", url);
+  document.head.append(canonical);
+  const schema = document.querySelector("#test-webpage-schema") || document.createElement("script");
+  schema.id = "test-webpage-schema";
+  schema.type = "application/ld+json";
+  schema.textContent = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: test.title,
+    description,
+    url,
+    inLanguage: "ko",
+    isPartOf: { "@type": "WebSite", name: "오늘의 초이스", url: "https://todayschoice.kr/" },
+  });
+  document.head.append(schema);
+})();
+```
+
 ## test-loader.js
 
 ```javascript
@@ -845,10 +1193,11 @@ async function loadTest() {
       throw new Error("테스트 정보를 확인할 수 없어요. 잠시 후 다시 시도해 주세요.");
     }
     window.testData = data;
-    document.title = `${data.title} | Today's Choice`;
+    document.title = `${data.title} | 오늘의 초이스 심리테스트`;
     createTestRunner(root, data);
     root.querySelector('[data-role="loading"]').hidden = true;
   } catch (error) {
+    if (typeof window.markTestSeoError === "function") window.markTestSeoError();
     console.error("테스트 불러오기 실패", error);
     root.querySelector('[data-role="loading"]').hidden = true;
     root.querySelector('[data-role="error-message"]').textContent = selectedTest
