@@ -407,7 +407,8 @@ body:has(dialog[open]){overflow:hidden}
 .question-title{margin:0 0 28px;font-size:25px;line-height:1.55;letter-spacing:-.7px}
 .answer-list{display:grid;gap:12px}
 .answer-button{width:100%;min-height:64px;padding:18px 20px;border:1px solid var(--border);border-radius:16px;background:#fff;text-align:left;font-size:16px;line-height:1.65}
-.answer-button:hover,.answer-button[aria-pressed="true"]{border-color:var(--pink);background:var(--pink-light)}
+.answer-button[aria-pressed="true"]{border-color:var(--pink);background:var(--pink-light)}
+@media(hover:hover) and (pointer:fine){.answer-button:hover{border-color:var(--pink);background:var(--pink-light)}}
 .test-result{text-align:center}
 .result-metric{display:inline-block;margin:0 0 24px;padding:12px 18px;border:1px solid #ffdce4;border-radius:16px;background:var(--pink-light);color:var(--pink);font-size:18px;font-weight:650;line-height:1.5}
 .result-score{margin:14px 0 28px;color:var(--pink);font-size:72px;line-height:1.15;font-weight:800;letter-spacing:-2px}
