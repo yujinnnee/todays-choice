@@ -9,6 +9,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <meta name="naver-site-verification" content="443c2f6de5e3ef34f37b5ca0766012b74c51bf0e" />
   <script src="test-catalog.js"></script>
   <script src="analytics.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -116,6 +117,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <meta name="naver-site-verification" content="443c2f6de5e3ef34f37b5ca0766012b74c51bf0e" />
   <script src="test-catalog.js"></script>
   <script src="analytics.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -232,6 +234,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <meta name="naver-site-verification" content="443c2f6de5e3ef34f37b5ca0766012b74c51bf0e" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Today's choice</title>
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
