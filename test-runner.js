@@ -20,6 +20,16 @@ function createTestRunner(root, data) {
   find("category").textContent = data.category;
   find("title").textContent = data.title;
   find("description").textContent = data.description;
+  const catalogEntry = typeof TEST_CATALOG !== "undefined" ? TEST_CATALOG.find((test) => test.id === data.id) : null;
+  const introduction = find("introduction");
+  const introductionParagraphs = typeof TEST_INTRODUCTIONS !== "undefined" && catalogEntry ? TEST_INTRODUCTIONS[catalogEntry.slug] : null;
+  if (introduction && introductionParagraphs) {
+    introduction.replaceChildren(...introductionParagraphs.map((text) => {
+      const paragraph = document.createElement("p");
+      paragraph.textContent = text;
+      return paragraph;
+    }));
+  }
   find("count").textContent = `총 ${data.questions.length}문항`;
   find("progress").max = data.questions.length;
   const configure = (name, callback) => {
@@ -31,6 +41,18 @@ function createTestRunner(root, data) {
   configure("result-card", (element) => { element.dataset.styled = "true"; });
   configure("result-type", (element) => { element.hidden = !data.showResultType; });
   configure("result-metric", (element) => { element.hidden = !data.resultMetric; });
+  if (typeof TEST_CATALOG !== "undefined") configure("related-section", (element) => { element.hidden = false; });
+  if (typeof TEST_CATALOG !== "undefined") configure("related-links", (element) => {
+    const sameCategory = TEST_CATALOG.filter((test) => test.id !== data.id && test.category.replace("/", "·") === data.category.replace("/", "·"));
+    const others = TEST_CATALOG.filter((test) => test.id !== data.id && !sameCategory.includes(test));
+    const recommendations = [...sameCategory, ...others].slice(0, 3);
+    element.replaceChildren(...recommendations.map((test) => {
+      const link = document.createElement("a");
+      link.href = test.url;
+      link.textContent = test.title;
+      return link;
+    }));
+  });
 
   function showScreen(name, focus = true) {
     screen = name;

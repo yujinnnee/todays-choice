@@ -29,7 +29,15 @@ const index = fs.readFileSync(indexPath, "utf8");
 const grid = /<div class="card-grid" id="category-grid">[\s\S]*?<\/div>(?=\s*<p class="category-empty")/;
 if (!grid.test(index)) throw Error("Main test grid not found");
 fs.writeFileSync(indexPath, index.replace(grid, `<div class="card-grid" id="category-grid">\n${cards}\n      </div>`));
-const urls = ["https://todayschoice.kr/", ...catalog.map(test => new URL(test.url, "https://todayschoice.kr/").href)];
+const informationPages = ["about.html", "privacy.html", "terms.html", "contact.html", "disclaimer.html"];
+for (const page of informationPages) {
+  if (!fs.existsSync(path.join(root, page))) throw Error(`Missing information page: ${page}`);
+}
+const urls = [
+  "https://todayschoice.kr/",
+  ...informationPages.map(page => new URL(page, "https://todayschoice.kr/").href),
+  ...catalog.map(test => new URL(test.url, "https://todayschoice.kr/").href),
+];
 const sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
   urls.map(url => `  <url>\n    <loc>${escape(url)}</loc>\n  </url>`).join("\n") + "\n</urlset>\n";
 const sitemapPath = path.join(root, "sitemap.xml");

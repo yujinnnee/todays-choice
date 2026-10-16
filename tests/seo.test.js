@@ -85,7 +85,8 @@ for (const test of catalog) {
 }
 const sitemap = fs.readFileSync("sitemap.xml", "utf8");
 const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]);
-assert.deepEqual(urls, ["https://todayschoice.kr/", ...catalog.map(test => `https://todayschoice.kr/${test.url}`)]);
+const informationPages = ["about.html", "privacy.html", "terms.html", "contact.html", "disclaimer.html"];
+assert.deepEqual(urls, ["https://todayschoice.kr/", ...informationPages.map(page => `https://todayschoice.kr/${page}`), ...catalog.map(test => `https://todayschoice.kr/${test.url}`)]);
 assert.ok(!urls.some(url => /404|naver|-test\.html|localhost/.test(url)));
 assert.equal(fs.readFileSync("robots.txt", "utf8").replace(/\r\n/g, "\n"), "User-agent: *\nAllow: /\n\nSitemap: https://todayschoice.kr/sitemap.xml\n");
 const detail = fs.readFileSync("test.html", "utf8");
@@ -93,4 +94,21 @@ assert.equal((detail.match(/<h1\b/g) || []).length, 1);
 assert.ok(!/<meta name="robots" content="noindex/.test(detail));
 assert.ok(!/rel="canonical"/.test(detail)); // Query-specific canonical is added once by test-seo.js.
 assert.ok(fs.readFileSync("404.html", "utf8").includes('<meta name="robots" content="noindex, follow">'));
+const introductionsContext = vm.createContext({});
+vm.runInContext(fs.readFileSync("test-introductions.js", "utf8") + "\nthis.introductions = TEST_INTRODUCTIONS;", introductionsContext);
+assert.equal(Object.keys(introductionsContext.introductions).sort().join(","), catalog.map(test => test.slug).sort().join(","));
+for (const paragraphs of Object.values(introductionsContext.introductions)) {
+  assert.equal(paragraphs.length, 2);
+  assert.ok(paragraphs.every(paragraph => paragraph.length >= 60));
+}
+for (const page of informationPages) {
+  const html = fs.readFileSync(page, "utf8");
+  assert.ok(html.includes('<meta name="robots" content="index, follow">'));
+  assert.ok(html.includes(`rel="canonical" href="https://todayschoice.kr/${page}"`));
+  for (const linkedPage of informationPages) assert.ok(html.includes(`href="${linkedPage}"`));
+}
+for (const page of ["index.html", "test.html"]) {
+  const html = fs.readFileSync(page, "utf8");
+  for (const linkedPage of informationPages) assert.ok(html.includes(`href="${linkedPage}"`));
+}
 console.log(`PASS: ${catalog.length} unique test metadata sets, aliases, error exclusion, static links, schemas, and ${urls.length} sitemap URLs`);

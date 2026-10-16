@@ -47,6 +47,9 @@ const server = http.createServer((req, res) => {
             pagination.querySelector('[aria-label="처음"]').click();
             document.querySelector('[data-filter=love]').click();
             if (cards.filter(card => !card.hidden).some(card => card.dataset.category !== 'love')) throw Error('filter');
+            document.querySelector('[data-category-link=fun]').click();
+            if (document.querySelector('[data-filter=fun]').getAttribute('aria-pressed') !== 'true') throw Error('category guide filter');
+            if (cards.filter(card => !card.hidden).some(card => card.dataset.category !== 'fun')) throw Error('category guide cards');
             document.querySelector('.search-toggle').click();
             const input = document.querySelector('#search-input');
             input.value = '사랑에 빠지는'; input.dispatchEvent(new Event('input'));

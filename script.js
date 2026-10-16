@@ -296,6 +296,14 @@ categoryButtons.forEach((button) => {
     renderCategoryTests();
   });
 });
+
+document.querySelectorAll("[data-category-link]").forEach((link) => {
+  link.addEventListener("click", () => {
+    const categoryButton = categoryButtons.find((button) => button.dataset.filter === link.dataset.categoryLink);
+    if (categoryButton) categoryButton.click();
+  });
+});
+
 if (categoryGrid) renderCategoryTests();
 mobileTestLayout.addEventListener("change", () => {
   if (!categoryGrid) return;
