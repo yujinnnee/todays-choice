@@ -1,0 +1,8 @@
+Use case: ads-marketing.
+Asset type: final website social sharing cover for Today's Choice, landscape 1200 by 630 pixels, exact aspect ratio 40:21.
+Create a polished Korean typographic brand poster that reads extremely clearly as a small KakaoTalk link thumbnail.
+Full bleed flat warm pink background #ff5c7a. Bold near-black oversized Korean sans-serif typography. No outer frame, no card-within-card, no gradients, no shadows, no mascots or illustrations. The typography is the visual.
+At the top left, medium-size bold brand text exactly "Today's Choice".
+The main headline, dominant and occupying most of the canvas, exactly "오늘 당신의" on the first line and "초이스는?" on the second line. Use strong clean Korean sans-serif similar to Pretendard ExtraBold, extremely large, carefully spaced. Center the main headline block with balanced but compact margins.
+Along the bottom, one understated white rounded pill with black readable text exactly "연애 · 인간관계 · 성격 · 재미".
+All text must be accurately rendered in Korean, perfectly readable. Simple, confident contemporary editorial graphic design. Use only the stated text, no website URL, no tiny captions, no decorative clutter, no other text. Keep all words well inside a safe inset of 70 pixels. This replaces a bland grey-and-white sharing cover.
