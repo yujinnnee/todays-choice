@@ -101,6 +101,14 @@ for (const paragraphs of Object.values(introductionsContext.introductions)) {
   assert.equal(paragraphs.length, 2);
   assert.ok(paragraphs.every(paragraph => paragraph.length >= 60));
 }
+const focusContext = vm.createContext({});
+vm.runInContext(fs.readFileSync("test-focus.js", "utf8") + "\nthis.focus = TEST_FOCUS;", focusContext);
+assert.equal(Object.keys(focusContext.focus).sort().join(","), catalog.map(test => test.slug).sort().join(","));
+assert.equal(new Set(Object.values(focusContext.focus)).size, catalog.length);
+for (const text of Object.values(focusContext.focus)) assert.ok(text.length >= 35);
+assert.ok(detail.includes("이 테스트에서는 무엇을 살펴보나요?"));
+assert.ok(detail.includes("결과 해석 시 참고할 점"));
+assert.ok(detail.includes("상황이나 관계, 시기에 따라 다른 모습이 나타날 수 있으며"));
 for (const page of informationPages) {
   const html = fs.readFileSync(page, "utf8");
   assert.ok(html.includes('<meta name="robots" content="index, follow">'));

@@ -54,6 +54,7 @@ const server = http.createServer((req, res) => {
             const input = document.querySelector('#search-input');
             input.value = '사랑에 빠지는'; input.dispatchEvent(new Event('input'));
             if (document.querySelectorAll('.search-result').length !== 1) throw Error('search');
+            if (document.querySelector('.search-result').tagName !== 'A' || !document.querySelector('.search-result').href.includes('test.html?id=')) throw Error('search link');
           } else {
             const start = document.querySelector('[data-role=start]');
             if (!window.testData || start.closest('section').hidden) return;
@@ -63,6 +64,7 @@ const server = http.createServer((req, res) => {
             if (document.querySelector('meta[property="og:title"]').content !== testData.title) throw Error('test OG title');
             if (!document.querySelector('meta[name="description"]').content.startsWith(testData.title)) throw Error('test description');
             if (JSON.parse(document.querySelector('#test-webpage-schema').textContent).url !== canonical) throw Error('test schema');
+            if (!document.querySelector('[data-role=focus]').textContent) throw Error('test focus');
             start.click();
             for (let i = 0; i < testData.questions.length; i++) document.querySelector('[data-role=answers] button').click();
             if (document.querySelector('[data-screen=result]').hidden) throw Error('result hidden');

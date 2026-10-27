@@ -30,6 +30,12 @@ function createTestRunner(root, data) {
       return paragraph;
     }));
   }
+  const focus = find("focus");
+  if (focus) {
+    focus.textContent = typeof TEST_FOCUS !== "undefined" && catalogEntry
+      ? TEST_FOCUS[catalogEntry.slug]
+      : "일상적인 선택에서 자연스럽게 드러나는 생각과 행동의 경향을 살펴봅니다.";
+  }
   find("count").textContent = `총 ${data.questions.length}문항`;
   find("progress").max = data.questions.length;
   const configure = (name, callback) => {

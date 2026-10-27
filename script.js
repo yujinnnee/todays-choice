@@ -171,9 +171,9 @@ function renderSearch() {
     const searchable = `${test.title} ${test.description}`.toLocaleLowerCase("ko").replace(/\s+/g, "");
     if (!searchable.includes(query)) return;
     count += 1;
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "search-result";
+    const link = document.createElement("a");
+    link.className = "search-result";
+    link.href = test.url;
     const title = document.createElement("span");
     title.textContent = test.title;
     const icon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -182,9 +182,8 @@ function renderSearch() {
     const use = document.createElementNS("http://www.w3.org/2000/svg", "use");
     use.setAttribute("href", "#icon-arrow");
     icon.append(use);
-    button.append(title, icon);
-    button.addEventListener("click", () => openTest(test.id));
-    searchResults.append(button);
+    link.append(title, icon);
+    searchResults.append(link);
   });
   searchCount.textContent = `테스트 ${count}개`;
   if (count === 0) {
