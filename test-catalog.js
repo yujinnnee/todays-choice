@@ -3,6 +3,60 @@
 // Add metadata here and a matching <slug>-data.js module to register a test.
 const TEST_CATALOG = [
   {
+    "id": 63,
+    "slug": "lasting-love-needs",
+    "title": "나는 어떤 사랑을 받을 때 오래 만날 수 있을까?",
+    "description": "연애에서 내가 가장 오래 안정감을 느끼는 사랑은 어떤 모습일까?",
+    "category": "연애·결혼",
+    "url": "test.html?id=lasting-love-needs",
+    "icon": "heart"
+  },
+  {
+    "id": 62,
+    "slug": "happiest-love-style",
+    "title": "내가 가장 행복해지는 연애 방식은?",
+    "description": "좋아하는 사람과 어떤 관계를 만들 때 나는 가장 편안하고 행복할까?",
+    "category": "연애·결혼",
+    "url": "test.html?id=happiest-love-style",
+    "icon": "heart"
+  },
+  {
+    "id": 61,
+    "slug": "long-distance-love",
+    "title": "장거리 연애를 하면 나는 어떻게 변할까?",
+    "description": "자주 볼 수 없는 연애가 시작된다면 나는 어떤 모습이 될까?",
+    "category": "연애·결혼",
+    "url": "test.html?id=long-distance-love",
+    "icon": "heart"
+  },
+  {
+    "id": 60,
+    "slug": "hidden-dating-side",
+    "title": "연애하면서 가장 숨기고 싶은 모습은?",
+    "description": "좋아하는 사람 앞에서는 괜찮은 척하지만, 사실 가장 들키기 싫은 내 모습은 뭘까?",
+    "category": "연애·결혼",
+    "url": "test.html?id=hidden-dating-side",
+    "icon": "heart"
+  },
+  {
+    "id": 59,
+    "slug": "internet-meme",
+    "title": "갑자기 인터넷에서 밈이 된다면 나는?",
+    "description": "내 사진이나 말 한마디가 갑자기 전국적으로 퍼진다면 나는 어떻게 반응할까?",
+    "category": "재미",
+    "url": "test.html?id=internet-meme",
+    "icon": "star"
+  },
+  {
+    "id": 58,
+    "slug": "restart-life",
+    "title": "인생을 처음부터 다시 시작할 수 있다면?",
+    "description": "지금의 기억을 가진 채 다시 시작한다면 나는 무엇을 가장 다르게 선택할까?",
+    "category": "재미",
+    "url": "test.html?id=restart-life",
+    "icon": "star"
+  },
+  {
     "id": 57,
     "slug": "presidential-power",
     "title": "내가 하루 동안 대통령급 권력을 갖게 된다면?",

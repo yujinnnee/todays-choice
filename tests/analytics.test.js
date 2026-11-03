@@ -305,6 +305,168 @@ for (const file of dataFiles) {
       assert.equal(result.result_title, context.data.results.find(item => item.stat === scenario.winner).title);
     }
   }
+  if (file === "restart-life-data.js") {
+    const types = ["challenge", "relationship", "growth", "stability", "contentment"];
+    assert.equal(context.data.category, "재미");
+    assert.equal(context.data.questions.length, 15);
+    context.data.questions.forEach(question => {
+      assert.equal(JSON.stringify([...question.answers.map(answer => answer.stat)].sort()), JSON.stringify([...types].sort()));
+      question.answers.forEach(answer => assert.equal(answer.score, 1));
+    });
+    const scenarios = [
+      ...types.map(stat => ({ stats: Array(15).fill(stat), winner: stat, score: 15 })),
+      { stats: [...types, ...types, ...types], winner: "contentment", score: 3 },
+      { stats: [...Array(7).fill("challenge"), ...Array(7).fill("relationship"), "growth"], winner: "relationship", score: 7 },
+    ];
+    for (const scenario of scenarios) {
+      click("restart");
+      click("start");
+      scenario.stats.forEach((stat, index) => {
+        const choice = context.data.questions[index].answers.findIndex(answer => answer.stat === stat);
+        roles.get("answers").children[choice].handlers.click();
+      });
+      const result = events.filter(event => event.name === "test_complete").at(-1).extra;
+      assert.equal(result.result_stat, scenario.winner);
+      assert.equal(result.result_score, scenario.score);
+      assert.equal(result.question_count, 15);
+      assert.equal(result.result_title, context.data.results.find(item => item.stat === scenario.winner).title);
+    }
+  }
+  if (file === "internet-meme-data.js") {
+    const types = ["enjoy", "analyze", "hide", "leverage", "unbothered"];
+    assert.equal(context.data.category, "재미");
+    assert.equal(context.data.questions.length, 15);
+    context.data.questions.forEach(question => {
+      assert.equal(JSON.stringify([...question.answers.map(answer => answer.stat)].sort()), JSON.stringify([...types].sort()));
+      question.answers.forEach(answer => assert.equal(answer.score, 1));
+    });
+    const scenarios = [
+      ...types.map(stat => ({ stats: Array(15).fill(stat), winner: stat, score: 15 })),
+      { stats: [...types, ...types, ...types], winner: "unbothered", score: 3 },
+      { stats: [...Array(7).fill("enjoy"), ...Array(7).fill("analyze"), "hide"], winner: "analyze", score: 7 },
+    ];
+    for (const scenario of scenarios) {
+      click("restart");
+      click("start");
+      scenario.stats.forEach((stat, index) => {
+        const choice = context.data.questions[index].answers.findIndex(answer => answer.stat === stat);
+        roles.get("answers").children[choice].handlers.click();
+      });
+      const result = events.filter(event => event.name === "test_complete").at(-1).extra;
+      assert.equal(result.result_stat, scenario.winner);
+      assert.equal(result.result_score, scenario.score);
+      assert.equal(result.question_count, 15);
+      assert.equal(result.result_title, context.data.results.find(item => item.stat === scenario.winner).title);
+    }
+  }
+  if (file === "hidden-dating-side-data.js") {
+    const types = ["jealous", "dependent", "grudge", "reassurance", "cold"];
+    assert.equal(context.data.category, "연애·결혼");
+    assert.equal(context.data.questions.length, 15);
+    context.data.questions.forEach(question => {
+      assert.equal(JSON.stringify([...question.answers.map(answer => answer.stat)].sort()), JSON.stringify([...types].sort()));
+      question.answers.forEach(answer => assert.equal(answer.score, 1));
+    });
+    const scenarios = [
+      ...types.map(stat => ({ stats: Array(15).fill(stat), winner: stat, score: 15 })),
+      { stats: [...types, ...types, ...types], winner: "cold", score: 3 },
+      { stats: [...Array(7).fill("jealous"), ...Array(7).fill("dependent"), "grudge"], winner: "dependent", score: 7 },
+    ];
+    for (const scenario of scenarios) {
+      click("restart");
+      click("start");
+      scenario.stats.forEach((stat, index) => {
+        const choice = context.data.questions[index].answers.findIndex(answer => answer.stat === stat);
+        roles.get("answers").children[choice].handlers.click();
+      });
+      const result = events.filter(event => event.name === "test_complete").at(-1).extra;
+      assert.equal(result.result_stat, scenario.winner);
+      assert.equal(result.result_score, scenario.score);
+      assert.equal(result.question_count, 15);
+      assert.equal(result.result_title, context.data.results.find(item => item.stat === scenario.winner).title);
+    }
+  }
+  if (file === "long-distance-love-data.js") {
+    const types = ["independent", "reassurance", "planner", "romantic", "weary"];
+    assert.equal(context.data.category, "연애·결혼");
+    assert.equal(context.data.questions.length, 15);
+    context.data.questions.forEach(question => {
+      assert.equal(JSON.stringify([...question.answers.map(answer => answer.stat)].sort()), JSON.stringify([...types].sort()));
+      question.answers.forEach(answer => assert.equal(answer.score, 1));
+    });
+    const scenarios = [
+      ...types.map(stat => ({ stats: Array(15).fill(stat), winner: stat, score: 15 })),
+      { stats: [...types, ...types, ...types], winner: "weary", score: 3 },
+      { stats: [...Array(7).fill("independent"), ...Array(7).fill("reassurance"), "planner"], winner: "reassurance", score: 7 },
+    ];
+    for (const scenario of scenarios) {
+      click("restart");
+      click("start");
+      scenario.stats.forEach((stat, index) => {
+        const choice = context.data.questions[index].answers.findIndex(answer => answer.stat === stat);
+        roles.get("answers").children[choice].handlers.click();
+      });
+      const result = events.filter(event => event.name === "test_complete").at(-1).extra;
+      assert.equal(result.result_stat, scenario.winner);
+      assert.equal(result.result_score, scenario.score);
+      assert.equal(result.question_count, 15);
+      assert.equal(result.result_title, context.data.results.find(item => item.stat === scenario.winner).title);
+    }
+  }
+  if (file === "happiest-love-style-data.js") {
+    const types = ["together", "independent", "expressive", "secure", "exciting"];
+    assert.equal(context.data.category, "연애·결혼");
+    assert.equal(context.data.questions.length, 15);
+    context.data.questions.forEach(question => {
+      assert.equal(JSON.stringify([...question.answers.map(answer => answer.stat)].sort()), JSON.stringify([...types].sort()));
+      question.answers.forEach(answer => assert.equal(answer.score, 1));
+    });
+    const scenarios = [
+      ...types.map(stat => ({ stats: Array(15).fill(stat), winner: stat, score: 15 })),
+      { stats: [...types, ...types, ...types], winner: "exciting", score: 3 },
+      { stats: [...Array(7).fill("together"), ...Array(7).fill("independent"), "expressive"], winner: "independent", score: 7 },
+    ];
+    for (const scenario of scenarios) {
+      click("restart");
+      click("start");
+      scenario.stats.forEach((stat, index) => {
+        const choice = context.data.questions[index].answers.findIndex(answer => answer.stat === stat);
+        roles.get("answers").children[choice].handlers.click();
+      });
+      const result = events.filter(event => event.name === "test_complete").at(-1).extra;
+      assert.equal(result.result_stat, scenario.winner);
+      assert.equal(result.result_score, scenario.score);
+      assert.equal(result.question_count, 15);
+      assert.equal(result.result_title, context.data.results.find(item => item.stat === scenario.winner).title);
+    }
+  }
+  if (file === "lasting-love-needs-data.js") {
+    const types = ["expressive", "stable", "together", "respectful", "supportive"];
+    assert.equal(context.data.category, "연애·결혼");
+    assert.equal(context.data.questions.length, 15);
+    context.data.questions.forEach(question => {
+      assert.equal(JSON.stringify([...question.answers.map(answer => answer.stat)].sort()), JSON.stringify([...types].sort()));
+      question.answers.forEach(answer => assert.equal(answer.score, 1));
+    });
+    const scenarios = [
+      ...types.map(stat => ({ stats: Array(15).fill(stat), winner: stat, score: 15 })),
+      { stats: [...types, ...types, ...types], winner: "supportive", score: 3 },
+      { stats: [...Array(7).fill("expressive"), ...Array(7).fill("stable"), "together"], winner: "stable", score: 7 },
+    ];
+    for (const scenario of scenarios) {
+      click("restart");
+      click("start");
+      scenario.stats.forEach((stat, index) => {
+        const choice = context.data.questions[index].answers.findIndex(answer => answer.stat === stat);
+        roles.get("answers").children[choice].handlers.click();
+      });
+      const result = events.filter(event => event.name === "test_complete").at(-1).extra;
+      assert.equal(result.result_stat, scenario.winner);
+      assert.equal(result.result_score, scenario.score);
+      assert.equal(result.question_count, 15);
+      assert.equal(result.result_title, context.data.results.find(item => item.stat === scenario.winner).title);
+    }
+  }
   if (file === "variety-character-data.js") {
     const c = "center", r = "reaction", b = "brain", a = "chaos", q = "quiet";
     const mappings = [[r,c,q,b,a], [b,r,q,a,c], [b,r,q,a,c], [b,c,a,r,q], [c,r,b,a,q], [b,r,c,q,a], [c,r,a,q,b], [b,a,c,r,q], [c,r,q,b,a], [b,r,c,a,q], [b,r,c,q,a], [c,r,b,a,q], [a,b,r,c,q], [c,r,b,a,q], [c,r,b,a,q]];
