@@ -69,6 +69,9 @@ const server = http.createServer((req, res) => {
             for (let i = 0; i < testData.questions.length; i++) document.querySelector('[data-role=answers] button').click();
             if (document.querySelector('[data-screen=result]').hidden) throw Error('result hidden');
             if (!document.querySelector('[data-role=result-title]').textContent) throw Error('result title');
+            const metric = document.querySelector('[data-role=result-metric]');
+            if (testData.resultMetric && (metric.hidden || !metric.textContent.endsWith('%'))) throw Error('missing percentage metric');
+            if (!testData.resultMetric && !metric.hidden) throw Error('unwanted percentage metric');
             if (document.querySelector('[data-role=score-panel]')) throw Error('unwanted score');
             if (document.querySelector('[data-role=stats], [data-role=result-label]')) throw Error('unwanted result details');
             document.querySelector('[data-role=restart]').click();

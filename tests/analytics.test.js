@@ -64,6 +64,12 @@ for (const file of dataFiles) {
   assert.equal(count("test_complete"), 1);
   const result = events.find(event => event.name === "test_complete").extra;
   assert.equal(result.result_title, roles.get("result-title").textContent);
+  if (context.data.resultMetric) {
+    assert.equal(roles.get("result-metric").hidden, false);
+    assert.match(roles.get("result-metric").textContent, new RegExp(`^${context.data.resultMetric.label} \\d+%$`));
+  } else {
+    assert.equal(roles.get("result-metric").hidden, true);
+  }
   assert.ok(Number.isFinite(result.result_score));
   click("restart");
   click("start");
@@ -191,6 +197,114 @@ for (const file of dataFiles) {
       assert.equal(result.result_title, context.data.results.find(item => item.stat === scenario.winner).title);
     }
   }
+  if (file === "workplace-intolerance-data.js") {
+    const types = ["blame", "irresponsible", "frustrating", "political", "domineering"];
+    assert.equal(context.data.category, "친구·인간관계·사회생활");
+    assert.equal(context.data.questions.length, 15);
+    context.data.questions.forEach(question => {
+      assert.equal(JSON.stringify([...question.answers.map(answer => answer.stat)].sort()), JSON.stringify([...types].sort()));
+      question.answers.forEach(answer => assert.equal(answer.score, 1));
+    });
+    const scenarios = [
+      ...types.map(stat => ({ stats: Array(15).fill(stat), winner: stat, score: 15 })),
+      { stats: [...types, ...types, ...types], winner: "domineering", score: 3 },
+      { stats: [...Array(7).fill("blame"), ...Array(7).fill("irresponsible"), "frustrating"], winner: "irresponsible", score: 7 },
+    ];
+    for (const scenario of scenarios) {
+      click("restart");
+      click("start");
+      scenario.stats.forEach((stat, index) => {
+        const choice = context.data.questions[index].answers.findIndex(answer => answer.stat === stat);
+        roles.get("answers").children[choice].handlers.click();
+      });
+      const result = events.filter(event => event.name === "test_complete").at(-1).extra;
+      assert.equal(result.result_stat, scenario.winner);
+      assert.equal(result.result_score, scenario.score);
+      assert.equal(result.question_count, 15);
+      assert.equal(result.result_title, context.data.results.find(item => item.stat === scenario.winner).title);
+    }
+  }
+  if (file === "competitive-trigger-data.js") {
+    const types = ["similar", "close", "attention", "surprise", "talent"];
+    assert.equal(context.data.category, "친구·인간관계·사회생활");
+    assert.equal(context.data.questions.length, 15);
+    context.data.questions.forEach(question => {
+      assert.equal(JSON.stringify([...question.answers.map(answer => answer.stat)].sort()), JSON.stringify([...types].sort()));
+      question.answers.forEach(answer => assert.equal(answer.score, 1));
+    });
+    const scenarios = [
+      ...types.map(stat => ({ stats: Array(15).fill(stat), winner: stat, score: 15 })),
+      { stats: [...types, ...types, ...types], winner: "talent", score: 3 },
+      { stats: [...Array(7).fill("similar"), ...Array(7).fill("close"), "attention"], winner: "close", score: 7 },
+    ];
+    for (const scenario of scenarios) {
+      click("restart");
+      click("start");
+      scenario.stats.forEach((stat, index) => {
+        const choice = context.data.questions[index].answers.findIndex(answer => answer.stat === stat);
+        roles.get("answers").children[choice].handlers.click();
+      });
+      const result = events.filter(event => event.name === "test_complete").at(-1).extra;
+      assert.equal(result.result_stat, scenario.winner);
+      assert.equal(result.result_score, scenario.score);
+      assert.equal(result.question_count, 15);
+      assert.equal(result.result_title, context.data.results.find(item => item.stat === scenario.winner).title);
+    }
+  }
+  if (file === "weather-personality-data.js") {
+    const types = ["sunny", "wind", "cloudy", "shower", "snow"];
+    assert.equal(context.data.category, "성격");
+    assert.equal(context.data.questions.length, 15);
+    context.data.questions.forEach(question => {
+      assert.equal(JSON.stringify([...question.answers.map(answer => answer.stat)].sort()), JSON.stringify([...types].sort()));
+      question.answers.forEach(answer => assert.equal(answer.score, 1));
+    });
+    const scenarios = [
+      ...types.map(stat => ({ stats: Array(15).fill(stat), winner: stat, score: 15 })),
+      { stats: [...types, ...types, ...types], winner: "snow", score: 3 },
+      { stats: [...Array(7).fill("sunny"), ...Array(7).fill("wind"), "cloudy"], winner: "wind", score: 7 },
+    ];
+    for (const scenario of scenarios) {
+      click("restart");
+      click("start");
+      scenario.stats.forEach((stat, index) => {
+        const choice = context.data.questions[index].answers.findIndex(answer => answer.stat === stat);
+        roles.get("answers").children[choice].handlers.click();
+      });
+      const result = events.filter(event => event.name === "test_complete").at(-1).extra;
+      assert.equal(result.result_stat, scenario.winner);
+      assert.equal(result.result_score, scenario.score);
+      assert.equal(result.question_count, 15);
+      assert.equal(result.result_title, context.data.results.find(item => item.stat === scenario.winner).title);
+    }
+  }
+  if (file === "presidential-power-data.js") {
+    const types = ["livelihood", "reform", "pragmatic", "freedom", "stability"];
+    assert.equal(context.data.category, "재미");
+    assert.equal(context.data.questions.length, 15);
+    context.data.questions.forEach(question => {
+      assert.equal(JSON.stringify([...question.answers.map(answer => answer.stat)].sort()), JSON.stringify([...types].sort()));
+      question.answers.forEach(answer => assert.equal(answer.score, 1));
+    });
+    const scenarios = [
+      ...types.map(stat => ({ stats: Array(15).fill(stat), winner: stat, score: 15 })),
+      { stats: [...types, ...types, ...types], winner: "stability", score: 3 },
+      { stats: [...Array(7).fill("livelihood"), ...Array(7).fill("reform"), "pragmatic"], winner: "reform", score: 7 },
+    ];
+    for (const scenario of scenarios) {
+      click("restart");
+      click("start");
+      scenario.stats.forEach((stat, index) => {
+        const choice = context.data.questions[index].answers.findIndex(answer => answer.stat === stat);
+        roles.get("answers").children[choice].handlers.click();
+      });
+      const result = events.filter(event => event.name === "test_complete").at(-1).extra;
+      assert.equal(result.result_stat, scenario.winner);
+      assert.equal(result.result_score, scenario.score);
+      assert.equal(result.question_count, 15);
+      assert.equal(result.result_title, context.data.results.find(item => item.stat === scenario.winner).title);
+    }
+  }
   if (file === "variety-character-data.js") {
     const c = "center", r = "reaction", b = "brain", a = "chaos", q = "quiet";
     const mappings = [[r,c,q,b,a], [b,r,q,a,c], [b,r,q,a,c], [b,c,a,r,q], [c,r,b,a,q], [b,r,c,q,a], [c,r,a,q,b], [b,a,c,r,q], [c,r,q,b,a], [b,r,c,a,q], [b,r,c,q,a], [c,r,b,a,q], [a,b,r,c,q], [c,r,b,a,q], [c,r,b,a,q]];
@@ -306,7 +420,6 @@ for (const file of dataFiles) {
       assert.equal(result.max_score, 60);
       assert.equal(result.result_percentage, percentage);
       assert.equal(result.result_title, context.data.results[expected].title);
-      assert.equal(roles.get("result-metric").textContent, `${isLongTerm ? "장기연애 체질" : "감정 기복"} ${percentage}%`);
       assert.equal(result.question_count, 15);
     }
   }
@@ -333,8 +446,76 @@ for (const file of dataFiles) {
       assert.equal(result.max_score, 60);
       assert.equal(result.result_percentage, percentage);
       assert.equal(result.result_title, context.data.results[expected].title);
-      assert.equal(roles.get("result-metric").textContent, `사회성 ${percentage}%`);
       assert.equal(result.question_count, 15);
+    }
+  }
+  if (file === "trust-people-data.js") {
+    assert.equal(context.data.questions.length, 15);
+    context.data.questions.forEach(question => {
+      assert.equal(JSON.stringify(question.answers.map(answer => answer.score)), JSON.stringify([4, 3, 2, 1]));
+    });
+    const cases = [[15,0,0], [26,24,0], [27,27,1], [37,49,1], [38,51,2], [48,73,2], [49,76,3], [60,100,3]];
+    for (const [total, percentage, resultIndex] of cases) {
+      click("restart");
+      click("start");
+      let extra = total - 15;
+      for (let index = 0; index < 15; index++) {
+        const score = 1 + Math.min(3, extra);
+        extra -= score - 1;
+        roles.get("answers").children[4 - score].handlers.click();
+      }
+      const result = events.filter(event => event.name === "test_complete").at(-1).extra;
+      assert.equal(result.result_score, total);
+      assert.equal(result.max_score, 60);
+      assert.equal(result.result_percentage, percentage);
+      assert.equal(result.result_title, context.data.results[resultIndex].title);
+    }
+  }
+  if (file === "social-cues-data.js") {
+    assert.equal(context.data.questions.length, 15);
+    context.data.questions.forEach(question => {
+      assert.equal(JSON.stringify([...question.answers.map(answer => answer.score)].sort()), JSON.stringify([1, 2, 3, 4]));
+    });
+    const cases = [[15,0,0], [26,24,0], [27,27,1], [37,49,1], [38,51,2], [48,73,2], [49,76,3], [60,100,3]];
+    for (const [total, percentage, resultIndex] of cases) {
+      click("restart");
+      click("start");
+      let extra = total - 15;
+      for (let index = 0; index < 15; index++) {
+        const score = 1 + Math.min(3, extra);
+        extra -= score - 1;
+        const choice = context.data.questions[index].answers.findIndex(answer => answer.score === score);
+        roles.get("answers").children[choice].handlers.click();
+      }
+      const result = events.filter(event => event.name === "test_complete").at(-1).extra;
+      assert.equal(result.result_score, total);
+      assert.equal(result.max_score, 60);
+      assert.equal(result.result_percentage, percentage);
+      assert.equal(result.result_title, context.data.results[resultIndex].title);
+    }
+  }
+  if (file === "secret-agent-survival-data.js") {
+    assert.equal(context.data.questions.length, 15);
+    context.data.questions.forEach(question => {
+      assert.equal(JSON.stringify([...question.answers.map(answer => answer.score)].sort()), JSON.stringify([1, 2, 3, 4]));
+    });
+    const cases = [[15,0,0], [26,24,0], [27,27,1], [37,49,1], [38,51,2], [48,73,2], [49,76,3], [60,100,3]];
+    for (const [total, percentage, resultIndex] of cases) {
+      click("restart");
+      click("start");
+      let extra = total - 15;
+      for (let index = 0; index < 15; index++) {
+        const score = 1 + Math.min(3, extra);
+        extra -= score - 1;
+        const choice = context.data.questions[index].answers.findIndex(answer => answer.score === score);
+        roles.get("answers").children[choice].handlers.click();
+      }
+      const result = events.filter(event => event.name === "test_complete").at(-1).extra;
+      assert.equal(result.result_score, total);
+      assert.equal(result.max_score, 60);
+      assert.equal(result.result_percentage, percentage);
+      assert.equal(result.result_title, context.data.results[resultIndex].title);
+      assert.equal(roles.get("result-metric").textContent, `비밀요원 생존력 ${percentage}%`);
     }
   }
   if (file === "relationship-fatigue-data.js") {
@@ -353,7 +534,6 @@ for (const file of dataFiles) {
       assert.equal(result.result_score, total);
       assert.equal(result.result_percentage, percentage);
       assert.equal(result.result_title, context.data.results[resultIndex].title);
-      assert.equal(roles.get("result-metric").textContent, `인간관계 피로도 ${percentage}%`);
     }
   }
   if (file === "million-followers-data.js") {

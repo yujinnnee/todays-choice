@@ -3,6 +3,69 @@
 // Add metadata here and a matching <slug>-data.js module to register a test.
 const TEST_CATALOG = [
   {
+    "id": 57,
+    "slug": "presidential-power",
+    "title": "내가 하루 동안 대통령급 권력을 갖게 된다면?",
+    "description": "딱 24시간, 나라 전체를 움직일 힘이 생긴다면 나는 무엇부터 바꿀까?",
+    "category": "재미",
+    "url": "test.html?id=presidential-power",
+    "icon": "star"
+  },
+  {
+    "id": 56,
+    "slug": "secret-agent-survival",
+    "title": "내가 비밀요원이 된다면 얼마나 잘 버틸까?",
+    "description": "정체를 숨기고 압박 속에서 버텨야 한다면 나는 어느 정도까지 살아남을 수 있을까?",
+    "category": "재미",
+    "url": "test.html?id=secret-agent-survival",
+    "icon": "star"
+  },
+  {
+    "id": 55,
+    "slug": "weather-personality",
+    "title": "내 성격은 어떤 날씨에 가까울까?",
+    "description": "사람들과 상황을 대하는 내 모습은 어떤 날씨와 가장 닮아 있을까?",
+    "category": "성격",
+    "url": "test.html?id=weather-personality",
+    "icon": "leaf"
+  },
+  {
+    "id": 54,
+    "slug": "competitive-trigger",
+    "title": "내가 은근히 경쟁심을 느끼는 상대는?",
+    "description": "평소엔 티 안 내도 이상하게 신경 쓰이는 사람은 어떤 타입일까?",
+    "category": "친구·인간관계·사회생활",
+    "url": "test.html?id=competitive-trigger",
+    "icon": "people"
+  },
+  {
+    "id": 53,
+    "slug": "workplace-intolerance",
+    "title": "직장에서 내가 제일 못 견디는 사람 유형은?",
+    "description": "같이 일할 때 유독 스트레스 받는 사람은 어떤 타입일까?",
+    "category": "친구·인간관계·사회생활",
+    "url": "test.html?id=workplace-intolerance",
+    "icon": "people"
+  },
+  {
+    "id": 52,
+    "slug": "social-cues",
+    "title": "내 사회생활 눈치 레벨은?",
+    "description": "분위기, 말투, 표정까지 나는 얼마나 빠르게 캐치하는 편일까?",
+    "category": "친구·인간관계·사회생활",
+    "url": "test.html?id=social-cues",
+    "icon": "people"
+  },
+  {
+    "id": 51,
+    "slug": "trust-people",
+    "title": "나는 사람을 얼마나 쉽게 믿는 편일까?",
+    "description": "처음 만난 사람부터 가까운 사람까지, 나는 얼마나 빨리 마음을 여는 편일까?",
+    "category": "친구·인간관계·사회생활",
+    "url": "test.html?id=trust-people",
+    "icon": "people"
+  },
+  {
     "id": 50,
     "slug": "romance-priorities",
     "title": "내가 연애에서 절대 포기 못 하는 건?",
