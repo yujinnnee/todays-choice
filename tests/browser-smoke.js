@@ -4,6 +4,9 @@ const path = require("node:path");
 const os = require("node:os");
 const http = require("node:http");
 const { spawn } = require("node:child_process");
+const vm = require("node:vm");
+const catalogContext = {};
+vm.runInNewContext(fs.readFileSync("data/content/test-catalog.js", "utf8") + ";this.catalog=TEST_CATALOG;", catalogContext);
 const browser = process.env.CHROME_PATH || "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
 const base = process.cwd();
 const server = http.createServer((req, res) => {
@@ -30,6 +33,9 @@ const server = http.createServer((req, res) => {
             const expected = matchMedia('(max-width:640px)').matches ? 5 : 9;
             if (cards.filter(card => !card.hidden).length !== expected) throw Error('pagination');
             if (document.querySelectorAll('#new-tests .test-card').length !== 3) throw Error('today');
+            if (document.querySelectorAll('.curation-group').length !== 3) throw Error('curation groups');
+            const curationLinks = [...document.querySelectorAll('.curation-group a')];
+            if (curationLinks.length !== 12 || curationLinks.some(link => !TEST_CATALOG.some(test => link.getAttribute('href') === test.url))) throw Error('curation links');
             const pagination = document.querySelector('#test-pagination');
             const pageCount = Math.ceil(TEST_CATALOG.length / expected);
             const numberButtons = () => [...pagination.querySelectorAll('.page-button')].filter(button => /^[0-9]+$/.test(button.textContent));
@@ -65,10 +71,19 @@ const server = http.createServer((req, res) => {
             if (!document.querySelector('meta[name="description"]').content.startsWith(testData.title)) throw Error('test description');
             if (JSON.parse(document.querySelector('#test-webpage-schema').textContent).url !== canonical) throw Error('test schema');
             if (!document.querySelector('[data-role=focus]').textContent) throw Error('test focus');
+            const guide = document.querySelector('[data-role=result-guide]');
+            if (guide.closest('[data-screen]').dataset.screen !== 'result' || !guide.closest('[data-screen]').hidden) throw Error('premature guide');
+            const related = [...document.querySelectorAll('[data-role=related-links] a')];
+            if (related.length !== 3 || related.some((link, i) => link.getAttribute('href') !== TEST_CATALOG.find(test => test.slug === TEST_RELATED[currentTest.slug][i]).url)) throw Error('curated related links');
             start.click();
             for (let i = 0; i < testData.questions.length; i++) document.querySelector('[data-role=answers] button').click();
             if (document.querySelector('[data-screen=result]').hidden) throw Error('result hidden');
             if (!document.querySelector('[data-role=result-title]').textContent) throw Error('result title');
+            if (guide.hidden || !guide.getBoundingClientRect().height) throw Error('guide hidden');
+            if (guide.querySelectorAll('h2').length !== 3 || guide.querySelectorAll('p').length !== 3) throw Error('guide sections');
+            if ([...guide.querySelectorAll('p')].some((p, i) => p.textContent !== TEST_GUIDES[currentTest.slug][i][1])) throw Error('wrong guide content');
+            if (guide.getBoundingClientRect().top < document.querySelector('[data-role=result-card]').getBoundingClientRect().bottom) throw Error('guide position');
+            if (document.documentElement.scrollWidth > window.innerWidth) throw Error('horizontal overflow');
             const metric = document.querySelector('[data-role=result-metric]');
             if (testData.resultMetric && (metric.hidden || !metric.textContent.endsWith('%'))) throw Error('missing percentage metric');
             if (!testData.resultMetric && !metric.hidden) throw Error('unwanted percentage metric');
@@ -76,6 +91,7 @@ const server = http.createServer((req, res) => {
             if (document.querySelector('[data-role=stats], [data-role=result-label]')) throw Error('unwanted result details');
             document.querySelector('[data-role=restart]').click();
             if (document.querySelector('[data-screen=start]').hidden) throw Error('restart');
+            if (!guide.closest('[data-screen]').hidden) throw Error('guide visible after restart');
           }
           document.body.dataset.smoke = 'PASS'; clearInterval(timer);
         } catch (error) { document.body.dataset.smoke = 'FAIL:' + error.message; clearInterval(timer); }
@@ -88,7 +104,10 @@ const server = http.createServer((req, res) => {
 
 server.listen(0, "127.0.0.1", async () => {
   try {
-    for (const [route, width] of [["index.html", 1200], ["index.html", 390], ["test.html?id=jealousy", 390], ["test.html?id=game-character", 390], ["test.html?id=falling-in-love", 390], ["test.html?id=million-followers", 390]]) {
+    const routes = [["index.html", 1200], ["index.html", 390],
+      ...catalogContext.catalog.map(test => [test.url, 390]),
+      ["test.html?id=long-distance-love", 1200], ["test.html?id=workplace-intolerance", 1200], ["test.html?id=weather-personality", 1200]];
+    for (const [route, width] of routes) {
       const profile = fs.mkdtempSync(path.join(os.tmpdir(), "choice-smoke-"));
       const result = await new Promise((resolve, reject) => {
         const child = spawn(browser, ["--headless", "--disable-gpu", "--no-first-run", "--disable-background-networking", "--virtual-time-budget=7000", `--window-size=${width},900`, `--user-data-dir=${profile}`, "--dump-dom", `http://127.0.0.1:${server.address().port}/${route}`], { windowsHide: true });

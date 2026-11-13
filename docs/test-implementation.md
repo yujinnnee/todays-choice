@@ -1,6 +1,6 @@
 # Today's Choice 전체 코드
 
-공통 test.html과 테스트 데이터, SEO, GA4, 카카오톡 공유 기능을 포함한 전체 코드입니다. 공유 이미지는 assets/share-cover-v3.png입니다. 구조 안내는 test-structure.md, SEO 안내는 seo-setup.md를 참고하세요.
+공통 test.html과 테스트 데이터, SEO, GA4, 카카오톡 공유 기능을 포함한 전체 코드입니다. 공유 이미지는 assets/share-cover-v3.png입니다. 구조 안내는 docs/test-structure.md, SEO 안내는 docs/seo-setup.md를 참고하세요.
 
 ## index.html
 
@@ -10,8 +10,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="naver-site-verification" content="443c2f6de5e3ef34f37b5ca0766012b74c51bf0e" />
-  <script src="test-catalog.js"></script>
-  <script src="analytics.js"></script>
+  <script src="data/content/test-catalog.js"></script>
+  <script src="assets/js/analytics.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -47,8 +47,8 @@
   }
   </script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/script.js" defer></script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2401413706072374"
        crossorigin="anonymous"></script>
 </head>
@@ -354,8 +354,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="naver-site-verification" content="443c2f6de5e3ef34f37b5ca0766012b74c51bf0e" />
-  <script src="test-catalog.js"></script>
-  <script src="analytics.js"></script>
+  <script src="data/content/test-catalog.js"></script>
+  <script src="assets/js/analytics.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -378,15 +378,15 @@
   <meta name="description" content="오늘의 초이스에서 재미있는 심리테스트를 만나보세요.">
   <meta name="robots" content="index, follow">
   <title>오늘의 초이스 | 심리테스트</title>
-  <script src="seo-descriptions.js"></script>
-  <script src="test-seo.js"></script>
+  <script src="data/content/seo-descriptions.js"></script>
+  <script src="assets/js/test-seo.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="test.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/test.css">
   <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.8.2/kakao.min.js" integrity="sha384-zt/G7/KfaRQ9dT/QIkS0ujMtzouJqzuSJcXVQu50x0rl/+mD1dc70AeOejVbMD9E" crossorigin="anonymous" defer></script>
-  <script src="script.js" defer></script>
-  <script src="test-runner.js" defer></script>
-  <script type="module" src="test-loader.js"></script>
+  <script src="assets/js/script.js" defer></script>
+  <script src="assets/js/test-runner.js" defer></script>
+  <script type="module" src="assets/js/test-loader.js"></script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2401413706072374"
        crossorigin="anonymous"></script>
 </head>
@@ -482,11 +482,11 @@
   <meta property="og:title" content="Today's choice">
   <meta property="og:description" content="오늘의 초이스에서 재미있는 심리테스트를 만나보세요.">
   <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
-  <script src="/test-catalog.js"></script>
-  <script src="/analytics.js"></script>
-  <script src="/legacy-redirect.js" defer></script>
-  <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="/test.css">
+  <script src="/data/content/test-catalog.js"></script>
+  <script src="/assets/js/analytics.js"></script>
+  <script src="/assets/js/legacy-redirect.js" defer></script>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/test.css">
 </head>
 <body class="test-page">
   <main>
@@ -500,7 +500,7 @@
 </html>
 ```
 
-## style.css
+## assets/css/style.css
 
 ```css
 :root{--pink:#ff5c7a;--pink-light:#fff1f4;--text:#111;--muted:#6b6b6b;--border:#eee;--width:1360px}
@@ -626,7 +626,7 @@ body:has(dialog[open]){overflow:hidden}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
 ```
 
-## test.css
+## assets/css/test.css
 
 ```css
 .test-page{display:flex;flex-direction:column;min-height:100vh}
@@ -686,7 +686,7 @@ body:has(dialog[open]){overflow:hidden}
 @media(max-width:640px){.test-result[data-card="true"]{padding:28px 20px}.result-card[data-styled="true"]::before{margin-bottom:22px}.result-card[data-styled="true"] .result-title{font-size:25px;margin-bottom:24px}.result-card[data-styled="true"] .result-score{font-size:48px}.result-card[data-styled="true"] .result-description{padding:20px 18px;font-size:15px;line-height:1.9}.test-result[data-card="true"] .result-actions{grid-template-columns:1fr 1fr;gap:10px}.test-result[data-card="true"] .secondary-button{padding:12px 8px;font-size:14px}}
 ```
 
-## analytics.js
+## assets/js/analytics.js
 
 ```javascript
 "use strict";
@@ -727,12 +727,12 @@ function trackTestEvent(eventName, data, extra = {}) {
 }
 ```
 
-## test-catalog.js
+## data/content/test-catalog.js
 
 ```javascript
 "use strict";
 
-// Add metadata here and a matching <slug>-data.js module to register a test.
+// Add metadata here and a matching data/tests/<slug>-data.js module to register a test.
 const TEST_CATALOG = [
   {
     "id": 50,
@@ -1070,7 +1070,7 @@ const TEST_CATALOG = [
 ];
 ```
 
-## seo-descriptions.js
+## data/content/seo-descriptions.js
 
 ```javascript
 "use strict";
@@ -1117,7 +1117,7 @@ const TEST_SEO_DESCRIPTIONS = {
 };
 ```
 
-## test-seo.js
+## assets/js/test-seo.js
 
 ```javascript
 "use strict";
@@ -1177,7 +1177,7 @@ const TEST_SEO_DESCRIPTIONS = {
 })();
 ```
 
-## test-loader.js
+## assets/js/test-loader.js
 
 ```javascript
 const root = document.querySelector("[data-test-runner]");
@@ -1188,7 +1188,7 @@ async function loadTest() {
   try {
     if (!selectedTest) throw new Error("찾는 테스트가 없어요. 전체 테스트에서 다시 선택해 주세요.");
     // Only import paths from the registered catalog, never a user-supplied path.
-    const { default: data } = await import(`./${selectedTest.slug}-data.js`);
+    const { default: data } = await import(`../../data/tests/${selectedTest.slug}-data.js`);
     if (data.id !== selectedTest.id || !data.questions?.length || !data.results?.length) {
       throw new Error("테스트 정보를 확인할 수 없어요. 잠시 후 다시 시도해 주세요.");
     }
@@ -1210,7 +1210,7 @@ async function loadTest() {
 loadTest();
 ```
 
-## test-runner.js
+## assets/js/test-runner.js
 
 ```javascript
 "use strict";
@@ -1358,7 +1358,7 @@ function createTestRunner(root, data) {
 }
 ```
 
-## legacy-redirect.js
+## assets/js/legacy-redirect.js
 
 ```javascript
 "use strict";
@@ -1376,7 +1376,7 @@ if (legacyTest) {
 }
 ```
 
-## script.js
+## assets/js/script.js
 
 ```javascript
 "use strict";
@@ -1716,7 +1716,7 @@ if ("IntersectionObserver" in window) {
 document.querySelectorAll("svg.icon").forEach((icon) => icon.setAttribute("aria-hidden", "true"));
 ```
 
-## affection-data.js
+## data/tests/affection-data.js
 
 ```javascript
 "use strict";
@@ -1801,7 +1801,7 @@ const testData = {
 export default testData;
 ```
 
-## animal-personality-data.js
+## data/tests/animal-personality-data.js
 
 ```javascript
 "use strict";
@@ -1921,7 +1921,7 @@ const testData = {
 export default testData;
 ```
 
-## breakup-data.js
+## data/tests/breakup-data.js
 
 ```javascript
 "use strict";
@@ -2023,7 +2023,7 @@ const testData = {
 export default testData;
 ```
 
-## compatible-partner-data.js
+## data/tests/compatible-partner-data.js
 
 ```javascript
 "use strict";
@@ -2181,7 +2181,7 @@ const testData = {
 export default testData;
 ```
 
-## cutoff-data.js
+## data/tests/cutoff-data.js
 
 ```javascript
 "use strict";
@@ -2266,7 +2266,7 @@ const testData = {
 export default testData;
 ```
 
-## difficult-people-data.js
+## data/tests/difficult-people-data.js
 
 ```javascript
 "use strict";
@@ -2351,7 +2351,7 @@ const testData = {
 export default testData;
 ```
 
-## falling-in-love-data.js
+## data/tests/falling-in-love-data.js
 
 ```javascript
 "use strict";
@@ -2457,7 +2457,7 @@ const testData = {
 export default testData;
 ```
 
-## friend-boundaries-data.js
+## data/tests/friend-boundaries-data.js
 
 ```javascript
 "use strict";
@@ -2542,7 +2542,7 @@ const testData = {
 export default testData;
 ```
 
-## friend-dependence-data.js
+## data/tests/friend-dependence-data.js
 
 ```javascript
 "use strict";
@@ -2627,7 +2627,7 @@ const testData = {
 export default testData;
 ```
 
-## friend-romance-distance-data.js
+## data/tests/friend-romance-distance-data.js
 
 ```javascript
 "use strict";
@@ -2833,7 +2833,7 @@ const testData = {
 export default testData;
 ```
 
-## game-character-data.js
+## data/tests/game-character-data.js
 
 ```javascript
 "use strict";
@@ -2929,7 +2929,7 @@ const testData = {
 export default testData;
 ```
 
-## hidden-romance-data.js
+## data/tests/hidden-romance-data.js
 
 ```javascript
 "use strict";
@@ -3035,7 +3035,7 @@ const testData = {
 export default testData;
 ```
 
-## hidden-strength-data.js
+## data/tests/hidden-strength-data.js
 
 ```javascript
 "use strict";
@@ -3147,7 +3147,7 @@ const testData = {
 export default testData;
 ```
 
-## jealousy-data.js
+## data/tests/jealousy-data.js
 
 ```javascript
 "use strict";
@@ -3232,7 +3232,7 @@ const testData = {
 export default testData;
 ```
 
-## long-term-love-data.js
+## data/tests/long-term-love-data.js
 
 ```javascript
 "use strict";
@@ -3425,7 +3425,7 @@ const testData = {
 export default testData;
 ```
 
-## lying-data.js
+## data/tests/lying-data.js
 
 ```javascript
 "use strict";
@@ -3510,7 +3510,7 @@ const testData = {
 export default testData;
 ```
 
-## marriage-values-data.js
+## data/tests/marriage-values-data.js
 
 ```javascript
 "use strict";
@@ -3595,7 +3595,7 @@ const testData = {
 export default testData;
 ```
 
-## married-partner-data.js
+## data/tests/married-partner-data.js
 
 ```javascript
 "use strict";
@@ -3701,7 +3701,7 @@ const testData = {
 export default testData;
 ```
 
-## mental-recovery-data.js
+## data/tests/mental-recovery-data.js
 
 ```javascript
 "use strict";
@@ -3883,7 +3883,7 @@ const testData = {
 export default testData;
 ```
 
-## mental-strength-data.js
+## data/tests/mental-strength-data.js
 
 ```javascript
 "use strict";
@@ -3968,7 +3968,7 @@ const testData = {
 export default testData;
 ```
 
-## million-followers-data.js
+## data/tests/million-followers-data.js
 
 ```javascript
 "use strict";
@@ -4054,7 +4054,7 @@ const testData = {
 export default testData;
 ```
 
-## mood-swings-data.js
+## data/tests/mood-swings-data.js
 
 ```javascript
 "use strict";
@@ -4169,7 +4169,7 @@ const testData = {
 export default testData;
 ```
 
-## overseas-move-data.js
+## data/tests/overseas-move-data.js
 
 ```javascript
 "use strict";
@@ -4295,7 +4295,7 @@ const testData = {
 export default testData;
 ```
 
-## relationship-control-data.js
+## data/tests/relationship-control-data.js
 
 ```javascript
 "use strict";
@@ -4380,7 +4380,7 @@ const testData = {
 export default testData;
 ```
 
-## relationship-energy-data.js
+## data/tests/relationship-energy-data.js
 
 ```javascript
 "use strict";
@@ -4465,7 +4465,7 @@ const testData = {
 export default testData;
 ```
 
-## relationship-fatigue-data.js
+## data/tests/relationship-fatigue-data.js
 
 ```javascript
 "use strict";
@@ -4573,7 +4573,7 @@ const testData = {
 export default testData;
 ```
 
-## romance-behavior-data.js
+## data/tests/romance-behavior-data.js
 
 ```javascript
 "use strict";
@@ -4693,7 +4693,7 @@ const testData = {
 export default testData;
 ```
 
-## romance-priorities-data.js
+## data/tests/romance-priorities-data.js
 
 ```javascript
 "use strict";
@@ -4899,7 +4899,7 @@ const testData = {
 export default testData;
 ```
 
-## secret-data.js
+## data/tests/secret-data.js
 
 ```javascript
 "use strict";
@@ -4984,7 +4984,7 @@ const testData = {
 export default testData;
 ```
 
-## sociability-data.js
+## data/tests/sociability-data.js
 
 ```javascript
 "use strict";
@@ -5167,7 +5167,7 @@ const testData = {
 export default testData;
 ```
 
-## social-adaptation-data.js
+## data/tests/social-adaptation-data.js
 
 ```javascript
 "use strict";
@@ -5252,7 +5252,7 @@ const testData = {
 export default testData;
 ```
 
-## social-awareness-data.js
+## data/tests/social-awareness-data.js
 
 ```javascript
 "use strict";
@@ -5337,7 +5337,7 @@ const testData = {
 export default testData;
 ```
 
-## social-mask-data.js
+## data/tests/social-mask-data.js
 
 ```javascript
 "use strict";
@@ -5422,7 +5422,7 @@ const testData = {
 export default testData;
 ```
 
-## stress-change-data.js
+## data/tests/stress-change-data.js
 
 ```javascript
 "use strict";
@@ -5542,7 +5542,7 @@ const testData = {
 export default testData;
 ```
 
-## variety-character-data.js
+## data/tests/variety-character-data.js
 
 ```javascript
 "use strict";
@@ -5748,7 +5748,7 @@ const testData = {
 export default testData;
 ```
 
-## workplace-image-data.js
+## data/tests/workplace-image-data.js
 
 ```javascript
 "use strict";
@@ -5954,7 +5954,7 @@ const testData = {
 export default testData;
 ```
 
-## year-off-data.js
+## data/tests/year-off-data.js
 
 ```javascript
 "use strict";

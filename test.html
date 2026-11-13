@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="naver-site-verification" content="443c2f6de5e3ef34f37b5ca0766012b74c51bf0e" />
-  <script src="test-catalog.js"></script>
-  <script src="analytics.js"></script>
+  <script src="data/content/test-catalog.js"></script>
+  <script src="assets/js/analytics.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -27,17 +27,18 @@
   <meta name="description" content="오늘의 초이스에서 재미있는 심리테스트를 만나보세요.">
   <meta name="robots" content="index, follow">
   <title>오늘의 초이스 | 심리테스트</title>
-  <script src="seo-descriptions.js"></script>
-  <script src="test-introductions.js"></script>
-  <script src="test-focus.js"></script>
-  <script src="test-seo.js"></script>
+  <script src="data/content/seo-descriptions.js"></script>
+  <script src="data/content/test-introductions.js"></script>
+  <script src="data/content/test-focus.js"></script>
+  <script src="data/content/test-guides.js"></script>
+  <script src="assets/js/test-seo.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="test.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/test.css">
   <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.8.2/kakao.min.js" integrity="sha384-zt/G7/KfaRQ9dT/QIkS0ujMtzouJqzuSJcXVQu50x0rl/+mD1dc70AeOejVbMD9E" crossorigin="anonymous" defer></script>
-  <script src="script.js" defer></script>
-  <script src="test-runner.js" defer></script>
-  <script type="module" src="test-loader.js"></script>
+  <script src="assets/js/script.js" defer></script>
+  <script src="assets/js/test-runner.js" defer></script>
+  <script type="module" src="assets/js/test-loader.js"></script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2401413706072374"
        crossorigin="anonymous"></script>
 </head>
@@ -99,6 +100,7 @@
         <h2 class="result-title" id="result-title" data-role="result-title" data-focus tabindex="-1"></h2>
         <div class="result-description" data-role="result-description"></div>
       </div>
+      <section class="result-guide" data-role="result-guide" aria-label="테스트 주제 더 읽기" hidden></section>
       <section class="result-note" aria-labelledby="result-note-title">
         <h3 id="result-note-title">결과 해석 시 참고할 점</h3>
         <p>이 결과는 지금 고른 답을 바탕으로 살펴본 성향입니다. 상황이나 관계, 시기에 따라 다른 모습이 나타날 수 있으며 전문적인 심리검사나 진단 결과가 아닙니다.</p>

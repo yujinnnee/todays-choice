@@ -1,6 +1,6 @@
 "use strict";
 
-// Add metadata here and a matching <slug>-data.js module to register a test.
+// Add metadata here and a matching data/tests/<slug>-data.js module to register a test.
 const TEST_CATALOG = [
   {
     "id": 63,

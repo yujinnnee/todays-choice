@@ -5,7 +5,7 @@ const path = require("node:path");
 const vm = require("node:vm");
 const root = path.resolve(__dirname, "..");
 const context = vm.createContext({});
-vm.runInContext(fs.readFileSync(path.join(root, "test-catalog.js"), "utf8") + "\nthis.catalog = TEST_CATALOG;", context);
+vm.runInContext(fs.readFileSync(path.join(root, "data/content/test-catalog.js"), "utf8") + "\nthis.catalog = TEST_CATALOG;", context);
 const catalog = context.catalog;
 const escape = value => String(value).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const categories = { "연애/결혼": "love", "연애·결혼": "love", "성격": "personality", "재미": "fun", "친구·인간관계·사회생활": "relationship" };
@@ -15,7 +15,7 @@ const cards = catalog.map(test => {
   const category = categories[test.category];
   if (!category || seen.has(test.slug)) throw Error(`Invalid catalog entry: ${test.slug}`);
   seen.add(test.slug);
-  if (!fs.existsSync(path.join(root, `${test.slug}-data.js`))) throw Error(`Missing test data: ${test.slug}`);
+  if (!fs.existsSync(path.join(root, `data/tests/${test.slug}-data.js`))) throw Error(`Missing test data: ${test.slug}`);
   if (test.url !== `test.html?id=${test.slug}`) throw Error(`Unexpected test URL: ${test.url}`);
   return `        <a class="test-card" href="${escape(test.url)}" data-test="${test.id}" data-category="${category}">
           <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#icon-${icons[category]}"/></svg></span>

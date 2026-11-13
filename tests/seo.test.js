@@ -2,10 +2,10 @@ const assert = require("node:assert/strict");
 const fs = require("node:fs");
 const vm = require("node:vm");
 const catalogContext = vm.createContext({});
-vm.runInContext(fs.readFileSync("test-catalog.js", "utf8") + "\nthis.catalog = TEST_CATALOG;", catalogContext);
+vm.runInContext(fs.readFileSync("data/content/test-catalog.js", "utf8") + "\nthis.catalog = TEST_CATALOG;", catalogContext);
 const catalog = catalogContext.catalog;
-const source = fs.readFileSync("test-seo.js", "utf8");
-const descriptions = fs.readFileSync("seo-descriptions.js", "utf8");
+const source = fs.readFileSync("assets/js/test-seo.js", "utf8");
+const descriptions = fs.readFileSync("data/content/seo-descriptions.js", "utf8");
 
 function render(search) {
   const elements = [];
@@ -92,17 +92,17 @@ assert.equal(fs.readFileSync("robots.txt", "utf8").replace(/\r\n/g, "\n"), "User
 const detail = fs.readFileSync("test.html", "utf8");
 assert.equal((detail.match(/<h1\b/g) || []).length, 1);
 assert.ok(!/<meta name="robots" content="noindex/.test(detail));
-assert.ok(!/rel="canonical"/.test(detail)); // Query-specific canonical is added once by test-seo.js.
+assert.ok(!/rel="canonical"/.test(detail)); // Query-specific canonical is added once by assets/js/test-seo.js.
 assert.ok(fs.readFileSync("404.html", "utf8").includes('<meta name="robots" content="noindex, follow">'));
 const introductionsContext = vm.createContext({});
-vm.runInContext(fs.readFileSync("test-introductions.js", "utf8") + "\nthis.introductions = TEST_INTRODUCTIONS;", introductionsContext);
+vm.runInContext(fs.readFileSync("data/content/test-introductions.js", "utf8") + "\nthis.introductions = TEST_INTRODUCTIONS;", introductionsContext);
 assert.equal(Object.keys(introductionsContext.introductions).sort().join(","), catalog.map(test => test.slug).sort().join(","));
 for (const paragraphs of Object.values(introductionsContext.introductions)) {
   assert.equal(paragraphs.length, 2);
   assert.ok(paragraphs.every(paragraph => paragraph.length >= 60));
 }
 const focusContext = vm.createContext({});
-vm.runInContext(fs.readFileSync("test-focus.js", "utf8") + "\nthis.focus = TEST_FOCUS;", focusContext);
+vm.runInContext(fs.readFileSync("data/content/test-focus.js", "utf8") + "\nthis.focus = TEST_FOCUS;", focusContext);
 assert.equal(Object.keys(focusContext.focus).sort().join(","), catalog.map(test => test.slug).sort().join(","));
 assert.equal(new Set(Object.values(focusContext.focus)).size, catalog.length);
 for (const text of Object.values(focusContext.focus)) assert.ok(text.length >= 35);

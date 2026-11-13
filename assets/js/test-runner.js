@@ -21,6 +21,22 @@ function createTestRunner(root, data) {
   find("title").textContent = data.title;
   find("description").textContent = data.description;
   const catalogEntry = typeof TEST_CATALOG !== "undefined" ? TEST_CATALOG.find((test) => test.id === data.id) : null;
+  // Editorial content is independent of the answers and the result calculation.
+  const guide = find("result-guide");
+  const guideItems = typeof TEST_GUIDES !== "undefined" && catalogEntry ? TEST_GUIDES[catalogEntry.slug] : null;
+  if (guide && guideItems) {
+    guide.replaceChildren(...guideItems.map(([title, text]) => {
+      const item = document.createElement("div");
+      item.className = "result-guide-item";
+      const heading = document.createElement("h2");
+      heading.textContent = title;
+      const paragraph = document.createElement("p");
+      paragraph.textContent = text;
+      item.append(heading, paragraph);
+      return item;
+    }));
+    guide.hidden = false;
+  }
   const introduction = find("introduction");
   const introductionParagraphs = typeof TEST_INTRODUCTIONS !== "undefined" && catalogEntry ? TEST_INTRODUCTIONS[catalogEntry.slug] : null;
   if (introduction && introductionParagraphs) {
@@ -51,7 +67,9 @@ function createTestRunner(root, data) {
   if (typeof TEST_CATALOG !== "undefined") configure("related-links", (element) => {
     const sameCategory = TEST_CATALOG.filter((test) => test.id !== data.id && test.category.replace("/", "·") === data.category.replace("/", "·"));
     const others = TEST_CATALOG.filter((test) => test.id !== data.id && !sameCategory.includes(test));
-    const recommendations = [...sameCategory, ...others].slice(0, 3);
+    const curatedSlugs = typeof TEST_RELATED !== "undefined" && catalogEntry ? TEST_RELATED[catalogEntry.slug] || [] : [];
+    const curated = curatedSlugs.map((slug) => TEST_CATALOG.find((test) => test.slug === slug)).filter((test) => test && test.id !== data.id);
+    const recommendations = [...new Set([...curated, ...sameCategory, ...others])].slice(0, 3);
     element.replaceChildren(...recommendations.map((test) => {
       const link = document.createElement("a");
       link.href = test.url;

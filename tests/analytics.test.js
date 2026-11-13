@@ -12,7 +12,7 @@ function node() {
   };
 }
 
-const analytics = fs.readFileSync("analytics.js", "utf8");
+const analytics = fs.readFileSync("assets/js/analytics.js", "utf8");
 for (const realId of [false, true]) {
   const head = node();
   const context = vm.createContext({ window: {}, document: { head, createElement: node }, URLSearchParams, location: { search: "", pathname: "/index.html" } });
@@ -30,8 +30,8 @@ for (const realId of [false, true]) {
   assert.doesNotThrow(() => vm.runInContext('trackTestEvent("test_start", {id: 1, title: "Test", category: "Fun"})', context));
 }
 
-const runner = fs.readFileSync("test-runner.js", "utf8");
-const dataFiles = fs.readdirSync(".").filter(file => file.endsWith("-data.js"));
+const runner = fs.readFileSync("assets/js/test-runner.js", "utf8");
+const dataFiles = fs.readdirSync("data/tests").filter(file => file.endsWith("-data.js"));
 for (const file of dataFiles) {
   const roles = new Map();
   const root = {
@@ -47,7 +47,7 @@ for (const file of dataFiles) {
     document: { querySelector: () => root, createElement: node },
     trackTestEvent: (name, data, extra) => events.push({ name, data, extra }),
   });
-  vm.runInContext(fs.readFileSync(file, "utf8").replace("export default testData;", "") + '\nthis.data = testData;', context);
+  vm.runInContext(fs.readFileSync(`data/tests/${file}`, "utf8").replace("export default testData;", "") + '\nthis.data = testData;', context);
   vm.runInContext(runner + '\ncreateTestRunner(document.querySelector("[data-test-runner]"), testData);', context);
   const click = name => roles.get(name).handlers.click();
   const count = name => events.filter(event => event.name === name).length;
@@ -778,7 +778,7 @@ const shareContext = vm.createContext({
   trackTestEvent: (...args) => shareEvents.push(args),
   document: { querySelector: selector => selector === "#kakao-share-button" ? shareButton : node() },
 });
-vm.runInContext(fs.readFileSync("script.js", "utf8").split("// The complete category list")[0], shareContext);
+vm.runInContext(fs.readFileSync("assets/js/script.js", "utf8").split("// The complete category list")[0], shareContext);
 shareButton.handlers.click();
 assert.equal(shares, 1);
 assert.equal(shareEvents[0][0], "test_share");
@@ -788,7 +788,7 @@ assert.equal(shareEvents[0][2].method, "kakao");
 const pages = ["index.html", "test.html", "404.html"];
 for (const file of pages) {
   const html = fs.readFileSync(file, "utf8");
-  assert.equal((html.match(/src="\/?analytics.js"/g) || []).length, 1);
-  assert.ok(html.search(/src="\/?analytics.js"/) < html.indexOf("</head>"));
+  assert.equal((html.match(/src="\/?assets\/js\/analytics\.js"/g) || []).length, 1);
+  assert.ok(html.search(/src="\/?assets\/js\/analytics\.js"/) < html.indexOf("</head>"));
 }
 console.log(`PASS: GA4 configuration, ${pages.length} pages, ${dataFiles.length} test flows, restart and share events`);

@@ -6,7 +6,7 @@ async function loadTest() {
   try {
     if (!selectedTest) throw new Error("찾는 테스트가 없어요. 전체 테스트에서 다시 선택해 주세요.");
     // Only import paths from the registered catalog, never a user-supplied path.
-    const { default: data } = await import(`./${selectedTest.slug}-data.js`);
+    const { default: data } = await import(`../../data/tests/${selectedTest.slug}-data.js`);
     if (data.id !== selectedTest.id || !data.questions?.length || !data.results?.length) {
       throw new Error("테스트 정보를 확인할 수 없어요. 잠시 후 다시 시도해 주세요.");
     }

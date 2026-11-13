@@ -3,7 +3,7 @@ const fs = require("node:fs");
 const vm = require("node:vm");
 
 const catalogContext = vm.createContext({});
-vm.runInContext(fs.readFileSync("test-catalog.js", "utf8") + "\nthis.catalog = TEST_CATALOG;", catalogContext);
+vm.runInContext(fs.readFileSync("data/content/test-catalog.js", "utf8") + "\nthis.catalog = TEST_CATALOG;", catalogContext);
 const catalog = catalogContext.catalog;
 assert.equal(new Set(catalog.map(test => test.id)).size, catalog.length);
 assert.equal(new Set(catalog.map(test => test.slug)).size, catalog.length);
@@ -25,13 +25,13 @@ async function checkLoad(id, broken = false) {
     importTest: async path => {
       imports++;
       if (broken) throw new Error("Network failure");
-      const source = fs.readFileSync(path, "utf8").replace("export default testData;", "");
+      const source = fs.readFileSync(require("node:path").resolve("assets/js", path), "utf8").replace("export default testData;", "");
       const dataContext = vm.createContext({});
       vm.runInContext(source + "\nthis.data = testData;", dataContext);
       return { default: dataContext.data };
     },
   });
-  const source = fs.readFileSync("test-loader.js", "utf8").replace("await import(", "await importTest(");
+  const source = fs.readFileSync("assets/js/test-loader.js", "utf8").replace("await import(", "await importTest(");
   await vm.runInContext(source, context);
   return { selected, imports, context, nodes };
 }
@@ -56,7 +56,7 @@ async function checkLoad(id, broken = false) {
         replace: url => { redirected = new URL(url); },
       },
     });
-    vm.runInContext(fs.readFileSync("legacy-redirect.js", "utf8"), legacyContext);
+    vm.runInContext(fs.readFileSync("assets/js/legacy-redirect.js", "utf8"), legacyContext);
     assert.equal(redirected.searchParams.get("id"), test.slug);
     assert.equal(redirected.searchParams.get("utm_source"), "instagram");
     assert.equal(redirected.hash, "#main");
@@ -66,7 +66,7 @@ async function checkLoad(id, broken = false) {
       location: { pathname: "/test.html", search: `?id=${test.slug}` },
       document: { createElement: () => ({}), head: { append: script => scripts.push(script) } },
     });
-    vm.runInContext(fs.readFileSync("analytics.js", "utf8"), analyticsContext);
+    vm.runInContext(fs.readFileSync("assets/js/analytics.js", "utf8"), analyticsContext);
     const configs = analyticsContext.window.dataLayer.filter(event => event[0] === "config");
     assert.equal(configs.length, 1);
     assert.equal(configs[0][2].page_title, `${test.title} | Today's Choice`);
@@ -80,7 +80,7 @@ async function checkLoad(id, broken = false) {
   assert.equal(failed.selected, undefined);
   assert.equal(failed.nodes.get('[data-role="load-error"]').hidden, false);
   const page = fs.readFileSync("test.html", "utf8");
-  assert.ok(page.includes('type="module" src="test-loader.js"'));
+  assert.ok(page.includes('type="module" src="assets/js/test-loader.js"'));
   assert.equal((page.match(/googlesyndication.com/g) || []).length, 1);
   assert.ok(page.includes("assets/share-cover-v3.png"));
   console.log(`PASS: ${catalog.length} slug/numeric routes, legacy redirects, page titles, unknown IDs and load failures`);
