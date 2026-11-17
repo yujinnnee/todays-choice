@@ -4,6 +4,7 @@ const vm = require("node:vm");
 const catalogContext = vm.createContext({});
 vm.runInContext(fs.readFileSync("data/content/test-catalog.js", "utf8") + "\nthis.catalog = TEST_CATALOG;", catalogContext);
 const catalog = catalogContext.catalog;
+vm.runInContext(fs.readFileSync("data/content/thinking-tests.js", "utf8") + "\nthis.thinking = THINKING_TESTS;", catalogContext);
 const source = fs.readFileSync("assets/js/test-seo.js", "utf8");
 const descriptions = fs.readFileSync("data/content/seo-descriptions.js", "utf8");
 
@@ -36,7 +37,7 @@ for (const test of catalog) {
     const { context, document, elements } = render(`?id=${id}&utm_source=instagram#result`);
     const canonical = `https://todayschoice.kr/${test.url}`;
     const description = document.querySelector('meta[name="description"]').attributes.content;
-    assert.equal(document.title, `${test.title} | 오늘의 초이스 심리테스트`);
+    assert.equal(document.title, `${test.title} | 오늘의 초이스 심리 테스트`);
     assert.ok(description.startsWith(test.title + " "));
     assert.ok(description.length > test.title.length + 25);
     assert.equal(document.querySelector('meta[name="robots"]').attributes.content, "index, follow");
@@ -71,13 +72,13 @@ assert.equal((main.match(/<h1\b/g) || []).length, 1);
 for (const name of ["description", "keywords", "robots", "twitter:card", "twitter:title", "twitter:description"]) {
   assert.equal((main.match(new RegExp(`<meta name="${name}"`, "g")) || []).length, 1);
 }
-assert.ok(main.includes('<title>오늘의 초이스 | 무료 심리테스트, 연애·성격 테스트</title>'));
+assert.ok(main.includes('<title>오늘의 초이스 | 심리 테스트와 사고력 테스트</title>'));
 assert.equal((main.match(/rel="canonical"/g) || []).length, 1);
 assert.ok(main.includes('rel="canonical" href="https://todayschoice.kr/"'));
 const siteSchema = JSON.parse(main.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
 assert.equal(siteSchema["@type"], "WebSite");
 assert.equal(siteSchema.alternateName, "Today's Choice");
-const grid = main.match(/<div class="card-grid" id="category-grid">([\s\S]*?)<\/div>(?=\s*<p class="category-empty")/)[1];
+const grid = fs.readFileSync("psychology.html", "utf8").match(/<div class="card-grid" id="category-grid">([\s\S]*?)<\/div>(?=\s*<p class="category-empty")/)[1];
 assert.equal((grid.match(/<a class="test-card"/g) || []).length, catalog.length);
 for (const test of catalog) {
   assert.ok(grid.includes(`href="${test.url}"`));
@@ -86,7 +87,7 @@ for (const test of catalog) {
 const sitemap = fs.readFileSync("sitemap.xml", "utf8");
 const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]);
 const informationPages = ["about.html", "privacy.html", "terms.html", "contact.html", "disclaimer.html"];
-assert.deepEqual(urls, ["https://todayschoice.kr/", ...informationPages.map(page => `https://todayschoice.kr/${page}`), ...catalog.map(test => `https://todayschoice.kr/${test.url}`)]);
+assert.deepEqual(urls, ["https://todayschoice.kr/", ...["psychology.html", "thinking.html"].map(page => `https://todayschoice.kr/${page}`), ...informationPages.map(page => `https://todayschoice.kr/${page}`), ...catalogContext.thinking.map(test => `https://todayschoice.kr/thinking-detail.html?id=${encodeURIComponent(test.id)}`), ...catalog.map(test => `https://todayschoice.kr/${test.url}`)]);
 assert.ok(!urls.some(url => /404|naver|-test\.html|localhost/.test(url)));
 assert.equal(fs.readFileSync("robots.txt", "utf8").replace(/\r\n/g, "\n"), "User-agent: *\nAllow: /\n\nSitemap: https://todayschoice.kr/sitemap.xml\n");
 const detail = fs.readFileSync("test.html", "utf8");

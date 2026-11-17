@@ -25,7 +25,7 @@
 
   const url = new URL(test.url, "https://todayschoice.kr/").href;
   const description = `${test.title} ${TEST_SEO_DESCRIPTIONS[test.slug] || test.description}`;
-  document.title = `${test.title} | 오늘의 초이스 심리테스트`;
+  document.title = `${test.title} | 오늘의 초이스 심리 테스트`;
   meta("name", "description", description);
   meta("name", "robots", "index, follow");
   meta("property", "og:title", test.title);

@@ -11,7 +11,7 @@ async function loadTest() {
       throw new Error("테스트 정보를 확인할 수 없어요. 잠시 후 다시 시도해 주세요.");
     }
     window.testData = data;
-    document.title = `${data.title} | 오늘의 초이스 심리테스트`;
+    document.title = `${data.title} | 오늘의 초이스 심리 테스트`;
     createTestRunner(root, data);
     root.querySelector('[data-role="loading"]').hidden = true;
   } catch (error) {

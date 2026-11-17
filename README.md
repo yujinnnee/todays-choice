@@ -25,6 +25,7 @@ sitemap.xml      기존 페이지 목록
 저장소 루트에서 검증합니다.
 
 ```text
+node tests/thinking.test.js
 node tests/content.test.js
 node tests/seo.test.js
 node tests/routing.test.js
@@ -38,3 +39,7 @@ node tests/browser-smoke.js
 - [콘텐츠 관리와 보강 기록](docs/content-quality.md)
 - [SEO 설정](docs/seo-setup.md)
 - [GA4 설정](docs/analytics-setup.md)
+
+- [사이트 개편 및 사고력 테스트 운영](docs/site-restructure.md)
+
+- [사고력 테스트 30문제와 답변보기 구현](docs/thinking-tests.md)

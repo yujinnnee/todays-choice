@@ -42,7 +42,6 @@
 .test-disclaimer{margin:28px 0 0;color:var(--muted);font-size:12px;line-height:1.7}
 .kakao-share-button{width:100%;margin-top:12px}
 .kakao-share-status{margin:12px 0 0;color:var(--muted);font-size:14px;line-height:1.7}
-.related-tests{margin-top:26px}.related-heading{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:14px}.related-heading h2{margin:0;font-size:20px}.related-heading>a{color:var(--muted);font-size:13px}.related-heading>a:hover{color:var(--pink)}.related-test-links{display:grid;gap:8px}.related-test-links a{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 18px;border:1px solid var(--border);border-radius:14px;background:#fff;font-size:14px;font-weight:600;line-height:1.55}.related-test-links a::after{content:"→";color:var(--pink)}.related-test-links a:hover{border-color:#ffd1dc;background:#fffafb}
 @media(max-width:640px){.test-page main{margin-top:32px}.test-panel{padding:28px 22px}.test-category{margin-bottom:20px}.test-description,.result-description{font-size:16px}.test-focus{padding:18px}.question-title{font-size:22px}.test-progress{margin-bottom:28px}.answer-button{padding:16px;min-height:62px}.result-title{font-size:24px}.result-score{font-size:64px}.result-actions{grid-template-columns:1fr}}
 
 .result-description{white-space:pre-line}

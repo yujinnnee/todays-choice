@@ -1,14 +1,14 @@
 # 오늘의 초이스 SEO 관리
 
-메인 제목: 오늘의 초이스 | 무료 심리테스트, 연애·성격 테스트
+메인 제목: 오늘의 초이스 | 무료 심리 테스트, 연애·성격 테스트
 
-메인 설명: 연애, 성격, 인간관계, 재미 테스트까지 가볍게 즐길 수 있는 무료 심리테스트 사이트 오늘의 초이스입니다.
+메인 설명: 연애, 성격, 인간관계, 재미 테스트까지 가볍게 즐길 수 있는 무료 심리 테스트 사이트 오늘의 초이스입니다.
 
 ## 적용 방식
 
 - `index.html`: 고유 title/description, 요청한 keywords, robots, canonical, OG, Twitter Card, WebSite JSON-LD. 기존 공유 이미지를 유지합니다.
 - 메인 HTML에 등록된 테스트의 제목·부제목·실제 링크를 포함합니다. JavaScript를 실행하지 않아도 이 목록을 읽을 수 있습니다. 실행 후의 필터·검색·랜덤 추천·페이지 이동은 기존 동작을 유지합니다.
-- `test.html?id=<slug>`: `assets/js/test-seo.js`가 목록과 `data/content/seo-descriptions.js`를 읽어 테스트별 title/description/canonical/OG/Twitter/WebPage JSON-LD를 생성합니다. title 형식은 `테스트 제목 | 오늘의 초이스 심리테스트`입니다.
+- `test.html?id=<slug>`: `assets/js/test-seo.js`가 목록과 `data/content/seo-descriptions.js`를 읽어 테스트별 title/description/canonical/OG/Twitter/WebPage JSON-LD를 생성합니다. title 형식은 `테스트 제목 | 오늘의 초이스 심리 테스트`입니다.
 - 숫자 ID, UTM, 해시가 붙어도 canonical과 og:url은 등록된 slug 주소를 사용합니다. 잘못된 ID나 로드 실패는 noindex로 처리하며 정상 테스트에는 noindex를 넣지 않습니다.
 - `404.html`은 고유 안내 제목과 설명, noindex를 사용합니다. 인증용 네이버 HTML은 원본을 유지하며 sitemap에 넣지 않습니다.
 - sitemap은 메인 1개와 테스트 37개, 총 38개입니다. robots.txt는 기존 내용이 정상이라 변경하지 않았습니다.

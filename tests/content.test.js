@@ -62,13 +62,6 @@ for (let i = 0; i < passages.length; i++) {
   }
 }
 assert.ok(closest.similarity < 0.45, `Near duplicate: ${JSON.stringify(closest)}`);
-const home = fs.readFileSync("index.html", "utf8");
-const curation = home.match(/<section class="container test-curation"[\s\S]*?(?=<section class="container test-section category-section")/)[0];
-assert.equal((curation.match(/class="curation-group"/g) || []).length, 3);
-const links = [...curation.matchAll(/<a href="([^"]+)">([^<]+)<\/a>/g)];
-assert.equal(links.length, 12);
-for (const [, href, title] of links) assert.ok(catalog.some(test => test.url === href && test.title === title));
-assert.equal(new Set(links.map(link => link[1])).size, 12);
 console.log(`PASS: ${catalog.length} guides, ${paragraphs.size} unique paragraphs, ${sentences.size} unique sentences, ${shortest}–${longest} characters per guide`);
-console.log(`PASS: ${catalog.length * 3} curated recommendations; 3 home groups, 12 existing links`);
+console.log(`PASS: ${catalog.length * 3} curated recommendations`);
 console.log(`Highest cross-test paragraph similarity (5-character Jaccard): ${(closest.similarity * 100).toFixed(1)}% (${closest.a}, ${closest.b})`);

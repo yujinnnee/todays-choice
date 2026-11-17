@@ -18,8 +18,8 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ko_KR">
   <meta property="og:site_name" content="오늘의 초이스">
-  <meta property="og:title" content="오늘의 초이스 | 무료 심리테스트">
-  <meta property="og:description" content="연애, 성격, 인간관계 등 다양한 심리테스트를 가볍게 즐겨보세요.">
+  <meta property="og:title" content="오늘의 초이스 | 무료 심리 테스트">
+  <meta property="og:description" content="연애, 성격, 인간관계 등 다양한 심리 테스트를 가볍게 즐겨보세요.">
   <meta property="og:url" content="https://todayschoice.kr/">
   <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
   <meta property="og:image:width" content="1731">
@@ -27,15 +27,15 @@
   <meta property="og:image:alt" content="Today's choice">
   <meta property="og:image:type" content="image/png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="오늘의 초이스 | 무료 심리테스트">
-  <meta name="twitter:description" content="연애, 성격, 인간관계 등 다양한 심리테스트를 가볍게 즐겨보세요.">
+  <meta name="twitter:title" content="오늘의 초이스 | 무료 심리 테스트">
+  <meta name="twitter:description" content="연애, 성격, 인간관계 등 다양한 심리 테스트를 가볍게 즐겨보세요.">
   <meta name="twitter:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
   <meta name="twitter:image:alt" content="Today's choice">
-  <meta name="description" content="연애, 성격, 인간관계, 재미 테스트까지 가볍게 즐길 수 있는 무료 심리테스트 사이트 오늘의 초이스입니다.">
-  <meta name="keywords" content="심리테스트, 무료 심리테스트, 연애 심리테스트, 성격 테스트, 인간관계 테스트, 재미있는 테스트, 오늘의 초이스">
+  <meta name="description" content="연애, 성격, 인간관계, 재미 테스트까지 가볍게 즐길 수 있는 무료 심리 테스트 사이트 오늘의 초이스입니다.">
+  <meta name="keywords" content="심리 테스트, 무료 심리 테스트, 연애 심리 테스트, 성격 테스트, 인간관계 테스트, 재미있는 테스트, 오늘의 초이스">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://todayschoice.kr/">
-  <title>오늘의 초이스 | 무료 심리테스트, 연애·성격 테스트</title>
+  <title>오늘의 초이스 | 무료 심리 테스트, 연애·성격 테스트</title>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -43,7 +43,7 @@
     "name": "오늘의 초이스",
     "alternateName": "Today's Choice",
     "url": "https://todayschoice.kr/",
-    "description": "연애, 성격, 인간관계 등 다양한 무료 심리테스트를 제공하는 사이트"
+    "description": "연애, 성격, 인간관계 등 다양한 무료 심리 테스트를 제공하는 사이트"
   }
   </script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
@@ -84,7 +84,7 @@
       <div class="container hero-inner">
         <div class="hero-copy">
           <h1 id="hero-title">오늘 당신의 <span>초이스</span>는?</h1>
-          <p>연애에서 느끼는 감정과 인간관계 속 내 모습, 평소 성격을 무료 심리테스트로 알아보세요.</p>
+          <p>연애에서 느끼는 감정과 인간관계 속 내 모습, 평소 성격을 무료 심리 테스트로 알아보세요.</p>
           <button class="primary-button" id="random-test-button" type="button">랜덤 테스트 시작하기 <svg class="icon"><use href="#icon-arrow"/></svg></button>
         </div>
       </div>
@@ -362,8 +362,8 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ko_KR">
   <meta property="og:site_name" content="오늘의 초이스">
-  <meta property="og:title" content="오늘의 초이스 | 심리테스트">
-  <meta property="og:description" content="오늘의 초이스에서 재미있는 심리테스트를 만나보세요.">
+  <meta property="og:title" content="오늘의 초이스 | 심리 테스트">
+  <meta property="og:description" content="오늘의 초이스에서 재미있는 심리 테스트를 만나보세요.">
   <meta property="og:url" content="https://todayschoice.kr/test.html">
   <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
   <meta property="og:image:width" content="1731">
@@ -371,13 +371,13 @@
   <meta property="og:image:alt" content="Today's choice">
   <meta property="og:image:type" content="image/png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="오늘의 초이스 | 심리테스트">
-  <meta name="twitter:description" content="오늘의 초이스에서 재미있는 심리테스트를 만나보세요.">
+  <meta name="twitter:title" content="오늘의 초이스 | 심리 테스트">
+  <meta name="twitter:description" content="오늘의 초이스에서 재미있는 심리 테스트를 만나보세요.">
   <meta name="twitter:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
   <meta name="twitter:image:alt" content="Today's choice">
-  <meta name="description" content="오늘의 초이스에서 재미있는 심리테스트를 만나보세요.">
+  <meta name="description" content="오늘의 초이스에서 재미있는 심리 테스트를 만나보세요.">
   <meta name="robots" content="index, follow">
-  <title>오늘의 초이스 | 심리테스트</title>
+  <title>오늘의 초이스 | 심리 테스트</title>
   <script src="data/content/seo-descriptions.js"></script>
   <script src="assets/js/test-seo.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
@@ -476,11 +476,11 @@
   <meta name="naver-site-verification" content="443c2f6de5e3ef34f37b5ca0766012b74c51bf0e" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>페이지를 찾을 수 없어요 | 오늘의 초이스</title>
-  <meta name="description" content="요청한 페이지를 찾을 수 없습니다. 오늘의 초이스에서 원하는 심리테스트를 찾아보세요.">
+  <meta name="description" content="요청한 페이지를 찾을 수 없습니다. 오늘의 초이스에서 원하는 심리 테스트를 찾아보세요.">
   <meta name="robots" content="noindex, follow">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <meta property="og:title" content="Today's choice">
-  <meta property="og:description" content="오늘의 초이스에서 재미있는 심리테스트를 만나보세요.">
+  <meta property="og:description" content="오늘의 초이스에서 재미있는 심리 테스트를 만나보세요.">
   <meta property="og:image" content="https://todayschoice.kr/assets/share-cover-v3.png">
   <script src="/data/content/test-catalog.js"></script>
   <script src="/assets/js/analytics.js"></script>
@@ -1077,10 +1077,10 @@ const TEST_CATALOG = [
 
 // Search descriptions describe the existing tests; they do not change quiz data.
 const TEST_SEO_DESCRIPTIONS = {
-  "romance-priorities": "연애에서 신뢰, 애정 표현, 소통, 자유, 미래 중 내가 가장 중요하게 생각하는 기준을 무료 심리테스트로 알아보세요.",
+  "romance-priorities": "연애에서 신뢰, 애정 표현, 소통, 자유, 미래 중 내가 가장 중요하게 생각하는 기준을 무료 심리 테스트로 알아보세요.",
   "overseas-move": "해외 이민 기회가 생겼을 때 새로운 경험, 현실 조건, 인간관계와 안정 중 무엇을 우선할지 재미 테스트로 알아보세요.",
   "friend-romance-distance": "연애를 시작한 친구의 연락이 뜸해질 때 이해하거나 서운해하는 내 반응을 인간관계 테스트로 알아보세요.",
-  "long-term-love": "설렘이 익숙함으로 바뀐 뒤에도 관계를 오래 이어갈 수 있는지 무료 연애 심리테스트로 확인해보세요.",
+  "long-term-love": "설렘이 익숙함으로 바뀐 뒤에도 관계를 오래 이어갈 수 있는지 무료 연애 심리 테스트로 확인해보세요.",
   "mood-swings": "내 기분이 얼마나 자주, 얼마나 크게 흔들리는지 일상 속 반응을 돌아보며 감정 기복을 알아보세요.",
   "sociability": "낯선 사람과의 대화나 모임에서 드러나는 사회성을 무료 인간관계 테스트로 알아보세요.",
   "year-off": "아무 의무 없이 1년의 휴가가 생긴다면 여행, 성장, 휴식, 관계와 도전 중 무엇을 선택할지 알아보세요.",
@@ -1096,7 +1096,7 @@ const TEST_SEO_DESCRIPTIONS = {
   "married-partner": "함께하는 일상, 갈등과 생활 계획을 대하는 방식으로 결혼하면 어떤 배우자가 될지 알아보세요.",
   "compatible-partner": "편안함, 다정함, 자유와 확실한 표현 중 어떤 사람과 연애할 때 가장 잘 맞을지 알아보세요.",
   "breakup": "관계가 끝난 뒤 마음을 정리하거나 추억을 되짚고 새로운 일상으로 넘어가는 내 이별 성향을 알아보세요.",
-  "falling-in-love": "설렘, 편안함, 배려와 본능적인 끌림 중 어떤 순간에 사랑이 시작되는지 무료 연애 심리테스트로 알아보세요.",
+  "falling-in-love": "설렘, 편안함, 배려와 본능적인 끌림 중 어떤 순간에 사랑이 시작되는지 무료 연애 심리 테스트로 알아보세요.",
   "social-adaptation": "새로운 사람과 환경, 낯선 규칙에 얼마나 빨리 익숙해지는지 사회생활 적응 성향을 알아보세요.",
   "difficult-people": "불편한 사람과 함께 일하거나 대화할 때 감정과 상황을 어떻게 다루는지 인간관계 테스트로 알아보세요.",
   "million-followers": "하루아침에 100만 팔로워가 생기면 관심, 콘텐츠, 광고와 일상을 어떻게 대할지 재미 테스트로 알아보세요.",
@@ -1113,7 +1113,7 @@ const TEST_SEO_DESCRIPTIONS = {
   "social-mask": "사람들과 함께 있을 때와 혼자 있을 때의 모습이 얼마나 다른지 사회생활 속 내 모습을 알아보세요.",
   "social-awareness": "다른 사람의 말투, 표정과 분위기를 얼마나 신경 쓰는지 무료 인간관계 테스트로 알아보세요.",
   "cutoff": "서운하거나 맞지 않는 관계에서 더 기다리거나 거리를 두는 내 인간관계 성향을 알아보세요.",
-  "jealousy": "연인의 연락과 인간관계를 대할 때 나타나는 질투 성향을 무료 연애 심리테스트로 알아보세요.",
+  "jealousy": "연인의 연락과 인간관계를 대할 때 나타나는 질투 성향을 무료 연애 심리 테스트로 알아보세요.",
 };
 ```
 
@@ -1147,7 +1147,7 @@ const TEST_SEO_DESCRIPTIONS = {
 
   const url = new URL(test.url, "https://todayschoice.kr/").href;
   const description = `${test.title} ${TEST_SEO_DESCRIPTIONS[test.slug] || test.description}`;
-  document.title = `${test.title} | 오늘의 초이스 심리테스트`;
+  document.title = `${test.title} | 오늘의 초이스 심리 테스트`;
   meta("name", "description", description);
   meta("name", "robots", "index, follow");
   meta("property", "og:title", test.title);
@@ -1193,7 +1193,7 @@ async function loadTest() {
       throw new Error("테스트 정보를 확인할 수 없어요. 잠시 후 다시 시도해 주세요.");
     }
     window.testData = data;
-    document.title = `${data.title} | 오늘의 초이스 심리테스트`;
+    document.title = `${data.title} | 오늘의 초이스 심리 테스트`;
     createTestRunner(root, data);
     root.querySelector('[data-role="loading"]').hidden = true;
   } catch (error) {

@@ -72,7 +72,6 @@ if (kakaoShareButton) {
 const catalogGrid = document.querySelector("#category-grid");
 if (catalogGrid && typeof TEST_CATALOG !== "undefined") {
   const categories = { "연애/결혼": "love", "연애·결혼": "love", "재미": "fun", "성격": "personality" };
-  const categoryIcons = { love: "heart", relationship: "people", personality: "leaf", fun: "star" };
   const makeIcon = (name) => {
     const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     svg.setAttribute("class", "icon");
@@ -90,8 +89,8 @@ if (catalogGrid && typeof TEST_CATALOG !== "undefined") {
     card.dataset.test = test.id;
     card.dataset.category = categories[test.category] || "relationship";
     const tile = document.createElement("span");
-    tile.className = "icon-tile";
-    tile.append(makeIcon(categoryIcons[card.dataset.category]));
+    tile.className = "eyebrow";
+    tile.textContent = test.category;
     const title = document.createElement("h3");
     title.textContent = test.title;
     const description = document.createElement("p");
@@ -121,6 +120,22 @@ const searchDialog = document.querySelector("#search-dialog");
 const searchInput = document.querySelector("#search-input");
 const searchResults = document.querySelector("#search-results");
 const searchCount = document.querySelector("#search-count");
+const searchLevels = ['쉬움', '보통', '조금 어려움', '어려움', '매우 어려움'];
+// Keep combined search separate from the psychology random-test catalog.
+const searchTests = [
+  ...tests.map(test => ({ ...test, type: 'psychology', typeLabel: '심리 테스트' })),
+  ...(typeof THINKING_TESTS !== 'undefined' ? THINKING_TESTS : []).map(test => ({
+    title: test.title,
+    description: test.question,
+    category: test.category,
+    level: searchLevels[test.difficulty - 1],
+    type: 'thinking',
+    typeLabel: '사고력 테스트',
+    url: `thinking-detail.html?id=${encodeURIComponent(test.id)}`,
+  })),
+];
+const searchTypeButtons = Array.from(document.querySelectorAll('[data-search-type]'));
+let selectedSearchType = 'all';
 
 const todayGrid = document.querySelector("#new-tests .card-grid");
 if (todayGrid && cards.length) {
@@ -167,25 +182,34 @@ function renderSearch() {
   const query = searchInput.value.trim().toLocaleLowerCase("ko").replace(/\s+/g, "");
   searchResults.replaceChildren();
   let count = 0;
-  tests.forEach((test, index) => {
-    const searchable = `${test.title} ${test.description}`.toLocaleLowerCase("ko").replace(/\s+/g, "");
+  const counts = { psychology: 0, thinking: 0 };
+  searchTests.forEach((test) => {
+    if (selectedSearchType !== 'all' && test.type !== selectedSearchType) return;
+    const searchable = `${test.typeLabel} ${test.category || ''} ${test.level || ''} ${test.title} ${test.description}`.toLocaleLowerCase("ko").replace(/\s+/g, "");
     if (!searchable.includes(query)) return;
     count += 1;
+    counts[test.type] += 1;
     const link = document.createElement("a");
     link.className = "search-result";
     link.href = test.url;
+    const copy = document.createElement('span');
+    copy.className = 'search-result-copy';
+    const meta = document.createElement('span');
+    meta.className = 'search-result-meta';
+    meta.textContent = [test.typeLabel, test.category, test.level].filter(Boolean).join(' · ');
     const title = document.createElement("span");
     title.textContent = test.title;
+    copy.append(meta, title);
     const icon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     icon.classList.add("icon");
     icon.setAttribute("aria-hidden", "true");
     const use = document.createElementNS("http://www.w3.org/2000/svg", "use");
     use.setAttribute("href", "#icon-arrow");
     icon.append(use);
-    link.append(title, icon);
+    link.append(copy, icon);
     searchResults.append(link);
   });
-  searchCount.textContent = `테스트 ${count}개`;
+  searchCount.textContent = `검색 결과 ${count}개 · 심리 ${counts.psychology}개 · 사고력 ${counts.thinking}개`;
   if (count === 0) {
     const empty = document.createElement("p");
     empty.className = "empty-results";
@@ -197,12 +221,21 @@ function renderSearch() {
 document.querySelectorAll(".search-toggle").forEach((button) => {
   button.addEventListener("click", () => {
     searchInput.value = "";
+    selectedSearchType = 'all';
+    searchTypeButtons.forEach(item => item.setAttribute('aria-pressed', String(item.dataset.searchType === 'all')));
     renderSearch();
     searchDialog.showModal();
     searchInput.focus();
   });
 });
 searchInput.addEventListener("input", renderSearch);
+searchTypeButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    selectedSearchType = button.dataset.searchType;
+    searchTypeButtons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+    renderSearch();
+  });
+});
 
 document.querySelectorAll("[data-close]").forEach((button) => {
   button.addEventListener("click", () => button.closest("dialog").close());
@@ -216,7 +249,7 @@ document.querySelectorAll("dialog").forEach((dialog) => {
   });
 });
 
-const categoryButtons = Array.from(document.querySelectorAll(".category-button"));
+const categoryButtons = Array.from(document.querySelectorAll(".category-button[data-filter]"));
 const categoryCards = Array.from(document.querySelectorAll("#category-grid .test-card"));
 categoryButtons.forEach((button) => {
   button.dataset.label = button.textContent.trim();
@@ -235,7 +268,7 @@ let selectedCategory = "all";
 let currentTestPage = 1;
 
 function renderCategoryTests() {
-  const testsPerPage = mobileTestLayout.matches ? 5 : 9;
+  const testsPerPage = mobileTestLayout.matches ? 3 : 9;
   const filteredCards = categoryCards.filter((card) => selectedCategory === "all" || card.dataset.category === selectedCategory);
   const pageCount = Math.ceil(filteredCards.length / testsPerPage);
   currentTestPage = Math.max(1, Math.min(currentTestPage, pageCount || 1));
@@ -251,42 +284,36 @@ function renderCategoryTests() {
   testPagination.replaceChildren();
   testPagination.hidden = pageCount <= 1;
   if (pageCount <= 1) return;
-  function addPageButton(label, page, disabled = false, active = false, symbol = "") {
+  function addPageButton(label, page, disabled = false, active = false) {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "page-button";
-    button.textContent = symbol || label;
+    button.textContent = label;
     button.disabled = disabled;
-    if (symbol) {
-      button.setAttribute("aria-label", label);
-      button.title = label;
-    }
+    button.setAttribute("aria-label", /^\d+$/.test(label) ? `${label}페이지` : label);
     button.setAttribute("aria-controls", "category-grid");
     if (active) button.setAttribute("aria-current", "page");
     button.addEventListener("click", () => {
-      categoryGrid.style.minHeight = `${categoryGrid.getBoundingClientRect().height}px`;
       currentTestPage = page;
       renderCategoryTests();
-      testPagination.querySelector('[aria-current="page"]').focus({ preventScroll: true });
+      categoryGrid.scrollIntoView({ block: 'start' });
+      categoryGrid.querySelector('a:not([hidden])')?.focus({ preventScroll: true });
     });
     testPagination.append(button);
   }
   const visiblePageCount = Math.min(5, pageCount);
   const firstPage = Math.max(1, Math.min(currentTestPage - Math.floor(visiblePageCount / 2), pageCount - visiblePageCount + 1));
   const lastPage = firstPage + visiblePageCount - 1;
-  addPageButton("처음", 1, currentTestPage === 1, false, "<<");
-  addPageButton("이전", currentTestPage - 1, currentTestPage === 1, false, "<");
+  addPageButton("이전", currentTestPage - 1, currentTestPage === 1);
   for (let page = firstPage; page <= lastPage; page += 1) {
     addPageButton(String(page), page, false, page === currentTestPage);
   }
-  addPageButton("다음", currentTestPage + 1, currentTestPage === pageCount, false, ">");
-  addPageButton("맨끝", pageCount, currentTestPage === pageCount, false, ">>");
+  addPageButton("다음", currentTestPage + 1, currentTestPage === pageCount);
 }
 
 categoryButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    // Keep the list's space so filtering cannot pull the page bottom upward.
-    categoryGrid.style.minHeight = `${categoryGrid.getBoundingClientRect().height}px`;
+    categoryGrid.style.minHeight = '';
     selectedCategory = button.dataset.filter;
     currentTestPage = 1;
     categoryButtons.forEach((item) => {
@@ -318,25 +345,9 @@ document.querySelectorAll(".view-all").forEach((link) => {
   });
 });
 
-const navLinks = Array.from(document.querySelectorAll(".nav-link"));
-function updateNavigation(id) {
-  navLinks.forEach((link) => {
-    const active = link.getAttribute("href") === `#${id}`;
-    link.classList.toggle("is-active", active);
-    if (active) link.setAttribute("aria-current", "location");
-    else link.removeAttribute("aria-current");
-  });
-}
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => updateNavigation(link.hash.slice(1)));
-});
-if ("IntersectionObserver" in window) {
-  const observer = new IntersectionObserver((entries) => {
-    const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-    if (visible.length) updateNavigation(visible[0].target.id);
-  }, { rootMargin: "-5% 0px -35% 0px", threshold: [0, 0.25, 0.5] });
-  document.querySelectorAll("#home, #popular, #new-tests, #about").forEach((section) => observer.observe(section));
-}
-
 // Decorative icons are hidden from assistive technology; their labels are nearby.
 document.querySelectorAll("svg.icon").forEach((icon) => icon.setAttribute("aria-hidden", "true"));
+
+if (/\/(?:index\.html)?$/.test(location.pathname) && ["#popular", "#category-tests", "#new-tests"].includes(location.hash)) {
+  location.replace("psychology.html" + location.hash);
+}
