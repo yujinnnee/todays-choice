@@ -85,11 +85,6 @@ const server = http.createServer((req, res) => {
             document.querySelector('[data-thinking-filter="전체"]').click();
             if (!document.querySelector('[data-thinking-empty]').hidden) throw Error('thinking empty');
             if (todayGrid.innerHTML !== todaySnapshot) throw Error('today picks changed while filtering');
-            document.querySelector('[data-thinking-filter="논리"]').click();
-            const viewAll = document.querySelector('[data-thinking-view-all]');
-            if (viewAll.getAttribute('href') !== '#thinking-list') throw Error('today view all target');
-            viewAll.click();
-            if (document.querySelector('[data-thinking-filter="전체"]').getAttribute('aria-pressed')!=='true' || pager.querySelector('[aria-current="page"]').textContent !== '1') throw Error('today view all reset');
           } else if (location.pathname === '/thinking-detail.html') {
             const id = new URLSearchParams(location.search).get('id');
             const test = THINKING_TESTS.find(t=>t.id===id);
@@ -127,15 +122,15 @@ const server = http.createServer((req, res) => {
               q('reveal').click();
               if (q('selection-error').hidden || q('selection-error').textContent !== '답을 하나 선택해주세요.' || !feedback.hidden || q('answer').textContent) throw Error('unselected');
               const choices = [...form.querySelectorAll('input')];
-              if (choices.length !== 4 || choices.some((input,i)=>!input.closest('label').textContent.startsWith(['①','②','③','④'][i]))) throw Error('choice labels');
+              if (choices.length !== 4 || choices.some((input,i)=>input.closest('label').querySelector('.thinking-choice-text').textContent !== test.choices[i])) throw Error('choice labels');
               for (let index=0; index<4; index++) {
                 choices[index].click();
                 if (!q('selection-error').hidden) throw Error('selection error clearing');
                 q('reveal').click();
                 if (feedback.hidden || q('explanation').textContent !== test.explanation || q('actions').hidden) throw Error('answer reveal');
                 if (q('result').textContent !== (index===test.answer?'정답입니다!':'아쉽습니다!')) throw Error('grading');
-                if (q('selected').textContent !== '내가 선택한 답: '+['①','②','③','④'][index]+' '+test.choices[index]) throw Error('selected answer');
-                if (q('answer').textContent !== '정답: '+['①','②','③','④'][test.answer]+' '+test.choices[test.answer]) throw Error('correct answer');
+                if (q('selected').textContent !== '내가 선택한 답: '+test.choices[index]) throw Error('selected answer');
+                if (q('answer').textContent !== '정답: '+test.choices[test.answer]) throw Error('correct answer');
                 if (!choices[test.answer].closest('label').classList.contains('is-correct')) throw Error('correct color');
                 if (index!==test.answer && !choices[index].closest('label').classList.contains('is-wrong')) throw Error('wrong color');
                 if (!choices.every(input=>input.disabled) || !q('reveal').disabled) throw Error('answer lock');

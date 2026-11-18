@@ -1,4 +1,4 @@
-﻿// Independent calculations and exhaustive finite-model checks for all 30 problems.
+﻿// Independent calculations and exhaustive finite-model checks for every published problem.
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const vm = require('node:vm');
@@ -16,6 +16,9 @@ for (const t of tests) {
   assert.ok(Number.isInteger(t.difficulty) && t.difficulty >= 1 && t.difficulty <= 5);
   assert.equal(t.choices.length, 4, t.id);
   assert.equal(new Set(t.choices).size, 4, t.id);
+  if (t.choices.every(choice => /^[A-Z](?:\s+[^A-Z]+)?$/.test(choice))) {
+    assert.deepEqual(t.choices, [...t.choices].sort(), `${t.id}: alphabetic choice order`);
+  }
   assert.ok(Number.isInteger(t.answer) && t.answer >= 0 && t.answer < 4);
   assert.ok(t.question && t.explanation);
 }
@@ -131,6 +134,51 @@ const segments=[6,2,5,5,4,5,6,3,7,6];
 check('pattern-005', `${[...'2026'].reduce((sum,n)=>sum+segments[Number(n)],0)}개`);
 let number=7; for(let i=0;i<8;i++) number=number%2===0?number/2:3*number+1;
 check('pattern-006', String(number));
+// Enumerate individual balls independently of the combinatorial explanation.
+const ballColors = [...Array(5).fill('red'), ...Array(4).fill('blue'), ...Array(3).fill('green')];
+let redDraws=0, twoColors=0;
+for(let a=0;a<10;a++) for(let b=a+1;b<11;b++) for(let c=b+1;c<12;c++) {
+  const colors=[ballColors[a],ballColors[b],ballColors[c]];
+  if(!colors.includes('red')) continue;
+  redDraws++;
+  if(new Set(colors).size===2) twoColors++;
+}
+const gcd=(a,b)=>b?gcd(b,a%b):a;
+check('math-007', `${twoColors/gcd(twoColors,redDraws)}/${redDraws/gcd(twoColors,redDraws)}`);
+const witnessModels=[];
+for(let culprit=0;culprit<5;culprit++) for(const truth of states(5)) {
+  if(truth.filter(Boolean).length!==2) continue;
+  const [a,b,c,d]=truth;
+  const claims=[!b&&culprit===2,a!==d,culprit===0||culprit===4,c||!b,culprit===3];
+  if(claims.every((claim,i)=>claim===truth[i])) witnessModels.push({culprit,truth});
+}
+check('logic-007', 'ABCDE'[single(witnessModels).culprit]);
+const newClues=[['1234',1,0],['5678',2,2],['9051',2,1],['2705',4,0]];
+const fourDigitCodes=[];
+for(let n=0;n<10000;n++) {
+  const code=String(n).padStart(4,'0');
+  if(new Set(code).size!==4) continue;
+  if(newClues.every(([guess,total,right])=>[...guess].filter(d=>code.includes(d)).length===total&&[...guess].filter((d,i)=>d===code[i]).length===right)) fourDigitCodes.push(code);
+}
+check('reasoning-007', single(fourDigitCodes));
+// Check voxel adjacency and the three groups described in the explanation.
+const solid=[];
+for(let a=1;a<=5;a++) for(let b=1;b<=5;b++) for(let c=1;c<=5;c++) {
+  if([a,b,c].filter(v=>v===3).length<2) solid.push([a,b,c]);
+}
+assert.equal(solid.length,112);
+const occupied=new Set(solid.map(p=>p.join(',')));
+const exposedGroups=[0,0,0,0];
+for(const p of solid) {
+  const exposed=[[1,0,0],[-1,0,0],[0,1,0],[0,-1,0],[0,0,1],[0,0,-1]].filter(delta=>!occupied.has(p.map((v,i)=>v+delta[i]).join(','))).length;
+  if(exposed===2) exposedGroups[p.filter(v=>v===1||v===5).length]++;
+}
+assert.deepEqual(exposedGroups,[12,24,36,0]);
+check('spatial-007', `${exposedGroups.reduce((sum,n)=>sum+n,0)}개`);
+// Expand the actual string instead of using the explanation's count recurrence.
+let expanded='A';
+for(let step=0;step<10;step++) expanded=[...expanded].map(c=>({A:'AB',B:'BC',C:'A'})[c]).join('');
+check('pattern-007', `${[...expanded].filter(c=>c==='C').length}개`);
 assert.equal(checked.size, tests.length, 'Every published problem needs an independent solution');
-console.log(`PASS: ${tests.length} independently solved problems, unique answers, 5 categories × 6, four choices each`);
+console.log(`PASS: ${tests.length} independently solved problems, unique answers, 5 categories, four choices each`);
 console.log('Difficulty distribution:', JSON.stringify(tests.reduce((counts,t)=>(counts[t.difficulty]=(counts[t.difficulty]||0)+1,counts),{})));

@@ -17,7 +17,7 @@ const tiles = (items,y=64) => {
   const gap=10,w=Math.min(84,(536-(items.length-1)*gap)/items.length), total=items.length*w+(items.length-1)*gap;
   return items.map((item,i)=>rect((600-total)/2+i*(w+gap),y,w,64)+text((600-total)/2+i*(w+gap)+w/2,y+41,item,25)).join('');
 };
-const note = (value,y=180) => text(300,y,value,15,muted);
+const note = (value,y=180) => text(300,y,value,16,muted);
 const title = value => text(300,30,value,15,muted);
 const table = (headers,rows,widths=[140,350],startX=55,startY=52,rowHeight=38) => {
   let svg=''; const all=[headers,...rows];
@@ -142,6 +142,28 @@ add('pattern-004','치환 규칙 A는 AB로, B는 A로 바뀜. 처음 A, 첫 단
 }
 add('pattern-006','시작값 7에서 현재 수가 짝수면 2로 나누고 홀수면 3배 더하기 1. 변환을 8번 반복하는 두 갈래 도식.','시작값은 변환 횟수에 포함하지 않습니다.',218,
   title('7에서 시작 · 정확히 8번 변환')+rect(215,62,170,49)+text(300,93,'현재 수',21)+arrow(215,87,130,144)+arrow(385,87,470,144)+rect(40,147,180,48)+text(130,177,'짝수 → ÷ 2',20)+rect(380,147,180,48)+text(470,177,'홀수 → × 3 + 1',20));
+
+add('math-007','빨간 공 5개, 파란 공 4개, 초록 공 3개 중 3개를 뽑습니다. 빨간 공이 적어도 하나 있습니다.','색 이외에는 같은 공을 되돌려 넣지 않고 뽑습니다.',190,
+  card(45,20,160,80,'빨간 공','5개')+card(220,20,160,80,'파란 공','4개')+card(395,20,160,80,'초록 공','3개')+note('3개 추출 · 빨간 공이 적어도 1개',145)+note('정확히 두 종류의 색일 확률은?',177));
+add('logic-007','다섯 사람 중 정직한 사람은 정확히 두 명이며 범인은 한 명입니다.','전체 진술이 거짓이어도 그 안의 일부 내용은 참일 수 있습니다.',160,
+  tiles(['A','B','C','D','E'],20)+note('정직한 사람 2명 · 거짓말쟁이 3명',119)+note('범인은 정확히 1명',149));
+add('reasoning-007','1234는 포함 1개 자리 일치 0개, 5678은 2개와 2개, 9051은 2개와 1개, 2705는 4개와 0개입니다.','포함 개수는 자리 일치 개수를 포함합니다.',215,
+  table(['입력','포함','자리 일치'],[['1234','1개','0개'],['5678','2개','2개'],['9051','2개','1개'],['2705','4개','0개']],[160,160,160],60,10,39));
+{
+  let body=title('z층별 제거 위치 · ×는 제거한 칸');
+  for(let layer=0;layer<2;layer++) {
+    const start=layer===0?92:352;
+    body+=text(start+75,65,layer===0?'z = 1, 2, 4, 5':'z = 3',17);
+    for(let x=1;x<=5;x++) for(let y=1;y<=5;y++) {
+      const removed=layer===0?(x===3&&y===3):(x===3||y===3);
+      body+=rect(start+(x-1)*30,80+(y-1)*30,30,30,removed?'#f1f2f4':'#fff',line,0);
+      if(removed) body+=text(start+(x-1)*30+15,102+(y-1)*30,'×',20);
+    }
+  }
+  add('spatial-007','z가 1, 2, 4, 5인 층은 중앙 한 칸을 제거하고, z가 3인 층은 중앙 행과 열을 제거합니다.','위에서 본 층별 단면입니다. 남은 칸은 작은 정육면체입니다.',244,body);
+}
+add('pattern-007','동시 치환 규칙 A는 AB, B는 BC, C는 A. 시작 상태 A에서 10단계 진행합니다.','새로 생긴 문자는 다음 단계에서 바꿉니다.',160,
+  card(45,15,160,80,'A','AB')+card(220,15,160,80,'B','BC')+card(395,15,160,80,'C','A')+note('0단계 A → 1단계 AB → 2단계 ABBC',140));
 
 // Crop unused canvas above and below the drawing; the surrounding card supplies padding.
 const contentBottoms = {

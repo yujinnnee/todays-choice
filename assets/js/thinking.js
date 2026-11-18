@@ -3,7 +3,6 @@
   const problems = THINKING_TESTS;
   const find = name => document.querySelector(`[data-thinking-${name}]`);
   const grid = document.querySelector('#thinking-grid') || find('preview');
-  const numbers = ['①', '②', '③', '④'];
   const levels = ['쉬움', '보통', '조금 어려움', '어려움', '매우 어려움'];
   const difficulty = test => `난이도 · ${levels[test.difficulty - 1]}`;
   const mobileLayout = window.matchMedia('(max-width: 640px)');
@@ -123,9 +122,6 @@
         render(category);
       });
     });
-    find('view-all')?.addEventListener('click', () => {
-      filters.find(button => button.dataset.thinkingFilter === '전체')?.click();
-    });
     mobileLayout.addEventListener('change', () => {
       if (!find('pagination')) return;
       currentPage = 1;
@@ -175,7 +171,7 @@
   const choices = test.choices.map((choice, index) => {
     const label = document.createElement('label');
     const input = document.createElement('input'); input.type = 'radio'; input.name = 'answer'; input.value = index; input.required = true;
-    const text = document.createElement('span'); text.className = 'thinking-choice-text'; text.textContent = `${numbers[index]} ${choice}`;
+    const text = document.createElement('span'); text.className = 'thinking-choice-text'; text.textContent = choice;
     const badge = document.createElement('span'); badge.className = 'thinking-choice-badge'; badge.hidden = true;
     label.append(input, text, badge); find('choices').append(label);
     input.addEventListener('change', () => { find('selection-error').hidden = true; });
@@ -195,8 +191,8 @@
     const selectedIndex = Number(selected.value);
     find('selection-error').hidden = true;
     find('result').textContent = selectedIndex === test.answer ? '정답입니다!' : '아쉽습니다!';
-    find('selected').textContent = `내가 선택한 답: ${numbers[selectedIndex]} ${test.choices[selectedIndex]}`;
-    find('answer').textContent = `정답: ${numbers[test.answer]} ${test.choices[test.answer]}`;
+    find('selected').textContent = `내가 선택한 답: ${test.choices[selectedIndex]}`;
+    find('answer').textContent = `정답: ${test.choices[test.answer]}`;
     find('explanation').textContent = test.explanation;
     choices.forEach(({ label, input, badge }, index) => {
       const correct = index === test.answer;
